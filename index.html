@@ -279,6 +279,7 @@
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 
 <script type="text/babel">
 const{useState,useEffect,useRef,useCallback}=React;
@@ -289,11 +290,77 @@ const WEEK_KEY=(()=>{const d=new Date(),s=new Date(d.getFullYear(),0,1);return`$
 const EMOJIS=['🌿','🌸','✨','🕊️','🌻','🌙','⭐','🦋','🌺','🍀','🦚','🌾'];
 const COLORS=['#2C4A3E','#C4956A','#7B8EC8','#C87B8E','#8E7BC4','#7BC4B5'];
 
-// ── STORAGE ─────────────────────────────────────────────────────────────────
+// ── SUPABASE ─────────────────────────────────────────────────────────────────
+const SB_URL='https://mlznzzskyqagriojsxmw.supabase.co';
+const SB_KEY='sb_publishable_w_z6ciB8BFICUxjXbGxE1A_zTuY4VD-';
+const sb=supabase.createClient(SB_URL,SB_KEY);
+
+// ── STORAGE LOCAL (só para devocional/tema — não precisa sincronizar) ────────
 const S={
   get(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch{return null;}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}},
   rm(k){try{localStorage.removeItem(k);}catch{}},
+};
+
+// ── SUPABASE HELPERS ─────────────────────────────────────────────────────────
+const DB={
+  // Progresso
+  async getProgress(){
+    const{data}=await sb.from('progresso').select('*');
+    // Agrupa por membro
+    const p={};
+    (data||[]).forEach(r=>{
+      if(!p[r.membro_id])p[r.membro_id]={devotionals:[],missions:[]};
+      if(r.tipo==='devocional')p[r.membro_id].devotionals.push(r.referencia);
+      if(r.tipo==='missao')p[r.membro_id].missions.push(r.referencia);
+    });
+    return p;
+  },
+  async addProgress(membroId,tipo,referencia){
+    // Evita duplicata
+    const{data}=await sb.from('progresso').select('id').eq('membro_id',membroId).eq('tipo',tipo).eq('referencia',referencia);
+    if(data&&data.length>0)return;
+    await sb.from('progresso').insert({membro_id:membroId,tipo,referencia});
+  },
+  // Orações
+  async getOracoes(){
+    const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').order('criado_em',{ascending:false});
+    return(data||[]).map(o=>({
+      id:o.id, authorId:o.autor_id, text:o.texto, date:o.data_br,
+      prayedBy:(o.intercessions||[]).map(i=>i.membro_id)
+    }));
+  },
+  async addOracao(autor,texto){
+    const{data}=await sb.from('oracoes').insert({
+      autor_id:autor.id, autor_nome:autor.name, autor_emoji:autor.emoji,
+      texto, data_br:new Date().toLocaleDateString('pt-BR')
+    }).select().single();
+    return data;
+  },
+  async addIntercessao(oracaoId,membroId){
+    await sb.from('intercessions').upsert({oracao_id:oracaoId,membro_id:membroId});
+  },
+  // Comentários
+  async getComentarios(dataDevocional){
+    const{data}=await sb.from('comentarios').select('*').eq('data_devocional',dataDevocional).order('criado_em');
+    return(data||[]).map(c=>({id:c.id,authorId:c.autor_id,text:c.texto,time:c.hora}));
+  },
+  async addComentario(autorId,texto){
+    await sb.from('comentarios').insert({
+      autor_id:autorId, data_devocional:TODAY, texto,
+      hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
+    });
+  },
+  // Missões concluídas
+  async getMissoes(){
+    const{data}=await sb.from('progresso').select('*').eq('tipo','missao');
+    const ms={};
+    (data||[]).forEach(r=>{
+      if(!ms[r.referencia])ms[r.referencia]=[];
+      ms[r.referencia].push(r.membro_id);
+    });
+    return ms;
+  },
 };
 
 // ── GEMINI API ───────────────────────────────────────────────────────────────
@@ -733,6 +800,7 @@ function App(){
   const[missions,setMissions]=useState([]);
   const[progress,setProgress]=useState({});
   const[loading,setLoading]=useState(false);
+  const[loadErr,setLoadErr]=useState('');
   
 
   const DEF=[
@@ -742,7 +810,6 @@ function App(){
   ];
 
   useEffect(()=>{(async()=>{
-    
     const m=S.get('members');
     if(m)setMembers(m);else{setMembers(DEF);S.set('members',DEF);}
     const th=S.get(`theme-${WEEK_KEY}`);
@@ -751,76 +818,75 @@ function App(){
     if(th)setTheme(th);
     if(d)setDev(d);
     if(pr)setPrayer(pr);
-    setComments(S.get(`comments-${TODAY}`)||[]);
-    setWall(S.get('wall')||[]);
-    setMissions(S.get(`missions-${WEEK_KEY}`)||[]);
-    setProgress(S.get('progress')||{});
+    // Carrega dados sincronizados do Supabase
+    const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
+    setProgress(pg);
+    setWall(wl);
+    setComments(cm);
     setView('login');
   })();},[]);
 
-  // Load devotional from JSON file
+  // Carrega devocional do JSON e missões com completedBy do Supabase
   async function generate(){
     setLoading(true);
     try{
       const today=await getTodayDevotional();
       const th={theme:today.tema};
       setTheme(th);S.set(`theme-${WEEK_KEY}`,th);
-      const d={
-        title:today.titulo,
-        verse:today.versiculo,
-        verseText:today.versiculoTexto,
-        reflection:today.reflexao,
-        prayer:today.oracao
-      };
+      const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
-      const ms=(today.missoes||[]).map((t,i)=>({id:String(i+1),text:t,completedBy:[]}));
-      setMissions(ms);S.set(`missions-${WEEK_KEY}`,ms);
-    }catch(e){
-      console.error('Erro ao carregar devocional:',e);
-      alert('Erro ao carregar: '+e.message);
-    }
+      // Missões com completedBy do Supabase
+      const msDone=await DB.getMissoes();
+      const ms=(today.missoes||[]).map((t,i)=>({id:String(i+1),text:t,completedBy:msDone[String(i+1)]||[]}));
+      setMissions(ms);
+    }catch(e){console.error(e);alert('Erro ao carregar: '+e.message);}
     setLoading(false);
   }
 
   async function handleLogin(m){
     setUser(m);setView('app');setTab('home');
-    // Only generate if not already cached
-    const hasDev=!!S.get(`dev-${TODAY}`);
-    const hasTheme=!!S.get(`theme-${WEEK_KEY}`);
-    if(!hasDev) await generate();
+    if(!S.get(`dev-${TODAY}`)) await generate();
+    else{
+      // Atualiza missões com dados do Supabase mesmo se devocional já está em cache
+      const msDone=await DB.getMissoes();
+      const cached=S.get(`missions-${WEEK_KEY}`)||[];
+      setMissions(cached.map(ms=>({...ms,completedBy:msDone[ms.id]||[]})));
+      // Atualiza progresso e orações
+      const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
+      setProgress(pg);setWall(wl);setComments(cm);
+    }
   }
 
   async function markRead(){
-    const p={...progress};
-    if(!p[user.id])p[user.id]={devotionals:[],missions:[]};
-    if(!(p[user.id].devotionals||[]).includes(TODAY))
-      p[user.id].devotionals=[...(p[user.id].devotionals||[]),TODAY];
-    setProgress(p);S.set('progress',p);
+    await DB.addProgress(user.id,'devocional',TODAY);
+    const pg=await DB.getProgress();
+    setProgress(pg);
   }
 
-  function addComment(text){
-    const c={id:Date.now(),authorId:user.id,text,time:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})};
-    const nc=[...comments,c];setComments(nc);S.set(`comments-${TODAY}`,nc);
+  async function addComment(text){
+    await DB.addComentario(user.id,text);
+    const cm=await DB.getComentarios(TODAY);
+    setComments(cm);
   }
 
-  function addPrayer(text){
-    const p={id:Date.now(),authorId:user.id,text,prayedBy:[],date:new Date().toLocaleDateString('pt-BR')};
-    const nw=[p,...wall];setWall(nw);S.set('wall',nw);
+  async function addPrayer(text){
+    await DB.addOracao(user,text);
+    const wl=await DB.getOracoes();
+    setWall(wl);
   }
 
-  function prayFor(id){
-    const nw=wall.map(p=>p.id===id&&!p.prayedBy.includes(user.id)?{...p,prayedBy:[...p.prayedBy,user.id]}:p);
-    setWall(nw);S.set('wall',nw);
+  async function prayFor(id){
+    await DB.addIntercessao(id,user.id);
+    const wl=await DB.getOracoes();
+    setWall(wl);
   }
 
-  function completeMission(mid){
-    const nm=missions.map(m=>m.id===mid&&!m.completedBy.includes(user.id)?{...m,completedBy:[...m.completedBy,user.id]}:m);
-    setMissions(nm);S.set(`missions-${WEEK_KEY}`,nm);
-    const p={...progress};
-    if(!p[user.id])p[user.id]={devotionals:[],missions:[]};
-    if(!(p[user.id].missions||[]).includes(mid))p[user.id].missions=[...(p[user.id].missions||[]),mid];
-    setProgress(p);S.set('progress',p);
+  async function completeMission(mid){
+    await DB.addProgress(user.id,'missao',mid);
+    const[pg,msDone]=await Promise.all([DB.getProgress(),DB.getMissoes()]);
+    setProgress(pg);
+    setMissions(ms=>ms.map(m=>({...m,completedBy:msDone[m.id]||[]})));
   }
 
   function saveMembers(list){setMembers(list);S.set('members',list);setView('login');}
