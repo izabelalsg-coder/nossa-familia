@@ -85,7 +85,7 @@
     async function callClaude(user, sys) {
       const apiKey = localStorage.getItem('apiKey') || '';
       const prompt = sys ? `${sys}\n\n${user}` : user;
-      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
         method:'POST',
         headers:{ 'Content-Type':'application/json' },
         body: JSON.stringify({
@@ -303,13 +303,22 @@
                 <p style={{color:T.muted,fontSize:'12px',marginTop:'8px',opacity:.7}}>A IA está gerando seu conteúdo</p>
               </div>
             ):!dev?(
-  <div style={{textAlign:'center',padding:'80px 20px'}}>
+  <div style={{textAlign:'center',padding:'60px 20px'}} className="fi">
     <div style={{fontSize:'50px',marginBottom:'20px'}}>📖</div>
-    <p style={{color:T.muted, marginBottom:'20px'}}>O devocional de hoje ainda não foi gerado.</p>
-    <button onClick={() => theme ? genDaily(theme) : genWeekly()} 
-      style={{padding:'15px 30px', background:T.sage, color:'white', border:'none', borderRadius:'25px', fontWeight:'bold', boxShadow:`0 4px 14px ${T.sage}44`}}>
-      ✨ Gerar Devocional de Hoje
-    </button>
+    <p style={{fontFamily:"'Lora',serif", color:T.muted, marginBottom:'20px'}}>
+      {loading ? 'Aguarde, preparando sua leitura...' : 'O devocional de hoje ainda não foi gerado.'}
+    </p>
+    {!loading && (
+      <button 
+        onClick={() => {
+          console.log("Botão clicado!"); // Para teste
+          theme ? genDaily(theme) : genWeekly();
+        }} 
+        style={{padding:'15px 30px', background:T.sage, color:'white', border:'none', borderRadius:'25px', fontWeight:'bold', boxShadow:`0 4px 14px ${T.sage}44`, cursor:'pointer'}}
+      >
+        ✨ Gerar Devocional de Hoje
+      </button>
+    )}
   </div>
 ):tab==='dev'?(
               <div className="fi">
