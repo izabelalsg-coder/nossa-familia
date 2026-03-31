@@ -55,58 +55,58 @@
       async set(k,v) { try { localStorage.setItem(k,JSON.stringify(v)); } catch {} },
     };
 
+    // AJUSTE: Extrator de JSON mais resiliente
     function extractJSON(text) {
-      try { return JSON.parse(text.trim()); } catch {}
-      text = text.replace(/```json|```/g,'').trim();
-      try { return JSON.parse(text); } catch {}
-      const start = text.indexOf('{');
-      if(start === -1) throw new Error('O Google não enviou o conteúdo no formato correto. Tente novamente.');
-      let depth=0, inStr=false, esc=false;
-      for(let i=start; i<text.length; i++) {
-        const c=text[i];
-        if(esc){esc=false;continue;}
-        if(c==='\\'&&inStr){esc=true;continue;}
-        if(c==='"'){inStr=!inStr;continue;}
-        if(inStr)continue;
-        if(c==='{')depth++;
-        if(c==='}'){depth--;if(depth===0){try{return JSON.parse(text.substring(start,i+1));}catch(e){throw new Error('JSON malformado');}}}
+      try { 
+        const cleaned = text.replace(/```json|```/g,'').trim();
+        return JSON.parse(cleaned); 
+      } catch(e) {
+        const start = text.indexOf('{');
+        const end = text.lastIndexOf('}');
+        if(start !== -1 && end !== -1) {
+          try { return JSON.parse(text.substring(start, end + 1)); } catch(e2) {}
+        }
+        throw new Error('A IA enviou um texto incompleto. Tente clicar no botão novamente.');
       }
-      throw new Error('Resposta incompleta da IA.');
     }
 
     async function callClaude(user, sys) {
       const apiKey = localStorage.getItem('apiKey') || '';
       const prompt = sys ? `${sys}\n\n${user}` : user;
-      // CONEXÃO REVISADA: Modelo 2.5-flash com v1beta
+      
       const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
         method:'POST',
         headers:{ 'Content-Type':'application/json' },
         body: JSON.stringify({
           contents:[{ parts:[{ text: prompt }] }],
-          generationConfig:{ maxOutputTokens:2000, temperature:0.7 }
+          generationConfig:{ 
+            maxOutputTokens:1500, 
+            temperature:0.7,
+            response_mime_type: "application/json" // FORÇA O GOOGLE A ENTREGAR JSON VÁLIDO
+          }
         })
       });
+      
       const d = await r.json();
       if(d.error) {
-          alert("Atenção: " + d.error.message); // Alerta visual para a senhora saber o que houve
+          if(d.error.code === 429) alert("Limite de 20 mensagens diárias atingido. Tente novamente em alguns minutos ou amanhã.");
+          else alert("Erro: " + d.error.message);
           throw new Error(d.error.message);
       }
-      const parts = d.candidates[0].content.parts;
-      return parts[0].text;
+      return d.candidates[0].content.parts[0].text;
     }
 
     function speak(text, onEnd) {
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
-      u.lang='pt-BR'; u.rate=0.88; u.pitch=1.0;
+      u.lang='pt-BR'; u.rate=0.88;
       if(onEnd) u.onend=onEnd;
       window.speechSynthesis.speak(u);
     }
     const stopSpeak = () => window.speechSynthesis.cancel();
     const fmtDate = () => new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
-    const cap = s => s?s.charAt(0).toUpperCase()+s.slice(1):s;
 
-    // --- TELAS SECUNDÁRIAS ---
+    // --- TELAS ---
     function ApiKeyScreen({ onSave }) {
       const [key, setKey] = useState('');
       const [testing, setTesting] = useState(false);
@@ -115,15 +115,15 @@
         setTesting(true);
         try {
           localStorage.setItem('apiKey', key.trim());
-          await callClaude('Responda ok', 'Teste');
+          await callClaude('{"test":"ok"}', 'Responda apenas JSON.');
           onSave();
-        } catch(e) { localStorage.removeItem('apiKey'); }
+        } catch(e) { localStorage.removeItem('apiKey'); alert("Chave inválida ou erro de cota."); }
         setTesting(false);
       }
       return (
         <div style={{height:'100vh',background:T.cream,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:30}}>
-          <h2 style={{fontFamily:'Lora',marginBottom:20}}>Chave da API</h2>
-          <input type="password" value={key} onChange={e=>setKey(e.target.value)} placeholder="Cole aqui a chave do Google AI Studio" style={{width:'100%',maxWidth:300,padding:15,borderRadius:12,border:`1px solid ${T.border}`,marginBottom:20}} />
+          <h2 style={{fontFamily:'Lora',marginBottom:20}}>Chave do Gemini</h2>
+          <input type="password" value={key} onChange={e=>setKey(e.target.value)} placeholder="Cole sua chave aqui" style={{width:'100%',maxWidth:300,padding:15,borderRadius:12,border:`1px solid ${T.border}`,marginBottom:20}} />
           <button onClick={handleSave} style={{background:T.sage,color:'white',padding:'15px 30px',border:'none',borderRadius:12,fontWeight:'bold'}}>{testing?'Verificando...':'Salvar e Começar'}</button>
         </div>
       );
@@ -131,24 +131,23 @@
 
     function LoginScreen({ members, onLogin, onSetup }) {
       return (
-        <div style={{height:'100vh',background:`radial-gradient(ellipse at 25% 0%,#DFF0E8 0%,${T.cream} 55%)`,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:20}}>
+        <div style={{height:'100vh',background:T.cream,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:20}}>
           <div style={{fontSize:60,marginBottom:15}}>🕊️</div>
-          <h1 style={{fontFamily:'Lora',fontSize:28,fontWeight:700,color:T.ink,marginBottom:40}}>Nossa Família</h1>
+          <h1 style={{fontFamily:'Lora',fontSize:26,fontWeight:700,color:T.ink,marginBottom:35}}>Nossa Família</h1>
           <div style={{display:'flex',flexDirection:'column',gap:12,width:'100%',maxWidth:320}}>
             {members.map(m=>(
-              <button key={m.id} onClick={()=>onLogin(m)} style={{background:'white',border:`1px solid ${T.border}`,borderRadius:18,padding:20,display:'flex',alignItems:'center',gap:15,textAlign:'left'}}>
-                <div style={{fontSize:25}}>{m.emoji}</div>
-                <div style={{fontWeight:700,fontSize:17}}>{m.name}</div>
+              <button key={m.id} onClick={()=>onLogin(m)} style={{background:'white',border:`1px solid ${T.border}`,borderRadius:18,padding:18,display:'flex',alignItems:'center',gap:15,textAlign:'left'}}>
+                <div style={{fontSize:24}}>{m.emoji}</div>
+                <div style={{fontWeight:700,fontSize:16}}>{m.name}</div>
               </button>
             ))}
           </div>
-          <button onClick={onSetup} style={{marginTop:30,background:'none',border:'none',color:T.muted,textDecoration:'underline'}}>Editar Membros</button>
+          <button onClick={onSetup} style={{marginTop:30,background:'none',border:'none',color:T.muted,fontSize:13,textDecoration:'underline'}}>Editar Membros</button>
         </div>
       );
     }
 
-    // --- TELA PRINCIPAL (CORRIGIDA) ---
-    function HomeScreen({ user, theme, dev, loading, onMarkRead, members, onGenDaily, onGenWeekly, hasRead }) {
+    function HomeScreen({ user, theme, dev, loading, onMarkRead, hasRead, onGenDaily, onGenWeekly }) {
       const [tab, setTab] = useState('dev');
       const [speaking, setSpeaking] = useState(false);
       const toggleSpeak = text => { if(speaking){stopSpeak();setSpeaking(false);}else{setSpeaking(true);speak(text,()=>setSpeaking(false));} };
@@ -156,7 +155,7 @@
       return (
         <div style={{flex:1,display:'flex',flexDirection:'column',overflow:'hidden'}}>
           <div style={{padding:20,background:'white',borderBottom:`1px solid ${T.border}`}}>
-            <p style={{fontSize:12,color:T.muted}}>{fmtDate()}</p>
+            <p style={{fontSize:11,color:T.muted,textTransform:'uppercase'}}>{fmtDate()}</p>
             <h2 style={{fontFamily:'Lora',fontSize:20,fontWeight:700}}>Olá, {user.name} {user.emoji}</h2>
           </div>
 
@@ -164,56 +163,51 @@
             {loading ? (
               <div style={{textAlign:'center',padding:80}} className="pulse">
                 <div style={{fontSize:42,marginBottom:15}}>✨</div>
-                <p style={{fontFamily:'Lora',fontStyle:'italic',color:T.muted}}>A IA está escrevendo o devocional...</p>
+                <p style={{fontFamily:'Lora',fontStyle:'italic',color:T.muted}}>Buscando palavra de hoje...</p>
               </div>
             ) : !dev ? (
               <div style={{textAlign:'center',padding:60}} className="fi">
                 <div style={{fontSize:50,marginBottom:20}}>📖</div>
-                <p style={{fontFamily:'Lora',color:T.muted,marginBottom:25}}>O devocional de hoje ainda não foi gerado.</p>
+                <p style={{fontFamily:'Lora',color:T.muted,marginBottom:25,lineHeight:1.5}}>O devocional de hoje ainda não foi gerado.</p>
                 <button 
-                  onClick={() => { console.log("Clicou no botão"); theme ? onGenDaily() : onGenWeekly(); }}
-                  style={{padding:'15px 30px',background:T.sage,color:'white',border:'none',borderRadius:25,fontWeight:'bold',boxShadow:`0 4px 14px ${T.sage}44`}}>
-                  ✨ Gerar Conteúdo de Hoje
+                  onClick={() => { theme ? onGenDaily() : onGenWeekly(); }}
+                  style={{padding:'16px 32px',background:T.sage,color:'white',border:'none',borderRadius:30,fontWeight:800,boxShadow:`0 4px 14px ${T.sage}44`}}>
+                  ✨ Gerar Devocional
                 </button>
               </div>
             ) : tab==='dev' ? (
               <div className="fi">
                 <div style={{background:T.sage,borderRadius:20,padding:25,marginBottom:20,color:'white'}}>
                   <p style={{fontSize:10,opacity:0.7,fontWeight:700,textTransform:'uppercase'}}>Versículo do dia</p>
-                  <p style={{fontFamily:'Lora',fontSize:18,fontStyle:'italic',margin:'12px 0'}}>"{dev.verseText}"</p>
-                  <p style={{fontSize:14,fontWeight:700}}>— {dev.verse}</p>
+                  <p style={{fontFamily:'Lora',fontSize:17,fontStyle:'italic',margin:'12px 0',lineHeight:1.6}}>"{dev.verseText}"</p>
+                  <p style={{fontSize:13,fontWeight:700}}>— {dev.verse}</p>
                 </div>
-                <h3 style={{fontFamily:'Lora',fontSize:22,fontWeight:700,marginBottom:15}}>{dev.title}</h3>
-                {dev.reflection.split('\n\n').map((p,i)=><p key={i} style={{fontSize:15,lineHeight:1.8,marginBottom:15}}>{p}</p>)}
-                {!hasRead && <button onClick={onMarkRead} style={{width:'100%',padding:18,background:T.sage,color:'white',border:'none',borderRadius:15,fontWeight:800,marginTop:10}}>✓ Concluir Leitura</button>}
-                {hasRead && <div style={{textAlign:'center',padding:15,background:T.sageLt,borderRadius:15,color:T.sage,fontWeight:700}}>✓ Concluído hoje!</div>}
+                <h3 style={{fontFamily:'Lora',fontSize:21,fontWeight:700,marginBottom:15}}>{dev.title}</h3>
+                {dev.reflection.split('\n\n').map((p,i)=><p key={i} style={{fontSize:15,lineHeight:1.8,marginBottom:15,color:'#333'}}>{p}</p>)}
+                <button onClick={onMarkRead} disabled={hasRead} style={{width:'100%',padding:18,background:hasRead?T.sageLt:T.sage,color:hasRead?T.sage:'white',border:'none',borderRadius:15,fontWeight:800,marginTop:10}}>
+                  {hasRead ? '✓ Concluído hoje' : 'Marcar como Lido'}
+                </button>
               </div>
             ) : (
               <div className="fi">
                 <div style={{background:T.amberLt,borderRadius:20,padding:25,borderLeft:`4px solid ${T.amber}`}}>
-                  <p style={{color:T.amber,fontWeight:700,fontSize:12,marginBottom:10,textTransform:'uppercase'}}>🙏 Oração Sugerida</p>
-                  <p style={{fontFamily:'Lora',fontStyle:'italic',lineHeight:1.8,fontSize:16}}>{dev.prayer}</p>
+                  <p style={{color:T.amber,fontWeight:700,fontSize:11,marginBottom:12,textTransform:'uppercase'}}>🙏 Oração para a Família</p>
+                  <p style={{fontFamily:'Lora',fontStyle:'italic',lineHeight:1.8,fontSize:16,color:'#444'}}>{dev.prayer}</p>
                 </div>
               </div>
             )}
           </div>
           
           <div style={{background:'white',display:'flex',padding:'10px 0 25px',borderTop:`1px solid ${T.border}`}}>
-            <button onClick={()=>setTab('dev')} style={{flex:1,background:'none',border:'none',color:tab==='dev'?T.sage:T.muted,fontWeight:tab==='dev'?800:400}}>📖 Leitura</button>
+            <button onClick={()=>setTab('dev')} style={{flex:1,background:'none',border:'none',color:tab==='dev'?T.sage:T.muted,fontWeight:tab==='dev'?800:400}}>📖 Devocional</button>
             <button onClick={()=>setTab('prayer')} style={{flex:1,background:'none',border:'none',color:tab==='prayer'?T.sage:T.muted,fontWeight:tab==='prayer'?800:400}}>🙏 Oração</button>
           </div>
         </div>
       );
     }
 
-    // --- TELAS DE APOIO (Mural, Placar, Missões) ---
-    function BoardScreen() { return <div style={{padding:40,textAlign:'center'}}><h2 style={{fontFamily:'Lora'}}>Jornada da Família</h2><p style={{marginTop:20,color:T.muted}}>Em breve: O mapa do progresso espiritual da família!</p></div>; }
-    function PrayersScreen() { return <div style={{padding:40,textAlign:'center'}}><h2 style={{fontFamily:'Lora'}}>Mural de Orações</h2><p style={{marginTop:20,color:T.muted}}>Espaço para compartilhar pedidos de oração.</p></div>; }
-    function MissionsScreen() { return <div style={{padding:40,textAlign:'center'}}><h2 style={{fontFamily:'Lora'}}>Missões da Semana</h2><p style={{marginTop:20,color:T.muted}}>Desafios práticos para viver a fé em casa.</p></div>; }
-
     function App() {
       const [view, setView] = useState('loading');
-      const [tab, setTab] = useState('home');
       const [user, setUser] = useState(null);
       const [members, setMembers] = useState([]);
       const [theme, setTheme] = useState(null);
@@ -233,21 +227,21 @@
       async function genWeekly(){
         setLoading(true);
         try{
-          const raw = await callClaude(`Gere um tema semanal familiar cristão. Responda APENAS JSON:\n{"theme":"Título","description":"frase","verse":"Ref ARC","verseText":"texto ARC","missions":[]}`,'Pastor cristão.');
+          const raw = await callClaude(`Gere um tema semanal cristão em JSON:\n{"theme":"Título","description":"frase","verse":"Ref ARC","verseText":"texto ARC","missions":[]}`,'Pastor batista.');
           const th = extractJSON(raw);
           setTheme(th); await store.set(`theme-${WEEK_KEY}`, th);
           await genDaily(th);
-        }catch(e){ console.error(e); }
+        }catch(e){ alert("Falha ao gerar tema semanal. Verifique sua cota diária."); }
         setLoading(false);
       }
 
       async function genDaily(th){
         setLoading(true);
         try{
-          const raw = await callClaude(`Tema: ${th.theme}. Gere o devocional de hoje. Responda APENAS JSON:\n{"title":"título","verse":"Ref ARC","verseText":"texto ARC","reflection":"texto longo","prayer":"oração"}`,'Pastor cristão.');
+          const raw = await callClaude(`Tema: ${th.theme}. Gere devocional em JSON:\n{"title":"título","verse":"Ref","verseText":"texto","reflection":"texto","prayer":"oração"}`,'Pastor batista.');
           const d = extractJSON(raw);
           setDev(d); await store.set(`dev-${TODAY}`, d);
-        }catch(e){ console.error(e); }
+        }catch(e){ alert("Falha ao gerar devocional diário."); }
         setLoading(false);
       }
 
@@ -256,26 +250,17 @@
         setProgress(p); await store.set('progress', p);
       };
 
-      const hasRead = !!(progress[user?.id]?.devotionals || []).includes(TODAY);
-
       if(view==='loading') return <div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:T.cream}}>🕊️</div>;
       if(view==='apikey') return <ApiKeyScreen onSave={()=>setView('login')}/>;
       if(view==='login') return <LoginScreen members={members} onLogin={m=>{setUser(m);setView('app')}} onSetup={()=>alert('Em breve!')}/>;
 
       return (
         <div style={{height:'100vh',display:'flex',flexDirection:'column',background:T.cream,maxWidth:480,margin:'0 auto',boxShadow:'0 0 40px rgba(0,0,0,0.1)'}}>
-          {tab==='home' && <HomeScreen user={user} theme={theme} dev={dev} loading={loading} onMarkRead={markRead} members={members} hasRead={hasRead} onGenDaily={()=>genDaily(theme)} onGenWeekly={genWeekly} />}
-          {tab==='board' && <BoardScreen />}
-          {tab==='prayers' && <PrayersScreen />}
-          {tab==='missions' && <MissionsScreen />}
-          
-          <div style={{display:'flex',background:'white',borderTop:`1px solid ${T.border}`,paddingBottom:12}}>
-            {['home','board','prayers','missions'].map(t=>(
-              <button key={t} onClick={()=>setTab(t)} style={{flex:1,padding:15,background:'none',border:'none',fontSize:22,opacity:tab===t?1:0.25}}>
-                {t==='home'?'📖':t==='board'?'🗺️':t==='prayers'?'🙏':'⚔️'}
-              </button>
-            ))}
-          </div>
+          <HomeScreen 
+            user={user} theme={theme} dev={dev} loading={loading} onMarkRead={markRead} 
+            hasRead={!!(progress[user?.id]?.devotionals || []).includes(TODAY)}
+            onGenDaily={()=>genDaily(theme)} onGenWeekly={genWeekly} 
+          />
         </div>
       );
     }
