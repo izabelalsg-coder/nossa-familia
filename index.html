@@ -303,8 +303,15 @@
                 <p style={{color:T.muted,fontSize:'12px',marginTop:'8px',opacity:.7}}>A IA está gerando seu conteúdo</p>
               </div>
             ):!dev?(
-              <div style={{textAlign:'center',padding:'80px 20px'}}><p style={{color:T.muted}}>Sem conteúdo disponível.</p></div>
-            ):tab==='dev'?(
+  <div style={{textAlign:'center',padding:'80px 20px'}}>
+    <div style={{fontSize:'50px',marginBottom:'20px'}}>📖</div>
+    <p style={{color:T.muted, marginBottom:'20px'}}>O devocional de hoje ainda não foi gerado.</p>
+    <button onClick={() => theme ? genDaily(theme) : genWeekly()} 
+      style={{padding:'15px 30px', background:T.sage, color:'white', border:'none', borderRadius:'25px', fontWeight:'bold', boxShadow:`0 4px 14px ${T.sage}44`}}>
+      ✨ Gerar Devocional de Hoje
+    </button>
+  </div>
+):tab==='dev'?(
               <div className="fi">
                 <div style={{background:`linear-gradient(145deg,${T.sage} 0%,#2E5245 100%)`,borderRadius:'20px',padding:'24px',marginBottom:'22px',color:'white',position:'relative',overflow:'hidden'}}>
                   <div style={{position:'absolute',top:'-30px',right:'-30px',width:'130px',height:'130px',borderRadius:'50%',background:'rgba(255,255,255,.06)'}}/>
@@ -586,9 +593,8 @@
       }
 
       async function handleLogin(m){
-        setUser(m);setView('app');setTab('home');
-        if(!theme)await genWeekly();else if(!dev)await genDaily(theme);
-      }
+  setUser(m);setView('app');setTab('home');
+}
 
       async function markRead(){
         const p={...progress};
