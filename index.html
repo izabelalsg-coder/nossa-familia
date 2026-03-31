@@ -321,6 +321,27 @@ function extractJSON(raw){
 
 
 
+// ── DEVOTIONAL LOADER ───────────────────────────────────────────────────────
+let _devData=null;
+async function loadDevData(){
+  if(_devData)return _devData;
+  const r=await fetch('devocionais.json?v='+Date.now());
+  if(!r.ok)throw new Error('Arquivo devocionais.json não encontrado ('+r.status+')');
+  _devData=await r.json();
+  return _devData;
+}
+function getDayIndex(){
+  const start=new Date('2026-01-01');
+  const today=new Date();
+  return Math.max(0,Math.floor((today-start)/86400000));
+}
+async function getTodayDevotional(){
+  const data=await loadDevData();
+  const allDays=data.semanas.flatMap(s=>s.dias.map(d=>({...d,tema:s.tema})));
+  if(!allDays.length)throw new Error('Nenhum devocional encontrado no arquivo');
+  return allDays[getDayIndex()%allDays.length];
+}
+
 // ── HELPERS ─────────────────────────────────────────────────────────────────
 const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
@@ -741,22 +762,24 @@ function App(){
   async function generate(){
     setLoading(true);
     try{
-      const today = await getTodayDevotional();
-      const th = { theme: today.tema };
-      setTheme(th); S.set(`theme-${WEEK_KEY}`, th);
-      const d = {
-        title: today.titulo,
-        verse: today.versiculo,
-        verseText: today.versiculoTexto,
-        reflection: today.reflexao,
-        prayer: today.oracao
+      const today=await getTodayDevotional();
+      const th={theme:today.tema};
+      setTheme(th);S.set(`theme-${WEEK_KEY}`,th);
+      const d={
+        title:today.titulo,
+        verse:today.versiculo,
+        verseText:today.versiculoTexto,
+        reflection:today.reflexao,
+        prayer:today.oracao
       };
-      setDev(d); S.set(`dev-${TODAY}`, d);
-      setPrayer({text: today.oracao}); S.set(`prayer-${TODAY}`, {text: today.oracao});
-      const wm = await getWeekMissions();
-      const ms = wm.missions.map((t,i) => ({id:String(i+1), text:t, completedBy:[]}));
-      setMissions(ms); S.set(`missions-${WEEK_KEY}`, ms);
-    }catch(e){ console.error('Erro ao carregar devocional:', e); }
+      setDev(d);S.set(`dev-${TODAY}`,d);
+      setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
+      const ms=(today.missoes||[]).map((t,i)=>({id:String(i+1),text:t,completedBy:[]}));
+      setMissions(ms);S.set(`missions-${WEEK_KEY}`,ms);
+    }catch(e){
+      console.error('Erro ao carregar devocional:',e);
+      alert('Erro ao carregar: '+e.message);
+    }
     setLoading(false);
   }
 
