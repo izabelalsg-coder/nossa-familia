@@ -169,24 +169,6 @@
     .color-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .15s;border:2.5px solid transparent;}
     .color-dot.sel{border-color:var(--ink);}
 
-    /* ── API KEY ── */
-    #apikey-screen{
-      min-height:100vh;display:flex;flex-direction:column;align-items:center;
-      justify-content:center;padding:32px 24px;
-      background:radial-gradient(ellipse at 70% 100%,#D4E8DF 0%,var(--cream) 55%);
-    }
-    .key-card{width:100%;max-width:360px;}
-    .key-steps{counter-reset:steps;}
-    .key-step{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;}
-    .key-step-num{
-      width:22px;height:22px;border-radius:50%;background:var(--forest);color:#fff;
-      font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
-    }
-    .key-step p{font-size:13px;color:var(--muted);line-height:1.55;}
-    .key-step strong{color:var(--ink);}
-    .input-wrap{position:relative;}
-    .toggle-eye{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:17px;color:var(--muted);}
-    .key-preview{font-size:11px;color:var(--muted);margin-bottom:10px;margin-top:-4px;}
 
     /* ── HOME ── */
     .home-header{padding:18px 20px 14px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
@@ -319,7 +301,7 @@ function extractJSON(raw){
 }
 
 async function gemini(prompt){
-  const key=S.get('apiKey')||'';
+  const key='AIzaSyCt-MH_QkvhhMZGid4l1zSEi6EkZc2jZLE';
   const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
@@ -346,62 +328,6 @@ const stopSpeak=()=>window.speechSynthesis.cancel();
 
 // ── COMPONENTS ───────────────────────────────────────────────────────────────
 
-// API KEY SCREEN
-function ApiKeyScreen({onSave}){
-  const[key,setKey]=useState('');
-  const[show,setShow]=useState(false);
-  const[err,setErr]=useState('');
-  const[loading,setLoading]=useState(false);
-
-  async function save(){
-    if(!key.trim()){setErr('Cole sua chave aqui.');return;}
-    setLoading(true);setErr('');
-    try{
-      S.set('apiKey',key.trim());
-      const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key.trim()}`,{
-        method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({contents:[{parts:[{text:'Responda: ok'}]}],generationConfig:{maxOutputTokens:10}})
-      });
-      const d=await r.json();
-      if(d.error){S.rm('apiKey');setErr(`❌ Erro ${d.error.code}: ${d.error.message}`);}
-      else onSave();
-    }catch(e){S.rm('apiKey');setErr(`❌ Erro de rede: ${e.message}`);}
-    setLoading(false);
-  }
-
-  return(
-    <div id="apikey-screen">
-      <div className="key-card fu">
-        <div style={{textAlign:'center',marginBottom:'28px'}}>
-          <div style={{fontSize:'52px',marginBottom:'14px'}}>🔑</div>
-          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:'24px',fontWeight:'700',color:'var(--ink)'}}>Configuração Inicial</h1>
-          <p style={{color:'var(--muted)',marginTop:'8px',fontSize:'14px',lineHeight:'1.6'}}>Para gerar os devocionais com IA<br/>você precisa de uma chave do Google — gratuita!</p>
-        </div>
-        <div className="alert alert-amber" style={{marginBottom:'20px'}}>
-          <p style={{fontWeight:'700',marginBottom:'10px',fontSize:'13px'}}>📋 Como obter (grátis, sem cartão):</p>
-          {[['Acesse','aistudio.google.com no navegador'],['Entre','com sua conta Google'],['Clique em','Get API Key → Create API key'],['Copie','a chave e cole abaixo']].map(([a,b],i)=>(
-            <div key={i} className="key-step">
-              <div className="key-step-num">{i+1}</div>
-              <p><strong>{a}</strong> {b}</p>
-            </div>
-          ))}
-        </div>
-        <div className="input-wrap" style={{marginBottom:'6px'}}>
-          <input className="input" value={key} onChange={e=>setKey(e.target.value)} placeholder="AIza..." type={show?'text':'password'} onKeyDown={e=>e.key==='Enter'&&save()}/>
-          <button className="toggle-eye" onClick={()=>setShow(!show)}>{show?'🙈':'👁️'}</button>
-        </div>
-        {key&&<p className="key-preview">{key.substring(0,8)}... ({key.length} caracteres)</p>}
-        {err&&<div className="alert alert-red" style={{marginBottom:'10px'}}>{err}</div>}
-        <button className="btn btn-primary btn-full" onClick={save} disabled={loading} style={{marginTop:'4px',padding:'15px',fontSize:'15px'}}>
-          {loading?'⏳ Verificando...':'Salvar e continuar →'}
-        </button>
-        <p style={{textAlign:'center',fontSize:'11px',color:'var(--muted)',marginTop:'12px',lineHeight:'1.6'}}>
-          🔒 A chave fica salva apenas neste dispositivo.<br/>Cada membro da família insere a própria chave.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 // LOGIN SCREEN
 function LoginScreen({members,onLogin,onSetup}){
@@ -801,7 +727,7 @@ function App(){
   ];
 
   useEffect(()=>{(async()=>{
-    const hasKey=!!S.get('apiKey');
+    
     const m=S.get('members');
     if(m)setMembers(m);else{setMembers(DEF);S.set('members',DEF);}
     const th=S.get(`theme-${WEEK_KEY}`);
@@ -814,7 +740,7 @@ function App(){
     setWall(S.get('wall')||[]);
     setMissions(S.get(`missions-${WEEK_KEY}`)||[]);
     setProgress(S.get('progress')||{});
-    setView(hasKey?'login':'apikey');
+    setView('login');
   })();},[]);
 
   // Generate ONLY if not cached
@@ -891,7 +817,7 @@ function App(){
   const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(TODAY);
 
   if(view==='loading')return<div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--cream)'}}><div style={{fontSize:'40px'}} className="pulse">🕊️</div></div>;
-  if(view==='apikey')return<ApiKeyScreen onSave={()=>setView('login')}/>;
+  
   if(view==='setup')return<SetupScreen members={members} onSave={saveMembers} onBack={()=>setView('login')}/>;
   if(view==='login')return<LoginScreen members={members} onLogin={handleLogin} onSetup={()=>setView('setup')}/>;
 
