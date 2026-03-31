@@ -252,6 +252,25 @@
     .loading-icon{font-size:44px;margin-bottom:18px;}
     .loading-text{font-family:'Playfair Display',serif;color:var(--muted);font-style:italic;font-size:16px;}
     .loading-sub{color:var(--muted);font-size:12px;margin-top:8px;opacity:.7;}
+
+    /* ── MOBILE FIXES ── */
+    @media (max-width: 480px) {
+      .login-title{font-size:26px;}
+      .login-dove{font-size:56px;}
+      .home-greeting{font-size:20px;}
+      .dev-title{font-size:20px;}
+      .dev-para{font-size:16px;line-height:1.85;}
+      .verse-text{font-size:15px;}
+      .prayer-para{font-size:15px;}
+      .card-verse{padding:20px;}
+      .home-header{padding:14px 16px 12px;}
+      .home-tabs{padding:12px 16px 0;}
+      .scroll > div, .scroll > .fi{padding:16px!important;}
+      .topbar{padding:12px 16px;}
+      .member-btn{max-width:100%;}
+    }
+    /* Prevent iOS zoom on inputs */
+    input, textarea, select {font-size:16px!important;}
   </style>
 </head>
 <body>
@@ -413,7 +432,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
         </div>
       </div>
 
-      <div className="scroll" style={{padding:'20px'}}>
+      <div className="scroll" style={{padding:'16px'}}>
 
         {loading?(
           <div className="loading-center fi">
@@ -510,7 +529,7 @@ function BoardScreen({members,progress}){
   return(
     <div className="screen">
       <div className="topbar"><h2>🗺️ Jornada da Família</h2></div>
-      <div className="scroll" style={{padding:'20px'}}>
+      <div className="scroll" style={{padding:'16px'}}>
         {/* Map */}
         <div className="map-container">
           <span className="map-decoration" style={{top:'8px',left:'16px',fontSize:'22px'}}>🌿</span>
@@ -574,7 +593,7 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
           <button className="btn btn-primary btn-sm" onClick={()=>setOpen(true)}>+ Pedir</button>
         </div>
       </div>
-      <div className="scroll" style={{padding:'20px'}}>
+      <div className="scroll" style={{padding:'16px'}}>
         {open&&(
           <div className="card fu" style={{marginBottom:'20px',background:'var(--amber-lt)',border:'1px solid rgba(201,125,58,.25)'}}>
             <p style={{fontFamily:"'Playfair Display',serif",fontWeight:'700',color:'var(--ink)',marginBottom:'10px'}}>Novo pedido de oração</p>
@@ -625,7 +644,7 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
   return(
     <div className="screen">
       <div className="topbar"><h2>⚔️ Missões da Semana</h2></div>
-      <div className="scroll" style={{padding:'20px'}}>
+      <div className="scroll" style={{padding:'16px'}}>
         {missions.length>0&&(
           <div className="alert alert-green" style={{marginBottom:'20px',display:'flex',alignItems:'center',gap:'14px'}}>
             <span style={{fontSize:'32px'}}>🎯</span>
@@ -791,7 +810,7 @@ function App(){
   if(view==='login')return<LoginScreen members={members} onLogin={handleLogin} onSetup={()=>setView('setup')}/>;
 
   return(
-    <div style={{height:'100vh',display:'flex',flexDirection:'column',background:'var(--cream)',maxWidth:'500px',margin:'0 auto'}}>
+    <div style={{height:'100vh',display:'flex',flexDirection:'column',background:'var(--cream)'}}>
       {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onRegenerate={generate} hasRead={hasRead} members={members}/>}
       {tab==='board'&&<BoardScreen members={members} progress={progress}/>}
       {tab==='prayers'&&<PrayersScreen user={user} wall={wall} onAdd={addPrayer} onPray={prayFor} members={members}/>}
