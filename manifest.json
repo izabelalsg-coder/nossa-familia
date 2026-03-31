@@ -1,0 +1,13 @@
+{
+  "name": "Nossa Família - Devocional",
+  "short_name": "Nossa Família",
+  "description": "Devocional familiar diário com IA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5EFE3",
+  "theme_color": "#3D6959",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
