@@ -351,6 +351,16 @@ const DB={
       hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
     });
   },
+  // Membros
+  async getMembros(){
+    const{data}=await sb.from('membros').select('*').order('id');
+    return(data||[]).map(m=>({id:m.id,name:m.nome,emoji:m.emoji,color:m.cor}));
+  },
+  async saveMembros(list){
+    for(const m of list){
+      await sb.from('membros').upsert({id:m.id,nome:m.name,emoji:m.emoji,cor:m.color,atualizado_em:new Date().toISOString()});
+    }
+  },
   // Missões concluídas
   async getMissoes(){
     const{data}=await sb.from('progresso').select('*').eq('tipo','missao');
@@ -810,8 +820,14 @@ function App(){
   ];
 
   useEffect(()=>{(async()=>{
-    const m=S.get('members');
-    if(m)setMembers(m);else{setMembers(DEF);S.set('members',DEF);}
+    // Carrega membros do Supabase
+    let m=null;
+    try{ m=await DB.getMembros(); }catch(e){ console.error('Erro membros:',e); }
+    if(m&&m.length>0){setMembers(m);S.set('members',m);}
+    else{
+      const local=S.get('members');
+      if(local)setMembers(local);else{setMembers(DEF);S.set('members',DEF);}
+    }
     const th=S.get(`theme-${WEEK_KEY}`);
     const d=S.get(`dev-${TODAY}`);
     const pr=S.get(`prayer-${TODAY}`);
@@ -889,7 +905,11 @@ function App(){
     setMissions(ms=>ms.map(m=>({...m,completedBy:msDone[m.id]||[]})));
   }
 
-  function saveMembers(list){setMembers(list);S.set('members',list);setView('login');}
+  async function saveMembers(list){
+    setMembers(list);S.set('members',list);
+    try{ await DB.saveMembros(list); }catch(e){ console.error('Erro ao salvar membros:',e); }
+    setView('login');
+  }
 
   const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(TODAY);
 
