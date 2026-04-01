@@ -770,7 +770,7 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
                     {ms.completedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}
                   </div>
                 )}
-                {!isDone&&<button className="btn btn-amber btn-sm" style={{marginTop:'10px'}} onClick={()=>onComplete(ms.id)}>✅ Completar missão</button>}
+                {!isDone&&<button className="btn btn-amber btn-sm" style={{marginTop:'10px'}} onClick={(e)=>{e.currentTarget.disabled=true;e.currentTarget.textContent='⏳...';onComplete(ms.id);}}>✅ Completar missão</button>}
               </div>
             </div>
           </div>
@@ -905,6 +905,8 @@ function App(){
   }
 
   async function completeMission(mid){
+    // Optimistic update — impede clique duplo imediatamente
+    setMissions(ms=>ms.map(m=>m.id===mid&&!m.completedBy.includes(user.id)?{...m,completedBy:[...m.completedBy,user.id]}:m));
     await DB.addProgress(user.id,'missao',mid);
     const[pg,msDone]=await Promise.all([DB.getProgress(),DB.getMissoes()]);
     setProgress(pg);
