@@ -247,6 +247,26 @@
     .quota-banner p:first-child{font-weight:700;color:var(--amber);font-size:14px;margin-bottom:4px;}
     .quota-banner p:last-child{font-size:12px;color:var(--muted);line-height:1.5;}
 
+    /* ── CELEBRATION ── */
+    .celebration-overlay{
+      position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;
+      background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;
+      animation:fadeIn .3s ease;
+    }
+    .celebration-card{
+      background:var(--white);border-radius:28px;padding:36px 28px;text-align:center;
+      max-width:320px;width:90%;position:relative;overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.3);
+    }
+    .confetti-piece{
+      position:absolute;width:8px;height:8px;border-radius:2px;
+      animation:confettiFall linear forwards;
+    }
+    @keyframes confettiFall{
+      0%{transform:translateY(-20px) rotate(0deg);opacity:1;}
+      100%{transform:translateY(400px) rotate(720deg);opacity:0;}
+    }
+
     /* ── LOADING ── */
     .loading-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;}
     .loading-icon{font-size:44px;margin-bottom:18px;}
@@ -367,7 +387,8 @@ const DB={
     const ms={};
     (data||[]).forEach(r=>{
       if(!ms[r.referencia])ms[r.referencia]=[];
-      ms[r.referencia].push(r.membro_id);
+      // Evita duplicatas do mesmo membro
+      if(!ms[r.referencia].includes(r.membro_id))ms[r.referencia].push(r.membro_id);
     });
     return ms;
   },
@@ -621,7 +642,18 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
 function BoardScreen({members,progress}){
   const TOTAL=10;
   const PATH=[{x:12,y:83},{x:27,y:68},{x:47,y:77},{x:65,y:63},{x:80,y:72},{x:86,y:53},{x:72,y:39},{x:54,y:32},{x:36,y:46},{x:18,y:36},{x:9,y:18}];
-  const gp=id=>{const p=progress[id]||{};const d=(p.devotionals||[]).length;const ms=(p.missions||[]).length;return{d,ms,total:Math.min(d+ms,TOTAL)};};
+  const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
+  const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
+  const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
+  const gp=id=>{
+    const p=progress[id]||{};
+    const d=(p.devotionals||[]).length;
+    const ms=(p.missions||[]).length;
+    const totalAll=d+ms;
+    const phase=Math.floor(totalAll/TOTAL);
+    const pts=totalAll%TOTAL;
+    return{d,ms,total:pts,totalAll,phase};
+  };
   const sorted=[...members].sort((a,b)=>gp(b.id).total-gp(a.id).total);
 
   return(
@@ -642,10 +674,13 @@ function BoardScreen({members,progress}){
             </div>
           ))}
           {members.map((m,mi)=>{
-            const{total}=gp(m.id);const pos=PATH[total]||PATH[0];
+            const{total,phase}=gp(m.id);const pos=PATH[total]||PATH[0];
             return(
               <div key={m.id} className="member-token" style={{left:`${pos.x}%`,top:`${pos.y}%`,transform:`translate(${mi%2===0?'-130%':'20%'},-50%)`}}>
-                <div className="token-circle" style={{border:`2.5px solid ${m.color}`}}>{m.emoji}</div>
+                <div style={{position:'relative'}}>
+                  <div className="token-circle" style={{border:`2.5px solid ${m.color}`}}>{m.emoji}</div>
+                  {phase>0&&<div style={{position:'absolute',top:'-6px',right:'-8px',background:PHASE_COLORS[Math.min(phase,4)],color:'white',fontSize:'7px',fontWeight:'900',borderRadius:'6px',padding:'1px 4px',lineHeight:'12px'}}>F{phase+1}</div>}
+                </div>
                 <div className="token-name">{m.name}</div>
               </div>
             );
@@ -654,21 +689,22 @@ function BoardScreen({members,progress}){
         </div>
         {/* Ranking */}
         <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>Placar</h3>
-        {sorted.map((m,i)=>{const p=gp(m.id);return(
-          <div key={m.id} className="rank-row">
+        {sorted.map((m,i)=>{const p=gp(m.id);const phaseColor=PHASE_COLORS[Math.min(p.phase,4)];const phaseLabel=PHASE_LABELS[Math.min(p.phase,4)];return(
+          <div key={m.id} className="rank-row" style={{borderLeft:`3px solid ${phaseColor}`}}>
             <div className="rank-medal">{['🥇','🥈','🥉'][i]||<span style={{fontSize:'11px',fontWeight:'700',color:'var(--muted)'}}>{i+1}</span>}</div>
             <div className="avatar" style={{background:`${m.color}18`,border:`2px solid ${m.color}44`}}>{m.emoji}</div>
             <div style={{flex:1}}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
                 <span style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{m.name}</span>
-                <span style={{fontSize:'15px',color:'var(--forest)',fontWeight:'800'}}>{p.total} pts</span>
+                <span style={{fontSize:'14px',color:phaseColor,fontWeight:'800'}}>{phaseLabel} {PHASE_NAMES[Math.min(p.phase,4)]} · {p.total} pts</span>
               </div>
               <div className="progress-bar-wrap">
-                <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`}}/>
+                <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`,background:`linear-gradient(90deg,${phaseColor},${phaseColor}99)`}}/>
               </div>
               <div className="progress-stats">
                 <span className="progress-stat">📖 {p.d} devocionais</span>
                 <span className="progress-stat">⚔️ {p.ms} missões</span>
+                <span className="progress-stat">🏆 {p.totalAll} total</span>
               </div>
             </div>
           </div>
@@ -780,6 +816,46 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
   );
 }
 
+// CELEBRATION SCREEN
+function CelebrationScreen({member,phase,onClose}){
+  const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
+  const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
+  const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
+  const color=PHASE_COLORS[Math.min(phase,4)];
+  const label=PHASE_LABELS[Math.min(phase,4)];
+  const name=PHASE_NAMES[Math.min(phase,4)];
+  const confetti=[...Array(20)].map((_,i)=>({
+    left:`${Math.random()*100}%`,
+    delay:`${Math.random()*1.5}s`,
+    duration:`${1.5+Math.random()}s`,
+    color:['#FFD700','#FF6B6B','#4ECDC4','#A8E6CF','#FFE66D','#C9A600'][i%6],
+    size:`${6+Math.random()*8}px`
+  }));
+  return(
+    <div className="celebration-overlay" onClick={onClose}>
+      <div className="celebration-card" onClick={e=>e.stopPropagation()}>
+        {confetti.map((c,i)=>(
+          <div key={i} className="confetti-piece" style={{left:c.left,top:'-10px',width:c.size,height:c.size,background:c.color,animationDelay:c.delay,animationDuration:c.duration}}/>
+        ))}
+        <div style={{fontSize:'64px',marginBottom:'12px'}}>{label}</div>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'22px',fontWeight:'700',color:'var(--ink)',marginBottom:'8px'}}>
+          {member.emoji} {member.name}
+        </h2>
+        <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>
+          completou a Fase {phase}!<br/>Nova jornada começa agora.
+        </p>
+        <div style={{background:`${color}18`,border:`2px solid ${color}44`,borderRadius:'16px',padding:'16px',marginBottom:'24px'}}>
+          <p style={{fontSize:'12px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'4px'}}>Próxima fase</p>
+          <p style={{fontSize:'20px',fontWeight:'900',color:color}}>{label} {name}</p>
+        </div>
+        <button className="btn btn-primary btn-full" onClick={onClose} style={{padding:'14px',fontSize:'15px'}}>
+          🚀 Continuar a jornada!
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // BOTTOM NAV
 function BottomNav({active,onChange}){
   const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'missions',icon:'⚔️',label:'Missões'}];
@@ -810,6 +886,7 @@ function App(){
   const[missions,setMissions]=useState([]);
   const[progress,setProgress]=useState({});
   const[loading,setLoading]=useState(false);
+  const[celebration,setCelebration]=useState(null); // {member, phase}
   const[loadErr,setLoadErr]=useState('');
   
 
@@ -884,6 +961,7 @@ function App(){
     await DB.addProgress(user.id,'devocional',TODAY);
     const pg=await DB.getProgress();
     setProgress(pg);
+    checkPhase(pg,user.id);
   }
 
   async function addComment(text){
@@ -904,6 +982,16 @@ function App(){
     setWall(wl);
   }
 
+  function checkPhase(pg,uid){
+    const p=pg[uid]||{};
+    const total=(p.devotionals||[]).length+(p.missions||[]).length;
+    const TOTAL=10;
+    if(total>0&&total%TOTAL===0){
+      const phase=total/TOTAL;
+      setCelebration({member:user,phase});
+    }
+  }
+
   async function completeMission(mid){
     // Optimistic update — impede clique duplo imediatamente
     setMissions(ms=>ms.map(m=>m.id===mid&&!m.completedBy.includes(user.id)?{...m,completedBy:[...m.completedBy,user.id]}:m));
@@ -911,6 +999,7 @@ function App(){
     const[pg,msDone]=await Promise.all([DB.getProgress(),DB.getMissoes()]);
     setProgress(pg);
     setMissions(ms=>ms.map(m=>({...m,completedBy:msDone[m.id]||[]})));
+    checkPhase(pg,user.id);
   }
 
   async function saveMembers(list){
@@ -928,6 +1017,7 @@ function App(){
 
   return(
     <div style={{height:'100vh',display:'flex',flexDirection:'column',background:'var(--cream)'}}>
+      {celebration&&<CelebrationScreen member={celebration.member} phase={celebration.phase} onClose={()=>setCelebration(null)}/>}
       {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onRegenerate={generate} hasRead={hasRead} members={members}/>}
       {tab==='board'&&<BoardScreen members={members} progress={progress}/>}
       {tab==='prayers'&&<PrayersScreen user={user} wall={wall} onAdd={addPrayer} onPray={prayFor} members={members}/>}
