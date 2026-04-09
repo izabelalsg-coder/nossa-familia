@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#2C4A3E">
-  <title>Nossa FamÃ­lia</title>
+  <title>Nossa Família</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -36,12 +36,12 @@
     .fi{animation:fadeIn .3s ease forwards;}
     .pulse{animation:pulse 1.8s ease infinite;}
 
-    /* â”€â”€ LAYOUT â”€â”€ */
+    /* ── LAYOUT ── */
     #root{height:100%;display:flex;flex-direction:column;}
     .screen{flex:1;display:flex;flex-direction:column;overflow:hidden;}
     .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 
-    /* â”€â”€ TOPBAR â”€â”€ */
+    /* ── TOPBAR ── */
     .topbar{
       background:var(--white);border-bottom:1px solid var(--border);
       padding:14px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;
@@ -51,7 +51,7 @@
     .topbar h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);}
     .topbar-right{margin-left:auto;display:flex;align-items:center;gap:10px;}
 
-    /* â”€â”€ BOTTOM NAV â”€â”€ */
+    /* ── BOTTOM NAV ── */
     .bottom-nav{
       background:var(--white);border-top:1px solid var(--border);
       display:flex;padding:8px 0 max(16px,env(safe-area-inset-bottom));
@@ -67,7 +67,7 @@
     .nav-btn span:last-child{font-size:10px;font-weight:600;letter-spacing:.2px;}
     .nav-indicator{width:18px;height:2.5px;background:var(--forest);border-radius:2px;margin-top:2px;}
 
-    /* â”€â”€ BUTTONS â”€â”€ */
+    /* ── BUTTONS ── */
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:8px;
       border:none;border-radius:12px;cursor:pointer;font-weight:600;
@@ -83,7 +83,7 @@
     .btn-sm{padding:8px 14px;font-size:13px;border-radius:9px;}
     .btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;}
 
-    /* â”€â”€ CARDS â”€â”€ */
+    /* ── CARDS ── */
     .card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:18px;}
     .card-verse{
       background:linear-gradient(145deg,var(--forest) 0%,#1E3530 100%);
@@ -98,7 +98,7 @@
       border-radius:50%;background:rgba(255,255,255,.04);
     }
 
-    /* â”€â”€ INPUTS â”€â”€ */
+    /* ── INPUTS ── */
     .input{
       width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;
       font-size:15px;outline:none;background:var(--white);color:var(--ink);
@@ -107,7 +107,7 @@
     .input:focus{border-color:var(--forest);}
     .textarea{resize:none;min-height:80px;line-height:1.65;}
 
-    /* â”€â”€ TABS â”€â”€ */
+    /* ── TABS ── */
     .tabs{display:flex;background:var(--parch);border-radius:12px;padding:3px;gap:3px;}
     .tab{
       flex:1;padding:9px;border:none;border-radius:9px;background:transparent;
@@ -115,30 +115,30 @@
     }
     .tab.active{background:var(--white);color:var(--forest);font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.09);}
 
-    /* â”€â”€ BADGE â”€â”€ */
+    /* ── BADGE ── */
     .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
     .badge-green{background:var(--moss);color:var(--forest);}
     .badge-amber{background:var(--amber-lt);color:var(--amber);}
 
-    /* â”€â”€ ALERT â”€â”€ */
+    /* ── ALERT ── */
     .alert{padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.6;}
     .alert-amber{background:var(--amber-lt);border:1px solid rgba(201,125,58,.25);color:#7A4A1A;}
     .alert-green{background:var(--moss);border:1px solid rgba(44,74,62,.2);color:var(--forest);}
     .alert-red{background:#FDE8E8;border:1px solid #F5C0C0;color:var(--red);}
 
-    /* â”€â”€ MEMBER AVATAR â”€â”€ */
+    /* ── MEMBER AVATAR ── */
     .avatar{
       width:42px;height:42px;border-radius:50%;display:flex;align-items:center;
       justify-content:center;font-size:20px;flex-shrink:0;
     }
 
-    /* â”€â”€ LOADING SKELETON â”€â”€ */
+    /* ── LOADING SKELETON ── */
     .skel{
       background:linear-gradient(90deg,var(--parch) 25%,var(--border) 50%,var(--parch) 75%);
       background-size:200% 100%;animation:shimmer 1.4s ease infinite;border-radius:8px;
     }
 
-    /* â”€â”€ LOGIN â”€â”€ */
+    /* ── LOGIN ── */
     #login-screen{
       min-height:100vh;display:flex;flex-direction:column;align-items:center;
       justify-content:center;padding:32px 24px;
@@ -160,7 +160,7 @@
     .member-btn-info p:last-child{font-size:12px;color:var(--muted);margin-top:2px;}
     .member-btn-arrow{margin-left:auto;color:var(--border);font-size:20px;}
 
-    /* â”€â”€ SETUP â”€â”€ */
+    /* ── SETUP ── */
     .setup-member{border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;background:var(--white);}
     .emoji-grid{display:flex;gap:6px;flex-wrap:wrap;}
     .emoji-btn{width:34px;height:34px;border-radius:8px;font-size:18px;border:2px solid var(--border);background:transparent;cursor:pointer;transition:all .15s;}
@@ -169,7 +169,7 @@
     .color-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .15s;border:2.5px solid transparent;}
     .color-dot.sel{border-color:var(--ink);}
 
-    /* â”€â”€ HOME â”€â”€ */
+    /* ── HOME ── */
     .home-header{padding:18px 20px 14px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
     .home-greeting-date{font-size:12px;color:var(--muted);text-transform:capitalize;margin-bottom:4px;}
     .home-greeting{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px;}
@@ -203,7 +203,7 @@
     .prayer-label{font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
     .prayer-para{font-family:'Playfair Display',serif;color:var(--ink);font-size:16px;line-height:1.9;font-style:italic;margin-bottom:16px;}
 
-    /* â”€â”€ BOARD â”€â”€ */
+    /* ── BOARD ── */
     .map-container{
       background:linear-gradient(155deg,#CCE5D8 0%,#DDD8CF 55%,#EAE3D5 100%);
       border-radius:22px;height:220px;position:relative;overflow:hidden;
@@ -224,7 +224,7 @@
     .progress-stats{display:flex;gap:14px;}
     .progress-stat{font-size:11px;color:var(--muted);}
 
-    /* â”€â”€ PRAYERS WALL â”€â”€ */
+    /* ── PRAYERS WALL ── */
     .prayer-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;}
     .prayer-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
     .prayer-card-text{font-size:14px;color:#3A3530;line-height:1.75;margin-bottom:14px;}
@@ -232,7 +232,7 @@
     .prayed-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
     .prayed-chip{font-size:13px;background:var(--moss);border-radius:20px;padding:3px 10px;border:1px solid rgba(44,74,62,.15);}
 
-    /* â”€â”€ MISSIONS â”€â”€ */
+    /* ── MISSIONS ── */
     .mission-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;transition:border-color .3s;}
     .mission-card.done{border-color:rgba(44,74,62,.35);background:var(--moss);}
     .mission-num{width:34px;height:34px;border-radius:50%;background:var(--parch);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--muted);flex-shrink:0;transition:all .3s;}
@@ -241,12 +241,12 @@
     .mission-text.done{color:var(--muted);text-decoration:line-through;}
     .completed-by{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px;}
 
-    /* â”€â”€ QUOTA BANNER â”€â”€ */
+    /* ── QUOTA BANNER ── */
     .quota-banner{margin:16px;padding:14px 16px;background:var(--amber-lt);border:1px solid rgba(201,125,58,.3);border-radius:14px;}
     .quota-banner p:first-child{font-weight:700;color:var(--amber);font-size:14px;margin-bottom:4px;}
     .quota-banner p:last-child{font-size:12px;color:var(--muted);line-height:1.5;}
 
-    /* â”€â”€ CELEBRATION â”€â”€ */
+    /* ── CELEBRATION ── */
     .celebration-overlay{
       position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;
       background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;
@@ -266,13 +266,13 @@
       100%{transform:translateY(400px) rotate(720deg);opacity:0;}
     }
 
-    /* â”€â”€ LOADING â”€â”€ */
+    /* ── LOADING ── */
     .loading-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;}
     .loading-icon{font-size:44px;margin-bottom:18px;}
     .loading-text{font-family:'Playfair Display',serif;color:var(--muted);font-style:italic;font-size:16px;}
     .loading-sub{color:var(--muted);font-size:12px;margin-top:8px;opacity:.7;}
 
-    /* â”€â”€ MOBILE FIXES â”€â”€ */
+    /* ── MOBILE FIXES ── */
     @media (max-width: 480px) {
       .login-title{font-size:26px;}
       .login-dove{font-size:56px;}
@@ -303,25 +303,25 @@
 <script type="text/babel">
 const{useState,useEffect,useRef,useCallback}=React;
 
-// â”€â”€ CONSTANTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── CONSTANTS ──────────────────────────────────────────────────────────────
 const TODAY=new Date().toISOString().split('T')[0];
 const WEEK_KEY=(()=>{const d=new Date(),s=new Date(d.getFullYear(),0,1);return`${d.getFullYear()}-W${Math.ceil(((d-s)/86400000+s.getDay()+1)/7)}`;})();
-const EMOJIS=['ðŸŒ¿','ðŸŒ¸','âœ¨','ðŸ•Šï¸','ðŸŒ»','ðŸŒ™','â­','ðŸ¦‹','ðŸŒº','ðŸ€','ðŸ¦š','ðŸŒ¾'];
+const EMOJIS=['🌿','🌸','✨','🕊️','🌻','🌙','⭐','🦋','🌺','🍀','🦚','🌾'];
 const COLORS=['#2C4A3E','#C4956A','#7B8EC8','#C87B8E','#8E7BC4','#7BC4B5'];
 
-// â”€â”€ SUPABASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── SUPABASE ─────────────────────────────────────────────────────────────────
 const SB_URL='https://mlznzzskyqagriojsxmw.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sem56enNreXFhZ3Jpb2pzeG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5ODcwMDQsImV4cCI6MjA5MDU2MzAwNH0.0Ah-fsxfn_SjAj-KRWoYOJ75NODwoJHc1-VPBSZ7u60';
 const sb=supabase.createClient(SB_URL,SB_KEY);
 
-// â”€â”€ STORAGE LOCAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── STORAGE LOCAL ────────────────────────────────────────────────────────────
 const S={
   get(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch{return null;}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}},
   rm(k){try{localStorage.removeItem(k);}catch{}},
 };
 
-// â”€â”€ SUPABASE HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── SUPABASE HELPERS ─────────────────────────────────────────────────────────
 const DB={
   async getProgress(){
     const{data}=await sb.from('progresso').select('*');
@@ -386,12 +386,12 @@ const DB={
   },
 };
 
-// â”€â”€ DEVOTIONAL LOADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── DEVOTIONAL LOADER ───────────────────────────────────────────────────────
 let _devData=null;
 async function loadDevData(){
   if(_devData)return _devData;
   const r=await fetch('devocionais.json?v='+Date.now());
-  if(!r.ok)throw new Error('Arquivo devocionais.json nÃ£o encontrado ('+r.status+')');
+  if(!r.ok)throw new Error('Arquivo devocionais.json não encontrado ('+r.status+')');
   _devData=await r.json();
   return _devData;
 }
@@ -407,21 +407,21 @@ async function getTodayDevotional(){
   return allDays[getDayIndex()%allDays.length];
 }
 
-// â”€â”€ HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── HELPERS ─────────────────────────────────────────────────────────────────
 const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 function speak(text,onEnd){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=0.88;if(onEnd)u.onend=onEnd;window.speechSynthesis.speak(u);}
 const stopSpeak=()=>window.speechSynthesis.cancel();
 
-// â”€â”€ COMPONENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── COMPONENTS ───────────────────────────────────────────────────────────────
 
 function LoginScreen({members,onLogin,onSetup}){
   return(
     <div id="login-screen">
       <div className="login-hero fu">
-        <span className="login-dove">ðŸ•Šï¸</span>
-        <h1 className="login-title">Nossa FamÃ­lia</h1>
-        <p className="login-sub">Quem estÃ¡ orando hoje?</p>
+        <span className="login-dove">🕊️</span>
+        <h1 className="login-title">Nossa Família</h1>
+        <p className="login-sub">Quem está orando hoje?</p>
         <p className="login-date">{cap(fmtDate())}</p>
       </div>
       <div style={{display:'flex',flexDirection:'column',gap:'10px',width:'100%',maxWidth:'320px'}}>
@@ -432,12 +432,12 @@ function LoginScreen({members,onLogin,onSetup}){
               <p>{m.name}</p>
               <p>Entrar como {m.name}</p>
             </div>
-            <span className="member-btn-arrow">â€º</span>
+            <span className="member-btn-arrow">›</span>
           </button>
         ))}
       </div>
       <button onClick={onSetup} style={{marginTop:'28px',background:'none',border:'none',color:'var(--muted)',fontSize:'13px',cursor:'pointer',textDecoration:'underline',opacity:.7}}>
-        âœ¦ Editar membros da famÃ­lia
+        ✦ Editar membros da família
       </button>
     </div>
   );
@@ -449,8 +449,8 @@ function SetupScreen({members,onSave,onBack}){
   return(
     <div className="screen">
       <div className="topbar">
-        <button className="topbar-back" onClick={onBack}>â€¹</button>
-        <h2>Membros da FamÃ­lia</h2>
+        <button className="topbar-back" onClick={onBack}>‹</button>
+        <h2>Membros da Família</h2>
       </div>
       <div className="scroll" style={{padding:'20px',maxWidth:'480px',width:'100%',margin:'0 auto'}}>
         {list.map(m=>(
@@ -458,7 +458,7 @@ function SetupScreen({members,onSave,onBack}){
             <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'12px'}}>
               <span style={{fontSize:'28px'}}>{m.emoji}</span>
               <input className="input" value={m.name} onChange={e=>upd(m.id,'name',e.target.value)} style={{flex:1}}/>
-              {list.length>1&&<button onClick={()=>setList(list.filter(x=>x.id!==m.id))} style={{background:'none',border:'none',cursor:'pointer',fontSize:'18px',opacity:.5}}>ðŸ—‘</button>}
+              {list.length>1&&<button onClick={()=>setList(list.filter(x=>x.id!==m.id))} style={{background:'none',border:'none',cursor:'pointer',fontSize:'18px',opacity:.5}}>🗑</button>}
             </div>
             <p style={{fontSize:'11px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',marginBottom:'8px'}}>EMOJI</p>
             <div className="emoji-grid" style={{marginBottom:'12px'}}>
@@ -470,7 +470,7 @@ function SetupScreen({members,onSave,onBack}){
             </div>
           </div>
         ))}
-        <button onClick={()=>setList([...list,{id:String(Date.now()),name:'Novo Membro',emoji:'ðŸŒ¸',color:COLORS[1]}])}
+        <button onClick={()=>setList([...list,{id:String(Date.now()),name:'Novo Membro',emoji:'🌸',color:COLORS[1]}])}
           style={{width:'100%',padding:'14px',background:'none',border:`2px dashed var(--border)`,borderRadius:'16px',color:'var(--muted)',cursor:'pointer',fontSize:'14px',marginBottom:'12px'}}>
           + Adicionar membro
         </button>
@@ -483,21 +483,21 @@ function SetupScreen({members,onSave,onBack}){
 function AudioBtn({text,label}){
   const[playing,setPlaying]=useState(false);
   const toggle=()=>{if(playing){stopSpeak();setPlaying(false);}else{setPlaying(true);speak(text,()=>setPlaying(false));}};
-  return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'â¹ Parar':`â–¶ ${label||'Ouvir'}`}</button>;
+  return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'⏹ Parar':`▶ ${label||'Ouvir'}`}</button>;
 }
 
 function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onRegenerate,hasRead,members}){
   const[tab,setTab]=useState('dev');
   const[comment,setComment]=useState('');
-  const gm=id=>members.find(m=>m.id===id)||{emoji:'ðŸ‘¤',name:'Membro',color:'var(--muted)'};
+  const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   return(
     <div className="screen">
       <div className="home-header">
         <p className="home-greeting-date">{fmtDate()}</p>
-        <div className="home-greeting"><span>{user.emoji}</span> OlÃ¡, {user.name}</div>
+        <div className="home-greeting"><span>{user.emoji}</span> Olá, {user.name}</div>
         {theme&&(
           <div className="theme-chip">
-            <span style={{fontSize:'16px'}}>ðŸ“–</span>
+            <span style={{fontSize:'16px'}}>📖</span>
             <div>
               <p className="theme-chip-label">Tema desta semana</p>
               <p className="theme-chip-name">{theme.theme}</p>
@@ -507,31 +507,31 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
       </div>
       <div className="home-tabs">
         <div className="tabs">
-          <button className={`tab${tab==='dev'?' active':''}`} onClick={()=>setTab('dev')}>ðŸ“– Devocional</button>
-          <button className={`tab${tab==='prayer'?' active':''}`} onClick={()=>setTab('prayer')}>ðŸ™ OraÃ§Ã£o</button>
+          <button className={`tab${tab==='dev'?' active':''}`} onClick={()=>setTab('dev')}>📖 Devocional</button>
+          <button className={`tab${tab==='prayer'?' active':''}`} onClick={()=>setTab('prayer')}>🙏 Oração</button>
         </div>
       </div>
       <div className="scroll" style={{padding:'16px'}}>
         {loading?(
           <div className="loading-center fi">
-            <div className="loading-icon pulse">âœ¨</div>
+            <div className="loading-icon pulse">✨</div>
             <p className="loading-text">Preparando o devocional do dia...</p>
-            <p className="loading-sub">A IA estÃ¡ gerando seu conteÃºdo</p>
+            <p className="loading-sub">A IA está gerando seu conteúdo</p>
           </div>
         ):!dev?(
           <div className="loading-center">
-            <div style={{fontSize:'44px',marginBottom:'16px'}}>ðŸŒ¿</div>
-            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic',marginBottom:'20px'}}>Nenhum conteÃºdo ainda.</p>
-            <button className="btn btn-primary" onClick={onRegenerate}>âœ¨ Gerar devocional de hoje</button>
+            <div style={{fontSize:'44px',marginBottom:'16px'}}>🌿</div>
+            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic',marginBottom:'20px'}}>Nenhum conteúdo ainda.</p>
+            <button className="btn btn-primary" onClick={onRegenerate}>✨ Gerar devocional de hoje</button>
           </div>
         ):tab==='dev'?(
           <div className="fi">
             <div className="card-verse" style={{marginBottom:'22px'}}>
-              <p className="verse-label">VersÃ­culo do dia Â· ARC</p>
+              <p className="verse-label">Versículo do dia · ARC</p>
               <p className="verse-text">"{dev.verseText}"</p>
-              <p className="verse-ref">â€” {dev.verse}</p>
+              <p className="verse-ref">— {dev.verse}</p>
               <div style={{marginTop:'16px',position:'relative',zIndex:1}}>
-                <AudioBtn text={dev.verseText} label="Ouvir versÃ­culo"/>
+                <AudioBtn text={dev.verseText} label="Ouvir versículo"/>
               </div>
             </div>
             <h2 className="dev-title">{dev.title}</h2>
@@ -543,14 +543,14 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             </div>
             {!hasRead?(
               <button className="btn btn-primary btn-full" onClick={onMarkRead} style={{marginBottom:'24px',padding:'15px',fontSize:'15px'}}>
-                âœ“ Concluir devocional de hoje
+                ✓ Concluir devocional de hoje
               </button>
             ):(
-              <div className="done-banner fi" style={{marginBottom:'24px'}}>âœ“ Devocional concluÃ­do! +1 ponto ðŸŽ‰</div>
+              <div className="done-banner fi" style={{marginBottom:'24px'}}>✓ Devocional concluído! +1 ponto 🎉</div>
             )}
             <div>
               <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>
-                ðŸ’¬ ReflexÃµes da famÃ­lia {comments.length>0&&`(${comments.length})`}
+                💬 Reflexões da família {comments.length>0&&`(${comments.length})`}
               </h3>
               {comments.map(c=>{const m=gm(c.authorId);return(
                 <div key={c.id} className="comment-box fi">
@@ -564,10 +564,10 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
               );})}
               <div className="comment-input-row">
                 <input className="input" value={comment} onChange={e=>setComment(e.target.value)}
-                  placeholder="Compartilhe sua reflexÃ£o..."
+                  placeholder="Compartilhe sua reflexão..."
                   onKeyDown={e=>e.key==='Enter'&&comment.trim()&&(onAddComment(comment.trim()),setComment(''))}
                   style={{flex:1}}/>
-                <button className="comment-send" onClick={()=>{if(comment.trim()){onAddComment(comment.trim());setComment('');}}}>â€º</button>
+                <button className="comment-send" onClick={()=>{if(comment.trim()){onAddComment(comment.trim());setComment('');}}}>›</button>
               </div>
             </div>
           </div>
@@ -575,15 +575,15 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
           <div className="fi">
             {prayer?(
               <div className="prayer-box">
-                <p className="prayer-label">ðŸ™ OraÃ§Ã£o do Dia</p>
+                <p className="prayer-label">🙏 Oração do Dia</p>
                 {(prayer.text||'').split(/\n+/).filter(Boolean).map((p,i)=>(
                   <p key={i} className="prayer-para">{p}</p>
                 ))}
-                <AudioBtn text={prayer.text} label="Ouvir oraÃ§Ã£o"/>
+                <AudioBtn text={prayer.text} label="Ouvir oração"/>
               </div>
             ):(
               <div className="loading-center">
-                <p style={{color:'var(--muted)'}}>OraÃ§Ã£o nÃ£o disponÃ­vel.</p>
+                <p style={{color:'var(--muted)'}}>Oração não disponível.</p>
               </div>
             )}
           </div>
@@ -598,7 +598,7 @@ function BoardScreen({members,progress}){
   const PATH=[{x:12,y:83},{x:27,y:68},{x:47,y:77},{x:65,y:63},{x:80,y:72},{x:86,y:53},{x:72,y:39},{x:54,y:32},{x:36,y:46},{x:18,y:36},{x:9,y:18}];
   const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
   const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
-  const PHASE_LABELS=['ðŸŒ±','ðŸ‘‘','ðŸ’œ','ðŸ”¥','âœ¨'];
+  const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
   const gp=id=>{
     const p=progress[id]||{};
     const d=(p.devotionals||[]).length;
@@ -611,18 +611,18 @@ function BoardScreen({members,progress}){
   const sorted=[...members].sort((a,b)=>gp(b.id).total-gp(a.id).total);
   return(
     <div className="screen">
-      <div className="topbar"><h2>ðŸ—ºï¸ Jornada da FamÃ­lia</h2></div>
+      <div className="topbar"><h2>🗺️ Jornada da Família</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
         <div className="map-container">
-          <span className="map-decoration" style={{top:'8px',left:'16px',fontSize:'22px'}}>ðŸŒ¿</span>
-          <span className="map-decoration" style={{top:'38%',right:'12px',fontSize:'18px'}}>ðŸŒ¸</span>
-          <span className="map-decoration" style={{bottom:'18px',left:'38%',fontSize:'14px'}}>âœ¦</span>
+          <span className="map-decoration" style={{top:'8px',left:'16px',fontSize:'22px'}}>🌿</span>
+          <span className="map-decoration" style={{top:'38%',right:'12px',fontSize:'18px'}}>🌸</span>
+          <span className="map-decoration" style={{bottom:'18px',left:'38%',fontSize:'14px'}}>✦</span>
           <svg style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} viewBox="0 0 100 100" preserveAspectRatio="none">
             <polyline points={PATH.map(p=>`${p.x},${p.y}`).join(' ')} fill="none" stroke="rgba(44,74,62,.2)" strokeWidth="1.8" strokeDasharray="3,3"/>
           </svg>
           {PATH.map((p,i)=>(
             <div key={i} className={`path-dot ${i===PATH.length-1?'path-dot-goal':'path-dot-normal'}`} style={{left:`${p.x}%`,top:`${p.y}%`}}>
-              {i===PATH.length-1?'â­':''}
+              {i===PATH.length-1?'⭐':''}
             </div>
           ))}
           {members.map((m,mi)=>{
@@ -637,25 +637,25 @@ function BoardScreen({members,progress}){
               </div>
             );
           })}
-          <div style={{position:'absolute',bottom:'8px',right:'10px',fontSize:'9px',color:'var(--muted)',fontWeight:'700'}}>Meta: â­ {TOTAL} pts</div>
+          <div style={{position:'absolute',bottom:'8px',right:'10px',fontSize:'9px',color:'var(--muted)',fontWeight:'700'}}>Meta: ⭐ {TOTAL} pts</div>
         </div>
         <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>Placar</h3>
         {sorted.map((m,i)=>{const p=gp(m.id);const phaseColor=PHASE_COLORS[Math.min(p.phase,4)];const phaseLabel=PHASE_LABELS[Math.min(p.phase,4)];return(
           <div key={m.id} className="rank-row" style={{borderLeft:`3px solid ${phaseColor}`}}>
-            <div className="rank-medal">{['ðŸ¥‡','ðŸ¥ˆ','ðŸ¥‰'][i]||<span style={{fontSize:'11px',fontWeight:'700',color:'var(--muted)'}}>{i+1}</span>}</div>
+            <div className="rank-medal">{['🥇','🥈','🥉'][i]||<span style={{fontSize:'11px',fontWeight:'700',color:'var(--muted)'}}>{i+1}</span>}</div>
             <div className="avatar" style={{background:`${m.color}18`,border:`2px solid ${m.color}44`}}>{m.emoji}</div>
             <div style={{flex:1}}>
               <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
                 <span style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{m.name}</span>
-                <span style={{fontSize:'14px',color:phaseColor,fontWeight:'800'}}>{phaseLabel} {PHASE_NAMES[Math.min(p.phase,4)]} Â· {p.total} pts</span>
+                <span style={{fontSize:'14px',color:phaseColor,fontWeight:'800'}}>{phaseLabel} {PHASE_NAMES[Math.min(p.phase,4)]} · {p.total} pts</span>
               </div>
               <div className="progress-bar-wrap">
                 <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`,background:`linear-gradient(90deg,${phaseColor},${phaseColor}99)`}}/>
               </div>
               <div className="progress-stats">
-                <span className="progress-stat">ðŸ“– {p.d} devocionais</span>
-                <span className="progress-stat">âš”ï¸ {p.ms} missÃµes</span>
-                <span className="progress-stat">ðŸ† {p.totalAll} total</span>
+                <span className="progress-stat">📖 {p.d} devocionais</span>
+                <span className="progress-stat">⚔️ {p.ms} missões</span>
+                <span className="progress-stat">🏆 {p.totalAll} total</span>
               </div>
             </div>
           </div>
@@ -668,11 +668,11 @@ function BoardScreen({members,progress}){
 function PrayersScreen({user,wall,onAdd,onPray,members}){
   const[text,setText]=useState('');
   const[open,setOpen]=useState(false);
-  const gm=id=>members.find(m=>m.id===id)||{emoji:'ðŸ‘¤',name:'Membro',color:'var(--muted)'};
+  const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   return(
     <div className="screen">
       <div className="topbar">
-        <h2>ðŸ™ Mural de OraÃ§Ãµes</h2>
+        <h2>🙏 Mural de Orações</h2>
         <div className="topbar-right">
           <button className="btn btn-primary btn-sm" onClick={()=>setOpen(true)}>+ Pedir</button>
         </div>
@@ -680,8 +680,8 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
       <div className="scroll" style={{padding:'16px'}}>
         {open&&(
           <div className="card fu" style={{marginBottom:'20px',background:'var(--amber-lt)',border:'1px solid rgba(201,125,58,.25)'}}>
-            <p style={{fontFamily:"'Playfair Display',serif",fontWeight:'700',color:'var(--ink)',marginBottom:'10px'}}>Novo pedido de oraÃ§Ã£o</p>
-            <textarea className="input textarea" value={text} onChange={e=>setText(e.target.value)} placeholder="Compartilhe seu pedido com a famÃ­lia..."/>
+            <p style={{fontFamily:"'Playfair Display',serif",fontWeight:'700',color:'var(--ink)',marginBottom:'10px'}}>Novo pedido de oração</p>
+            <textarea className="input textarea" value={text} onChange={e=>setText(e.target.value)} placeholder="Compartilhe seu pedido com a família..."/>
             <div style={{display:'flex',gap:'8px',marginTop:'10px'}}>
               <button className="btn btn-primary" style={{flex:1}} onClick={()=>{if(text.trim()){onAdd(text.trim());setText('');setOpen(false);}}}>Enviar</button>
               <button className="btn btn-ghost" onClick={()=>{setOpen(false);setText('');}}>Cancelar</button>
@@ -690,7 +690,7 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
         )}
         {wall.length===0&&(
           <div className="loading-center">
-            <div style={{fontSize:'50px',marginBottom:'14px'}}>ðŸ•Šï¸</div>
+            <div style={{fontSize:'50px',marginBottom:'14px'}}>🕊️</div>
             <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>Nenhum pedido ainda. Seja a primeira!</p>
           </div>
         )}
@@ -706,7 +706,7 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
             <p className="prayer-card-text">{p.text}</p>
             <div className="prayer-card-footer">
               <button className={`btn btn-sm${prayed?' btn-secondary':' btn-primary'}`} onClick={()=>!prayed&&onPray(p.id)}>
-                {prayed?'âœ“ Orei por vocÃª':'ðŸ™ Orar'}
+                {prayed?'✓ Orei por você':'🙏 Orar'}
               </button>
               {p.prayedBy.length>0&&(
                 <div className="prayed-chips">
@@ -722,31 +722,31 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
 }
 
 function MissionsScreen({user,missions,theme,onComplete,members}){
-  const gm=id=>members.find(m=>m.id===id)||{emoji:'ðŸ‘¤',name:'Membro',color:'var(--muted)'};
+  const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   const done=missions.filter(m=>m.completedBy.includes(user.id)).length;
   return(
     <div className="screen">
-      <div className="topbar"><h2>âš”ï¸ MissÃµes da Semana</h2></div>
+      <div className="topbar"><h2>⚔️ Missões da Semana</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
         {missions.length>0&&(
           <div className="alert alert-green" style={{marginBottom:'20px',display:'flex',alignItems:'center',gap:'14px'}}>
-            <span style={{fontSize:'32px'}}>ðŸŽ¯</span>
+            <span style={{fontSize:'32px'}}>🎯</span>
             <div>
               <p style={{fontWeight:'700',color:'var(--forest)',fontSize:'15px'}}>{done}/{missions.length} completas</p>
-              <p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>Cada missÃ£o = +1 ponto no tabuleiro</p>
+              <p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>Cada missão = +1 ponto no tabuleiro</p>
             </div>
           </div>
         )}
-        {theme&&<p style={{fontSize:'13px',color:'var(--muted)',marginBottom:'16px'}}>ðŸ“– Tema: <strong>{theme.theme}</strong></p>}
+        {theme&&<p style={{fontSize:'13px',color:'var(--muted)',marginBottom:'16px'}}>📖 Tema: <strong>{theme.theme}</strong></p>}
         {missions.length===0&&(
           <div className="loading-center">
-            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As missÃµes aparecem com o tema semanal.</p>
+            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As missões aparecem com o tema semanal.</p>
           </div>
         )}
         {missions.map((ms,i)=>{const isDone=ms.completedBy.includes(user.id);return(
           <div key={ms.id} className={`mission-card${isDone?' done':''} fu`} style={{animationDelay:`${i*.07}s`,opacity:0}}>
             <div style={{display:'flex',alignItems:'flex-start',gap:'14px'}}>
-              <div className={`mission-num${isDone?' done':''}`}>{isDone?'âœ“':i+1}</div>
+              <div className={`mission-num${isDone?' done':''}`}>{isDone?'✓':i+1}</div>
               <div style={{flex:1}}>
                 <p className={`mission-text${isDone?' done':''}`}>{ms.text}</p>
                 {ms.completedBy.length>0&&(
@@ -755,7 +755,7 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
                     {ms.completedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}
                   </div>
                 )}
-                {!isDone&&<button className="btn btn-amber btn-sm" style={{marginTop:'10px'}} onClick={(e)=>{e.currentTarget.disabled=true;e.currentTarget.textContent='â³...';onComplete(ms.id);}}>âœ… Completar missÃ£o</button>}
+                {!isDone&&<button className="btn btn-amber btn-sm" style={{marginTop:'10px'}} onClick={(e)=>{e.currentTarget.disabled=true;e.currentTarget.textContent='⏳...';onComplete(ms.id);}}>✅ Completar missão</button>}
               </div>
             </div>
           </div>
@@ -768,7 +768,7 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
 function CelebrationScreen({member,phase,onClose}){
   const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
   const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
-  const PHASE_LABELS=['ðŸŒ±','ðŸ‘‘','ðŸ’œ','ðŸ”¥','âœ¨'];
+  const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
   const color=PHASE_COLORS[Math.min(phase,4)];
   const label=PHASE_LABELS[Math.min(phase,4)];
   const name=PHASE_NAMES[Math.min(phase,4)];
@@ -790,14 +790,14 @@ function CelebrationScreen({member,phase,onClose}){
           {member.emoji} {member.name}
         </h2>
         <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>
-          completou a Fase {phase}!<br/>Nova jornada comeÃ§a agora.
+          completou a Fase {phase}!<br/>Nova jornada começa agora.
         </p>
         <div style={{background:`${color}18`,border:`2px solid ${color}44`,borderRadius:'16px',padding:'16px',marginBottom:'24px'}}>
-          <p style={{fontSize:'12px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'4px'}}>PrÃ³xima fase</p>
+          <p style={{fontSize:'12px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'4px'}}>Próxima fase</p>
           <p style={{fontSize:'20px',fontWeight:'900',color:color}}>{label} {name}</p>
         </div>
         <button className="btn btn-primary btn-full" onClick={onClose} style={{padding:'14px',fontSize:'15px'}}>
-          ðŸš€ Continuar a jornada!
+          🚀 Continuar a jornada!
         </button>
       </div>
     </div>
@@ -805,7 +805,7 @@ function CelebrationScreen({member,phase,onClose}){
 }
 
 function BottomNav({active,onChange}){
-  const tabs=[{id:'home',icon:'ðŸ“–',label:'Hoje'},{id:'board',icon:'ðŸ—ºï¸',label:'Jornada'},{id:'prayers',icon:'ðŸ™',label:'OraÃ§Ãµes'},{id:'missions',icon:'âš”ï¸',label:'MissÃµes'}];
+  const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'missions',icon:'⚔️',label:'Missões'}];
   return(
     <nav className="bottom-nav">
       {tabs.map(t=>(
@@ -819,7 +819,7 @@ function BottomNav({active,onChange}){
   );
 }
 
-// â”€â”€ ROOT APP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── ROOT APP ─────────────────────────────────────────────────────────────────
 function App(){
   const[view,setView]=useState('loading');
   const[tab,setTab]=useState('home');
@@ -837,9 +837,9 @@ function App(){
   const[loadErr,setLoadErr]=useState('');
 
   const DEF=[
-    {id:'1',name:'Bela',emoji:'ðŸŒ¿',color:'#2C4A3E'},
-    {id:'2',name:'Membro 2',emoji:'ðŸŒ¸',color:'#C4956A'},
-    {id:'3',name:'Membro 3',emoji:'âœ¨',color:'#7B8EC8'},
+    {id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},
+    {id:'2',name:'Membro 2',emoji:'🌸',color:'#C4956A'},
+    {id:'3',name:'Membro 3',emoji:'✨',color:'#7B8EC8'},
   ];
 
   useEffect(()=>{(async()=>{
@@ -872,7 +872,7 @@ function App(){
       const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
-      // â”€â”€ CORREÃ‡ÃƒO: IDs de missÃ£o incluem a semana para evitar conflito entre semanas â”€â”€
+      // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
       const msDone=await DB.getMissoes();
       const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
       setMissions(ms);
@@ -887,7 +887,7 @@ function App(){
       const msDone=await DB.getMissoes();
       try{
         const today=await getTodayDevotional();
-        // â”€â”€ CORREÃ‡ÃƒO: IDs de missÃ£o incluem a semana para evitar conflito entre semanas â”€â”€
+        // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
         const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
         setMissions(ms);
       }catch(e){
@@ -951,7 +951,7 @@ function App(){
 
   const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(TODAY);
 
-  if(view==='loading')return<div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--cream)'}}><div style={{fontSize:'40px'}} className="pulse">ðŸ•Šï¸</div></div>;
+  if(view==='loading')return<div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--cream)'}}><div style={{fontSize:'40px'}} className="pulse">🕊️</div></div>;
   if(view==='setup')return<SetupScreen members={members} onSave={saveMembers} onBack={()=>setView('login')}/>;
   if(view==='login')return<LoginScreen members={members} onLogin={handleLogin} onSetup={()=>setView('setup')}/>;
 
