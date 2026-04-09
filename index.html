@@ -169,7 +169,6 @@
     .color-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .15s;border:2.5px solid transparent;}
     .color-dot.sel{border-color:var(--ink);}
 
-
     /* ── HOME ── */
     .home-header{padding:18px 20px 14px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
     .home-greeting-date{font-size:12px;color:var(--muted);text-transform:capitalize;margin-bottom:4px;}
@@ -315,7 +314,7 @@ const SB_URL='https://mlznzzskyqagriojsxmw.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sem56enNreXFhZ3Jpb2pzeG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5ODcwMDQsImV4cCI6MjA5MDU2MzAwNH0.0Ah-fsxfn_SjAj-KRWoYOJ75NODwoJHc1-VPBSZ7u60';
 const sb=supabase.createClient(SB_URL,SB_KEY);
 
-// ── STORAGE LOCAL (só para devocional/tema — não precisa sincronizar) ────────
+// ── STORAGE LOCAL ────────────────────────────────────────────────────────────
 const S={
   get(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch{return null;}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}},
@@ -324,10 +323,8 @@ const S={
 
 // ── SUPABASE HELPERS ─────────────────────────────────────────────────────────
 const DB={
-  // Progresso
   async getProgress(){
     const{data}=await sb.from('progresso').select('*');
-    // Agrupa por membro
     const p={};
     (data||[]).forEach(r=>{
       if(!p[r.membro_id])p[r.membro_id]={devotionals:[],missions:[]};
@@ -337,12 +334,10 @@ const DB={
     return p;
   },
   async addProgress(membroId,tipo,referencia){
-    // Evita duplicata
     const{data}=await sb.from('progresso').select('id').eq('membro_id',membroId).eq('tipo',tipo).eq('referencia',referencia);
     if(data&&data.length>0)return;
     await sb.from('progresso').insert({membro_id:membroId,tipo,referencia});
   },
-  // Orações
   async getOracoes(){
     const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').order('criado_em',{ascending:false});
     return(data||[]).map(o=>({
@@ -360,7 +355,6 @@ const DB={
   async addIntercessao(oracaoId,membroId){
     await sb.from('intercessions').upsert({oracao_id:oracaoId,membro_id:membroId});
   },
-  // Comentários
   async getComentarios(dataDevocional){
     const{data}=await sb.from('comentarios').select('*').eq('data_devocional',dataDevocional).order('criado_em');
     return(data||[]).map(c=>({id:c.id,authorId:c.autor_id,text:c.texto,time:c.hora}));
@@ -371,7 +365,6 @@ const DB={
       hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
     });
   },
-  // Membros
   async getMembros(){
     const{data}=await sb.from('membros').select('*').order('id');
     return(data||[]).map(m=>({id:m.id,name:m.nome,emoji:m.emoji,color:m.cor}));
@@ -381,43 +374,16 @@ const DB={
       await sb.from('membros').upsert({id:m.id,nome:m.name,emoji:m.emoji,cor:m.color,atualizado_em:new Date().toISOString()});
     }
   },
-  // Missões concluídas
   async getMissoes(){
     const{data}=await sb.from('progresso').select('*').eq('tipo','missao');
     const ms={};
     (data||[]).forEach(r=>{
       if(!ms[r.referencia])ms[r.referencia]=[];
-      // Evita duplicatas do mesmo membro
       if(!ms[r.referencia].includes(r.membro_id))ms[r.referencia].push(r.membro_id);
     });
     return ms;
   },
 };
-
-// ── GEMINI API ───────────────────────────────────────────────────────────────
-function extractJSON(raw){
-  // Strategy 1: direct
-  try{return JSON.parse(raw.trim());}catch{}
-  // Strategy 2: strip markdown
-  const s=raw.replace(/```json|```/g,'').trim();
-  try{return JSON.parse(s);}catch{}
-  // Strategy 3: find outermost {}
-  const start=s.indexOf('{');
-  if(start===-1)throw new Error('Nenhum JSON na resposta');
-  let depth=0,inStr=false,esc=false;
-  for(let i=start;i<s.length;i++){
-    const c=s[i];
-    if(esc){esc=false;continue;}
-    if(c==='\\'&&inStr){esc=true;continue;}
-    if(c==='"'){inStr=!inStr;continue;}
-    if(inStr)continue;
-    if(c==='{')depth++;
-    if(c==='}'){depth--;if(depth===0){try{return JSON.parse(s.substring(start,i+1));}catch(e){throw new Error('JSON inválido: '+e.message);}}}
-  }
-  throw new Error('JSON incompleto');
-}
-
-
 
 // ── DEVOTIONAL LOADER ───────────────────────────────────────────────────────
 let _devData=null;
@@ -448,8 +414,6 @@ const stopSpeak=()=>window.speechSynthesis.cancel();
 
 // ── COMPONENTS ───────────────────────────────────────────────────────────────
 
-
-// LOGIN SCREEN
 function LoginScreen({members,onLogin,onSetup}){
   return(
     <div id="login-screen">
@@ -478,7 +442,6 @@ function LoginScreen({members,onLogin,onSetup}){
   );
 }
 
-// SETUP SCREEN
 function SetupScreen({members,onSave,onBack}){
   const[list,setList]=useState(members.map(m=>({...m})));
   const upd=(id,f,v)=>setList(list.map(m=>m.id===id?{...m,[f]:v}:m));
@@ -516,19 +479,16 @@ function SetupScreen({members,onSave,onBack}){
   );
 }
 
-// AUDIO BUTTON
 function AudioBtn({text,label}){
   const[playing,setPlaying]=useState(false);
   const toggle=()=>{if(playing){stopSpeak();setPlaying(false);}else{setPlaying(true);speak(text,()=>setPlaying(false));}};
   return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'⏹ Parar':`▶ ${label||'Ouvir'}`}</button>;
 }
 
-// HOME SCREEN
 function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onRegenerate,hasRead,members}){
   const[tab,setTab]=useState('dev');
   const[comment,setComment]=useState('');
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
-
   return(
     <div className="screen">
       <div className="home-header">
@@ -550,9 +510,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
           <button className={`tab${tab==='prayer'?' active':''}`} onClick={()=>setTab('prayer')}>🙏 Oração</button>
         </div>
       </div>
-
       <div className="scroll" style={{padding:'16px'}}>
-
         {loading?(
           <div className="loading-center fi">
             <div className="loading-icon pulse">✨</div>
@@ -567,7 +525,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
           </div>
         ):tab==='dev'?(
           <div className="fi">
-            {/* Verse card */}
             <div className="card-verse" style={{marginBottom:'22px'}}>
               <p className="verse-label">Versículo do dia · ARC</p>
               <p className="verse-text">"{dev.verseText}"</p>
@@ -576,7 +533,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
                 <AudioBtn text={dev.verseText} label="Ouvir versículo"/>
               </div>
             </div>
-            {/* Title & reflection */}
             <h2 className="dev-title">{dev.title}</h2>
             {(dev.reflection||'').split(/\n+/).filter(Boolean).map((p,i)=>(
               <p key={i} className="dev-para">{p}</p>
@@ -584,7 +540,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             <div style={{marginBottom:'22px'}}>
               <AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/>
             </div>
-            {/* Mark done */}
             {!hasRead?(
               <button className="btn btn-primary btn-full" onClick={onMarkRead} style={{marginBottom:'24px',padding:'15px',fontSize:'15px'}}>
                 ✓ Concluir devocional de hoje
@@ -592,7 +547,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             ):(
               <div className="done-banner fi" style={{marginBottom:'24px'}}>✓ Devocional concluído! +1 ponto 🎉</div>
             )}
-            {/* Comments */}
             <div>
               <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>
                 💬 Reflexões da família {comments.length>0&&`(${comments.length})`}
@@ -638,7 +592,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
   );
 }
 
-// BOARD SCREEN
 function BoardScreen({members,progress}){
   const TOTAL=10;
   const PATH=[{x:12,y:83},{x:27,y:68},{x:47,y:77},{x:65,y:63},{x:80,y:72},{x:86,y:53},{x:72,y:39},{x:54,y:32},{x:36,y:46},{x:18,y:36},{x:9,y:18}];
@@ -655,12 +608,10 @@ function BoardScreen({members,progress}){
     return{d,ms,total:pts,totalAll,phase};
   };
   const sorted=[...members].sort((a,b)=>gp(b.id).total-gp(a.id).total);
-
   return(
     <div className="screen">
       <div className="topbar"><h2>🗺️ Jornada da Família</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
-        {/* Map */}
         <div className="map-container">
           <span className="map-decoration" style={{top:'8px',left:'16px',fontSize:'22px'}}>🌿</span>
           <span className="map-decoration" style={{top:'38%',right:'12px',fontSize:'18px'}}>🌸</span>
@@ -687,7 +638,6 @@ function BoardScreen({members,progress}){
           })}
           <div style={{position:'absolute',bottom:'8px',right:'10px',fontSize:'9px',color:'var(--muted)',fontWeight:'700'}}>Meta: ⭐ {TOTAL} pts</div>
         </div>
-        {/* Ranking */}
         <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>Placar</h3>
         {sorted.map((m,i)=>{const p=gp(m.id);const phaseColor=PHASE_COLORS[Math.min(p.phase,4)];const phaseLabel=PHASE_LABELS[Math.min(p.phase,4)];return(
           <div key={m.id} className="rank-row" style={{borderLeft:`3px solid ${phaseColor}`}}>
@@ -714,7 +664,6 @@ function BoardScreen({members,progress}){
   );
 }
 
-// PRAYERS SCREEN
 function PrayersScreen({user,wall,onAdd,onPray,members}){
   const[text,setText]=useState('');
   const[open,setOpen]=useState(false);
@@ -771,7 +720,6 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
   );
 }
 
-// MISSIONS SCREEN
 function MissionsScreen({user,missions,theme,onComplete,members}){
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   const done=missions.filter(m=>m.completedBy.includes(user.id)).length;
@@ -816,7 +764,6 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
   );
 }
 
-// CELEBRATION SCREEN
 function CelebrationScreen({member,phase,onClose}){
   const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
   const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
@@ -856,7 +803,6 @@ function CelebrationScreen({member,phase,onClose}){
   );
 }
 
-// BOTTOM NAV
 function BottomNav({active,onChange}){
   const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'missions',icon:'⚔️',label:'Missões'}];
   return(
@@ -886,9 +832,8 @@ function App(){
   const[missions,setMissions]=useState([]);
   const[progress,setProgress]=useState({});
   const[loading,setLoading]=useState(false);
-  const[celebration,setCelebration]=useState(null); // {member, phase}
+  const[celebration,setCelebration]=useState(null);
   const[loadErr,setLoadErr]=useState('');
-  
 
   const DEF=[
     {id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},
@@ -897,7 +842,6 @@ function App(){
   ];
 
   useEffect(()=>{(async()=>{
-    // Carrega membros do Supabase
     let m=null;
     try{ m=await DB.getMembros(); }catch(e){ console.error('Erro membros:',e); }
     if(m&&m.length>0){setMembers(m);S.set('members',m);}
@@ -911,7 +855,6 @@ function App(){
     if(th)setTheme(th);
     if(d)setDev(d);
     if(pr)setPrayer(pr);
-    // Carrega dados sincronizados do Supabase
     const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
     setProgress(pg);
     setWall(wl);
@@ -919,7 +862,6 @@ function App(){
     setView('login');
   })();},[]);
 
-  // Carrega devocional do JSON e missões com completedBy do Supabase
   async function generate(){
     setLoading(true);
     try{
@@ -929,9 +871,9 @@ function App(){
       const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
-      // Missões com completedBy do Supabase
+      // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
       const msDone=await DB.getMissoes();
-      const ms=(today.missoes||[]).map((t,i)=>({id:String(i+1),text:t,completedBy:msDone[String(i+1)]||[]}));
+      const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
       setMissions(ms);
     }catch(e){console.error(e);alert('Erro ao carregar: '+e.message);}
     setLoading(false);
@@ -941,17 +883,16 @@ function App(){
     setUser(m);setView('app');setTab('home');
     if(!S.get(`dev-${TODAY}`)) await generate();
     else{
-      // Recarrega missões sempre do JSON (não depende de cache)
       const msDone=await DB.getMissoes();
       try{
         const today=await getTodayDevotional();
-        const ms=(today.missoes||[]).map((t,i)=>({id:String(i+1),text:t,completedBy:msDone[String(i+1)]||[]}));
+        // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
+        const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
         setMissions(ms);
       }catch(e){
         const cached=S.get(`missions-${WEEK_KEY}`)||[];
         setMissions(cached.map(ms=>({...ms,completedBy:msDone[ms.id]||[]})));
       }
-      // Atualiza progresso e orações
       const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
       setProgress(pg);setWall(wl);setComments(cm);
     }
@@ -993,7 +934,6 @@ function App(){
   }
 
   async function completeMission(mid){
-    // Optimistic update — impede clique duplo imediatamente
     setMissions(ms=>ms.map(m=>m.id===mid&&!m.completedBy.includes(user.id)?{...m,completedBy:[...m.completedBy,user.id]}:m));
     await DB.addProgress(user.id,'missao',mid);
     const[pg,msDone]=await Promise.all([DB.getProgress(),DB.getMissoes()]);
@@ -1011,7 +951,6 @@ function App(){
   const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(TODAY);
 
   if(view==='loading')return<div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--cream)'}}><div style={{fontSize:'40px'}} className="pulse">🕊️</div></div>;
-  
   if(view==='setup')return<SetupScreen members={members} onSave={saveMembers} onBack={()=>setView('login')}/>;
   if(view==='login')return<LoginScreen members={members} onLogin={handleLogin} onSetup={()=>setView('setup')}/>;
 
