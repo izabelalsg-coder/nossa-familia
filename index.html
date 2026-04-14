@@ -541,6 +541,12 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             <div style={{marginBottom:'22px'}}>
               <AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/>
             </div>
+            {dev.isLastDay&&(
+              <div style={{marginBottom:'22px',padding:'16px 18px',background:'linear-gradient(135deg,#F7F2EA,#E8F0EC)',borderRadius:'16px',border:'1px solid rgba(44,74,62,.15)',textAlign:'center'}}>
+                <p style={{fontSize:'13px',color:'var(--forest)',fontWeight:'700',letterSpacing:'.5px',marginBottom:'6px'}}>✦ Último dia do tema</p>
+                <p style={{fontFamily:"'Playfair Display',serif",fontSize:'14px',color:'var(--muted)',fontStyle:'italic',lineHeight:'1.7'}}>Esta é a última reflexão sobre <strong style={{color:'var(--ink)',fontStyle:'normal'}}>{dev.tema}</strong>. Que o que foi plantado esta semana continue crescendo no coração da nossa família.</p>
+              </div>
+            )}
             {!hasRead?(
               <button className="btn btn-primary btn-full" onClick={onMarkRead} style={{marginBottom:'24px',padding:'15px',fontSize:'15px'}}>
                 ✓ Concluir devocional de hoje
@@ -869,7 +875,7 @@ function App(){
       const today=await getTodayDevotional();
       const th={theme:today.tema};
       setTheme(th);S.set(`theme-${WEEK_KEY}`,th);
-      const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao};
+      const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao,isLastDay:today.dia===7,tema:today.tema};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
       // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
