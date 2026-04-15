@@ -396,15 +396,18 @@ async function loadDevData(){
   return _devData;
 }
 function getDayIndex(){
-  const start=new Date('2026-01-01');
-  const today=new Date();
-  return Math.max(0,Math.floor((today-start)/86400000));
+  // Semana começa na quarta (3) e termina na terça (2)
+  // Quarta=0, Quinta=1, Sexta=2, Sábado=3, Domingo=4, Segunda=5, Terça=6
+  return(new Date().getDay()-3+7)%7;
 }
 async function getTodayDevotional(){
   const data=await loadDevData();
   const allDays=data.semanas.flatMap(s=>s.dias.map(d=>({...d,tema:s.tema})));
   if(!allDays.length)throw new Error('Nenhum devocional encontrado no arquivo');
-  return allDays[getDayIndex()%allDays.length];
+  const idx=getDayIndex()%allDays.length;
+  const day=allDays[idx];
+  // Último dia = terça-feira (getDay()===2)
+  return {...day,isLastDay:new Date().getDay()===2};
 }
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
@@ -859,8 +862,10 @@ function App(){
     const th=S.get(`theme-${WEEK_KEY}`);
     const d=S.get(`dev-${TODAY}`);
     const pr=S.get(`prayer-${TODAY}`);
+    // Se o tema mudou esta semana, limpa o cache do devocional do dia
+    if(d&&th&&d.tema&&d.tema!==th.theme){S.rm(`dev-${TODAY}`);}
     if(th)setTheme(th);
-    if(d)setDev(d);
+    if(d&&th&&d.tema===th.theme)setDev(d);
     if(pr)setPrayer(pr);
     const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
     setProgress(pg);
@@ -875,7 +880,7 @@ function App(){
       const today=await getTodayDevotional();
       const th={theme:today.tema};
       setTheme(th);S.set(`theme-${WEEK_KEY}`,th);
-      const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao,isLastDay:today.dia===7,tema:today.tema};
+      const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao,isLastDay:today.isLastDay,tema:today.tema};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
       // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
