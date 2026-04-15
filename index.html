@@ -305,7 +305,14 @@ const{useState,useEffect,useRef,useCallback}=React;
 
 // ── CONSTANTS ──────────────────────────────────────────────────────────────
 const TODAY=new Date().toISOString().split('T')[0];
-const WEEK_KEY=(()=>{const d=new Date(),s=new Date(d.getFullYear(),0,1);return`${d.getFullYear()}-W${Math.ceil(((d-s)/86400000+s.getDay()+1)/7)}`;})();
+const WEEK_KEY=(()=>{
+  const d=new Date();
+  // Semana devocional começa na quarta (3). Calcula a quarta mais recente.
+  const daysSinceWed=(d.getDay()-3+7)%7;
+  const wed=new Date(d);
+  wed.setDate(d.getDate()-daysSinceWed);
+  return wed.toISOString().split('T')[0]; // ex: "2026-04-15"
+})();
 const EMOJIS=['🌿','🌸','✨','🕊️','🌻','🌙','⭐','🦋','🌺','🍀','🦚','🌾'];
 const COLORS=['#2C4A3E','#C4956A','#7B8EC8','#C87B8E','#8E7BC4','#7BC4B5'];
 
@@ -339,7 +346,7 @@ const DB={
     await sb.from('progresso').insert({membro_id:membroId,tipo,referencia});
   },
   async getOracoes(){
-    const weekStart=new Date();weekStart.setDate(weekStart.getDate()-weekStart.getDay());weekStart.setHours(0,0,0,0);
+    const weekStart=new Date();const daysSinceWed=(weekStart.getDay()-3+7)%7;weekStart.setDate(weekStart.getDate()-daysSinceWed);weekStart.setHours(0,0,0,0);
     const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').gte('criado_em',weekStart.toISOString()).order('criado_em',{ascending:false});
     return(data||[]).map(o=>({
       id:o.id, authorId:o.autor_id, text:o.texto, date:o.data_br,
