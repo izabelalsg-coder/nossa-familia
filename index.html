@@ -911,7 +911,7 @@ function App(){
   }
 
   async function markRead(){
-    await DB.addProgress(user.id,'devocional',TODAY);
+    await DB.addProgress(user.id,'devocional',`${WEEK_KEY}-${TODAY}`);
     const pg=await DB.getProgress();
     setProgress(pg);
     checkPhase(pg,user.id);
@@ -960,7 +960,7 @@ function App(){
     setView('login');
   }
 
-  const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(TODAY);
+  const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(`${WEEK_KEY}-${TODAY}`);
 
   if(view==='loading')return<div style={{height:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'var(--cream)'}}><div style={{fontSize:'40px'}} className="pulse">🕊️</div></div>;
   if(view==='setup')return<SetupScreen members={members} onSave={saveMembers} onBack={()=>setView('login')}/>;
