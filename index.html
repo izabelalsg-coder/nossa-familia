@@ -624,7 +624,7 @@ function BoardScreen({members,progress}){
     const pts=totalAll%TOTAL;
     return{d,ms,total:pts,totalAll,phase};
   };
-  const sorted=[...members].sort((a,b)=>gp(b.id).total-gp(a.id).total);
+  const sorted=[...members].sort((a,b)=>gp(b.id).totalAll-gp(a.id).totalAll);
   return(
     <div className="screen">
       <div className="topbar"><h2>🗺️ Jornada da Família</h2></div>
@@ -669,9 +669,7 @@ function BoardScreen({members,progress}){
                 <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`,background:`linear-gradient(90deg,${phaseColor},${phaseColor}99)`}}/>
               </div>
               <div className="progress-stats">
-                <span className="progress-stat">📖 {p.d} devocionais</span>
-                <span className="progress-stat">⚔️ {p.ms} missões</span>
-                <span className="progress-stat">🏆 {p.totalAll} total</span>
+                <span className="progress-stat">{p.total} de {TOTAL} pontos nesta fase</span>
               </div>
             </div>
           </div>
