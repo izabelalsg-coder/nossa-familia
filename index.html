@@ -303,6 +303,11 @@
 <script type="text/babel">
 const{useState,useEffect,useRef,useCallback}=React;
 
+// ── PWA INSTALL ───────────────────────────────────────────────────────────────
+let _installPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();_installPrompt=e;});
+function installApp(){if(_installPrompt){_installPrompt.prompt();_installPrompt.userChoice.then(()=>{_installPrompt=null;});}}
+
 // ── CONSTANTS ──────────────────────────────────────────────────────────────
 const TODAY=new Date().toISOString().split('T')[0];
 const WEEK_KEY=(()=>{
@@ -448,6 +453,9 @@ function LoginScreen({members,onLogin,onSetup}){
       </div>
       <button onClick={onSetup} style={{marginTop:'28px',background:'none',border:'none',color:'var(--muted)',fontSize:'13px',cursor:'pointer',textDecoration:'underline',opacity:.7}}>
         ✦ Editar membros da família
+      </button>
+      <button onClick={installApp} style={{marginTop:'12px',background:'none',border:'1px solid var(--border)',borderRadius:'10px',color:'var(--muted)',fontSize:'12px',cursor:'pointer',padding:'8px 16px',opacity:.8}}>
+        📲 Instalar app no celular
       </button>
     </div>
   );
