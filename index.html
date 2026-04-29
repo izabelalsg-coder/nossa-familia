@@ -420,8 +420,16 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
               <p className="verse-label">Versículo do dia · ARC</p>
               <p className="verse-text">"{dev.verseText}"</p>
               <p className="verse-ref">— {dev.verse}</p>
-              <div style={{marginTop:'16px',position:'relative',zIndex:1}}>
+              <div style={{marginTop:'16px',position:'relative',zIndex:1,display:'flex',gap:'10px',flexWrap:'wrap'}}>
                 <AudioBtn text={dev.verseText} label="Ouvir versículo"/>
+                <button className="audio-btn" style={{color:'#fff',borderColor:'rgba(255,255,255,.4)'}}
+                  onClick={()=>{
+                    const txt=`"${dev.verseText}" — ${dev.verse}\n\nNossa Família 🕊️`;
+                    if(navigator.share){navigator.share({text:txt});}
+                    else{navigator.clipboard.writeText(txt).then(()=>alert('Versículo copiado!'));}
+                  }}>
+                  ↗ Compartilhar
+                </button>
               </div>
             </div>
             <h2 className="dev-title">{dev.title}</h2>
