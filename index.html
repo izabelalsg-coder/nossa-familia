@@ -874,7 +874,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
     navigator.serviceWorker.register('/nossa-familia/sw.js')
-      .then(r=>console.log('SW registrado:',r.scope))
+      .then(r=>{
+        console.log('SW registrado:',r.scope);
+        // Pede permissão de notificação e agenda lembrete diário
+        if('Notification' in window && Notification.permission === 'default'){
+          Notification.requestPermission().then(p=>{
+            if(p==='granted' && r.active){
+              r.active.postMessage({type:'SCHEDULE_NOTIFICATION'});
+            }
+          });
+        } else if(Notification.permission === 'granted' && r.active){
+          r.active.postMessage({type:'SCHEDULE_NOTIFICATION'});
+        }
+      })
       .catch(e=>console.error('SW erro:',e));
   });
 }
