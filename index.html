@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#2C4A3E">
-  <link rel="manifest" href="manifest.json">
   <title>Nossa Família</title>
+  <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -27,53 +27,27 @@
     html,body{height:100%;background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--ink);}
     button,input,textarea,select{font-family:'DM Sans',sans-serif;}
     ::-webkit-scrollbar{width:3px;} ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
-
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-    @keyframes spin{to{transform:rotate(360deg)}}
     @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
     .fu{animation:fadeUp .4s ease forwards;}
     .fi{animation:fadeIn .3s ease forwards;}
     .pulse{animation:pulse 1.8s ease infinite;}
-
-    /* ── LAYOUT ── */
     #root{height:100%;display:flex;flex-direction:column;}
     .screen{flex:1;display:flex;flex-direction:column;overflow:hidden;}
     .scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-
-    /* ── TOPBAR ── */
-    .topbar{
-      background:var(--white);border-bottom:1px solid var(--border);
-      padding:14px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;
-      position:sticky;top:0;z-index:10;
-    }
+    .topbar{background:var(--white);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;gap:12px;flex-shrink:0;position:sticky;top:0;z-index:10;}
     .topbar-back{background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;line-height:1;padding:4px;}
     .topbar h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);}
     .topbar-right{margin-left:auto;display:flex;align-items:center;gap:10px;}
-
-    /* ── BOTTOM NAV ── */
-    .bottom-nav{
-      background:var(--white);border-top:1px solid var(--border);
-      display:flex;padding:8px 0 max(16px,env(safe-area-inset-bottom));
-      box-shadow:0 -4px 24px rgba(0,0,0,.06);flex-shrink:0;
-    }
-    .nav-btn{
-      flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
-      background:none;border:none;cursor:pointer;padding:6px 0;
-      color:var(--muted);transition:color .2s;
-    }
+    .bottom-nav{background:var(--white);border-top:1px solid var(--border);display:flex;padding:8px 0 max(16px,env(safe-area-inset-bottom));box-shadow:0 -4px 24px rgba(0,0,0,.06);flex-shrink:0;}
+    .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;padding:6px 0;color:var(--muted);transition:color .2s;}
     .nav-btn.active{color:var(--forest);}
     .nav-btn span:first-child{font-size:20px;}
     .nav-btn span:last-child{font-size:10px;font-weight:600;letter-spacing:.2px;}
     .nav-indicator{width:18px;height:2.5px;background:var(--forest);border-radius:2px;margin-top:2px;}
-
-    /* ── BUTTONS ── */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      border:none;border-radius:12px;cursor:pointer;font-weight:600;
-      transition:all .2s;font-size:14px;padding:12px 20px;
-    }
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:12px;cursor:pointer;font-weight:600;transition:all .2s;font-size:14px;padding:12px 20px;}
     .btn:active{transform:scale(.97);}
     .btn-primary{background:var(--forest);color:#fff;box-shadow:0 4px 16px rgba(44,74,62,.3);}
     .btn-primary:hover{background:var(--forest-lt);transform:translateY(-1px);}
@@ -83,85 +57,34 @@
     .btn-full{width:100%;}
     .btn-sm{padding:8px 14px;font-size:13px;border-radius:9px;}
     .btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;}
-
-    /* ── CARDS ── */
     .card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:18px;}
-    .card-verse{
-      background:linear-gradient(145deg,var(--forest) 0%,#1E3530 100%);
-      border-radius:20px;padding:24px;color:#fff;position:relative;overflow:hidden;
-    }
-    .card-verse::before{
-      content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;
-      border-radius:50%;background:rgba(255,255,255,.05);
-    }
-    .card-verse::after{
-      content:'';position:absolute;bottom:-20px;left:-20px;width:100px;height:100px;
-      border-radius:50%;background:rgba(255,255,255,.04);
-    }
-
-    /* ── INPUTS ── */
-    .input{
-      width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;
-      font-size:15px;outline:none;background:var(--white);color:var(--ink);
-      transition:border-color .2s;
-    }
+    .card-verse{background:linear-gradient(145deg,var(--forest) 0%,#1E3530 100%);border-radius:20px;padding:24px;color:#fff;position:relative;overflow:hidden;}
+    .card-verse::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.05);}
+    .card-verse::after{content:'';position:absolute;bottom:-20px;left:-20px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,.04);}
+    .input{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:15px;outline:none;background:var(--white);color:var(--ink);transition:border-color .2s;}
     .input:focus{border-color:var(--forest);}
     .textarea{resize:none;min-height:80px;line-height:1.65;}
-
-    /* ── TABS ── */
     .tabs{display:flex;background:var(--parch);border-radius:12px;padding:3px;gap:3px;}
-    .tab{
-      flex:1;padding:9px;border:none;border-radius:9px;background:transparent;
-      color:var(--muted);font-weight:500;cursor:pointer;font-size:13px;transition:all .2s;
-    }
+    .tab{flex:1;padding:9px;border:none;border-radius:9px;background:transparent;color:var(--muted);font-weight:500;cursor:pointer;font-size:13px;transition:all .2s;}
     .tab.active{background:var(--white);color:var(--forest);font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.09);}
-
-    /* ── BADGE ── */
     .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
     .badge-green{background:var(--moss);color:var(--forest);}
-    .badge-amber{background:var(--amber-lt);color:var(--amber);}
-
-    /* ── ALERT ── */
     .alert{padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.6;}
     .alert-amber{background:var(--amber-lt);border:1px solid rgba(201,125,58,.25);color:#7A4A1A;}
     .alert-green{background:var(--moss);border:1px solid rgba(44,74,62,.2);color:var(--forest);}
-    .alert-red{background:#FDE8E8;border:1px solid #F5C0C0;color:var(--red);}
-
-    /* ── MEMBER AVATAR ── */
-    .avatar{
-      width:42px;height:42px;border-radius:50%;display:flex;align-items:center;
-      justify-content:center;font-size:20px;flex-shrink:0;
-    }
-
-    /* ── LOADING SKELETON ── */
-    .skel{
-      background:linear-gradient(90deg,var(--parch) 25%,var(--border) 50%,var(--parch) 75%);
-      background-size:200% 100%;animation:shimmer 1.4s ease infinite;border-radius:8px;
-    }
-
-    /* ── LOGIN ── */
-    #login-screen{
-      min-height:100vh;display:flex;flex-direction:column;align-items:center;
-      justify-content:center;padding:32px 24px;
-      background:radial-gradient(ellipse at 30% 0%,#D4E8DF 0%,var(--cream) 55%);
-    }
+    .avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .skel{background:linear-gradient(90deg,var(--parch) 25%,var(--border) 50%,var(--parch) 75%);background-size:200% 100%;animation:shimmer 1.4s ease infinite;border-radius:8px;}
+    #login-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;background:radial-gradient(ellipse at 30% 0%,#D4E8DF 0%,var(--cream) 55%);}
     .login-hero{text-align:center;margin-bottom:40px;}
     .login-dove{font-size:64px;filter:drop-shadow(0 8px 20px rgba(44,74,62,.2));margin-bottom:18px;display:block;}
     .login-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--ink);line-height:1.2;}
     .login-sub{color:var(--muted);margin-top:8px;font-size:15px;}
     .login-date{color:var(--muted);font-size:12px;margin-top:6px;opacity:.7;text-transform:capitalize;}
-    .member-btn{
-      background:var(--white);border:1.5px solid var(--border);border-radius:18px;
-      padding:16px 20px;display:flex;align-items:center;gap:14px;cursor:pointer;
-      text-align:left;width:100%;max-width:320px;transition:all .2s;
-      box-shadow:0 2px 12px rgba(0,0,0,.05);
-    }
+    .member-btn{background:var(--white);border:1.5px solid var(--border);border-radius:18px;padding:16px 20px;display:flex;align-items:center;gap:14px;cursor:pointer;text-align:left;width:100%;max-width:320px;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.05);}
     .member-btn:hover,.member-btn:focus{border-color:var(--forest);transform:translateY(-2px);box-shadow:0 8px 24px rgba(44,74,62,.15);}
     .member-btn-info p:first-child{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);}
     .member-btn-info p:last-child{font-size:12px;color:var(--muted);margin-top:2px;}
     .member-btn-arrow{margin-left:auto;color:var(--border);font-size:20px;}
-
-    /* ── SETUP ── */
     .setup-member{border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;background:var(--white);}
     .emoji-grid{display:flex;gap:6px;flex-wrap:wrap;}
     .emoji-btn{width:34px;height:34px;border-radius:8px;font-size:18px;border:2px solid var(--border);background:transparent;cursor:pointer;transition:all .15s;}
@@ -169,8 +92,6 @@
     .color-grid{display:flex;gap:8px;}
     .color-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .15s;border:2.5px solid transparent;}
     .color-dot.sel{border-color:var(--ink);}
-
-    /* ── HOME ── */
     .home-header{padding:18px 20px 14px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
     .home-greeting-date{font-size:12px;color:var(--muted);text-transform:capitalize;margin-bottom:4px;}
     .home-greeting{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:10px;}
@@ -178,7 +99,6 @@
     .theme-chip-label{font-size:10px;color:var(--forest);font-weight:700;letter-spacing:.8px;text-transform:uppercase;}
     .theme-chip-name{font-size:14px;color:var(--ink);font-weight:600;margin-top:2px;}
     .home-tabs{padding:14px 20px 0;background:var(--white);flex-shrink:0;}
-
     .verse-label{font-size:10px;opacity:.65;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
     .verse-text{font-family:'Playfair Display',serif;font-size:16px;line-height:1.82;font-style:italic;margin-bottom:12px;position:relative;z-index:1;}
     .verse-ref{font-size:13px;opacity:.8;font-weight:600;position:relative;z-index:1;}
@@ -188,28 +108,20 @@
     .audio-btn:hover{border-color:var(--forest);color:var(--forest);}
     .audio-btn.playing{border-color:var(--amber);color:var(--amber);background:var(--amber-lt);}
     .done-banner{text-align:center;padding:13px;background:var(--moss);border-radius:12px;color:var(--forest);font-weight:700;border:1px solid rgba(44,74,62,.2);margin-bottom:22px;}
-
-    /* Comment */
     .comment-box{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;}
     .comment-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
     .comment-author{font-size:13px;font-weight:700;color:var(--ink);}
     .comment-time{font-size:11px;color:var(--muted);margin-left:auto;}
     .comment-text{font-size:14px;color:#3A3530;line-height:1.68;}
+    .comment-edit-btn{background:none;border:none;cursor:pointer;font-size:12px;color:var(--muted);padding:2px 6px;border-radius:6px;margin-left:6px;transition:all .2s;}
+    .comment-edit-btn:hover{background:var(--parch);color:var(--forest);}
     .comment-input-row{display:flex;gap:8px;margin-top:12px;}
     .comment-send{padding:12px 16px;background:var(--forest);color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:17px;transition:background .2s;}
     .comment-send:hover{background:var(--forest-lt);}
-
-    /* Prayer tab */
     .prayer-box{background:var(--amber-lt);border-radius:20px;padding:24px;border-left:4px solid var(--amber);}
     .prayer-label{font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
     .prayer-para{font-family:'Playfair Display',serif;color:var(--ink);font-size:16px;line-height:1.9;font-style:italic;margin-bottom:16px;}
-
-    /* ── BOARD ── */
-    .map-container{
-      background:linear-gradient(155deg,#CCE5D8 0%,#DDD8CF 55%,#EAE3D5 100%);
-      border-radius:22px;height:220px;position:relative;overflow:hidden;
-      border:1px solid var(--border);margin-bottom:22px;
-    }
+    .map-container{background:linear-gradient(155deg,#CCE5D8 0%,#DDD8CF 55%,#EAE3D5 100%);border-radius:22px;height:220px;position:relative;overflow:hidden;border:1px solid var(--border);margin-bottom:22px;}
     .map-decoration{position:absolute;pointer-events:none;opacity:.3;}
     .path-dot{position:absolute;transform:translate(-50%,-50%);border-radius:50%;transition:all .6s cubic-bezier(.34,1.56,.64,1);}
     .path-dot-normal{width:11px;height:11px;background:rgba(255,255,255,.8);border:1.5px solid rgba(44,74,62,.25);}
@@ -217,23 +129,18 @@
     .member-token{position:absolute;transform:translate(-50%,-50%);text-align:center;transition:all .8s cubic-bezier(.34,1.56,.64,1);}
     .token-circle{width:34px;height:34px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 3px 12px rgba(0,0,0,.18);}
     .token-name{font-size:8px;font-weight:800;color:var(--ink);background:rgba(255,255,255,.9);border-radius:4px;padding:1px 5px;margin-top:2px;white-space:nowrap;}
-
     .rank-row{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:15px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
     .rank-medal{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
     .progress-bar-wrap{height:6px;background:var(--parch);border-radius:3px;overflow:hidden;margin:6px 0;}
     .progress-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--forest),var(--amber));transition:width .7s ease;}
     .progress-stats{display:flex;gap:14px;}
     .progress-stat{font-size:11px;color:var(--muted);}
-
-    /* ── PRAYERS WALL ── */
     .prayer-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;}
     .prayer-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
     .prayer-card-text{font-size:14px;color:#3A3530;line-height:1.75;margin-bottom:14px;}
     .prayer-card-footer{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:12px;}
     .prayed-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
     .prayed-chip{font-size:13px;background:var(--moss);border-radius:20px;padding:3px 10px;border:1px solid rgba(44,74,62,.15);}
-
-    /* ── MISSIONS ── */
     .mission-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;transition:border-color .3s;}
     .mission-card.done{border-color:rgba(44,74,62,.35);background:var(--moss);}
     .mission-num{width:34px;height:34px;border-radius:50%;background:var(--parch);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--muted);flex-shrink:0;transition:all .3s;}
@@ -241,66 +148,30 @@
     .mission-text{font-size:15px;color:var(--ink);line-height:1.55;transition:all .3s;}
     .mission-text.done{color:var(--muted);text-decoration:line-through;}
     .completed-by{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px;}
-
-    /* ── QUOTA BANNER ── */
-    .quota-banner{margin:16px;padding:14px 16px;background:var(--amber-lt);border:1px solid rgba(201,125,58,.3);border-radius:14px;}
-    .quota-banner p:first-child{font-weight:700;color:var(--amber);font-size:14px;margin-bottom:4px;}
-    .quota-banner p:last-child{font-size:12px;color:var(--muted);line-height:1.5;}
-
-    /* ── CELEBRATION ── */
-    .celebration-overlay{
-      position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;
-      background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;
-      animation:fadeIn .3s ease;
-    }
-    .celebration-card{
-      background:var(--white);border-radius:28px;padding:36px 28px;text-align:center;
-      max-width:320px;width:90%;position:relative;overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,.3);
-    }
-    .confetti-piece{
-      position:absolute;width:8px;height:8px;border-radius:2px;
-      animation:confettiFall linear forwards;
-    }
-    @keyframes confettiFall{
-      0%{transform:translateY(-20px) rotate(0deg);opacity:1;}
-      100%{transform:translateY(400px) rotate(720deg);opacity:0;}
-    }
-
-    /* ── LOADING ── */
+    .celebration-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;animation:fadeIn .3s ease;}
+    .celebration-card{background:var(--white);border-radius:28px;padding:36px 28px;text-align:center;max-width:320px;width:90%;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+    .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall linear forwards;}
+    @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(400px) rotate(720deg);opacity:0;}}
     .loading-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;}
     .loading-icon{font-size:44px;margin-bottom:18px;}
     .loading-text{font-family:'Playfair Display',serif;color:var(--muted);font-style:italic;font-size:16px;}
     .loading-sub{color:var(--muted);font-size:12px;margin-top:8px;opacity:.7;}
-
-    /* ── MOBILE FIXES ── */
     @media (max-width: 480px) {
-      .login-title{font-size:26px;}
-      .login-dove{font-size:56px;}
-      .home-greeting{font-size:20px;}
-      .dev-title{font-size:20px;}
-      .dev-para{font-size:16px;line-height:1.85;}
-      .verse-text{font-size:15px;}
-      .prayer-para{font-size:15px;}
-      .card-verse{padding:20px;}
-      .home-header{padding:14px 16px 12px;}
-      .home-tabs{padding:12px 16px 0;}
-      .scroll > div, .scroll > .fi{padding:16px!important;}
-      .topbar{padding:12px 16px;}
-      .member-btn{max-width:100%;}
+      .login-title{font-size:26px;} .login-dove{font-size:56px;} .home-greeting{font-size:20px;}
+      .dev-title{font-size:20px;} .dev-para{font-size:16px;line-height:1.85;} .verse-text{font-size:15px;}
+      .prayer-para{font-size:15px;} .card-verse{padding:20px;} .home-header{padding:14px 16px 12px;}
+      .home-tabs{padding:12px 16px 0;} .scroll > div,.scroll > .fi{padding:16px!important;}
+      .topbar{padding:12px 16px;} .member-btn{max-width:100%;}
     }
-    /* Prevent iOS zoom on inputs */
-    input, textarea, select {font-size:16px!important;}
+    input,textarea,select{font-size:16px!important;}
   </style>
 </head>
 <body>
 <div id="root"></div>
-
 <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
-
 <script type="text/babel">
 const{useState,useEffect,useRef,useCallback}=React;
 
@@ -309,32 +180,29 @@ let _installPrompt=null;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();_installPrompt=e;});
 function installApp(){if(_installPrompt){_installPrompt.prompt();_installPrompt.userChoice.then(()=>{_installPrompt=null;});}}
 
-// ── CONSTANTS ──────────────────────────────────────────────────────────────
+// ── CONSTANTS ─────────────────────────────────────────────────────────────────
 const TODAY=new Date().toISOString().split('T')[0];
 const WEEK_KEY=(()=>{
   const d=new Date();
-  // Semana devocional começa na quarta (3). Calcula a quarta mais recente.
   const daysSinceWed=(d.getDay()-3+7)%7;
   const wed=new Date(d);
   wed.setDate(d.getDate()-daysSinceWed);
-  return wed.toISOString().split('T')[0]; // ex: "2026-04-15"
+  return wed.toISOString().split('T')[0];
 })();
 const EMOJIS=['🌿','🌸','✨','🕊️','🌻','🌙','⭐','🦋','🌺','🍀','🦚','🌾'];
 const COLORS=['#2C4A3E','#C4956A','#7B8EC8','#C87B8E','#8E7BC4','#7BC4B5'];
 
-// ── SUPABASE ─────────────────────────────────────────────────────────────────
+// ── SUPABASE ──────────────────────────────────────────────────────────────────
 const SB_URL='https://mlznzzskyqagriojsxmw.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sem56enNreXFhZ3Jpb2pzeG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5ODcwMDQsImV4cCI6MjA5MDU2MzAwNH0.0Ah-fsxfn_SjAj-KRWoYOJ75NODwoJHc1-VPBSZ7u60';
 const sb=supabase.createClient(SB_URL,SB_KEY);
 
-// ── STORAGE LOCAL ────────────────────────────────────────────────────────────
 const S={
   get(k){try{const v=localStorage.getItem(k);return v?JSON.parse(v):null;}catch{return null;}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{}},
   rm(k){try{localStorage.removeItem(k);}catch{}},
 };
 
-// ── SUPABASE HELPERS ─────────────────────────────────────────────────────────
 const DB={
   async getProgress(){
     const{data}=await sb.from('progresso').select('*');
@@ -352,18 +220,15 @@ const DB={
     await sb.from('progresso').insert({membro_id:membroId,tipo,referencia});
   },
   async getOracoes(){
-    const weekStart=new Date();const daysSinceWed=(weekStart.getDay()-3+7)%7;weekStart.setDate(weekStart.getDate()-daysSinceWed);weekStart.setHours(0,0,0,0);
+    const weekStart=new Date();
+    const daysSinceWed=(weekStart.getDay()-3+7)%7;
+    weekStart.setDate(weekStart.getDate()-daysSinceWed);
+    weekStart.setHours(0,0,0,0);
     const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').gte('criado_em',weekStart.toISOString()).order('criado_em',{ascending:false});
-    return(data||[]).map(o=>({
-      id:o.id, authorId:o.autor_id, text:o.texto, date:o.data_br,
-      prayedBy:(o.intercessions||[]).map(i=>i.membro_id)
-    }));
+    return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,prayedBy:(o.intercessions||[]).map(i=>i.membro_id)}));
   },
   async addOracao(autor,texto){
-    const{data}=await sb.from('oracoes').insert({
-      autor_id:autor.id, autor_nome:autor.name, autor_emoji:autor.emoji,
-      texto, data_br:new Date().toLocaleDateString('pt-BR')
-    }).select().single();
+    const{data}=await sb.from('oracoes').insert({autor_id:autor.id,autor_nome:autor.name,autor_emoji:autor.emoji,texto,data_br:new Date().toLocaleDateString('pt-BR')}).select().single();
     return data;
   },
   async addIntercessao(oracaoId,membroId){
@@ -374,10 +239,10 @@ const DB={
     return(data||[]).map(c=>({id:c.id,authorId:c.autor_id,text:c.texto,time:c.hora}));
   },
   async addComentario(autorId,texto){
-    await sb.from('comentarios').insert({
-      autor_id:autorId, data_devocional:TODAY, texto,
-      hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})
-    });
+    await sb.from('comentarios').insert({autor_id:autorId,data_devocional:TODAY,texto,hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})});
+  },
+  async editComentario(id,novoTexto){
+    await sb.from('comentarios').update({texto:novoTexto}).eq('id',id);
   },
   async getMembros(){
     const{data}=await sb.from('membros').select('*').order('id');
@@ -399,7 +264,7 @@ const DB={
   },
 };
 
-// ── DEVOTIONAL LOADER ───────────────────────────────────────────────────────
+// ── DEVOTIONAL LOADER ─────────────────────────────────────────────────────────
 let _devData=null;
 async function loadDevData(){
   if(_devData)return _devData;
@@ -409,8 +274,7 @@ async function loadDevData(){
   return _devData;
 }
 function getDayIndex(){
-  // Semana começa na quarta (3) e termina na terça (2)
-  // Quarta=0, Quinta=1, Sexta=2, Sábado=3, Domingo=4, Segunda=5, Terça=6
+  // Semana começa na quarta: Qua=0, Qui=1, Sex=2, Sáb=3, Dom=4, Seg=5, Ter=6
   return(new Date().getDay()-3+7)%7;
 }
 async function getTodayDevotional(){
@@ -420,16 +284,16 @@ async function getTodayDevotional(){
   const idx=getDayIndex()%allDays.length;
   const day=allDays[idx];
   // Último dia = terça-feira (getDay()===2)
-  return {...day,isLastDay:new Date().getDay()===2};
+  return{...day,isLastDay:new Date().getDay()===2};
 }
 
-// ── HELPERS ─────────────────────────────────────────────────────────────────
+// ── HELPERS ───────────────────────────────────────────────────────────────────
 const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 function speak(text,onEnd){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=0.88;if(onEnd)u.onend=onEnd;window.speechSynthesis.speak(u);}
 const stopSpeak=()=>window.speechSynthesis.cancel();
 
-// ── COMPONENTS ───────────────────────────────────────────────────────────────
+// ── COMPONENTS ────────────────────────────────────────────────────────────────
 
 function LoginScreen({members,onLogin,onSetup}){
   return(
@@ -444,10 +308,7 @@ function LoginScreen({members,onLogin,onSetup}){
         {members.map((m,i)=>(
           <button key={m.id} className="member-btn fu" onClick={()=>onLogin(m)} style={{animationDelay:`${i*.08}s`,opacity:0}}>
             <div className="avatar" style={{background:`${m.color}18`,border:`2px solid ${m.color}44`}}>{m.emoji}</div>
-            <div className="member-btn-info">
-              <p>{m.name}</p>
-              <p>Entrar como {m.name}</p>
-            </div>
+            <div className="member-btn-info"><p>{m.name}</p><p>Entrar como {m.name}</p></div>
             <span className="member-btn-arrow">›</span>
           </button>
         ))}
@@ -505,10 +366,21 @@ function AudioBtn({text,label}){
   return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'⏹ Parar':`▶ ${label||'Ouvir'}`}</button>;
 }
 
-function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onRegenerate,hasRead,members}){
+function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onEditComment,onRegenerate,hasRead,members}){
   const[tab,setTab]=useState('dev');
   const[comment,setComment]=useState('');
+  const[editingId,setEditingId]=useState(null);
+  const[editText,setEditText]=useState('');
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
+
+  const startEdit=(c)=>{setEditingId(c.id);setEditText(c.text);};
+  const cancelEdit=()=>{setEditingId(null);setEditText('');};
+  const saveEdit=async()=>{
+    if(!editText.trim())return;
+    await onEditComment(editingId,editText.trim());
+    setEditingId(null);setEditText('');
+  };
+
   return(
     <div className="screen">
       <div className="home-header">
@@ -535,7 +407,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
           <div className="loading-center fi">
             <div className="loading-icon pulse">✨</div>
             <p className="loading-text">Preparando o devocional do dia...</p>
-            <p className="loading-sub">A IA está gerando seu conteúdo</p>
           </div>
         ):!dev?(
           <div className="loading-center">
@@ -577,16 +448,34 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
               <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>
                 💬 Reflexões da família {comments.length>0&&`(${comments.length})`}
               </h3>
-              {comments.map(c=>{const m=gm(c.authorId);return(
-                <div key={c.id} className="comment-box fi">
-                  <div className="comment-meta">
-                    <span style={{fontSize:'18px'}}>{m.emoji}</span>
-                    <span className="comment-author">{m.name}</span>
-                    <span className="comment-time">{c.time}</span>
+              {comments.map(c=>{
+                const m=gm(c.authorId);
+                const isOwn=c.authorId===user.id;
+                const isEditing=editingId===c.id;
+                return(
+                  <div key={c.id} className="comment-box fi">
+                    <div className="comment-meta">
+                      <span style={{fontSize:'18px'}}>{m.emoji}</span>
+                      <span className="comment-author">{m.name}</span>
+                      {isOwn&&!isEditing&&(
+                        <button className="comment-edit-btn" onClick={()=>startEdit(c)}>✏️ editar</button>
+                      )}
+                      <span className="comment-time">{c.time}</span>
+                    </div>
+                    {isEditing?(
+                      <div>
+                        <textarea className="input textarea" value={editText} onChange={e=>setEditText(e.target.value)} style={{minHeight:'60px',marginBottom:'8px'}}/>
+                        <div style={{display:'flex',gap:'8px'}}>
+                          <button className="btn btn-primary btn-sm" onClick={saveEdit}>Salvar</button>
+                          <button className="btn btn-ghost btn-sm" onClick={cancelEdit}>Cancelar</button>
+                        </div>
+                      </div>
+                    ):(
+                      <p className="comment-text">{c.text}</p>
+                    )}
                   </div>
-                  <p className="comment-text">{c.text}</p>
-                </div>
-              );})}
+                );
+              })}
               <div className="comment-input-row">
                 <input className="input" value={comment} onChange={e=>setComment(e.target.value)}
                   placeholder="Compartilhe sua reflexão..."
@@ -607,9 +496,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
                 <AudioBtn text={prayer.text} label="Ouvir oração"/>
               </div>
             ):(
-              <div className="loading-center">
-                <p style={{color:'var(--muted)'}}>Oração não disponível.</p>
-              </div>
+              <div className="loading-center"><p style={{color:'var(--muted)'}}>Oração não disponível.</p></div>
             )}
           </div>
         )}
@@ -795,13 +682,7 @@ function CelebrationScreen({member,phase,onClose}){
   const color=PHASE_COLORS[Math.min(phase,4)];
   const label=PHASE_LABELS[Math.min(phase,4)];
   const name=PHASE_NAMES[Math.min(phase,4)];
-  const confetti=[...Array(20)].map((_,i)=>({
-    left:`${Math.random()*100}%`,
-    delay:`${Math.random()*1.5}s`,
-    duration:`${1.5+Math.random()}s`,
-    color:['#FFD700','#FF6B6B','#4ECDC4','#A8E6CF','#FFE66D','#C9A600'][i%6],
-    size:`${6+Math.random()*8}px`
-  }));
+  const confetti=[...Array(20)].map((_,i)=>({left:`${Math.random()*100}%`,delay:`${Math.random()*1.5}s`,duration:`${1.5+Math.random()}s`,color:['#FFD700','#FF6B6B','#4ECDC4','#A8E6CF','#FFE66D','#C9A600'][i%6],size:`${6+Math.random()*8}px`}));
   return(
     <div className="celebration-overlay" onClick={onClose}>
       <div className="celebration-card" onClick={e=>e.stopPropagation()}>
@@ -809,19 +690,13 @@ function CelebrationScreen({member,phase,onClose}){
           <div key={i} className="confetti-piece" style={{left:c.left,top:'-10px',width:c.size,height:c.size,background:c.color,animationDelay:c.delay,animationDuration:c.duration}}/>
         ))}
         <div style={{fontSize:'64px',marginBottom:'12px'}}>{label}</div>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'22px',fontWeight:'700',color:'var(--ink)',marginBottom:'8px'}}>
-          {member.emoji} {member.name}
-        </h2>
-        <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>
-          completou a Fase {phase}!<br/>Nova jornada começa agora.
-        </p>
+        <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'22px',fontWeight:'700',color:'var(--ink)',marginBottom:'8px'}}>{member.emoji} {member.name}</h2>
+        <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>completou a Fase {phase}!<br/>Nova jornada começa agora.</p>
         <div style={{background:`${color}18`,border:`2px solid ${color}44`,borderRadius:'16px',padding:'16px',marginBottom:'24px'}}>
           <p style={{fontSize:'12px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'4px'}}>Próxima fase</p>
           <p style={{fontSize:'20px',fontWeight:'900',color:color}}>{label} {name}</p>
         </div>
-        <button className="btn btn-primary btn-full" onClick={onClose} style={{padding:'14px',fontSize:'15px'}}>
-          🚀 Continuar a jornada!
-        </button>
+        <button className="btn btn-primary btn-full" onClick={onClose} style={{padding:'14px',fontSize:'15px'}}>🚀 Continuar a jornada!</button>
       </div>
     </div>
   );
@@ -833,8 +708,7 @@ function BottomNav({active,onChange}){
     <nav className="bottom-nav">
       {tabs.map(t=>(
         <button key={t.id} className={`nav-btn${active===t.id?' active':''}`} onClick={()=>onChange(t.id)}>
-          <span>{t.icon}</span>
-          <span>{t.label}</span>
+          <span>{t.icon}</span><span>{t.label}</span>
           {active===t.id&&<div className="nav-indicator"/>}
         </button>
       ))}
@@ -842,7 +716,7 @@ function BottomNav({active,onChange}){
   );
 }
 
-// ── ROOT APP ─────────────────────────────────────────────────────────────────
+// ── ROOT APP ──────────────────────────────────────────────────────────────────
 function App(){
   const[view,setView]=useState('loading');
   const[tab,setTab]=useState('home');
@@ -857,7 +731,6 @@ function App(){
   const[progress,setProgress]=useState({});
   const[loading,setLoading]=useState(false);
   const[celebration,setCelebration]=useState(null);
-  const[loadErr,setLoadErr]=useState('');
 
   const DEF=[
     {id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},
@@ -867,24 +740,18 @@ function App(){
 
   useEffect(()=>{(async()=>{
     let m=null;
-    try{ m=await DB.getMembros(); }catch(e){ console.error('Erro membros:',e); }
+    try{m=await DB.getMembros();}catch(e){console.error('Erro membros:',e);}
     if(m&&m.length>0){setMembers(m);S.set('members',m);}
-    else{
-      const local=S.get('members');
-      if(local)setMembers(local);else{setMembers(DEF);S.set('members',DEF);}
-    }
+    else{const local=S.get('members');if(local)setMembers(local);else{setMembers(DEF);S.set('members',DEF);}}
     const th=S.get(`theme-${WEEK_KEY}`);
     const d=S.get(`dev-${TODAY}`);
     const pr=S.get(`prayer-${TODAY}`);
-    // Se o tema mudou esta semana, limpa o cache do devocional do dia
     if(d&&th&&d.tema&&d.tema!==th.theme){S.rm(`dev-${TODAY}`);}
     if(th)setTheme(th);
     if(d&&th&&d.tema===th.theme)setDev(d);
     if(pr)setPrayer(pr);
     const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
-    setProgress(pg);
-    setWall(wl);
-    setComments(cm);
+    setProgress(pg);setWall(wl);setComments(cm);
     setView('login');
   })();},[]);
 
@@ -897,7 +764,6 @@ function App(){
       const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao,isLastDay:today.isLastDay,tema:today.tema};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
-      // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
       const msDone=await DB.getMissoes();
       const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
       setMissions(ms);
@@ -907,12 +773,11 @@ function App(){
 
   async function handleLogin(m){
     setUser(m);setView('app');setTab('home');
-    if(!S.get(`dev-${TODAY}`)) await generate();
+    if(!S.get(`dev-${TODAY}`))await generate();
     else{
       const msDone=await DB.getMissoes();
       try{
         const today=await getTodayDevotional();
-        // ── CORREÇÃO: IDs de missão incluem a semana para evitar conflito entre semanas ──
         const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
         setMissions(ms);
       }catch(e){
@@ -937,6 +802,12 @@ function App(){
     setComments(cm);
   }
 
+  async function editComment(id,novoTexto){
+    await DB.editComentario(id,novoTexto);
+    const cm=await DB.getComentarios(TODAY);
+    setComments(cm);
+  }
+
   async function addPrayer(text){
     await DB.addOracao(user,text);
     const wl=await DB.getOracoes();
@@ -953,10 +824,7 @@ function App(){
     const p=pg[uid]||{};
     const total=(p.devotionals||[]).length+(p.missions||[]).length;
     const TOTAL=10;
-    if(total>0&&total%TOTAL===0){
-      const phase=total/TOTAL;
-      setCelebration({member:user,phase});
-    }
+    if(total>0&&total%TOTAL===0){const phase=total/TOTAL;setCelebration({member:user,phase});}
   }
 
   async function completeMission(mid){
@@ -970,7 +838,7 @@ function App(){
 
   async function saveMembers(list){
     setMembers(list);S.set('members',list);
-    try{ await DB.saveMembros(list); }catch(e){ console.error('Erro ao salvar membros:',e); }
+    try{await DB.saveMembros(list);}catch(e){console.error('Erro ao salvar membros:',e);}
     setView('login');
   }
 
@@ -983,7 +851,7 @@ function App(){
   return(
     <div style={{height:'100vh',display:'flex',flexDirection:'column',background:'var(--cream)'}}>
       {celebration&&<CelebrationScreen member={celebration.member} phase={celebration.phase} onClose={()=>setCelebration(null)}/>}
-      {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onRegenerate={generate} hasRead={hasRead} members={members}/>}
+      {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onEditComment={editComment} onRegenerate={generate} hasRead={hasRead} members={members}/>}
       {tab==='board'&&<BoardScreen members={members} progress={progress}/>}
       {tab==='prayers'&&<PrayersScreen user={user} wall={wall} onAdd={addPrayer} onPray={prayFor} members={members}/>}
       {tab==='missions'&&<MissionsScreen user={user} missions={missions} theme={theme} onComplete={completeMission} members={members}/>}
