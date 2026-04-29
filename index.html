@@ -50,7 +50,7 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:12px;cursor:pointer;font-weight:600;transition:all .2s;font-size:14px;padding:12px 20px;}
     .btn:active{transform:scale(.97);}
     .btn-primary{background:var(--forest);color:#fff;box-shadow:0 4px 16px rgba(44,74,62,.3);}
-    .btn-primary:hover{background:var(--forest-lt);transform:translateY(-1px);}
+    .btn-primary:hover{background:var(--forest-lt);}
     .btn-secondary{background:var(--moss);color:var(--forest);border:1px solid rgba(44,74,62,.15);}
     .btn-amber{background:var(--amber-lt);color:var(--amber);border:1px solid rgba(201,125,58,.2);}
     .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
@@ -67,13 +67,9 @@
     .tabs{display:flex;background:var(--parch);border-radius:12px;padding:3px;gap:3px;}
     .tab{flex:1;padding:9px;border:none;border-radius:9px;background:transparent;color:var(--muted);font-weight:500;cursor:pointer;font-size:13px;transition:all .2s;}
     .tab.active{background:var(--white);color:var(--forest);font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.09);}
-    .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
-    .badge-green{background:var(--moss);color:var(--forest);}
     .alert{padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.6;}
-    .alert-amber{background:var(--amber-lt);border:1px solid rgba(201,125,58,.25);color:#7A4A1A;}
     .alert-green{background:var(--moss);border:1px solid rgba(44,74,62,.2);color:var(--forest);}
     .avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-    .skel{background:linear-gradient(90deg,var(--parch) 25%,var(--border) 50%,var(--parch) 75%);background-size:200% 100%;animation:shimmer 1.4s ease infinite;border-radius:8px;}
     #login-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;background:radial-gradient(ellipse at 30% 0%,#D4E8DF 0%,var(--cream) 55%);}
     .login-hero{text-align:center;margin-bottom:40px;}
     .login-dove{font-size:64px;filter:drop-shadow(0 8px 20px rgba(44,74,62,.2));margin-bottom:18px;display:block;}
@@ -112,9 +108,14 @@
     .comment-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
     .comment-author{font-size:13px;font-weight:700;color:var(--ink);}
     .comment-time{font-size:11px;color:var(--muted);margin-left:auto;}
-    .comment-text{font-size:14px;color:#3A3530;line-height:1.68;}
     .comment-edit-btn{background:none;border:none;cursor:pointer;font-size:12px;color:var(--muted);padding:2px 6px;border-radius:6px;margin-left:6px;transition:all .2s;}
     .comment-edit-btn:hover{background:var(--parch);color:var(--forest);}
+    .comment-text{font-size:14px;color:#3A3530;line-height:1.68;}
+    .reactions-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+    .reaction-btn{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;font-size:13px;transition:all .2s;}
+    .reaction-btn.active{border-color:var(--forest);background:var(--moss);}
+    .reaction-btn:hover{border-color:var(--forest);}
+    .reaction-count{font-size:12px;font-weight:700;color:var(--muted);}
     .comment-input-row{display:flex;gap:8px;margin-top:12px;}
     .comment-send{padding:12px 16px;background:var(--forest);color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:17px;transition:background .2s;}
     .comment-send:hover{background:var(--forest-lt);}
@@ -132,13 +133,15 @@
     .rank-row{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:15px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
     .rank-medal{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
     .progress-bar-wrap{height:6px;background:var(--parch);border-radius:3px;overflow:hidden;margin:6px 0;}
-    .progress-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--forest),var(--amber));transition:width .7s ease;}
+    .progress-bar-fill{height:100%;border-radius:3px;transition:width .7s ease;}
     .progress-stats{display:flex;gap:14px;}
     .progress-stat{font-size:11px;color:var(--muted);}
+    .streak-badge{display:inline-flex;align-items:center;gap:4px;background:#FFF3E0;border:1px solid #FFB74D;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700;color:#E65100;}
     .prayer-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;}
+    .prayer-card.answered{border-color:rgba(44,74,62,.4);background:var(--moss);}
     .prayer-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
     .prayer-card-text{font-size:14px;color:#3A3530;line-height:1.75;margin-bottom:14px;}
-    .prayer-card-footer{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:12px;}
+    .prayer-card-footer{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:12px;flex-wrap:wrap;}
     .prayed-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
     .prayed-chip{font-size:13px;background:var(--moss);border-radius:20px;padding:3px 10px;border:1px solid rgba(44,74,62,.15);}
     .mission-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;transition:border-color .3s;}
@@ -153,15 +156,12 @@
     .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall linear forwards;}
     @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(400px) rotate(720deg);opacity:0;}}
     .loading-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;}
-    .loading-icon{font-size:44px;margin-bottom:18px;}
     .loading-text{font-family:'Playfair Display',serif;color:var(--muted);font-style:italic;font-size:16px;}
-    .loading-sub{color:var(--muted);font-size:12px;margin-top:8px;opacity:.7;}
-    @media (max-width: 480px) {
-      .login-title{font-size:26px;} .login-dove{font-size:56px;} .home-greeting{font-size:20px;}
-      .dev-title{font-size:20px;} .dev-para{font-size:16px;line-height:1.85;} .verse-text{font-size:15px;}
-      .prayer-para{font-size:15px;} .card-verse{padding:20px;} .home-header{padding:14px 16px 12px;}
-      .home-tabs{padding:12px 16px 0;} .scroll > div,.scroll > .fi{padding:16px!important;}
-      .topbar{padding:12px 16px;} .member-btn{max-width:100%;}
+    @media (max-width:480px){
+      .login-title{font-size:26px;}.login-dove{font-size:56px;}.home-greeting{font-size:20px;}
+      .dev-title{font-size:20px;}.dev-para{font-size:16px;}.verse-text{font-size:15px;}
+      .card-verse{padding:20px;}.home-header{padding:14px 16px 12px;}.home-tabs{padding:12px 16px 0;}
+      .topbar{padding:12px 16px;}.member-btn{max-width:100%;}
     }
     input,textarea,select{font-size:16px!important;}
   </style>
@@ -173,7 +173,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script type="text/babel">
-const{useState,useEffect,useRef,useCallback}=React;
+const{useState,useEffect,useRef}=React;
 
 // ── PWA INSTALL ───────────────────────────────────────────────────────────────
 let _installPrompt=null;
@@ -185,12 +185,12 @@ const TODAY=new Date().toISOString().split('T')[0];
 const WEEK_KEY=(()=>{
   const d=new Date();
   const daysSinceWed=(d.getDay()-3+7)%7;
-  const wed=new Date(d);
-  wed.setDate(d.getDate()-daysSinceWed);
+  const wed=new Date(d);wed.setDate(d.getDate()-daysSinceWed);
   return wed.toISOString().split('T')[0];
 })();
 const EMOJIS=['🌿','🌸','✨','🕊️','🌻','🌙','⭐','🦋','🌺','🍀','🦚','🌾'];
 const COLORS=['#2C4A3E','#C4956A','#7B8EC8','#C87B8E','#8E7BC4','#7BC4B5'];
+const REACTIONS=[{emoji:'🙏',label:'Amém'},{emoji:'❤️',label:'Amor'},{emoji:'🔥',label:'Fogo'}];
 
 // ── SUPABASE ──────────────────────────────────────────────────────────────────
 const SB_URL='https://mlznzzskyqagriojsxmw.supabase.co';
@@ -222,45 +222,71 @@ const DB={
   async getOracoes(){
     const weekStart=new Date();
     const daysSinceWed=(weekStart.getDay()-3+7)%7;
-    weekStart.setDate(weekStart.getDate()-daysSinceWed);
-    weekStart.setHours(0,0,0,0);
+    weekStart.setDate(weekStart.getDate()-daysSinceWed);weekStart.setHours(0,0,0,0);
     const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').gte('criado_em',weekStart.toISOString()).order('criado_em',{ascending:false});
-    return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,prayedBy:(o.intercessions||[]).map(i=>i.membro_id)}));
+    return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,prayedBy:(o.intercessions||[]).map(i=>i.membro_id),respondida:o.respondida||false,respondida_em:o.respondida_em||null}));
+  },
+  async getAllOracoes(){
+    const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').eq('respondida',true).order('respondida_em',{ascending:false});
+    return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,respondida:true,respondida_em:o.respondida_em}));
   },
   async addOracao(autor,texto){
     const{data}=await sb.from('oracoes').insert({autor_id:autor.id,autor_nome:autor.name,autor_emoji:autor.emoji,texto,data_br:new Date().toLocaleDateString('pt-BR')}).select().single();
     return data;
+  },
+  async marcarRespondida(id){
+    await sb.from('oracoes').update({respondida:true,respondida_em:TODAY}).eq('id',id);
   },
   async addIntercessao(oracaoId,membroId){
     await sb.from('intercessions').upsert({oracao_id:oracaoId,membro_id:membroId});
   },
   async getComentarios(dataDevocional){
     const{data}=await sb.from('comentarios').select('*').eq('data_devocional',dataDevocional).order('criado_em');
-    return(data||[]).map(c=>({id:c.id,authorId:c.autor_id,text:c.texto,time:c.hora}));
+    return(data||[]).map(c=>({id:c.id,authorId:c.autor_id,text:c.texto,time:c.hora,reactions:c.reactions||{}}));
   },
   async addComentario(autorId,texto){
-    await sb.from('comentarios').insert({autor_id:autorId,data_devocional:TODAY,texto,hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})});
+    await sb.from('comentarios').insert({autor_id:autorId,data_devocional:TODAY,texto,hora:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}),reactions:{}});
   },
   async editComentario(id,novoTexto){
     await sb.from('comentarios').update({texto:novoTexto}).eq('id',id);
+  },
+  async updateReaction(comentarioId,emoji,memberId,reactions){
+    const curr=reactions[emoji]||[];
+    const updated=curr.includes(memberId)?curr.filter(x=>x!==memberId):[...curr,memberId];
+    const newReactions={...reactions,[emoji]:updated};
+    await sb.from('comentarios').update({reactions:newReactions}).eq('id',comentarioId);
+    return newReactions;
   },
   async getMembros(){
     const{data}=await sb.from('membros').select('*').order('id');
     return(data||[]).map(m=>({id:m.id,name:m.nome,emoji:m.emoji,color:m.cor}));
   },
   async saveMembros(list){
-    for(const m of list){
-      await sb.from('membros').upsert({id:m.id,nome:m.name,emoji:m.emoji,cor:m.color,atualizado_em:new Date().toISOString()});
-    }
+    for(const m of list){await sb.from('membros').upsert({id:m.id,nome:m.name,emoji:m.emoji,cor:m.color,atualizado_em:new Date().toISOString()});}
   },
   async getMissoes(){
     const{data}=await sb.from('progresso').select('*').eq('tipo','missao');
     const ms={};
-    (data||[]).forEach(r=>{
-      if(!ms[r.referencia])ms[r.referencia]=[];
-      if(!ms[r.referencia].includes(r.membro_id))ms[r.referencia].push(r.membro_id);
-    });
+    (data||[]).forEach(r=>{if(!ms[r.referencia])ms[r.referencia]=[];if(!ms[r.referencia].includes(r.membro_id))ms[r.referencia].push(r.membro_id);});
     return ms;
+  },
+  getStreak(devotionals){
+    // Calcula dias consecutivos contando para trás a partir de hoje
+    const dates=devotionals
+      .filter(r=>r.includes('-'))
+      .map(r=>r.split('-').slice(-3).join('-'))
+      .sort()
+      .reverse();
+    if(!dates.length)return 0;
+    let streak=0;
+    let check=new Date();
+    for(let i=0;i<30;i++){
+      const d=check.toISOString().split('T')[0];
+      if(dates.includes(d)){streak++;check.setDate(check.getDate()-1);}
+      else if(i===0){check.setDate(check.getDate()-1);}
+      else break;
+    }
+    return streak;
   },
 };
 
@@ -270,21 +296,15 @@ async function loadDevData(){
   if(_devData)return _devData;
   const r=await fetch('devocionais.json?v='+Date.now());
   if(!r.ok)throw new Error('Arquivo devocionais.json não encontrado ('+r.status+')');
-  _devData=await r.json();
-  return _devData;
+  _devData=await r.json();return _devData;
 }
-function getDayIndex(){
-  // Semana começa na quarta: Qua=0, Qui=1, Sex=2, Sáb=3, Dom=4, Seg=5, Ter=6
-  return(new Date().getDay()-3+7)%7;
-}
+function getDayIndex(){return(new Date().getDay()-3+7)%7;}
 async function getTodayDevotional(){
   const data=await loadDevData();
   const allDays=data.semanas.flatMap(s=>s.dias.map(d=>({...d,tema:s.tema})));
-  if(!allDays.length)throw new Error('Nenhum devocional encontrado no arquivo');
+  if(!allDays.length)throw new Error('Nenhum devocional encontrado');
   const idx=getDayIndex()%allDays.length;
-  const day=allDays[idx];
-  // Último dia = terça-feira (getDay()===2)
-  return{...day,isLastDay:new Date().getDay()===2};
+  return{...allDays[idx],isLastDay:new Date().getDay()===2};
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -292,6 +312,32 @@ const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'num
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 function speak(text,onEnd){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=0.88;if(onEnd)u.onend=onEnd;window.speechSynthesis.speak(u);}
 const stopSpeak=()=>window.speechSynthesis.cancel();
+
+// ── PDF EXPORT ────────────────────────────────────────────────────────────────
+function exportPDF(dev,comments,members){
+  const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro'};
+  const lines=[];
+  lines.push(`Nossa Família — Devocional do dia`);
+  lines.push(`Data: ${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}`);
+  lines.push(`Tema: ${dev.tema||''}`);
+  lines.push('');
+  lines.push(`"${dev.verseText}" — ${dev.verse}`);
+  lines.push('');
+  lines.push(dev.title);
+  lines.push('');
+  (dev.reflection||'').split(/\n+/).filter(Boolean).forEach(p=>lines.push(p));
+  if(comments.length){
+    lines.push('');
+    lines.push('Reflexões da família:');
+    comments.forEach(c=>{const m=gm(c.authorId);lines.push(`${m.emoji} ${m.name} (${c.time}): ${c.text}`);});
+  }
+  const content=lines.join('\n');
+  const blob=new Blob([content],{type:'text/plain;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`devocional-${TODAY}.txt`;a.click();
+  URL.revokeObjectURL(url);
+}
 
 // ── COMPONENTS ────────────────────────────────────────────────────────────────
 
@@ -313,12 +359,8 @@ function LoginScreen({members,onLogin,onSetup}){
           </button>
         ))}
       </div>
-      <button onClick={onSetup} style={{marginTop:'28px',background:'none',border:'none',color:'var(--muted)',fontSize:'13px',cursor:'pointer',textDecoration:'underline',opacity:.7}}>
-        ✦ Editar membros da família
-      </button>
-      <button onClick={installApp} style={{marginTop:'12px',background:'none',border:'1px solid var(--border)',borderRadius:'10px',color:'var(--muted)',fontSize:'12px',cursor:'pointer',padding:'8px 16px',opacity:.8}}>
-        📲 Instalar app no celular
-      </button>
+      <button onClick={onSetup} style={{marginTop:'28px',background:'none',border:'none',color:'var(--muted)',fontSize:'13px',cursor:'pointer',textDecoration:'underline',opacity:.7}}>✦ Editar membros da família</button>
+      <button onClick={installApp} style={{marginTop:'12px',background:'none',border:'1px solid var(--border)',borderRadius:'10px',color:'var(--muted)',fontSize:'12px',cursor:'pointer',padding:'8px 16px',opacity:.8}}>📲 Instalar app no celular</button>
     </div>
   );
 }
@@ -328,10 +370,7 @@ function SetupScreen({members,onSave,onBack}){
   const upd=(id,f,v)=>setList(list.map(m=>m.id===id?{...m,[f]:v}:m));
   return(
     <div className="screen">
-      <div className="topbar">
-        <button className="topbar-back" onClick={onBack}>‹</button>
-        <h2>Membros da Família</h2>
-      </div>
+      <div className="topbar"><button className="topbar-back" onClick={onBack}>‹</button><h2>Membros da Família</h2></div>
       <div className="scroll" style={{padding:'20px',maxWidth:'480px',width:'100%',margin:'0 auto'}}>
         {list.map(m=>(
           <div key={m.id} className="setup-member">
@@ -341,19 +380,12 @@ function SetupScreen({members,onSave,onBack}){
               {list.length>1&&<button onClick={()=>setList(list.filter(x=>x.id!==m.id))} style={{background:'none',border:'none',cursor:'pointer',fontSize:'18px',opacity:.5}}>🗑</button>}
             </div>
             <p style={{fontSize:'11px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',marginBottom:'8px'}}>EMOJI</p>
-            <div className="emoji-grid" style={{marginBottom:'12px'}}>
-              {EMOJIS.map(e=><button key={e} className={`emoji-btn${m.emoji===e?' sel':''}`} onClick={()=>upd(m.id,'emoji',e)}>{e}</button>)}
-            </div>
+            <div className="emoji-grid" style={{marginBottom:'12px'}}>{EMOJIS.map(e=><button key={e} className={`emoji-btn${m.emoji===e?' sel':''}`} onClick={()=>upd(m.id,'emoji',e)}>{e}</button>)}</div>
             <p style={{fontSize:'11px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',marginBottom:'8px'}}>COR</p>
-            <div className="color-grid">
-              {COLORS.map(c=><div key={c} className={`color-dot${m.color===c?' sel':''}`} style={{background:c}} onClick={()=>upd(m.id,'color',c)}/>)}
-            </div>
+            <div className="color-grid">{COLORS.map(c=><div key={c} className={`color-dot${m.color===c?' sel':''}`} style={{background:c}} onClick={()=>upd(m.id,'color',c)}/>)}</div>
           </div>
         ))}
-        <button onClick={()=>setList([...list,{id:String(Date.now()),name:'Novo Membro',emoji:'🌸',color:COLORS[1]}])}
-          style={{width:'100%',padding:'14px',background:'none',border:`2px dashed var(--border)`,borderRadius:'16px',color:'var(--muted)',cursor:'pointer',fontSize:'14px',marginBottom:'12px'}}>
-          + Adicionar membro
-        </button>
+        <button onClick={()=>setList([...list,{id:String(Date.now()),name:'Novo Membro',emoji:'🌸',color:COLORS[1]}])} style={{width:'100%',padding:'14px',background:'none',border:`2px dashed var(--border)`,borderRadius:'16px',color:'var(--muted)',cursor:'pointer',fontSize:'14px',marginBottom:'12px'}}>+ Adicionar membro</button>
         <button className="btn btn-primary btn-full" onClick={()=>onSave(list)} style={{padding:'15px',fontSize:'15px'}}>Salvar</button>
       </div>
     </div>
@@ -366,35 +398,21 @@ function AudioBtn({text,label}){
   return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'⏹ Parar':`▶ ${label||'Ouvir'}`}</button>;
 }
 
-function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onEditComment,onRegenerate,hasRead,members}){
+function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onEditComment,onReact,onRegenerate,hasRead,members}){
   const[tab,setTab]=useState('dev');
   const[comment,setComment]=useState('');
   const[editingId,setEditingId]=useState(null);
   const[editText,setEditText]=useState('');
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
-
-  const startEdit=(c)=>{setEditingId(c.id);setEditText(c.text);};
+  const startEdit=c=>{setEditingId(c.id);setEditText(c.text);};
   const cancelEdit=()=>{setEditingId(null);setEditText('');};
-  const saveEdit=async()=>{
-    if(!editText.trim())return;
-    await onEditComment(editingId,editText.trim());
-    setEditingId(null);setEditText('');
-  };
-
+  const saveEdit=async()=>{if(!editText.trim())return;await onEditComment(editingId,editText.trim());setEditingId(null);setEditText('');};
   return(
     <div className="screen">
       <div className="home-header">
         <p className="home-greeting-date">{fmtDate()}</p>
         <div className="home-greeting"><span>{user.emoji}</span> Olá, {user.name}</div>
-        {theme&&(
-          <div className="theme-chip">
-            <span style={{fontSize:'16px'}}>📖</span>
-            <div>
-              <p className="theme-chip-label">Tema desta semana</p>
-              <p className="theme-chip-name">{theme.theme}</p>
-            </div>
-          </div>
-        )}
+        {theme&&(<div className="theme-chip"><span style={{fontSize:'16px'}}>📖</span><div><p className="theme-chip-label">Tema desta semana</p><p className="theme-chip-name">{theme.theme}</p></div></div>)}
       </div>
       <div className="home-tabs">
         <div className="tabs">
@@ -403,18 +421,9 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
         </div>
       </div>
       <div className="scroll" style={{padding:'16px'}}>
-        {loading?(
-          <div className="loading-center fi">
-            <div className="loading-icon pulse">✨</div>
-            <p className="loading-text">Preparando o devocional do dia...</p>
-          </div>
-        ):!dev?(
-          <div className="loading-center">
-            <div style={{fontSize:'44px',marginBottom:'16px'}}>🌿</div>
-            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic',marginBottom:'20px'}}>Nenhum conteúdo ainda.</p>
-            <button className="btn btn-primary" onClick={onRegenerate}>✨ Gerar devocional de hoje</button>
-          </div>
-        ):tab==='dev'?(
+        {loading?(<div className="loading-center fi"><div style={{fontSize:'44px',marginBottom:'18px'}} className="pulse">✨</div><p className="loading-text">Preparando o devocional...</p></div>)
+        :!dev?(<div className="loading-center"><div style={{fontSize:'44px',marginBottom:'16px'}}>🌿</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic',marginBottom:'20px'}}>Nenhum conteúdo ainda.</p><button className="btn btn-primary" onClick={onRegenerate}>✨ Gerar devocional de hoje</button></div>)
+        :tab==='dev'?(
           <div className="fi">
             <div className="card-verse" style={{marginBottom:'22px'}}>
               <p className="verse-label">Versículo do dia · ARC</p>
@@ -423,21 +432,16 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
               <div style={{marginTop:'16px',position:'relative',zIndex:1,display:'flex',gap:'10px',flexWrap:'wrap'}}>
                 <AudioBtn text={dev.verseText} label="Ouvir versículo"/>
                 <button className="audio-btn" style={{color:'#fff',borderColor:'rgba(255,255,255,.4)'}}
-                  onClick={()=>{
-                    const txt=`"${dev.verseText}" — ${dev.verse}\n\nNossa Família 🕊️`;
-                    if(navigator.share){navigator.share({text:txt});}
-                    else{navigator.clipboard.writeText(txt).then(()=>alert('Versículo copiado!'));}
-                  }}>
+                  onClick={()=>{const txt=`"${dev.verseText}" — ${dev.verse}\n\nNossa Família 🕊️`;if(navigator.share)navigator.share({text:txt});else navigator.clipboard.writeText(txt).then(()=>alert('Copiado!'));}}>
                   ↗ Compartilhar
                 </button>
               </div>
             </div>
             <h2 className="dev-title">{dev.title}</h2>
-            {(dev.reflection||'').split(/\n+/).filter(Boolean).map((p,i)=>(
-              <p key={i} className="dev-para">{p}</p>
-            ))}
-            <div style={{marginBottom:'22px'}}>
+            {(dev.reflection||'').split(/\n+/).filter(Boolean).map((p,i)=><p key={i} className="dev-para">{p}</p>)}
+            <div style={{marginBottom:'22px',display:'flex',gap:'10px',flexWrap:'wrap'}}>
               <AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/>
+              <button className="audio-btn" onClick={()=>exportPDF(dev,comments,members)}>📄 Exportar PDF</button>
             </div>
             {dev.isLastDay&&(
               <div style={{marginBottom:'22px',padding:'16px 18px',background:'linear-gradient(135deg,#F7F2EA,#E8F0EC)',borderRadius:'16px',border:'1px solid rgba(44,74,62,.15)',textAlign:'center'}}>
@@ -445,67 +449,54 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
                 <p style={{fontFamily:"'Playfair Display',serif",fontSize:'14px',color:'var(--muted)',fontStyle:'italic',lineHeight:'1.7'}}>Esta é a última reflexão sobre <strong style={{color:'var(--ink)',fontStyle:'normal'}}>{dev.tema}</strong>. Que o que foi plantado esta semana continue crescendo no coração da nossa família.</p>
               </div>
             )}
-            {!hasRead?(
-              <button className="btn btn-primary btn-full" onClick={onMarkRead} style={{marginBottom:'24px',padding:'15px',fontSize:'15px'}}>
-                ✓ Concluir devocional de hoje
-              </button>
-            ):(
-              <div className="done-banner fi" style={{marginBottom:'24px'}}>✓ Devocional concluído! +1 ponto 🎉</div>
-            )}
+            {!hasRead?(<button className="btn btn-primary btn-full" onClick={onMarkRead} style={{marginBottom:'24px',padding:'15px',fontSize:'15px'}}>✓ Concluir devocional de hoje</button>)
+            :(<div className="done-banner fi" style={{marginBottom:'24px'}}>✓ Devocional concluído! +1 ponto 🎉</div>)}
             <div>
-              <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>
-                💬 Reflexões da família {comments.length>0&&`(${comments.length})`}
-              </h3>
+              <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>💬 Reflexões da família {comments.length>0&&`(${comments.length})`}</h3>
               {comments.map(c=>{
-                const m=gm(c.authorId);
-                const isOwn=c.authorId===user.id;
-                const isEditing=editingId===c.id;
+                const m=gm(c.authorId);const isOwn=c.authorId===user.id;const isEditing=editingId===c.id;
                 return(
                   <div key={c.id} className="comment-box fi">
                     <div className="comment-meta">
                       <span style={{fontSize:'18px'}}>{m.emoji}</span>
                       <span className="comment-author">{m.name}</span>
-                      {isOwn&&!isEditing&&(
-                        <button className="comment-edit-btn" onClick={()=>startEdit(c)}>✏️ editar</button>
-                      )}
+                      {isOwn&&!isEditing&&<button className="comment-edit-btn" onClick={()=>startEdit(c)}>✏️ editar</button>}
                       <span className="comment-time">{c.time}</span>
                     </div>
                     {isEditing?(
                       <div>
                         <textarea className="input textarea" value={editText} onChange={e=>setEditText(e.target.value)} style={{minHeight:'60px',marginBottom:'8px'}}/>
-                        <div style={{display:'flex',gap:'8px'}}>
-                          <button className="btn btn-primary btn-sm" onClick={saveEdit}>Salvar</button>
-                          <button className="btn btn-ghost btn-sm" onClick={cancelEdit}>Cancelar</button>
-                        </div>
+                        <div style={{display:'flex',gap:'8px'}}><button className="btn btn-primary btn-sm" onClick={saveEdit}>Salvar</button><button className="btn btn-ghost btn-sm" onClick={cancelEdit}>Cancelar</button></div>
                       </div>
                     ):(
-                      <p className="comment-text">{c.text}</p>
+                      <>
+                        <p className="comment-text">{c.text}</p>
+                        <div className="reactions-row">
+                          {REACTIONS.map(r=>{
+                            const reacted=(c.reactions[r.emoji]||[]).includes(user.id);
+                            const count=(c.reactions[r.emoji]||[]).length;
+                            return(
+                              <button key={r.emoji} className={`reaction-btn${reacted?' active':''}`} onClick={()=>onReact(c.id,r.emoji,c.reactions)}>
+                                {r.emoji}{count>0&&<span className="reaction-count">{count}</span>}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </>
                     )}
                   </div>
                 );
               })}
               <div className="comment-input-row">
-                <input className="input" value={comment} onChange={e=>setComment(e.target.value)}
-                  placeholder="Compartilhe sua reflexão..."
-                  onKeyDown={e=>e.key==='Enter'&&comment.trim()&&(onAddComment(comment.trim()),setComment(''))}
-                  style={{flex:1}}/>
+                <input className="input" value={comment} onChange={e=>setComment(e.target.value)} placeholder="Compartilhe sua reflexão..." onKeyDown={e=>e.key==='Enter'&&comment.trim()&&(onAddComment(comment.trim()),setComment(''))} style={{flex:1}}/>
                 <button className="comment-send" onClick={()=>{if(comment.trim()){onAddComment(comment.trim());setComment('');}}}>›</button>
               </div>
             </div>
           </div>
         ):(
           <div className="fi">
-            {prayer?(
-              <div className="prayer-box">
-                <p className="prayer-label">🙏 Oração do Dia</p>
-                {(prayer.text||'').split(/\n+/).filter(Boolean).map((p,i)=>(
-                  <p key={i} className="prayer-para">{p}</p>
-                ))}
-                <AudioBtn text={prayer.text} label="Ouvir oração"/>
-              </div>
-            ):(
-              <div className="loading-center"><p style={{color:'var(--muted)'}}>Oração não disponível.</p></div>
-            )}
+            {prayer?(<div className="prayer-box"><p className="prayer-label">🙏 Oração do Dia</p>{(prayer.text||'').split(/\n+/).filter(Boolean).map((p,i)=><p key={i} className="prayer-para">{p}</p>)}<AudioBtn text={prayer.text} label="Ouvir oração"/></div>)
+            :(<div className="loading-center"><p style={{color:'var(--muted)'}}>Oração não disponível.</p></div>)}
           </div>
         )}
       </div>
@@ -521,12 +512,10 @@ function BoardScreen({members,progress}){
   const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
   const gp=id=>{
     const p=progress[id]||{};
-    const d=(p.devotionals||[]).length;
-    const ms=(p.missions||[]).length;
-    const totalAll=d+ms;
-    const phase=Math.floor(totalAll/TOTAL);
-    const pts=totalAll%TOTAL;
-    return{d,ms,total:pts,totalAll,phase};
+    const d=(p.devotionals||[]).length;const ms=(p.missions||[]).length;
+    const totalAll=d+ms;const phase=Math.floor(totalAll/TOTAL);const pts=totalAll%TOTAL;
+    const streak=DB.getStreak(p.devotionals||[]);
+    return{d,ms,total:pts,totalAll,phase,streak};
   };
   const sorted=[...members].sort((a,b)=>gp(b.id).totalAll-gp(a.id).totalAll);
   return(
@@ -536,14 +525,11 @@ function BoardScreen({members,progress}){
         <div className="map-container">
           <span className="map-decoration" style={{top:'8px',left:'16px',fontSize:'22px'}}>🌿</span>
           <span className="map-decoration" style={{top:'38%',right:'12px',fontSize:'18px'}}>🌸</span>
-          <span className="map-decoration" style={{bottom:'18px',left:'38%',fontSize:'14px'}}>✦</span>
           <svg style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} viewBox="0 0 100 100" preserveAspectRatio="none">
             <polyline points={PATH.map(p=>`${p.x},${p.y}`).join(' ')} fill="none" stroke="rgba(44,74,62,.2)" strokeWidth="1.8" strokeDasharray="3,3"/>
           </svg>
           {PATH.map((p,i)=>(
-            <div key={i} className={`path-dot ${i===PATH.length-1?'path-dot-goal':'path-dot-normal'}`} style={{left:`${p.x}%`,top:`${p.y}%`}}>
-              {i===PATH.length-1?'⭐':''}
-            </div>
+            <div key={i} className={`path-dot ${i===PATH.length-1?'path-dot-goal':'path-dot-normal'}`} style={{left:`${p.x}%`,top:`${p.y}%`}}>{i===PATH.length-1?'⭐':''}</div>
           ))}
           {members.map((m,mi)=>{
             const{total,phase}=gp(m.id);const pos=PATH[total]||PATH[0];
@@ -565,16 +551,17 @@ function BoardScreen({members,progress}){
             <div className="rank-medal">{['🥇','🥈','🥉'][i]||<span style={{fontSize:'11px',fontWeight:'700',color:'var(--muted)'}}>{i+1}</span>}</div>
             <div className="avatar" style={{background:`${m.color}18`,border:`2px solid ${m.color}44`}}>{m.emoji}</div>
             <div style={{flex:1}}>
-              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'4px'}}>
                 <span style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{m.name}</span>
-                <span style={{fontSize:'14px',color:phaseColor,fontWeight:'800'}}>{phaseLabel} {PHASE_NAMES[Math.min(p.phase,4)]} · {p.total} pts</span>
+                <div style={{display:'flex',alignItems:'center',gap:'6px'}}>
+                  {p.streak>0&&<span className="streak-badge">🔥 {p.streak} dias</span>}
+                  <span style={{fontSize:'13px',color:phaseColor,fontWeight:'800'}}>{phaseLabel} {PHASE_NAMES[Math.min(p.phase,4)]}</span>
+                </div>
               </div>
               <div className="progress-bar-wrap">
                 <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`,background:`linear-gradient(90deg,${phaseColor},${phaseColor}99)`}}/>
               </div>
-              <div className="progress-stats">
-                <span className="progress-stat">{p.total} de {TOTAL} pontos nesta fase</span>
-              </div>
+              <div className="progress-stats"><span className="progress-stat">{p.total} de {TOTAL} pontos nesta fase</span></div>
             </div>
           </div>
         );})}
@@ -583,16 +570,21 @@ function BoardScreen({members,progress}){
   );
 }
 
-function PrayersScreen({user,wall,onAdd,onPray,members}){
+function PrayersScreen({user,wall,answeredWall,onAdd,onPray,onMarkAnswered,members}){
   const[text,setText]=useState('');
   const[open,setOpen]=useState(false);
+  const[viewTab,setViewTab]=useState('active');
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   return(
     <div className="screen">
       <div className="topbar">
         <h2>🙏 Mural de Orações</h2>
-        <div className="topbar-right">
-          <button className="btn btn-primary btn-sm" onClick={()=>setOpen(true)}>+ Pedir</button>
+        <div className="topbar-right"><button className="btn btn-primary btn-sm" onClick={()=>setOpen(true)}>+ Pedir</button></div>
+      </div>
+      <div style={{padding:'12px 16px 0',background:'var(--white)',borderBottom:'1px solid var(--border)',flexShrink:0}}>
+        <div className="tabs">
+          <button className={`tab${viewTab==='active'?' active':''}`} onClick={()=>setViewTab('active')}>🙏 Ativos</button>
+          <button className={`tab${viewTab==='answered'?' active':''}`} onClick={()=>setViewTab('answered')}>✅ Respondidos</button>
         </div>
       </div>
       <div className="scroll" style={{padding:'16px'}}>
@@ -606,34 +598,43 @@ function PrayersScreen({user,wall,onAdd,onPray,members}){
             </div>
           </div>
         )}
-        {wall.length===0&&(
-          <div className="loading-center">
-            <div style={{fontSize:'50px',marginBottom:'14px'}}>🕊️</div>
-            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>Nenhum pedido ainda. Seja a primeira!</p>
-          </div>
-        )}
-        {wall.map(p=>{const author=gm(p.authorId);const prayed=p.prayedBy.includes(user.id);return(
-          <div key={p.id} className="prayer-card">
-            <div className="prayer-card-header">
-              <div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div>
-              <div>
-                <p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p>
-                <p style={{fontSize:'11px',color:'var(--muted)'}}>{p.date}</p>
-              </div>
-            </div>
-            <p className="prayer-card-text">{p.text}</p>
-            <div className="prayer-card-footer">
-              <button className={`btn btn-sm${prayed?' btn-secondary':' btn-primary'}`} onClick={()=>!prayed&&onPray(p.id)}>
-                {prayed?'✓ Orei por você':'🙏 Orar'}
-              </button>
-              {p.prayedBy.length>0&&(
-                <div className="prayed-chips">
-                  {p.prayedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}
+        {viewTab==='active'&&(
+          <>
+            {wall.length===0&&(<div className="loading-center"><div style={{fontSize:'50px',marginBottom:'14px'}}>🕊️</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>Nenhum pedido esta semana.</p></div>)}
+            {wall.map(p=>{const author=gm(p.authorId);const prayed=p.prayedBy.includes(user.id);const isOwn=p.authorId===user.id;return(
+              <div key={p.id} className="prayer-card">
+                <div className="prayer-card-header">
+                  <div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div>
+                  <div><p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p><p style={{fontSize:'11px',color:'var(--muted)'}}>{p.date}</p></div>
                 </div>
-              )}
-            </div>
-          </div>
-        );})}
+                <p className="prayer-card-text">{p.text}</p>
+                <div className="prayer-card-footer">
+                  <button className={`btn btn-sm${prayed?' btn-secondary':' btn-primary'}`} onClick={()=>!prayed&&onPray(p.id)}>{prayed?'✓ Orei por você':'🙏 Orar'}</button>
+                  {isOwn&&<button className="btn btn-sm btn-amber" onClick={()=>onMarkAnswered(p.id)}>✅ Respondida!</button>}
+                  {p.prayedBy.length>0&&<div className="prayed-chips">{p.prayedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}</div>}
+                </div>
+              </div>
+            );})}
+          </>
+        )}
+        {viewTab==='answered'&&(
+          <>
+            {answeredWall.length===0&&(<div className="loading-center"><div style={{fontSize:'50px',marginBottom:'14px'}}>🌟</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As orações respondidas aparecerão aqui.</p></div>)}
+            {answeredWall.map(p=>{const author=gm(p.authorId);return(
+              <div key={p.id} className="prayer-card answered">
+                <div className="prayer-card-header">
+                  <div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div>
+                  <div>
+                    <p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p>
+                    <p style={{fontSize:'11px',color:'var(--muted)'}}>Início: {p.date} · Respondida: {p.respondida_em?new Date(p.respondida_em+'T00:00:00').toLocaleDateString('pt-BR'):'-'}</p>
+                  </div>
+                  <span style={{marginLeft:'auto',fontSize:'20px'}}>✅</span>
+                </div>
+                <p className="prayer-card-text">{p.text}</p>
+              </div>
+            );})}
+          </>
+        )}
       </div>
     </div>
   );
@@ -649,31 +650,19 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
         {missions.length>0&&(
           <div className="alert alert-green" style={{marginBottom:'20px',display:'flex',alignItems:'center',gap:'14px'}}>
             <span style={{fontSize:'32px'}}>🎯</span>
-            <div>
-              <p style={{fontWeight:'700',color:'var(--forest)',fontSize:'15px'}}>{done}/{missions.length} completas</p>
-              <p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>Cada missão = +1 ponto no tabuleiro</p>
-            </div>
+            <div><p style={{fontWeight:'700',color:'var(--forest)',fontSize:'15px'}}>{done}/{missions.length} completas</p><p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>Cada missão = +1 ponto no tabuleiro</p></div>
           </div>
         )}
         {theme&&<p style={{fontSize:'13px',color:'var(--muted)',marginBottom:'16px'}}>📖 Tema: <strong>{theme.theme}</strong></p>}
-        {missions.length===0&&(
-          <div className="loading-center">
-            <p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As missões aparecem com o tema semanal.</p>
-          </div>
-        )}
+        {missions.length===0&&(<div className="loading-center"><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As missões aparecem com o tema semanal.</p></div>)}
         {missions.map((ms,i)=>{const isDone=ms.completedBy.includes(user.id);return(
           <div key={ms.id} className={`mission-card${isDone?' done':''} fu`} style={{animationDelay:`${i*.07}s`,opacity:0}}>
             <div style={{display:'flex',alignItems:'flex-start',gap:'14px'}}>
               <div className={`mission-num${isDone?' done':''}`}>{isDone?'✓':i+1}</div>
               <div style={{flex:1}}>
                 <p className={`mission-text${isDone?' done':''}`}>{ms.text}</p>
-                {ms.completedBy.length>0&&(
-                  <div className="completed-by" style={{marginTop:'8px'}}>
-                    <span style={{fontSize:'11px',color:'var(--muted)'}}>Concluiu:</span>
-                    {ms.completedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}
-                  </div>
-                )}
-                {!isDone&&<button className="btn btn-amber btn-sm" style={{marginTop:'10px'}} onClick={(e)=>{e.currentTarget.disabled=true;e.currentTarget.textContent='⏳...';onComplete(ms.id);}}>✅ Completar missão</button>}
+                {ms.completedBy.length>0&&(<div className="completed-by" style={{marginTop:'8px'}}><span style={{fontSize:'11px',color:'var(--muted)'}}>Concluiu:</span>{ms.completedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}</div>)}
+                {!isDone&&<button className="btn btn-amber btn-sm" style={{marginTop:'10px'}} onClick={e=>{e.currentTarget.disabled=true;e.currentTarget.textContent='⏳...';onComplete(ms.id);}}>✅ Completar missão</button>}
               </div>
             </div>
           </div>
@@ -687,16 +676,12 @@ function CelebrationScreen({member,phase,onClose}){
   const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
   const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
   const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
-  const color=PHASE_COLORS[Math.min(phase,4)];
-  const label=PHASE_LABELS[Math.min(phase,4)];
-  const name=PHASE_NAMES[Math.min(phase,4)];
+  const color=PHASE_COLORS[Math.min(phase,4)];const label=PHASE_LABELS[Math.min(phase,4)];const name=PHASE_NAMES[Math.min(phase,4)];
   const confetti=[...Array(20)].map((_,i)=>({left:`${Math.random()*100}%`,delay:`${Math.random()*1.5}s`,duration:`${1.5+Math.random()}s`,color:['#FFD700','#FF6B6B','#4ECDC4','#A8E6CF','#FFE66D','#C9A600'][i%6],size:`${6+Math.random()*8}px`}));
   return(
     <div className="celebration-overlay" onClick={onClose}>
       <div className="celebration-card" onClick={e=>e.stopPropagation()}>
-        {confetti.map((c,i)=>(
-          <div key={i} className="confetti-piece" style={{left:c.left,top:'-10px',width:c.size,height:c.size,background:c.color,animationDelay:c.delay,animationDuration:c.duration}}/>
-        ))}
+        {confetti.map((c,i)=>(<div key={i} className="confetti-piece" style={{left:c.left,top:'-10px',width:c.size,height:c.size,background:c.color,animationDelay:c.delay,animationDuration:c.duration}}/>))}
         <div style={{fontSize:'64px',marginBottom:'12px'}}>{label}</div>
         <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'22px',fontWeight:'700',color:'var(--ink)',marginBottom:'8px'}}>{member.emoji} {member.name}</h2>
         <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>completou a Fase {phase}!<br/>Nova jornada começa agora.</p>
@@ -714,12 +699,7 @@ function BottomNav({active,onChange}){
   const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'missions',icon:'⚔️',label:'Missões'}];
   return(
     <nav className="bottom-nav">
-      {tabs.map(t=>(
-        <button key={t.id} className={`nav-btn${active===t.id?' active':''}`} onClick={()=>onChange(t.id)}>
-          <span>{t.icon}</span><span>{t.label}</span>
-          {active===t.id&&<div className="nav-indicator"/>}
-        </button>
-      ))}
+      {tabs.map(t=>(<button key={t.id} className={`nav-btn${active===t.id?' active':''}`} onClick={()=>onChange(t.id)}><span>{t.icon}</span><span>{t.label}</span>{active===t.id&&<div className="nav-indicator"/>}</button>))}
     </nav>
   );
 }
@@ -735,31 +715,26 @@ function App(){
   const[prayer,setPrayer]=useState(null);
   const[comments,setComments]=useState([]);
   const[wall,setWall]=useState([]);
+  const[answeredWall,setAnsweredWall]=useState([]);
   const[missions,setMissions]=useState([]);
   const[progress,setProgress]=useState({});
   const[loading,setLoading]=useState(false);
   const[celebration,setCelebration]=useState(null);
 
-  const DEF=[
-    {id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},
-    {id:'2',name:'Membro 2',emoji:'🌸',color:'#C4956A'},
-    {id:'3',name:'Membro 3',emoji:'✨',color:'#7B8EC8'},
-  ];
+  const DEF=[{id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},{id:'2',name:'Membro 2',emoji:'🌸',color:'#C4956A'},{id:'3',name:'Membro 3',emoji:'✨',color:'#7B8EC8'}];
 
   useEffect(()=>{(async()=>{
     let m=null;
-    try{m=await DB.getMembros();}catch(e){console.error('Erro membros:',e);}
+    try{m=await DB.getMembros();}catch(e){console.error(e);}
     if(m&&m.length>0){setMembers(m);S.set('members',m);}
     else{const local=S.get('members');if(local)setMembers(local);else{setMembers(DEF);S.set('members',DEF);}}
-    const th=S.get(`theme-${WEEK_KEY}`);
-    const d=S.get(`dev-${TODAY}`);
-    const pr=S.get(`prayer-${TODAY}`);
-    if(d&&th&&d.tema&&d.tema!==th.theme){S.rm(`dev-${TODAY}`);}
+    const th=S.get(`theme-${WEEK_KEY}`);const d=S.get(`dev-${TODAY}`);const pr=S.get(`prayer-${TODAY}`);
+    if(d&&th&&d.tema&&d.tema!==th.theme)S.rm(`dev-${TODAY}`);
     if(th)setTheme(th);
     if(d&&th&&d.tema===th.theme)setDev(d);
     if(pr)setPrayer(pr);
-    const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
-    setProgress(pg);setWall(wl);setComments(cm);
+    const[pg,wl,aw,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getAllOracoes(),DB.getComentarios(TODAY)]);
+    setProgress(pg);setWall(wl);setAnsweredWall(aw);setComments(cm);
     setView('login');
   })();},[]);
 
@@ -767,8 +742,7 @@ function App(){
     setLoading(true);
     try{
       const today=await getTodayDevotional();
-      const th={theme:today.tema};
-      setTheme(th);S.set(`theme-${WEEK_KEY}`,th);
+      const th={theme:today.tema};setTheme(th);S.set(`theme-${WEEK_KEY}`,th);
       const d={title:today.titulo,verse:today.versiculo,verseText:today.versiculoTexto,reflection:today.reflexao,prayer:today.oracao,isLastDay:today.isLastDay,tema:today.tema};
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
@@ -784,71 +758,43 @@ function App(){
     if(!S.get(`dev-${TODAY}`))await generate();
     else{
       const msDone=await DB.getMissoes();
-      try{
-        const today=await getTodayDevotional();
-        const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
-        setMissions(ms);
-      }catch(e){
-        const cached=S.get(`missions-${WEEK_KEY}`)||[];
-        setMissions(cached.map(ms=>({...ms,completedBy:msDone[ms.id]||[]})));
-      }
-      const[pg,wl,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getComentarios(TODAY)]);
-      setProgress(pg);setWall(wl);setComments(cm);
+      try{const today=await getTodayDevotional();setMissions((today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]})));}
+      catch(e){const cached=S.get(`missions-${WEEK_KEY}`)||[];setMissions(cached.map(ms=>({...ms,completedBy:msDone[ms.id]||[]})));}
+      const[pg,wl,aw,cm]=await Promise.all([DB.getProgress(),DB.getOracoes(),DB.getAllOracoes(),DB.getComentarios(TODAY)]);
+      setProgress(pg);setWall(wl);setAnsweredWall(aw);setComments(cm);
     }
+  }
+
+  function checkPhase(pg,uid){
+    const p=pg[uid]||{};const total=(p.devotionals||[]).length+(p.missions||[]).length;
+    if(total>0&&total%10===0)setCelebration({member:user,phase:total/10});
   }
 
   async function markRead(){
     await DB.addProgress(user.id,'devocional',`${WEEK_KEY}-${TODAY}`);
-    const pg=await DB.getProgress();
-    setProgress(pg);
-    checkPhase(pg,user.id);
+    const pg=await DB.getProgress();setProgress(pg);checkPhase(pg,user.id);
   }
 
-  async function addComment(text){
-    await DB.addComentario(user.id,text);
-    const cm=await DB.getComentarios(TODAY);
-    setComments(cm);
+  async function addComment(text){await DB.addComentario(user.id,text);setComments(await DB.getComentarios(TODAY));}
+  async function editComment(id,t){await DB.editComentario(id,t);setComments(await DB.getComentarios(TODAY));}
+  async function handleReact(comentarioId,emoji,reactions){
+    const newReactions=await DB.updateReaction(comentarioId,emoji,user.id,reactions);
+    setComments(prev=>prev.map(c=>c.id===comentarioId?{...c,reactions:newReactions}:c));
   }
-
-  async function editComment(id,novoTexto){
-    await DB.editComentario(id,novoTexto);
-    const cm=await DB.getComentarios(TODAY);
-    setComments(cm);
+  async function addPrayer(text){await DB.addOracao(user,text);setWall(await DB.getOracoes());}
+  async function prayFor(id){await DB.addIntercessao(id,user.id);setWall(await DB.getOracoes());}
+  async function markAnswered(id){
+    await DB.marcarRespondida(id);
+    const[wl,aw]=await Promise.all([DB.getOracoes(),DB.getAllOracoes()]);
+    setWall(wl);setAnsweredWall(aw);
   }
-
-  async function addPrayer(text){
-    await DB.addOracao(user,text);
-    const wl=await DB.getOracoes();
-    setWall(wl);
-  }
-
-  async function prayFor(id){
-    await DB.addIntercessao(id,user.id);
-    const wl=await DB.getOracoes();
-    setWall(wl);
-  }
-
-  function checkPhase(pg,uid){
-    const p=pg[uid]||{};
-    const total=(p.devotionals||[]).length+(p.missions||[]).length;
-    const TOTAL=10;
-    if(total>0&&total%TOTAL===0){const phase=total/TOTAL;setCelebration({member:user,phase});}
-  }
-
   async function completeMission(mid){
     setMissions(ms=>ms.map(m=>m.id===mid&&!m.completedBy.includes(user.id)?{...m,completedBy:[...m.completedBy,user.id]}:m));
     await DB.addProgress(user.id,'missao',mid);
     const[pg,msDone]=await Promise.all([DB.getProgress(),DB.getMissoes()]);
-    setProgress(pg);
-    setMissions(ms=>ms.map(m=>({...m,completedBy:msDone[m.id]||[]})));
-    checkPhase(pg,user.id);
+    setProgress(pg);setMissions(ms=>ms.map(m=>({...m,completedBy:msDone[m.id]||[]})));checkPhase(pg,user.id);
   }
-
-  async function saveMembers(list){
-    setMembers(list);S.set('members',list);
-    try{await DB.saveMembros(list);}catch(e){console.error('Erro ao salvar membros:',e);}
-    setView('login');
-  }
+  async function saveMembers(list){setMembers(list);S.set('members',list);try{await DB.saveMembros(list);}catch(e){console.error(e);}setView('login');}
 
   const hasRead=!!(progress[user?.id]?.devotionals||[]).includes(`${WEEK_KEY}-${TODAY}`);
 
@@ -859,9 +805,9 @@ function App(){
   return(
     <div style={{height:'100vh',display:'flex',flexDirection:'column',background:'var(--cream)'}}>
       {celebration&&<CelebrationScreen member={celebration.member} phase={celebration.phase} onClose={()=>setCelebration(null)}/>}
-      {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onEditComment={editComment} onRegenerate={generate} hasRead={hasRead} members={members}/>}
+      {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onEditComment={editComment} onReact={handleReact} onRegenerate={generate} hasRead={hasRead} members={members}/>}
       {tab==='board'&&<BoardScreen members={members} progress={progress}/>}
-      {tab==='prayers'&&<PrayersScreen user={user} wall={wall} onAdd={addPrayer} onPray={prayFor} members={members}/>}
+      {tab==='prayers'&&<PrayersScreen user={user} wall={wall} answeredWall={answeredWall} onAdd={addPrayer} onPray={prayFor} onMarkAnswered={markAnswered} members={members}/>}
       {tab==='missions'&&<MissionsScreen user={user} missions={missions} theme={theme} onComplete={completeMission} members={members}/>}
       <BottomNav active={tab} onChange={setTab}/>
     </div>
@@ -875,15 +821,9 @@ if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
     navigator.serviceWorker.register('/nossa-familia/sw.js')
       .then(r=>{
-        console.log('SW registrado:',r.scope);
-        // Pede permissão de notificação e agenda lembrete diário
-        if('Notification' in window && Notification.permission === 'default'){
-          Notification.requestPermission().then(p=>{
-            if(p==='granted' && r.active){
-              r.active.postMessage({type:'SCHEDULE_NOTIFICATION'});
-            }
-          });
-        } else if(Notification.permission === 'granted' && r.active){
+        if('Notification' in window && Notification.permission==='default'){
+          Notification.requestPermission().then(p=>{if(p==='granted'&&r.active)r.active.postMessage({type:'SCHEDULE_NOTIFICATION'});});
+        } else if(Notification.permission==='granted'&&r.active){
           r.active.postMessage({type:'SCHEDULE_NOTIFICATION'});
         }
       })
