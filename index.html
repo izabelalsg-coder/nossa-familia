@@ -358,8 +358,15 @@ function exportPNG(dev,comments,members,hasRead){
   </div>
   <style>@media print{.download-btn{display:none;}body{background:#fff;}#card{box-shadow:none;border-radius:0;max-width:100%;}}</style>
   </body></html>`;
-  const w=window.open('','_blank');
-  if(w){w.document.write(html);w.document.close();}
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=`devocional-${TODAY}.html`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
 
 // ── COMPONENTS ────────────────────────────────────────────────────────────────
