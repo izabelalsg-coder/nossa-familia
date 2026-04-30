@@ -313,142 +313,53 @@ const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 function speak(text,onEnd){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=0.88;if(onEnd)u.onend=onEnd;window.speechSynthesis.speak(u);}
 const stopSpeak=()=>window.speechSynthesis.cancel();
 
-// ── PNG EXPORT (canvas nativo) ────────────────────────────────────────────────
+// ── PNG EXPORT (nova aba com botão baixar) ────────────────────────────────────
 function exportPNG(dev,comments,members,hasRead){
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro'};
-  const W=800;const PAD=48;const LINE=28;
-  const canvas=document.createElement('canvas');
-  const ctx=canvas.getContext('2d');
-
-  function wrapText(text,maxW,fontSize,font){
-    ctx.font=`${fontSize}px ${font}`;
-    const words=text.split(' ');const lines=[];let cur='';
-    for(const w of words){const t=cur?cur+' '+w:w;if(ctx.measureText(t).width>maxW&&cur){lines.push(cur);cur=w;}else cur=t;}
-    if(cur)lines.push(cur);return lines;
-  }
-
-  function calcHeight(){
-    let h=PAD;
-    h+=40+16+18+8; // header logo+title+date+tema
-    h+=PAD;
-    // verse card
-    const vLines=wrapText(`"${dev.verseText}"`,W-PAD*2-48,18,'Georgia,serif');
-    h+=24+16+vLines.length*26+12+22+PAD;
-    // dev title
-    const tLines=wrapText(dev.title,W-PAD*2,22,'Georgia,serif');
-    h+=tLines.length*30+20;
-    // reflection
-    const paras=(dev.reflection||'').split(/\n+/).filter(Boolean);
-    for(const p of paras){const ls=wrapText(p,W-PAD*2,16,'sans-serif');h+=ls.length*26+12;}
-    h+=PAD;
-    // hasRead banner
-    if(hasRead)h+=44+16;
-    // comments
-    if(comments&&comments.length){
-      h+=30+16;
-      for(const c of comments){
-        const m=gm(c.authorId);
-        const ls=wrapText(c.text,W-PAD*2-32,15,'sans-serif');
-        h+=40+ls.length*24+PAD;
-      }
-    }
-    h+=40+PAD;
-    return h;
-  }
-
-  canvas.width=W;
-  canvas.height=calcHeight();
-
-  // background
-  ctx.fillStyle='#FBF7F0';ctx.fillRect(0,0,W,canvas.height);
-
-  let y=PAD;
-
-  // header
-  ctx.textAlign='center';
-  ctx.font='36px serif';ctx.fillText('🕊️',W/2,y+36);y+=52;
-  ctx.fillStyle='#2C4A3E';ctx.font='bold 22px Georgia,serif';ctx.fillText('Nossa Família',W/2,y);y+=30;
-  ctx.fillStyle='#7A7060';ctx.font='14px sans-serif';
-  ctx.fillText(new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),W/2,y);y+=22;
-  if(dev.tema){ctx.fillText('Tema: '+dev.tema,W/2,y);y+=20;}
-  y+=PAD;
-
-  // verse card
-  ctx.textAlign='left';
-  const vLines=wrapText(`"${dev.verseText}"`,W-PAD*2-48,18,'Georgia,serif');
-  const cardH=24+16+vLines.length*26+12+22+16;
-  ctx.fillStyle='#2C4A3E';
-  roundRect(ctx,PAD,y,W-PAD*2,cardH,16);ctx.fill();
-  let cy=y+24;
-  ctx.fillStyle='rgba(255,255,255,0.65)';ctx.font='bold 10px sans-serif';ctx.fillText('VERSÍCULO DO DIA · ARC',PAD+24,cy);cy+=20;
-  ctx.fillStyle='#ffffff';ctx.font='italic 18px Georgia,serif';
-  for(const l of vLines){ctx.fillText(l,PAD+24,cy);cy+=26;}
-  cy+=8;
-  ctx.font='bold 13px sans-serif';ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fillText('— '+dev.verse,PAD+24,cy);
-  y+=cardH+PAD;
-
-  // title
-  ctx.fillStyle='#1A1814';ctx.font='bold 22px Georgia,serif';
-  const tLines=wrapText(dev.title,W-PAD*2,22,'Georgia,serif');
-  for(const l of tLines){ctx.fillText(l,PAD,y);y+=30;}
-  y+=16;
-
-  // reflection
-  const paras=(dev.reflection||'').split(/\n+/).filter(Boolean);
-  for(const p of paras){
-    const ls=wrapText(p,W-PAD*2,16,'sans-serif');
-    ctx.fillStyle='#3A3530';ctx.font='16px sans-serif';
-    for(const l of ls){ctx.fillText(l,PAD,y);y+=26;}
-    y+=10;
-  }
-  y+=PAD;
-
-  // done banner
-  if(hasRead){
-    ctx.fillStyle='#E8F0EC';
-    roundRect(ctx,PAD,y,W-PAD*2,40,10);ctx.fill();
-    ctx.fillStyle='#2C4A3E';ctx.font='bold 15px sans-serif';ctx.textAlign='center';
-    ctx.fillText('✓ Devocional concluído',W/2,y+26);ctx.textAlign='left';
-    y+=56;
-  }
-
-  // comments
-  if(comments&&comments.length){
-    ctx.fillStyle='#1A1814';ctx.font='bold 18px Georgia,serif';
-    ctx.fillText('💬 Reflexões da família',PAD,y);y+=30;
-    for(const c of comments){
-      const m=gm(c.authorId);
-      ctx.fillStyle='#FEFDFB';
-      const ls=wrapText(c.text,W-PAD*2-32,15,'sans-serif');
-      const ch=40+ls.length*24+16;
-      roundRect(ctx,PAD,y,W-PAD*2,ch,12);ctx.fill();
-      ctx.strokeStyle='#E0D8CC';ctx.lineWidth=1;ctx.stroke();
-      ctx.font='16px sans-serif';ctx.fillStyle='#1A1814';ctx.fillText(m.emoji+' ',PAD+16,y+28);
-      ctx.font='bold 13px sans-serif';ctx.fillText(m.name,PAD+40,y+26);
-      ctx.fillStyle='#7A7060';ctx.font='11px sans-serif';ctx.textAlign='right';ctx.fillText(c.time,W-PAD-8,y+26);ctx.textAlign='left';
-      ctx.fillStyle='#3A3530';ctx.font='15px sans-serif';
-      let ly=y+44;
-      for(const l of ls){ctx.fillText(l,PAD+16,ly);ly+=24;}
-      y+=ch+12;
-    }
-  }
-
-  // footer
-  y+=PAD;
-  ctx.fillStyle='#7A7060';ctx.font='12px sans-serif';ctx.textAlign='center';
-  ctx.fillText('Nossa Família 🕊️',W/2,y);
-
-  // download
-  const a=document.createElement('a');
-  a.href=canvas.toDataURL('image/png');
-  a.download=`devocional-${TODAY}.png`;
-  a.click();
-}
-
-function roundRect(ctx,x,y,w,h,r){
-  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);
-  ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);
-  ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+  const commentRows=(comments||[]).map(c=>{
+    const m=gm(c.authorId);
+    return`<div style="background:#fff;border:1px solid #E0D8CC;border-radius:12px;padding:14px;margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <span style="font-size:18px">${m.emoji}</span>
+        <span style="font-weight:700;font-size:14px;color:#1A1814">${m.name}</span>
+        <span style="font-size:12px;color:#7A7060;margin-left:auto">${c.time}</span>
+      </div>
+      <p style="font-size:15px;color:#3A3530;line-height:1.7;margin:0">${c.text}</p>
+    </div>`;
+  }).join('');
+  const paras=(dev.reflection||'').split(/\n+/).filter(Boolean).map(p=>`<p style="font-size:16px;color:#3A3530;line-height:1.9;margin-bottom:14px">${p}</p>`).join('');
+  const html=`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Devocional</title>
+  <style>
+    body{margin:0;background:#f0f0f0;font-family:sans-serif;display:flex;flex-direction:column;align-items:center;padding:16px;}
+    #card{background:#FBF7F0;width:100%;max-width:480px;border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(0,0,0,.12);}
+    .download-btn{display:block;width:100%;max-width:480px;margin:0 auto 20px;padding:16px;background:#2C4A3E;color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;text-align:center;}
+  </style></head><body>
+  <button class="download-btn" onclick="window.print()">📥 Salvar / Imprimir</button>
+  <div id="card">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div style="font-size:40px;margin-bottom:8px">🕊️</div>
+      <div style="font-size:20px;font-weight:700;color:#2C4A3E;font-family:Georgia,serif">Nossa Família</div>
+      <div style="font-size:13px;color:#7A7060;margin-top:4px;text-transform:capitalize">${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div>
+      ${dev.tema?`<div style="font-size:13px;color:#7A7060;margin-top:2px">Tema: <strong>${dev.tema}</strong></div>`:''}
+    </div>
+    <div style="background:#2C4A3E;border-radius:16px;padding:22px;margin-bottom:22px;color:#fff;">
+      <div style="font-size:10px;opacity:.65;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px">VERSÍCULO DO DIA · ARC</div>
+      <div style="font-size:17px;line-height:1.85;font-style:italic;font-family:Georgia,serif;margin-bottom:12px">"${dev.verseText}"</div>
+      <div style="font-size:13px;opacity:.85;font-weight:600">— ${dev.verse}</div>
+    </div>
+    <h2 style="font-size:21px;font-weight:700;color:#1A1814;line-height:1.3;margin-bottom:16px;font-family:Georgia,serif">${dev.title}</h2>
+    ${paras}
+    ${hasRead?`<div style="text-align:center;padding:13px;background:#E8F0EC;border-radius:12px;color:#2C4A3E;font-weight:700;margin:20px 0;font-size:14px">✓ Devocional concluído</div>`:''}
+    ${commentRows?`<div style="margin-top:24px;padding-top:20px;border-top:1px solid #E0D8CC;">
+      <div style="font-size:17px;font-weight:700;color:#1A1814;margin-bottom:14px;font-family:Georgia,serif">💬 Reflexões da família</div>
+      ${commentRows}
+    </div>`:''}
+    <div style="text-align:center;font-size:12px;color:#7A7060;margin-top:24px;opacity:.7">Nossa Família 🕊️</div>
+  </div>
+  <style>@media print{.download-btn{display:none;}body{background:#fff;}#card{box-shadow:none;border-radius:0;max-width:100%;}}</style>
+  </body></html>`;
+  const w=window.open('','_blank');
+  if(w){w.document.write(html);w.document.close();}
 }
 
 // ── COMPONENTS ────────────────────────────────────────────────────────────────
