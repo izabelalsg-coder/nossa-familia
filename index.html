@@ -423,21 +423,17 @@ function AudioBtn({text,label}){
   return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'⏹ Parar':`▶ ${label||'Ouvir'}`}</button>;
 }
 
-function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onEditComment,onReact,onRegenerate,hasRead,members}){
+function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onEditComment,onReact,onRegenerate,hasRead,members,onExport}){
   const[tab,setTab]=useState('dev');
   const[comment,setComment]=useState('');
   const[editingId,setEditingId]=useState(null);
   const[editText,setEditText]=useState('');
-  const[exportView,setExportView]=useState(null);
-  const[showExport,setShowExport]=useState(false);
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   const startEdit=c=>{setEditingId(c.id);setEditText(c.text);};
   const cancelEdit=()=>{setEditingId(null);setEditText('');};
   const saveEdit=async()=>{if(!editText.trim())return;await onEditComment(editingId,editText.trim());setEditingId(null);setEditText('');};
   return(
     <div className="screen">
-      {showExport&&<ExportModal dev={dev} comments={comments} members={members} hasRead={hasRead} onClose={()=>setShowExport(false)}/>}
-      {exportView&&<ExportModal dev={exportView.dev} comments={exportView.comments} members={exportView.members} hasRead={exportView.hasRead} onClose={()=>setExportView(null)}/>}
       <div className="home-header">
         <p className="home-greeting-date">{fmtDate()}</p>
         <div className="home-greeting"><span>{user.emoji}</span> Olá, {user.name}</div>
@@ -470,7 +466,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             {(dev.reflection||'').split(/\n+/).filter(Boolean).map((p,i)=><p key={i} className="dev-para">{p}</p>)}
             <div style={{marginBottom:'22px',display:'flex',gap:'10px',flexWrap:'wrap'}}>
               <AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/>
-              <button className="audio-btn" onClick={()=>setShowExport(true)}>🖼️ Salvar imagem</button>
+              <button className="audio-btn" onClick={onExport}>🖼️ Salvar imagem</button>
             </div>
             {dev.isLastDay&&(
               <div style={{marginBottom:'22px',padding:'16px 18px',background:'linear-gradient(135deg,#F7F2EA,#E8F0EC)',borderRadius:'16px',border:'1px solid rgba(44,74,62,.15)',textAlign:'center'}}>
@@ -749,6 +745,7 @@ function App(){
   const[progress,setProgress]=useState({});
   const[loading,setLoading]=useState(false);
   const[celebration,setCelebration]=useState(null);
+  const[showExport,setShowExport]=useState(false);
 
   const DEF=[{id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},{id:'2',name:'Membro 2',emoji:'🌸',color:'#C4956A'},{id:'3',name:'Membro 3',emoji:'✨',color:'#7B8EC8'}];
 
@@ -834,7 +831,8 @@ function App(){
   return(
     <div style={{height:'100vh',display:'flex',flexDirection:'column',background:'var(--cream)'}}>
       {celebration&&<CelebrationScreen member={celebration.member} phase={celebration.phase} onClose={()=>setCelebration(null)}/>}
-      {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onEditComment={editComment} onReact={handleReact} onRegenerate={generate} hasRead={hasRead} members={members}/>}
+      {showExport&&<ExportModal dev={dev} comments={comments} members={members} hasRead={hasRead} onClose={()=>setShowExport(false)}/>}
+      {tab==='home'&&<HomeScreen user={user} theme={theme} dev={dev} prayer={prayer} comments={comments} loading={loading} onMarkRead={markRead} onAddComment={addComment} onEditComment={editComment} onReact={handleReact} onRegenerate={generate} hasRead={hasRead} members={members} onExport={()=>setShowExport(true)}/>}
       {tab==='board'&&<BoardScreen members={members} progress={progress}/>}
       {tab==='prayers'&&<PrayersScreen user={user} wall={wall} answeredWall={answeredWall} onAdd={addPrayer} onPray={prayFor} onMarkAnswered={markAnswered} members={members}/>}
       {tab==='missions'&&<MissionsScreen user={user} missions={missions} theme={theme} onComplete={completeMission} members={members}/>}
