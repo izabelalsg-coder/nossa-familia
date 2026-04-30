@@ -315,35 +315,50 @@ function speak(text,onEnd){window.speechSynthesis.cancel();const u=new SpeechSyn
 const stopSpeak=()=>window.speechSynthesis.cancel();
 
 // ── PNG EXPORT ────────────────────────────────────────────────────────────────
-function exportPNG(dev,comments,members){
+function exportPNG(dev,comments,members,hasRead){
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro'};
   const el=document.createElement('div');
-  el.style.cssText='width:390px;background:#FBF7F0;padding:28px;font-family:serif;position:fixed;top:-9999px;left:-9999px;';
-  const commentRows=comments.map(c=>{const m=gm(c.authorId);return`<div style="background:#FEFDFB;border:1px solid #E0D8CC;border-radius:12px;padding:12px;margin-bottom:8px;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"><span style="font-size:16px">${m.emoji}</span><span style="font-weight:700;font-size:13px;color:#1A1814">${m.name}</span><span style="font-size:11px;color:#7A7060;margin-left:auto">${c.time}</span></div><p style="font-size:13px;color:#3A3530;line-height:1.6">${c.text}</p></div>`;}).join('');
+  el.style.cssText='width:390px;background:#FBF7F0;padding:28px;font-family:Georgia,serif;position:fixed;top:-9999px;left:-9999px;z-index:-1;';
+  const commentRows=(comments||[]).map(c=>{
+    const m=gm(c.authorId);
+    return`<div style="background:#FEFDFB;border:1px solid #E0D8CC;border-radius:12px;padding:12px;margin-bottom:8px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+        <span style="font-size:16px">${m.emoji}</span>
+        <span style="font-weight:700;font-size:13px;color:#1A1814;font-family:sans-serif">${m.name}</span>
+        <span style="font-size:11px;color:#7A7060;margin-left:auto;font-family:sans-serif">${c.time}</span>
+      </div>
+      <p style="font-size:13px;color:#3A3530;line-height:1.6;font-family:sans-serif;margin:0">${c.text}</p>
+    </div>`;
+  }).join('');
   el.innerHTML=`
     <div style="text-align:center;margin-bottom:20px;">
       <span style="font-size:32px">🕊️</span>
-      <p style="font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:700;color:#2C4A3E;margin-top:6px">Nossa Família</p>
-      <p style="font-size:11px;color:#7A7060;margin-top:2px;text-transform:capitalize">${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</p>
+      <p style="font-size:18px;font-weight:700;color:#2C4A3E;margin-top:6px;font-family:Georgia,serif">Nossa Família</p>
+      <p style="font-size:11px;color:#7A7060;margin-top:2px;font-family:sans-serif;text-transform:capitalize">${new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</p>
+      ${dev.tema?`<p style="font-size:11px;color:#7A7060;margin-top:2px;font-family:sans-serif">Tema: ${dev.tema}</p>`:''}
     </div>
-    <div style="background:linear-gradient(145deg,#2C4A3E,#1E3530);border-radius:16px;padding:20px;margin-bottom:18px;color:#fff;">
-      <p style="font-size:9px;opacity:.65;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">VERSÍCULO DO DIA · ARC</p>
-      <p style="font-family:Georgia,serif;font-size:14px;line-height:1.8;font-style:italic;margin-bottom:10px">"${dev.verseText}"</p>
-      <p style="font-size:12px;opacity:.8;font-weight:600">— ${dev.verse}</p>
+    <div style="background:#2C4A3E;border-radius:16px;padding:20px;margin-bottom:18px;color:#fff;">
+      <p style="font-size:9px;opacity:.65;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-family:sans-serif">VERSÍCULO DO DIA</p>
+      <p style="font-size:14px;line-height:1.8;font-style:italic;margin-bottom:10px;font-family:Georgia,serif">"${dev.verseText}"</p>
+      <p style="font-size:12px;opacity:.8;font-weight:600;font-family:sans-serif">— ${dev.verse}</p>
     </div>
-    <h2 style="font-family:Georgia,serif;font-size:18px;font-weight:700;color:#1A1814;line-height:1.3;margin-bottom:14px">${dev.title}</h2>
-    ${(dev.reflection||'').split(/\n+/).filter(Boolean).map(p=>`<p style="font-size:13px;color:#3A3530;line-height:1.85;margin-bottom:12px">${p}</p>`).join('')}
-    ${comments.length?`<div style="margin-top:18px;padding-top:18px;border-top:1px solid #E0D8CC;"><p style="font-family:Georgia,serif;font-size:14px;font-weight:700;color:#1A1814;margin-bottom:12px">💬 Reflexões da família</p>${commentRows}</div>`:''}
-    <p style="text-align:center;font-size:10px;color:#7A7060;margin-top:18px;opacity:.6">Nossa Família 🕊️</p>
+    <h2 style="font-size:18px;font-weight:700;color:#1A1814;line-height:1.3;margin-bottom:14px;font-family:Georgia,serif">${dev.title}</h2>
+    ${(dev.reflection||'').split(/\n+/).filter(Boolean).map(p=>`<p style="font-size:13px;color:#3A3530;line-height:1.85;margin-bottom:12px;font-family:sans-serif">${p}</p>`).join('')}
+    ${hasRead?`<div style="text-align:center;padding:12px;background:#E8F0EC;border-radius:12px;color:#2C4A3E;font-weight:700;font-family:sans-serif;margin-bottom:16px;font-size:13px">✓ Devocional concluído</div>`:''}
+    ${commentRows?`<div style="margin-top:18px;padding-top:18px;border-top:1px solid #E0D8CC;">
+      <p style="font-size:14px;font-weight:700;color:#1A1814;margin-bottom:12px;font-family:Georgia,serif">💬 Reflexões da família</p>
+      ${commentRows}
+    </div>`:''}
+    <p style="text-align:center;font-size:10px;color:#7A7060;margin-top:18px;font-family:sans-serif">Nossa Família 🕊️</p>
   `;
   document.body.appendChild(el);
-  html2canvas(el,{scale:2,backgroundColor:'#FBF7F0',useCORS:true,logging:false}).then(canvas=>{
+  html2canvas(el,{scale:2,backgroundColor:'#FBF7F0',useCORS:true,logging:false,allowTaint:true}).then(canvas=>{
     document.body.removeChild(el);
     const a=document.createElement('a');
     a.href=canvas.toDataURL('image/png');
     a.download=`devocional-${TODAY}.png`;
     a.click();
-  }).catch(()=>document.body.removeChild(el));
+  }).catch(err=>{console.error(err);document.body.removeChild(el);});
 }
 
 // ── COMPONENTS ────────────────────────────────────────────────────────────────
@@ -448,7 +463,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             {(dev.reflection||'').split(/\n+/).filter(Boolean).map((p,i)=><p key={i} className="dev-para">{p}</p>)}
             <div style={{marginBottom:'22px',display:'flex',gap:'10px',flexWrap:'wrap'}}>
               <AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/>
-              <button className="audio-btn" onClick={()=>exportPNG(dev,comments,members)}>🖼️ Salvar imagem</button>
+              <button className="audio-btn" onClick={()=>exportPNG(dev,comments,members,hasRead)}>🖼️ Salvar imagem</button>
             </div>
             {dev.isLastDay&&(
               <div style={{marginBottom:'22px',padding:'16px 18px',background:'linear-gradient(135deg,#F7F2EA,#E8F0EC)',borderRadius:'16px',border:'1px solid rgba(44,74,62,.15)',textAlign:'center'}}>
