@@ -30,6 +30,7 @@
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    @keyframes spin{to{transform:rotate(360deg)}}
     @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
     .fu{animation:fadeUp .4s ease forwards;}
     .fi{animation:fadeIn .3s ease forwards;}
@@ -50,7 +51,7 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:12px;cursor:pointer;font-weight:600;transition:all .2s;font-size:14px;padding:12px 20px;}
     .btn:active{transform:scale(.97);}
     .btn-primary{background:var(--forest);color:#fff;box-shadow:0 4px 16px rgba(44,74,62,.3);}
-    .btn-primary:hover{background:var(--forest-lt);}
+    .btn-primary:hover{background:var(--forest-lt);transform:translateY(-1px);}
     .btn-secondary{background:var(--moss);color:var(--forest);border:1px solid rgba(44,74,62,.15);}
     .btn-amber{background:var(--amber-lt);color:var(--amber);border:1px solid rgba(201,125,58,.2);}
     .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
@@ -67,9 +68,15 @@
     .tabs{display:flex;background:var(--parch);border-radius:12px;padding:3px;gap:3px;}
     .tab{flex:1;padding:9px;border:none;border-radius:9px;background:transparent;color:var(--muted);font-weight:500;cursor:pointer;font-size:13px;transition:all .2s;}
     .tab.active{background:var(--white);color:var(--forest);font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.09);}
+    .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+    .badge-green{background:var(--moss);color:var(--forest);}
+    .badge-amber{background:var(--amber-lt);color:var(--amber);}
     .alert{padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.6;}
+    .alert-amber{background:var(--amber-lt);border:1px solid rgba(201,125,58,.25);color:#7A4A1A;}
     .alert-green{background:var(--moss);border:1px solid rgba(44,74,62,.2);color:var(--forest);}
+    .alert-red{background:#FDE8E8;border:1px solid #F5C0C0;color:var(--red);}
     .avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .skel{background:linear-gradient(90deg,var(--parch) 25%,var(--border) 50%,var(--parch) 75%);background-size:200% 100%;animation:shimmer 1.4s ease infinite;border-radius:8px;}
     #login-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;background:radial-gradient(ellipse at 30% 0%,#D4E8DF 0%,var(--cream) 55%);}
     .login-hero{text-align:center;margin-bottom:40px;}
     .login-dove{font-size:64px;filter:drop-shadow(0 8px 20px rgba(44,74,62,.2));margin-bottom:18px;display:block;}
@@ -86,7 +93,7 @@
     .emoji-btn{width:34px;height:34px;border-radius:8px;font-size:18px;border:2px solid var(--border);background:transparent;cursor:pointer;transition:all .15s;}
     .emoji-btn.sel{border-color:var(--forest);background:var(--moss);}
     .color-grid{display:flex;gap:8px;}
-    .color-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .15s;border:2.5px solid transparent;}
+    .color-dot{width:24px;height:24px;border-radius:50%;cursor:pointer;transition:all .15px;border:2.5px solid transparent;}
     .color-dot.sel{border-color:var(--ink);}
     .home-header{padding:18px 20px 14px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0;}
     .home-greeting-date{font-size:12px;color:var(--muted);text-transform:capitalize;margin-bottom:4px;}
@@ -108,14 +115,7 @@
     .comment-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
     .comment-author{font-size:13px;font-weight:700;color:var(--ink);}
     .comment-time{font-size:11px;color:var(--muted);margin-left:auto;}
-    .comment-edit-btn{background:none;border:none;cursor:pointer;font-size:12px;color:var(--muted);padding:2px 6px;border-radius:6px;margin-left:6px;transition:all .2s;}
-    .comment-edit-btn:hover{background:var(--parch);color:var(--forest);}
     .comment-text{font-size:14px;color:#3A3530;line-height:1.68;}
-    .reactions-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
-    .reaction-btn{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;font-size:13px;transition:all .2s;}
-    .reaction-btn.active{border-color:var(--forest);background:var(--moss);}
-    .reaction-btn:hover{border-color:var(--forest);}
-    .reaction-count{font-size:12px;font-weight:700;color:var(--muted);}
     .comment-input-row{display:flex;gap:8px;margin-top:12px;}
     .comment-send{padding:12px 16px;background:var(--forest);color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:17px;transition:background .2s;}
     .comment-send:hover{background:var(--forest-lt);}
@@ -133,15 +133,13 @@
     .rank-row{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:15px;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
     .rank-medal{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
     .progress-bar-wrap{height:6px;background:var(--parch);border-radius:3px;overflow:hidden;margin:6px 0;}
-    .progress-bar-fill{height:100%;border-radius:3px;transition:width .7s ease;}
+    .progress-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--forest),var(--amber));transition:width .7s ease;}
     .progress-stats{display:flex;gap:14px;}
     .progress-stat{font-size:11px;color:var(--muted);}
-    .streak-badge{display:inline-flex;align-items:center;gap:4px;background:#FFF3E0;border:1px solid #FFB74D;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700;color:#E65100;}
     .prayer-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;}
-    .prayer-card.answered{border-color:rgba(44,74,62,.4);background:var(--moss);}
     .prayer-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
     .prayer-card-text{font-size:14px;color:#3A3530;line-height:1.75;margin-bottom:14px;}
-    .prayer-card-footer{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:12px;flex-wrap:wrap;}
+    .prayer-card-footer{display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);padding-top:12px;}
     .prayed-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
     .prayed-chip{font-size:13px;background:var(--moss);border-radius:20px;padding:3px 10px;border:1px solid rgba(44,74,62,.15);}
     .mission-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;transition:border-color .3s;}
@@ -156,11 +154,14 @@
     .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall linear forwards;}
     @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(400px) rotate(720deg);opacity:0;}}
     .loading-center{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;text-align:center;}
+    .loading-icon{font-size:44px;margin-bottom:18px;}
     .loading-text{font-family:'Playfair Display',serif;color:var(--muted);font-style:italic;font-size:16px;}
+    .loading-sub{color:var(--muted);font-size:12px;margin-top:8px;opacity:.7;}
     @media (max-width:480px){
       .login-title{font-size:26px;}.login-dove{font-size:56px;}.home-greeting{font-size:20px;}
-      .dev-title{font-size:20px;}.dev-para{font-size:16px;}.verse-text{font-size:15px;}
-      .card-verse{padding:20px;}.home-header{padding:14px 16px 12px;}.home-tabs{padding:12px 16px 0;}
+      .dev-title{font-size:20px;}.dev-para{font-size:16px;line-height:1.85;}.verse-text{font-size:15px;}
+      .prayer-para{font-size:15px;}.card-verse{padding:20px;}.home-header{padding:14px 16px 12px;}
+      .home-tabs{padding:12px 16px 0;}.scroll > div,.scroll > .fi{padding:16px!important;}
       .topbar{padding:12px 16px;}.member-btn{max-width:100%;}
     }
     input,textarea,select{font-size:16px!important;}
@@ -173,7 +174,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script type="text/babel">
-const{useState,useEffect,useRef}=React;
+const{useState,useEffect,useRef,useCallback}=React;
 
 // ── PWA INSTALL ───────────────────────────────────────────────────────────────
 let _installPrompt=null;
@@ -190,7 +191,6 @@ const WEEK_KEY=(()=>{
 })();
 const EMOJIS=['🌿','🌸','✨','🕊️','🌻','🌙','⭐','🦋','🌺','🍀','🦚','🌾'];
 const COLORS=['#2C4A3E','#C4956A','#7B8EC8','#C87B8E','#8E7BC4','#7BC4B5'];
-const REACTIONS=[{emoji:'🙏',label:'Amém'},{emoji:'❤️',label:'Amor'},{emoji:'🔥',label:'Fogo'}];
 
 // ── SUPABASE ──────────────────────────────────────────────────────────────────
 const SB_URL='https://mlznzzskyqagriojsxmw.supabase.co';
@@ -227,7 +227,7 @@ const DB={
     return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,prayedBy:(o.intercessions||[]).map(i=>i.membro_id),respondida:o.respondida||false,respondida_em:o.respondida_em||null}));
   },
   async getAllOracoes(){
-    const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').eq('respondida',true).order('respondida_em',{ascending:false});
+    const{data}=await sb.from('oracoes').select('*').eq('respondida',true).order('respondida_em',{ascending:false});
     return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,respondida:true,respondida_em:o.respondida_em}));
   },
   async addOracao(autor,texto){
@@ -271,16 +271,10 @@ const DB={
     return ms;
   },
   getStreak(devotionals){
-    // Calcula dias consecutivos contando para trás a partir de hoje
-    const dates=devotionals
-      .filter(r=>r.includes('-'))
-      .map(r=>r.split('-').slice(-3).join('-'))
-      .sort()
-      .reverse();
+    const dates=devotionals.filter(r=>r.includes('-')).map(r=>r.split('-').slice(-3).join('-')).sort().reverse();
     if(!dates.length)return 0;
-    let streak=0;
-    let check=new Date();
-    for(let i=0;i<30;i++){
+    let streak=0;let check=new Date();
+    for(let i=0;i<60;i++){
       const d=check.toISOString().split('T')[0];
       if(dates.includes(d)){streak++;check.setDate(check.getDate()-1);}
       else if(i===0){check.setDate(check.getDate()-1);}
@@ -303,8 +297,7 @@ async function getTodayDevotional(){
   const data=await loadDevData();
   const allDays=data.semanas.flatMap(s=>s.dias.map(d=>({...d,tema:s.tema})));
   if(!allDays.length)throw new Error('Nenhum devocional encontrado');
-  const idx=getDayIndex()%allDays.length;
-  return{...allDays[idx],isLastDay:new Date().getDay()===2};
+  return{...allDays[getDayIndex()%allDays.length],isLastDay:new Date().getDay()===2};
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -312,6 +305,14 @@ const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'num
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 function speak(text,onEnd){window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='pt-BR';u.rate=0.88;if(onEnd)u.onend=onEnd;window.speechSynthesis.speak(u);}
 const stopSpeak=()=>window.speechSynthesis.cancel();
+
+// ── PHASE HELPER ─── CORRIGIDO: fase dinâmica sem limite ─────────────────────
+const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB','#D4690A','#1A7A4A','#6B35A0','#B8860B','#1B4F72'];
+const PHASE_LABELS=['🌱','👑','💜','🔥','✨','🌟','🍃','⚡','🏆','👼'];
+function getPhaseInfo(phase){
+  const idx=Math.min(phase,PHASE_COLORS.length-1);
+  return{color:PHASE_COLORS[idx],label:PHASE_LABELS[idx],name:`Fase ${phase+1}`};
+}
 
 // ── COMPONENTS ────────────────────────────────────────────────────────────────
 
@@ -372,6 +373,8 @@ function AudioBtn({text,label}){
   return<button className={`audio-btn${playing?' playing':''}`} onClick={toggle}>{playing?'⏹ Parar':`▶ ${label||'Ouvir'}`}</button>;
 }
 
+const REACTIONS=[{emoji:'🙏',label:'Amém'},{emoji:'❤️',label:'Amor'},{emoji:'🔥',label:'Fogo'}];
+
 function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComment,onEditComment,onReact,onRegenerate,hasRead,members}){
   const[tab,setTab]=useState('dev');
   const[comment,setComment]=useState('');
@@ -395,7 +398,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
         </div>
       </div>
       <div className="scroll" style={{padding:'16px'}}>
-        {loading?(<div className="loading-center fi"><div style={{fontSize:'44px',marginBottom:'18px'}} className="pulse">✨</div><p className="loading-text">Preparando o devocional...</p></div>)
+        {loading?(<div className="loading-center fi"><div className="loading-icon pulse">✨</div><p className="loading-text">Preparando o devocional do dia...</p></div>)
         :!dev?(<div className="loading-center"><div style={{fontSize:'44px',marginBottom:'16px'}}>🌿</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic',marginBottom:'20px'}}>Nenhum conteúdo ainda.</p><button className="btn btn-primary" onClick={onRegenerate}>✨ Gerar devocional de hoje</button></div>)
         :tab==='dev'?(
           <div className="fi">
@@ -413,9 +416,7 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
             </div>
             <h2 className="dev-title">{dev.title}</h2>
             {(dev.reflection||'').split(/\n+/).filter(Boolean).map((p,i)=><p key={i} className="dev-para">{p}</p>)}
-            <div style={{marginBottom:'22px',display:'flex',gap:'10px',flexWrap:'wrap'}}>
-              <AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/>
-            </div>
+            <div style={{marginBottom:'22px'}}><AudioBtn text={`${dev.title}. ${dev.reflection}`} label="Ouvir devocional completo"/></div>
             {dev.isLastDay&&(
               <div style={{marginBottom:'22px',padding:'16px 18px',background:'linear-gradient(135deg,#F7F2EA,#E8F0EC)',borderRadius:'16px',border:'1px solid rgba(44,74,62,.15)',textAlign:'center'}}>
                 <p style={{fontSize:'13px',color:'var(--forest)',fontWeight:'700',letterSpacing:'.5px',marginBottom:'6px'}}>✦ Último dia do tema</p>
@@ -433,27 +434,20 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
                     <div className="comment-meta">
                       <span style={{fontSize:'18px'}}>{m.emoji}</span>
                       <span className="comment-author">{m.name}</span>
-                      {isOwn&&!isEditing&&<button className="comment-edit-btn" onClick={()=>startEdit(c)}>✏️ editar</button>}
+                      {isOwn&&!isEditing&&<button style={{background:'none',border:'none',cursor:'pointer',fontSize:'12px',color:'var(--muted)',padding:'2px 6px',borderRadius:'6px',marginLeft:'6px'}} onClick={()=>startEdit(c)}>✏️ editar</button>}
                       <span className="comment-time">{c.time}</span>
                     </div>
                     {isEditing?(
-                      <div>
-                        <textarea className="input textarea" value={editText} onChange={e=>setEditText(e.target.value)} style={{minHeight:'60px',marginBottom:'8px'}}/>
-                        <div style={{display:'flex',gap:'8px'}}><button className="btn btn-primary btn-sm" onClick={saveEdit}>Salvar</button><button className="btn btn-ghost btn-sm" onClick={cancelEdit}>Cancelar</button></div>
-                      </div>
+                      <div><textarea className="input textarea" value={editText} onChange={e=>setEditText(e.target.value)} style={{minHeight:'60px',marginBottom:'8px'}}/><div style={{display:'flex',gap:'8px'}}><button className="btn btn-primary btn-sm" onClick={saveEdit}>Salvar</button><button className="btn btn-ghost btn-sm" onClick={cancelEdit}>Cancelar</button></div></div>
                     ):(
                       <>
                         <p className="comment-text">{c.text}</p>
-                        <div className="reactions-row">
-                          {REACTIONS.map(r=>{
-                            const reacted=(c.reactions[r.emoji]||[]).includes(user.id);
-                            const count=(c.reactions[r.emoji]||[]).length;
-                            return(
-                              <button key={r.emoji} className={`reaction-btn${reacted?' active':''}`} onClick={()=>onReact(c.id,r.emoji,c.reactions)}>
-                                {r.emoji}{count>0&&<span className="reaction-count">{count}</span>}
-                              </button>
-                            );
-                          })}
+                        <div style={{display:'flex',gap:'6px',marginTop:'10px',flexWrap:'wrap'}}>
+                          {REACTIONS.map(r=>{const reacted=(c.reactions[r.emoji]||[]).includes(user.id);const count=(c.reactions[r.emoji]||[]).length;return(
+                            <button key={r.emoji} onClick={()=>onReact(c.id,r.emoji,c.reactions)} style={{display:'inline-flex',alignItems:'center',gap:'4px',padding:'4px 10px',borderRadius:'20px',border:`1.5px solid ${reacted?'var(--forest)':'var(--border)'}`,background:reacted?'var(--moss)':'var(--white)',cursor:'pointer',fontSize:'13px'}}>
+                              {r.emoji}{count>0&&<span style={{fontSize:'12px',fontWeight:'700',color:'var(--muted)'}}>{count}</span>}
+                            </button>
+                          );})}
                         </div>
                       </>
                     )}
@@ -480,9 +474,6 @@ function HomeScreen({user,theme,dev,prayer,comments,loading,onMarkRead,onAddComm
 function BoardScreen({members,progress}){
   const TOTAL=10;
   const PATH=[{x:12,y:83},{x:27,y:68},{x:47,y:77},{x:65,y:63},{x:80,y:72},{x:86,y:53},{x:72,y:39},{x:54,y:32},{x:36,y:46},{x:18,y:36},{x:9,y:18}];
-  const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
-  const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
-  const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
   const gp=id=>{
     const p=progress[id]||{};
     const d=(p.devotionals||[]).length;const ms=(p.missions||[]).length;
@@ -501,16 +492,14 @@ function BoardScreen({members,progress}){
           <svg style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} viewBox="0 0 100 100" preserveAspectRatio="none">
             <polyline points={PATH.map(p=>`${p.x},${p.y}`).join(' ')} fill="none" stroke="rgba(44,74,62,.2)" strokeWidth="1.8" strokeDasharray="3,3"/>
           </svg>
-          {PATH.map((p,i)=>(
-            <div key={i} className={`path-dot ${i===PATH.length-1?'path-dot-goal':'path-dot-normal'}`} style={{left:`${p.x}%`,top:`${p.y}%`}}>{i===PATH.length-1?'⭐':''}</div>
-          ))}
+          {PATH.map((p,i)=>(<div key={i} className={`path-dot ${i===PATH.length-1?'path-dot-goal':'path-dot-normal'}`} style={{left:`${p.x}%`,top:`${p.y}%`}}>{i===PATH.length-1?'⭐':''}</div>))}
           {members.map((m,mi)=>{
-            const{total,phase}=gp(m.id);const pos=PATH[total]||PATH[0];
+            const{total,phase}=gp(m.id);const pos=PATH[total]||PATH[0];const pi=getPhaseInfo(phase);
             return(
               <div key={m.id} className="member-token" style={{left:`${pos.x}%`,top:`${pos.y}%`,transform:`translate(${mi%2===0?'-130%':'20%'},-50%)`}}>
                 <div style={{position:'relative'}}>
                   <div className="token-circle" style={{border:`2.5px solid ${m.color}`}}>{m.emoji}</div>
-                  {phase>0&&<div style={{position:'absolute',top:'-6px',right:'-8px',background:PHASE_COLORS[Math.min(phase,4)],color:'white',fontSize:'7px',fontWeight:'900',borderRadius:'6px',padding:'1px 4px',lineHeight:'12px'}}>F{phase+1}</div>}
+                  {phase>0&&<div style={{position:'absolute',top:'-6px',right:'-8px',background:pi.color,color:'white',fontSize:'7px',fontWeight:'900',borderRadius:'6px',padding:'1px 4px',lineHeight:'12px'}}>F{phase+1}</div>}
                 </div>
                 <div className="token-name">{m.name}</div>
               </div>
@@ -519,95 +508,48 @@ function BoardScreen({members,progress}){
           <div style={{position:'absolute',bottom:'8px',right:'10px',fontSize:'9px',color:'var(--muted)',fontWeight:'700'}}>Meta: ⭐ {TOTAL} pts</div>
         </div>
         <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:'700',color:'var(--ink)',marginBottom:'14px'}}>Placar</h3>
-        {sorted.map((m,i)=>{const p=gp(m.id);const phaseColor=PHASE_COLORS[Math.min(p.phase,4)];const phaseLabel=PHASE_LABELS[Math.min(p.phase,4)];return(
-          <div key={m.id} className="rank-row" style={{borderLeft:`3px solid ${phaseColor}`}}>
-            <div className="rank-medal">{['🥇','🥈','🥉'][i]||<span style={{fontSize:'11px',fontWeight:'700',color:'var(--muted)'}}>{i+1}</span>}</div>
-            <div className="avatar" style={{background:`${m.color}18`,border:`2px solid ${m.color}44`}}>{m.emoji}</div>
-            <div style={{flex:1}}>
-              <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'4px'}}>
-                <span style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{m.name}</span>
-                <div style={{display:'flex',alignItems:'center',gap:'6px'}}>
-                  {p.streak>0&&<span className="streak-badge">🔥 {p.streak} dias</span>}
-                  <span style={{fontSize:'13px',color:phaseColor,fontWeight:'800'}}>{phaseLabel} {PHASE_NAMES[Math.min(p.phase,4)]}</span>
+        {sorted.map((m,i)=>{
+          const p=gp(m.id);const pi=getPhaseInfo(p.phase);
+          return(
+            <div key={m.id} className="rank-row" style={{borderLeft:`3px solid ${pi.color}`}}>
+              <div className="rank-medal">{['🥇','🥈','🥉'][i]||<span style={{fontSize:'11px',fontWeight:'700',color:'var(--muted)'}}>{i+1}</span>}</div>
+              <div className="avatar" style={{background:`${m.color}18`,border:`2px solid ${m.color}44`}}>{m.emoji}</div>
+              <div style={{flex:1}}>
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'4px'}}>
+                  <span style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{m.name}</span>
+                  <div style={{display:'flex',alignItems:'center',gap:'6px'}}>
+                    {p.streak>0&&<span style={{display:'inline-flex',alignItems:'center',gap:'4px',background:'#FFF3E0',border:'1px solid #FFB74D',borderRadius:'20px',padding:'3px 10px',fontSize:'12px',fontWeight:'700',color:'#E65100'}}>🔥 {p.streak} dias</span>}
+                    <span style={{fontSize:'13px',color:pi.color,fontWeight:'800'}}>{pi.label} {pi.name}</span>
+                  </div>
                 </div>
+                <div className="progress-bar-wrap">
+                  <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`,background:`linear-gradient(90deg,${pi.color},${pi.color}99)`}}/>
+                </div>
+                <div className="progress-stats"><span className="progress-stat">{p.total} de {TOTAL} pontos nesta fase</span></div>
               </div>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar-fill" style={{width:`${(p.total/TOTAL)*100}%`,background:`linear-gradient(90deg,${phaseColor},${phaseColor}99)`}}/>
-              </div>
-              <div className="progress-stats"><span className="progress-stat">{p.total} de {TOTAL} pontos nesta fase</span></div>
             </div>
-          </div>
-        );})}
+          );
+        })}
       </div>
     </div>
   );
 }
 
 function PrayersScreen({user,wall,answeredWall,onAdd,onPray,onMarkAnswered,members}){
-  const[text,setText]=useState('');
-  const[open,setOpen]=useState(false);
-  const[viewTab,setViewTab]=useState('active');
+  const[text,setText]=useState('');const[open,setOpen]=useState(false);const[viewTab,setViewTab]=useState('active');
   const gm=id=>members.find(m=>m.id===id)||{emoji:'👤',name:'Membro',color:'var(--muted)'};
   return(
     <div className="screen">
-      <div className="topbar">
-        <h2>🙏 Mural de Orações</h2>
-        <div className="topbar-right"><button className="btn btn-primary btn-sm" onClick={()=>setOpen(true)}>+ Pedir</button></div>
-      </div>
+      <div className="topbar"><h2>🙏 Mural de Orações</h2><div className="topbar-right"><button className="btn btn-primary btn-sm" onClick={()=>setOpen(true)}>+ Pedir</button></div></div>
       <div style={{padding:'12px 16px 0',background:'var(--white)',borderBottom:'1px solid var(--border)',flexShrink:0}}>
-        <div className="tabs">
-          <button className={`tab${viewTab==='active'?' active':''}`} onClick={()=>setViewTab('active')}>🙏 Ativos</button>
-          <button className={`tab${viewTab==='answered'?' active':''}`} onClick={()=>setViewTab('answered')}>✅ Respondidos</button>
-        </div>
+        <div className="tabs"><button className={`tab${viewTab==='active'?' active':''}`} onClick={()=>setViewTab('active')}>🙏 Ativos</button><button className={`tab${viewTab==='answered'?' active':''}`} onClick={()=>setViewTab('answered')}>✅ Respondidos</button></div>
       </div>
       <div className="scroll" style={{padding:'16px'}}>
-        {open&&(
-          <div className="card fu" style={{marginBottom:'20px',background:'var(--amber-lt)',border:'1px solid rgba(201,125,58,.25)'}}>
-            <p style={{fontFamily:"'Playfair Display',serif",fontWeight:'700',color:'var(--ink)',marginBottom:'10px'}}>Novo pedido de oração</p>
-            <textarea className="input textarea" value={text} onChange={e=>setText(e.target.value)} placeholder="Compartilhe seu pedido com a família..."/>
-            <div style={{display:'flex',gap:'8px',marginTop:'10px'}}>
-              <button className="btn btn-primary" style={{flex:1}} onClick={()=>{if(text.trim()){onAdd(text.trim());setText('');setOpen(false);}}}>Enviar</button>
-              <button className="btn btn-ghost" onClick={()=>{setOpen(false);setText('');}}>Cancelar</button>
-            </div>
-          </div>
-        )}
-        {viewTab==='active'&&(
-          <>
-            {wall.length===0&&(<div className="loading-center"><div style={{fontSize:'50px',marginBottom:'14px'}}>🕊️</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>Nenhum pedido esta semana.</p></div>)}
-            {wall.map(p=>{const author=gm(p.authorId);const prayed=p.prayedBy.includes(user.id);const isOwn=p.authorId===user.id;return(
-              <div key={p.id} className="prayer-card">
-                <div className="prayer-card-header">
-                  <div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div>
-                  <div><p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p><p style={{fontSize:'11px',color:'var(--muted)'}}>{p.date}</p></div>
-                </div>
-                <p className="prayer-card-text">{p.text}</p>
-                <div className="prayer-card-footer">
-                  <button className={`btn btn-sm${prayed?' btn-secondary':' btn-primary'}`} onClick={()=>!prayed&&onPray(p.id)}>{prayed?'✓ Orei por você':'🙏 Orar'}</button>
-                  {isOwn&&<button className="btn btn-sm btn-amber" onClick={()=>onMarkAnswered(p.id)}>✅ Respondida!</button>}
-                  {p.prayedBy.length>0&&<div className="prayed-chips">{p.prayedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}</div>}
-                </div>
-              </div>
-            );})}
-          </>
-        )}
-        {viewTab==='answered'&&(
-          <>
-            {answeredWall.length===0&&(<div className="loading-center"><div style={{fontSize:'50px',marginBottom:'14px'}}>🌟</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As orações respondidas aparecerão aqui.</p></div>)}
-            {answeredWall.map(p=>{const author=gm(p.authorId);return(
-              <div key={p.id} className="prayer-card answered">
-                <div className="prayer-card-header">
-                  <div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div>
-                  <div>
-                    <p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p>
-                    <p style={{fontSize:'11px',color:'var(--muted)'}}>Início: {p.date} · Respondida: {p.respondida_em?new Date(p.respondida_em+'T00:00:00').toLocaleDateString('pt-BR'):'-'}</p>
-                  </div>
-                  <span style={{marginLeft:'auto',fontSize:'20px'}}>✅</span>
-                </div>
-                <p className="prayer-card-text">{p.text}</p>
-              </div>
-            );})}
-          </>
-        )}
+        {open&&(<div className="card fu" style={{marginBottom:'20px',background:'var(--amber-lt)',border:'1px solid rgba(201,125,58,.25)'}}><p style={{fontFamily:"'Playfair Display',serif",fontWeight:'700',color:'var(--ink)',marginBottom:'10px'}}>Novo pedido de oração</p><textarea className="input textarea" value={text} onChange={e=>setText(e.target.value)} placeholder="Compartilhe seu pedido com a família..."/><div style={{display:'flex',gap:'8px',marginTop:'10px'}}><button className="btn btn-primary" style={{flex:1}} onClick={()=>{if(text.trim()){onAdd(text.trim());setText('');setOpen(false);}}}>Enviar</button><button className="btn btn-ghost" onClick={()=>{setOpen(false);setText('');}}>Cancelar</button></div></div>)}
+        {viewTab==='active'&&(<>{wall.length===0&&(<div className="loading-center"><div style={{fontSize:'50px',marginBottom:'14px'}}>🕊️</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>Nenhum pedido esta semana.</p></div>)}
+        {wall.map(p=>{const author=gm(p.authorId);const prayed=p.prayedBy.includes(user.id);const isOwn=p.authorId===user.id;return(<div key={p.id} className="prayer-card"><div className="prayer-card-header"><div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div><div><p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p><p style={{fontSize:'11px',color:'var(--muted)'}}>{p.date}</p></div></div><p className="prayer-card-text">{p.text}</p><div className="prayer-card-footer"><button className={`btn btn-sm${prayed?' btn-secondary':' btn-primary'}`} onClick={()=>!prayed&&onPray(p.id)}>{prayed?'✓ Orei por você':'🙏 Orar'}</button>{isOwn&&<button className="btn btn-sm btn-amber" onClick={()=>onMarkAnswered(p.id)}>✅ Respondida!</button>}{p.prayedBy.length>0&&<div className="prayed-chips">{p.prayedBy.map(id=>{const m=gm(id);return<span key={id} className="prayed-chip">{m.emoji} {m.name}</span>;})}</div>}</div></div>);})}</>)}
+        {viewTab==='answered'&&(<>{answeredWall.length===0&&(<div className="loading-center"><div style={{fontSize:'50px',marginBottom:'14px'}}>🌟</div><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As orações respondidas aparecerão aqui.</p></div>)}
+        {answeredWall.map(p=>{const author=gm(p.authorId);return(<div key={p.id} className="prayer-card" style={{borderColor:'rgba(44,74,62,.4)',background:'var(--moss)'}}><div className="prayer-card-header"><div className="avatar" style={{width:'36px',height:'36px',background:`${author.color}18`,border:`2px solid ${author.color}33`,fontSize:'18px'}}>{author.emoji}</div><div><p style={{fontWeight:'700',color:'var(--ink)',fontSize:'14px'}}>{author.name}</p><p style={{fontSize:'11px',color:'var(--muted)'}}>Início: {p.date} · Respondida: {p.respondida_em?new Date(p.respondida_em+'T00:00:00').toLocaleDateString('pt-BR'):'-'}</p></div><span style={{marginLeft:'auto',fontSize:'20px'}}>✅</span></div><p className="prayer-card-text">{p.text}</p></div>);})}</>)}
       </div>
     </div>
   );
@@ -620,12 +562,7 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
     <div className="screen">
       <div className="topbar"><h2>⚔️ Missões da Semana</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
-        {missions.length>0&&(
-          <div className="alert alert-green" style={{marginBottom:'20px',display:'flex',alignItems:'center',gap:'14px'}}>
-            <span style={{fontSize:'32px'}}>🎯</span>
-            <div><p style={{fontWeight:'700',color:'var(--forest)',fontSize:'15px'}}>{done}/{missions.length} completas</p><p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>Cada missão = +1 ponto no tabuleiro</p></div>
-          </div>
-        )}
+        {missions.length>0&&(<div className="alert alert-green" style={{marginBottom:'20px',display:'flex',alignItems:'center',gap:'14px'}}><span style={{fontSize:'32px'}}>🎯</span><div><p style={{fontWeight:'700',color:'var(--forest)',fontSize:'15px'}}>{done}/{missions.length} completas</p><p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>Cada missão = +1 ponto no tabuleiro</p></div></div>)}
         {theme&&<p style={{fontSize:'13px',color:'var(--muted)',marginBottom:'16px'}}>📖 Tema: <strong>{theme.theme}</strong></p>}
         {missions.length===0&&(<div className="loading-center"><p style={{fontFamily:"'Playfair Display',serif",color:'var(--muted)',fontStyle:'italic'}}>As missões aparecem com o tema semanal.</p></div>)}
         {missions.map((ms,i)=>{const isDone=ms.completedBy.includes(user.id);return(
@@ -646,21 +583,18 @@ function MissionsScreen({user,missions,theme,onComplete,members}){
 }
 
 function CelebrationScreen({member,phase,onClose}){
-  const PHASE_COLORS=['#2C4A3E','#C9A600','#7B5EA7','#C0504D','#2E86AB'];
-  const PHASE_NAMES=['Fase 1','Fase 2','Fase 3','Fase 4','Fase 5'];
-  const PHASE_LABELS=['🌱','👑','💜','🔥','✨'];
-  const color=PHASE_COLORS[Math.min(phase,4)];const label=PHASE_LABELS[Math.min(phase,4)];const name=PHASE_NAMES[Math.min(phase,4)];
+  const pi=getPhaseInfo(phase);
   const confetti=[...Array(20)].map((_,i)=>({left:`${Math.random()*100}%`,delay:`${Math.random()*1.5}s`,duration:`${1.5+Math.random()}s`,color:['#FFD700','#FF6B6B','#4ECDC4','#A8E6CF','#FFE66D','#C9A600'][i%6],size:`${6+Math.random()*8}px`}));
   return(
     <div className="celebration-overlay" onClick={onClose}>
       <div className="celebration-card" onClick={e=>e.stopPropagation()}>
         {confetti.map((c,i)=>(<div key={i} className="confetti-piece" style={{left:c.left,top:'-10px',width:c.size,height:c.size,background:c.color,animationDelay:c.delay,animationDuration:c.duration}}/>))}
-        <div style={{fontSize:'64px',marginBottom:'12px'}}>{label}</div>
+        <div style={{fontSize:'64px',marginBottom:'12px'}}>{pi.label}</div>
         <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'22px',fontWeight:'700',color:'var(--ink)',marginBottom:'8px'}}>{member.emoji} {member.name}</h2>
-        <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>completou a Fase {phase}!<br/>Nova jornada começa agora.</p>
-        <div style={{background:`${color}18`,border:`2px solid ${color}44`,borderRadius:'16px',padding:'16px',marginBottom:'24px'}}>
+        <p style={{color:'var(--muted)',fontSize:'14px',marginBottom:'20px',lineHeight:'1.6'}}>completou a {getPhaseInfo(phase-1).name}!<br/>Nova jornada começa agora.</p>
+        <div style={{background:`${pi.color}18`,border:`2px solid ${pi.color}44`,borderRadius:'16px',padding:'16px',marginBottom:'24px'}}>
           <p style={{fontSize:'12px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'4px'}}>Próxima fase</p>
-          <p style={{fontSize:'20px',fontWeight:'900',color:color}}>{label} {name}</p>
+          <p style={{fontSize:'20px',fontWeight:'900',color:pi.color}}>{pi.label} {pi.name}</p>
         </div>
         <button className="btn btn-primary btn-full" onClick={onClose} style={{padding:'14px',fontSize:'15px'}}>🚀 Continuar a jornada!</button>
       </div>
@@ -670,14 +604,9 @@ function CelebrationScreen({member,phase,onClose}){
 
 function BottomNav({active,onChange}){
   const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'missions',icon:'⚔️',label:'Missões'}];
-  return(
-    <nav className="bottom-nav">
-      {tabs.map(t=>(<button key={t.id} className={`nav-btn${active===t.id?' active':''}`} onClick={()=>onChange(t.id)}><span>{t.icon}</span><span>{t.label}</span>{active===t.id&&<div className="nav-indicator"/>}</button>))}
-    </nav>
-  );
+  return(<nav className="bottom-nav">{tabs.map(t=>(<button key={t.id} className={`nav-btn${active===t.id?' active':''}`} onClick={()=>onChange(t.id)}><span>{t.icon}</span><span>{t.label}</span>{active===t.id&&<div className="nav-indicator"/>}</button>))}</nav>);
 }
 
-// ── ROOT APP ──────────────────────────────────────────────────────────────────
 function App(){
   const[view,setView]=useState('loading');
   const[tab,setTab]=useState('home');
@@ -697,8 +626,7 @@ function App(){
   const DEF=[{id:'1',name:'Bela',emoji:'🌿',color:'#2C4A3E'},{id:'2',name:'Membro 2',emoji:'🌸',color:'#C4956A'},{id:'3',name:'Membro 3',emoji:'✨',color:'#7B8EC8'}];
 
   useEffect(()=>{(async()=>{
-    let m=null;
-    try{m=await DB.getMembros();}catch(e){console.error(e);}
+    let m=null;try{m=await DB.getMembros();}catch(e){console.error(e);}
     if(m&&m.length>0){setMembers(m);S.set('members',m);}
     else{const local=S.get('members');if(local)setMembers(local);else{setMembers(DEF);S.set('members',DEF);}}
     const th=S.get(`theme-${WEEK_KEY}`);const d=S.get(`dev-${TODAY}`);const pr=S.get(`prayer-${TODAY}`);
@@ -720,8 +648,7 @@ function App(){
       setDev(d);S.set(`dev-${TODAY}`,d);
       setPrayer({text:today.oracao});S.set(`prayer-${TODAY}`,{text:today.oracao});
       const msDone=await DB.getMissoes();
-      const ms=(today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]}));
-      setMissions(ms);
+      setMissions((today.missoes||[]).map((t,i)=>({id:`${WEEK_KEY}-${i+1}`,text:t,completedBy:msDone[`${WEEK_KEY}-${i+1}`]||[]})));
     }catch(e){console.error(e);alert('Erro ao carregar: '+e.message);}
     setLoading(false);
   }
@@ -747,20 +674,12 @@ function App(){
     await DB.addProgress(user.id,'devocional',`${WEEK_KEY}-${TODAY}`);
     const pg=await DB.getProgress();setProgress(pg);checkPhase(pg,user.id);
   }
-
   async function addComment(text){await DB.addComentario(user.id,text);setComments(await DB.getComentarios(TODAY));}
   async function editComment(id,t){await DB.editComentario(id,t);setComments(await DB.getComentarios(TODAY));}
-  async function handleReact(comentarioId,emoji,reactions){
-    const newReactions=await DB.updateReaction(comentarioId,emoji,user.id,reactions);
-    setComments(prev=>prev.map(c=>c.id===comentarioId?{...c,reactions:newReactions}:c));
-  }
+  async function handleReact(cId,emoji,reactions){const nr=await DB.updateReaction(cId,emoji,user.id,reactions);setComments(prev=>prev.map(c=>c.id===cId?{...c,reactions:nr}:c));}
   async function addPrayer(text){await DB.addOracao(user,text);setWall(await DB.getOracoes());}
   async function prayFor(id){await DB.addIntercessao(id,user.id);setWall(await DB.getOracoes());}
-  async function markAnswered(id){
-    await DB.marcarRespondida(id);
-    const[wl,aw]=await Promise.all([DB.getOracoes(),DB.getAllOracoes()]);
-    setWall(wl);setAnsweredWall(aw);
-  }
+  async function markAnswered(id){await DB.marcarRespondida(id);const[wl,aw]=await Promise.all([DB.getOracoes(),DB.getAllOracoes()]);setWall(wl);setAnsweredWall(aw);}
   async function completeMission(mid){
     setMissions(ms=>ms.map(m=>m.id===mid&&!m.completedBy.includes(user.id)?{...m,completedBy:[...m.completedBy,user.id]}:m));
     await DB.addProgress(user.id,'missao',mid);
@@ -799,8 +718,7 @@ if('serviceWorker' in navigator){
         } else if(Notification.permission==='granted'&&r.active){
           r.active.postMessage({type:'SCHEDULE_NOTIFICATION'});
         }
-      })
-      .catch(e=>console.error('SW erro:',e));
+      }).catch(e=>console.error('SW erro:',e));
   });
 }
 </script>
