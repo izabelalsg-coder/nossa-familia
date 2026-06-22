@@ -169,10 +169,28 @@
 </head>
 <body>
 <div id="root"></div>
-<script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+window.addEventListener('error', function(e) {
+  document.getElementById('root').innerHTML =
+    '<div style="padding:24px;font-family:sans-serif;background:#FDE8E8;color:#C0504D;min-height:100vh;">' +
+    '<h2 style="margin-bottom:12px;">Erro detectado</h2>' +
+    '<p style="margin-bottom:8px;"><b>Mensagem:</b> ' + (e.message||'') + '</p>' +
+    '<p style="margin-bottom:8px;"><b>Arquivo:</b> ' + (e.filename||'') + '</p>' +
+    '<p style="margin-bottom:8px;"><b>Linha:</b> ' + (e.lineno||'') + '</p>' +
+    '</div>';
+});
+window.addEventListener('unhandledrejection', function(e) {
+  document.getElementById('root').innerHTML =
+    '<div style="padding:24px;font-family:sans-serif;background:#FDE8E8;color:#C0504D;min-height:100vh;">' +
+    '<h2 style="margin-bottom:12px;">Erro de promise não tratado</h2>' +
+    '<p>' + (e.reason && e.reason.message ? e.reason.message : String(e.reason)) + '</p>' +
+    '</div>';
+});
+</script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script type="text/babel">
 const{useState,useEffect,useRef,useCallback}=React;
 
