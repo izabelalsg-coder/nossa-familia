@@ -1,0 +1,4930 @@
+{
+  "planos": [
+    {
+      "id": "plano_anual",
+      "nome": "Plano Anual",
+      "duracao_dias": 365,
+      "total_capitulos": 1189,
+      "dias": [
+        {
+          "dia": 1,
+          "referencia": "Genesis 1-4",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 1,
+          "livro_final": "Genesis",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 2,
+          "referencia": "Genesis 5-8",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 5,
+          "livro_final": "Genesis",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 3,
+          "referencia": "Genesis 9-12",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 9,
+          "livro_final": "Genesis",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 4,
+          "referencia": "Genesis 13-16",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 13,
+          "livro_final": "Genesis",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 5,
+          "referencia": "Genesis 17-20",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 17,
+          "livro_final": "Genesis",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 6,
+          "referencia": "Genesis 21-24",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 21,
+          "livro_final": "Genesis",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 7,
+          "referencia": "Genesis 25-28",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 25,
+          "livro_final": "Genesis",
+          "capitulo_final": 28,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 8,
+          "referencia": "Genesis 29-32",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 29,
+          "livro_final": "Genesis",
+          "capitulo_final": 32,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 9,
+          "referencia": "Genesis 33-36",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 33,
+          "livro_final": "Genesis",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 10,
+          "referencia": "Genesis 37-40",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 37,
+          "livro_final": "Genesis",
+          "capitulo_final": 40,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 11,
+          "referencia": "Genesis 41-44",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 41,
+          "livro_final": "Genesis",
+          "capitulo_final": 44,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 12,
+          "referencia": "Genesis 45-48",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 45,
+          "livro_final": "Genesis",
+          "capitulo_final": 48,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 13,
+          "referencia": "Genesis 49-50; Exodo 1-2",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 49,
+          "livro_final": "Exodo",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 14,
+          "referencia": "Exodo 3-6",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 3,
+          "livro_final": "Exodo",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 15,
+          "referencia": "Exodo 7-10",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 7,
+          "livro_final": "Exodo",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 16,
+          "referencia": "Exodo 11-14",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 11,
+          "livro_final": "Exodo",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 17,
+          "referencia": "Exodo 15-18",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 15,
+          "livro_final": "Exodo",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 18,
+          "referencia": "Exodo 19-22",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 19,
+          "livro_final": "Exodo",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 19,
+          "referencia": "Exodo 23-26",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 23,
+          "livro_final": "Exodo",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 20,
+          "referencia": "Exodo 27-30",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 27,
+          "livro_final": "Exodo",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 21,
+          "referencia": "Exodo 31-34",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 31,
+          "livro_final": "Exodo",
+          "capitulo_final": 34,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 22,
+          "referencia": "Exodo 35-38",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 35,
+          "livro_final": "Exodo",
+          "capitulo_final": 38,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 23,
+          "referencia": "Exodo 39-40; Levitico 1-2",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 39,
+          "livro_final": "Levitico",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 24,
+          "referencia": "Levitico 3-6",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 3,
+          "livro_final": "Levitico",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 25,
+          "referencia": "Levitico 7-10",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 7,
+          "livro_final": "Levitico",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 26,
+          "referencia": "Levitico 11-14",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 11,
+          "livro_final": "Levitico",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 27,
+          "referencia": "Levitico 15-18",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 15,
+          "livro_final": "Levitico",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 28,
+          "referencia": "Levitico 19-22",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 19,
+          "livro_final": "Levitico",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 29,
+          "referencia": "Levitico 23-26",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 23,
+          "livro_final": "Levitico",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 30,
+          "referencia": "Levitico 27; Numeros 1-3",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 27,
+          "livro_final": "Numeros",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 31,
+          "referencia": "Numeros 4-7",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 4,
+          "livro_final": "Numeros",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 32,
+          "referencia": "Numeros 8-11",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 8,
+          "livro_final": "Numeros",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 33,
+          "referencia": "Numeros 12-15",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 12,
+          "livro_final": "Numeros",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 34,
+          "referencia": "Numeros 16-19",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 16,
+          "livro_final": "Numeros",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 35,
+          "referencia": "Numeros 20-23",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 20,
+          "livro_final": "Numeros",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 36,
+          "referencia": "Numeros 24-27",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 24,
+          "livro_final": "Numeros",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 37,
+          "referencia": "Numeros 28-31",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 28,
+          "livro_final": "Numeros",
+          "capitulo_final": 31,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 38,
+          "referencia": "Numeros 32-35",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 32,
+          "livro_final": "Numeros",
+          "capitulo_final": 35,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 39,
+          "referencia": "Numeros 36; Deuteronomio 1-3",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 36,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 40,
+          "referencia": "Deuteronomio 4-7",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 4,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 41,
+          "referencia": "Deuteronomio 8-11",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 8,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 42,
+          "referencia": "Deuteronomio 12-15",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 12,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 43,
+          "referencia": "Deuteronomio 16-19",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 16,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 44,
+          "referencia": "Deuteronomio 20-23",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 20,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 45,
+          "referencia": "Deuteronomio 24-27",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 24,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 46,
+          "referencia": "Deuteronomio 28-31",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 28,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 31,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 47,
+          "referencia": "Deuteronomio 32-34; Josue 1",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 32,
+          "livro_final": "Josue",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 48,
+          "referencia": "Josue 2-5",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 2,
+          "livro_final": "Josue",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 49,
+          "referencia": "Josue 6-9",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 6,
+          "livro_final": "Josue",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 50,
+          "referencia": "Josue 10-13",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 10,
+          "livro_final": "Josue",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 51,
+          "referencia": "Josue 14-17",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 14,
+          "livro_final": "Josue",
+          "capitulo_final": 17,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 52,
+          "referencia": "Josue 18-21",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 18,
+          "livro_final": "Josue",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 53,
+          "referencia": "Josue 22-24; Juizes 1",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 22,
+          "livro_final": "Juizes",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 54,
+          "referencia": "Juizes 2-5",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 2,
+          "livro_final": "Juizes",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 55,
+          "referencia": "Juizes 6-9",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 6,
+          "livro_final": "Juizes",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 56,
+          "referencia": "Juizes 10-13",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 10,
+          "livro_final": "Juizes",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 57,
+          "referencia": "Juizes 14-17",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 14,
+          "livro_final": "Juizes",
+          "capitulo_final": 17,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 58,
+          "referencia": "Juizes 18-21",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 18,
+          "livro_final": "Juizes",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 59,
+          "referencia": "Rute 1-4",
+          "livro_inicial": "Rute",
+          "capitulo_inicial": 1,
+          "livro_final": "Rute",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 60,
+          "referencia": "1 Samuel 1-4",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 1,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 61,
+          "referencia": "1 Samuel 5-8",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 5,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 62,
+          "referencia": "1 Samuel 9-12",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 9,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 63,
+          "referencia": "1 Samuel 13-16",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 13,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 64,
+          "referencia": "1 Samuel 17-20",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 17,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 65,
+          "referencia": "1 Samuel 21-24",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 21,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 66,
+          "referencia": "1 Samuel 25-28",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 25,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 28,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 67,
+          "referencia": "1 Samuel 29-31; 2 Samuel 1",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 29,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 68,
+          "referencia": "2 Samuel 2-5",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 2,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 69,
+          "referencia": "2 Samuel 6-9",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 6,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 70,
+          "referencia": "2 Samuel 10-13",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 10,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 71,
+          "referencia": "2 Samuel 14-17",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 14,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 17,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 72,
+          "referencia": "2 Samuel 18-21",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 18,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 73,
+          "referencia": "2 Samuel 22-24; 1 Reis 1",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 22,
+          "livro_final": "1 Reis",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 74,
+          "referencia": "1 Reis 2-5",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Reis",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 75,
+          "referencia": "1 Reis 6-9",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 6,
+          "livro_final": "1 Reis",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 76,
+          "referencia": "1 Reis 10-13",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 10,
+          "livro_final": "1 Reis",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 77,
+          "referencia": "1 Reis 14-17",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 14,
+          "livro_final": "1 Reis",
+          "capitulo_final": 17,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 78,
+          "referencia": "1 Reis 18-21",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 18,
+          "livro_final": "1 Reis",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 79,
+          "referencia": "1 Reis 22; 2 Reis 1-3",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 22,
+          "livro_final": "2 Reis",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 80,
+          "referencia": "2 Reis 4-7",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 4,
+          "livro_final": "2 Reis",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 81,
+          "referencia": "2 Reis 8-11",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 8,
+          "livro_final": "2 Reis",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 82,
+          "referencia": "2 Reis 12-15",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 12,
+          "livro_final": "2 Reis",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 83,
+          "referencia": "2 Reis 16-19",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 16,
+          "livro_final": "2 Reis",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 84,
+          "referencia": "2 Reis 20-23",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 20,
+          "livro_final": "2 Reis",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 85,
+          "referencia": "2 Reis 24-25; 1 Cronicas 1-2",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 24,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 86,
+          "referencia": "1 Cronicas 3-6",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 3,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 87,
+          "referencia": "1 Cronicas 7-10",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 7,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 88,
+          "referencia": "1 Cronicas 11-14",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 11,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 89,
+          "referencia": "1 Cronicas 15-18",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 15,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 90,
+          "referencia": "1 Cronicas 19-22",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 19,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 91,
+          "referencia": "1 Cronicas 23-26",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 23,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 92,
+          "referencia": "1 Cronicas 27-29; 2 Cronicas 1",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 27,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 93,
+          "referencia": "2 Cronicas 2-5",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 2,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 94,
+          "referencia": "2 Cronicas 6-9",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 6,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 4
+        },
+        {
+          "dia": 95,
+          "referencia": "2 Cronicas 10-12",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 10,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 96,
+          "referencia": "2 Cronicas 13-15",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 13,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 97,
+          "referencia": "2 Cronicas 16-18",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 16,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 98,
+          "referencia": "2 Cronicas 19-21",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 19,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 99,
+          "referencia": "2 Cronicas 22-24",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 22,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 100,
+          "referencia": "2 Cronicas 25-27",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 25,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 101,
+          "referencia": "2 Cronicas 28-30",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 28,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 102,
+          "referencia": "2 Cronicas 31-33",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 31,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 103,
+          "referencia": "2 Cronicas 34-36",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 34,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 104,
+          "referencia": "Esdras 1-3",
+          "livro_inicial": "Esdras",
+          "capitulo_inicial": 1,
+          "livro_final": "Esdras",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 105,
+          "referencia": "Esdras 4-6",
+          "livro_inicial": "Esdras",
+          "capitulo_inicial": 4,
+          "livro_final": "Esdras",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 106,
+          "referencia": "Esdras 7-9",
+          "livro_inicial": "Esdras",
+          "capitulo_inicial": 7,
+          "livro_final": "Esdras",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 107,
+          "referencia": "Esdras 10; Neemias 1-2",
+          "livro_inicial": "Esdras",
+          "capitulo_inicial": 10,
+          "livro_final": "Neemias",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 108,
+          "referencia": "Neemias 3-5",
+          "livro_inicial": "Neemias",
+          "capitulo_inicial": 3,
+          "livro_final": "Neemias",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 109,
+          "referencia": "Neemias 6-8",
+          "livro_inicial": "Neemias",
+          "capitulo_inicial": 6,
+          "livro_final": "Neemias",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 110,
+          "referencia": "Neemias 9-11",
+          "livro_inicial": "Neemias",
+          "capitulo_inicial": 9,
+          "livro_final": "Neemias",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 111,
+          "referencia": "Neemias 12-13; Ester 1",
+          "livro_inicial": "Neemias",
+          "capitulo_inicial": 12,
+          "livro_final": "Ester",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 112,
+          "referencia": "Ester 2-4",
+          "livro_inicial": "Ester",
+          "capitulo_inicial": 2,
+          "livro_final": "Ester",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 113,
+          "referencia": "Ester 5-7",
+          "livro_inicial": "Ester",
+          "capitulo_inicial": 5,
+          "livro_final": "Ester",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 114,
+          "referencia": "Ester 8-10",
+          "livro_inicial": "Ester",
+          "capitulo_inicial": 8,
+          "livro_final": "Ester",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 115,
+          "referencia": "Jo 1-3",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 1,
+          "livro_final": "Jo",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 116,
+          "referencia": "Jo 4-6",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 4,
+          "livro_final": "Jo",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 117,
+          "referencia": "Jo 7-9",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 7,
+          "livro_final": "Jo",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 118,
+          "referencia": "Jo 10-12",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 10,
+          "livro_final": "Jo",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 119,
+          "referencia": "Jo 13-15",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 13,
+          "livro_final": "Jo",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 120,
+          "referencia": "Jo 16-18",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 16,
+          "livro_final": "Jo",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 121,
+          "referencia": "Jo 19-21",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 19,
+          "livro_final": "Jo",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 122,
+          "referencia": "Jo 22-24",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 22,
+          "livro_final": "Jo",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 123,
+          "referencia": "Jo 25-27",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 25,
+          "livro_final": "Jo",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 124,
+          "referencia": "Jo 28-30",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 28,
+          "livro_final": "Jo",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 125,
+          "referencia": "Jo 31-33",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 31,
+          "livro_final": "Jo",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 126,
+          "referencia": "Jo 34-36",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 34,
+          "livro_final": "Jo",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 127,
+          "referencia": "Jo 37-39",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 37,
+          "livro_final": "Jo",
+          "capitulo_final": 39,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 128,
+          "referencia": "Jo 40-42",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 40,
+          "livro_final": "Jo",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 129,
+          "referencia": "Salmos 1-3",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 1,
+          "livro_final": "Salmos",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 130,
+          "referencia": "Salmos 4-6",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 4,
+          "livro_final": "Salmos",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 131,
+          "referencia": "Salmos 7-9",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 7,
+          "livro_final": "Salmos",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 132,
+          "referencia": "Salmos 10-12",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 10,
+          "livro_final": "Salmos",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 133,
+          "referencia": "Salmos 13-15",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 13,
+          "livro_final": "Salmos",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 134,
+          "referencia": "Salmos 16-18",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 16,
+          "livro_final": "Salmos",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 135,
+          "referencia": "Salmos 19-21",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 19,
+          "livro_final": "Salmos",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 136,
+          "referencia": "Salmos 22-24",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 22,
+          "livro_final": "Salmos",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 137,
+          "referencia": "Salmos 25-27",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 25,
+          "livro_final": "Salmos",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 138,
+          "referencia": "Salmos 28-30",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 28,
+          "livro_final": "Salmos",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 139,
+          "referencia": "Salmos 31-33",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 31,
+          "livro_final": "Salmos",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 140,
+          "referencia": "Salmos 34-36",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 34,
+          "livro_final": "Salmos",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 141,
+          "referencia": "Salmos 37-39",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 37,
+          "livro_final": "Salmos",
+          "capitulo_final": 39,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 142,
+          "referencia": "Salmos 40-42",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 40,
+          "livro_final": "Salmos",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 143,
+          "referencia": "Salmos 43-45",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 43,
+          "livro_final": "Salmos",
+          "capitulo_final": 45,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 144,
+          "referencia": "Salmos 46-48",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 46,
+          "livro_final": "Salmos",
+          "capitulo_final": 48,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 145,
+          "referencia": "Salmos 49-51",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 49,
+          "livro_final": "Salmos",
+          "capitulo_final": 51,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 146,
+          "referencia": "Salmos 52-54",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 52,
+          "livro_final": "Salmos",
+          "capitulo_final": 54,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 147,
+          "referencia": "Salmos 55-57",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 55,
+          "livro_final": "Salmos",
+          "capitulo_final": 57,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 148,
+          "referencia": "Salmos 58-60",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 58,
+          "livro_final": "Salmos",
+          "capitulo_final": 60,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 149,
+          "referencia": "Salmos 61-63",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 61,
+          "livro_final": "Salmos",
+          "capitulo_final": 63,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 150,
+          "referencia": "Salmos 64-66",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 64,
+          "livro_final": "Salmos",
+          "capitulo_final": 66,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 151,
+          "referencia": "Salmos 67-69",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 67,
+          "livro_final": "Salmos",
+          "capitulo_final": 69,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 152,
+          "referencia": "Salmos 70-72",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 70,
+          "livro_final": "Salmos",
+          "capitulo_final": 72,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 153,
+          "referencia": "Salmos 73-75",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 73,
+          "livro_final": "Salmos",
+          "capitulo_final": 75,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 154,
+          "referencia": "Salmos 76-78",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 76,
+          "livro_final": "Salmos",
+          "capitulo_final": 78,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 155,
+          "referencia": "Salmos 79-81",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 79,
+          "livro_final": "Salmos",
+          "capitulo_final": 81,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 156,
+          "referencia": "Salmos 82-84",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 82,
+          "livro_final": "Salmos",
+          "capitulo_final": 84,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 157,
+          "referencia": "Salmos 85-87",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 85,
+          "livro_final": "Salmos",
+          "capitulo_final": 87,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 158,
+          "referencia": "Salmos 88-90",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 88,
+          "livro_final": "Salmos",
+          "capitulo_final": 90,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 159,
+          "referencia": "Salmos 91-93",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 91,
+          "livro_final": "Salmos",
+          "capitulo_final": 93,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 160,
+          "referencia": "Salmos 94-96",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 94,
+          "livro_final": "Salmos",
+          "capitulo_final": 96,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 161,
+          "referencia": "Salmos 97-99",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 97,
+          "livro_final": "Salmos",
+          "capitulo_final": 99,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 162,
+          "referencia": "Salmos 100-102",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 100,
+          "livro_final": "Salmos",
+          "capitulo_final": 102,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 163,
+          "referencia": "Salmos 103-105",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 103,
+          "livro_final": "Salmos",
+          "capitulo_final": 105,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 164,
+          "referencia": "Salmos 106-108",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 106,
+          "livro_final": "Salmos",
+          "capitulo_final": 108,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 165,
+          "referencia": "Salmos 109-111",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 109,
+          "livro_final": "Salmos",
+          "capitulo_final": 111,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 166,
+          "referencia": "Salmos 112-114",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 112,
+          "livro_final": "Salmos",
+          "capitulo_final": 114,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 167,
+          "referencia": "Salmos 115-117",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 115,
+          "livro_final": "Salmos",
+          "capitulo_final": 117,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 168,
+          "referencia": "Salmos 118-120",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 118,
+          "livro_final": "Salmos",
+          "capitulo_final": 120,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 169,
+          "referencia": "Salmos 121-123",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 121,
+          "livro_final": "Salmos",
+          "capitulo_final": 123,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 170,
+          "referencia": "Salmos 124-126",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 124,
+          "livro_final": "Salmos",
+          "capitulo_final": 126,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 171,
+          "referencia": "Salmos 127-129",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 127,
+          "livro_final": "Salmos",
+          "capitulo_final": 129,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 172,
+          "referencia": "Salmos 130-132",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 130,
+          "livro_final": "Salmos",
+          "capitulo_final": 132,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 173,
+          "referencia": "Salmos 133-135",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 133,
+          "livro_final": "Salmos",
+          "capitulo_final": 135,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 174,
+          "referencia": "Salmos 136-138",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 136,
+          "livro_final": "Salmos",
+          "capitulo_final": 138,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 175,
+          "referencia": "Salmos 139-141",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 139,
+          "livro_final": "Salmos",
+          "capitulo_final": 141,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 176,
+          "referencia": "Salmos 142-144",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 142,
+          "livro_final": "Salmos",
+          "capitulo_final": 144,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 177,
+          "referencia": "Salmos 145-147",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 145,
+          "livro_final": "Salmos",
+          "capitulo_final": 147,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 178,
+          "referencia": "Salmos 148-150",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 148,
+          "livro_final": "Salmos",
+          "capitulo_final": 150,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 179,
+          "referencia": "Proverbios 1-3",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 1,
+          "livro_final": "Proverbios",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 180,
+          "referencia": "Proverbios 4-6",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 4,
+          "livro_final": "Proverbios",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 181,
+          "referencia": "Proverbios 7-9",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 7,
+          "livro_final": "Proverbios",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 182,
+          "referencia": "Proverbios 10-12",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 10,
+          "livro_final": "Proverbios",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 183,
+          "referencia": "Proverbios 13-15",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 13,
+          "livro_final": "Proverbios",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 184,
+          "referencia": "Proverbios 16-18",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 16,
+          "livro_final": "Proverbios",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 185,
+          "referencia": "Proverbios 19-21",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 19,
+          "livro_final": "Proverbios",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 186,
+          "referencia": "Proverbios 22-24",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 22,
+          "livro_final": "Proverbios",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 187,
+          "referencia": "Proverbios 25-27",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 25,
+          "livro_final": "Proverbios",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 188,
+          "referencia": "Proverbios 28-30",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 28,
+          "livro_final": "Proverbios",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 189,
+          "referencia": "Proverbios 31; Eclesiastes 1-2",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 31,
+          "livro_final": "Eclesiastes",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 190,
+          "referencia": "Eclesiastes 3-5",
+          "livro_inicial": "Eclesiastes",
+          "capitulo_inicial": 3,
+          "livro_final": "Eclesiastes",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 191,
+          "referencia": "Eclesiastes 6-8",
+          "livro_inicial": "Eclesiastes",
+          "capitulo_inicial": 6,
+          "livro_final": "Eclesiastes",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 192,
+          "referencia": "Eclesiastes 9-11",
+          "livro_inicial": "Eclesiastes",
+          "capitulo_inicial": 9,
+          "livro_final": "Eclesiastes",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 193,
+          "referencia": "Eclesiastes 12; Cantares 1-2",
+          "livro_inicial": "Eclesiastes",
+          "capitulo_inicial": 12,
+          "livro_final": "Cantares",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 194,
+          "referencia": "Cantares 3-5",
+          "livro_inicial": "Cantares",
+          "capitulo_inicial": 3,
+          "livro_final": "Cantares",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 195,
+          "referencia": "Cantares 6-8",
+          "livro_inicial": "Cantares",
+          "capitulo_inicial": 6,
+          "livro_final": "Cantares",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 196,
+          "referencia": "Isaias 1-3",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 1,
+          "livro_final": "Isaias",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 197,
+          "referencia": "Isaias 4-6",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 4,
+          "livro_final": "Isaias",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 198,
+          "referencia": "Isaias 7-9",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 7,
+          "livro_final": "Isaias",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 199,
+          "referencia": "Isaias 10-12",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 10,
+          "livro_final": "Isaias",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 200,
+          "referencia": "Isaias 13-15",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 13,
+          "livro_final": "Isaias",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 201,
+          "referencia": "Isaias 16-18",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 16,
+          "livro_final": "Isaias",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 202,
+          "referencia": "Isaias 19-21",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 19,
+          "livro_final": "Isaias",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 203,
+          "referencia": "Isaias 22-24",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 22,
+          "livro_final": "Isaias",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 204,
+          "referencia": "Isaias 25-27",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 25,
+          "livro_final": "Isaias",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 205,
+          "referencia": "Isaias 28-30",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 28,
+          "livro_final": "Isaias",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 206,
+          "referencia": "Isaias 31-33",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 31,
+          "livro_final": "Isaias",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 207,
+          "referencia": "Isaias 34-36",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 34,
+          "livro_final": "Isaias",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 208,
+          "referencia": "Isaias 37-39",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 37,
+          "livro_final": "Isaias",
+          "capitulo_final": 39,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 209,
+          "referencia": "Isaias 40-42",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 40,
+          "livro_final": "Isaias",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 210,
+          "referencia": "Isaias 43-45",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 43,
+          "livro_final": "Isaias",
+          "capitulo_final": 45,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 211,
+          "referencia": "Isaias 46-48",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 46,
+          "livro_final": "Isaias",
+          "capitulo_final": 48,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 212,
+          "referencia": "Isaias 49-51",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 49,
+          "livro_final": "Isaias",
+          "capitulo_final": 51,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 213,
+          "referencia": "Isaias 52-54",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 52,
+          "livro_final": "Isaias",
+          "capitulo_final": 54,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 214,
+          "referencia": "Isaias 55-57",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 55,
+          "livro_final": "Isaias",
+          "capitulo_final": 57,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 215,
+          "referencia": "Isaias 58-60",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 58,
+          "livro_final": "Isaias",
+          "capitulo_final": 60,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 216,
+          "referencia": "Isaias 61-63",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 61,
+          "livro_final": "Isaias",
+          "capitulo_final": 63,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 217,
+          "referencia": "Isaias 64-66",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 64,
+          "livro_final": "Isaias",
+          "capitulo_final": 66,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 218,
+          "referencia": "Jeremias 1-3",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 1,
+          "livro_final": "Jeremias",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 219,
+          "referencia": "Jeremias 4-6",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 4,
+          "livro_final": "Jeremias",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 220,
+          "referencia": "Jeremias 7-9",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 7,
+          "livro_final": "Jeremias",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 221,
+          "referencia": "Jeremias 10-12",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 10,
+          "livro_final": "Jeremias",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 222,
+          "referencia": "Jeremias 13-15",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 13,
+          "livro_final": "Jeremias",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 223,
+          "referencia": "Jeremias 16-18",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 16,
+          "livro_final": "Jeremias",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 224,
+          "referencia": "Jeremias 19-21",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 19,
+          "livro_final": "Jeremias",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 225,
+          "referencia": "Jeremias 22-24",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 22,
+          "livro_final": "Jeremias",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 226,
+          "referencia": "Jeremias 25-27",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 25,
+          "livro_final": "Jeremias",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 227,
+          "referencia": "Jeremias 28-30",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 28,
+          "livro_final": "Jeremias",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 228,
+          "referencia": "Jeremias 31-33",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 31,
+          "livro_final": "Jeremias",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 229,
+          "referencia": "Jeremias 34-36",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 34,
+          "livro_final": "Jeremias",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 230,
+          "referencia": "Jeremias 37-39",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 37,
+          "livro_final": "Jeremias",
+          "capitulo_final": 39,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 231,
+          "referencia": "Jeremias 40-42",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 40,
+          "livro_final": "Jeremias",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 232,
+          "referencia": "Jeremias 43-45",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 43,
+          "livro_final": "Jeremias",
+          "capitulo_final": 45,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 233,
+          "referencia": "Jeremias 46-48",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 46,
+          "livro_final": "Jeremias",
+          "capitulo_final": 48,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 234,
+          "referencia": "Jeremias 49-51",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 49,
+          "livro_final": "Jeremias",
+          "capitulo_final": 51,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 235,
+          "referencia": "Jeremias 52; Lamentacoes 1-2",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 52,
+          "livro_final": "Lamentacoes",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 236,
+          "referencia": "Lamentacoes 3-5",
+          "livro_inicial": "Lamentacoes",
+          "capitulo_inicial": 3,
+          "livro_final": "Lamentacoes",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 237,
+          "referencia": "Ezequiel 1-3",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 1,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 238,
+          "referencia": "Ezequiel 4-6",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 4,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 239,
+          "referencia": "Ezequiel 7-9",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 7,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 240,
+          "referencia": "Ezequiel 10-12",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 10,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 241,
+          "referencia": "Ezequiel 13-15",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 13,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 242,
+          "referencia": "Ezequiel 16-18",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 16,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 243,
+          "referencia": "Ezequiel 19-21",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 19,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 244,
+          "referencia": "Ezequiel 22-24",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 22,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 245,
+          "referencia": "Ezequiel 25-27",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 25,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 246,
+          "referencia": "Ezequiel 28-30",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 28,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 247,
+          "referencia": "Ezequiel 31-33",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 31,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 248,
+          "referencia": "Ezequiel 34-36",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 34,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 249,
+          "referencia": "Ezequiel 37-39",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 37,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 39,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 250,
+          "referencia": "Ezequiel 40-42",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 40,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 251,
+          "referencia": "Ezequiel 43-45",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 43,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 45,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 252,
+          "referencia": "Ezequiel 46-48",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 46,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 48,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 253,
+          "referencia": "Daniel 1-3",
+          "livro_inicial": "Daniel",
+          "capitulo_inicial": 1,
+          "livro_final": "Daniel",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 254,
+          "referencia": "Daniel 4-6",
+          "livro_inicial": "Daniel",
+          "capitulo_inicial": 4,
+          "livro_final": "Daniel",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 255,
+          "referencia": "Daniel 7-9",
+          "livro_inicial": "Daniel",
+          "capitulo_inicial": 7,
+          "livro_final": "Daniel",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 256,
+          "referencia": "Daniel 10-12",
+          "livro_inicial": "Daniel",
+          "capitulo_inicial": 10,
+          "livro_final": "Daniel",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 257,
+          "referencia": "Oseias 1-3",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 1,
+          "livro_final": "Oseias",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 258,
+          "referencia": "Oseias 4-6",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 4,
+          "livro_final": "Oseias",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 259,
+          "referencia": "Oseias 7-9",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 7,
+          "livro_final": "Oseias",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 260,
+          "referencia": "Oseias 10-12",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 10,
+          "livro_final": "Oseias",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 261,
+          "referencia": "Oseias 13-14; Joel 1",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 13,
+          "livro_final": "Joel",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 262,
+          "referencia": "Joel 2-3; Amos 1",
+          "livro_inicial": "Joel",
+          "capitulo_inicial": 2,
+          "livro_final": "Amos",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 263,
+          "referencia": "Amos 2-4",
+          "livro_inicial": "Amos",
+          "capitulo_inicial": 2,
+          "livro_final": "Amos",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 264,
+          "referencia": "Amos 5-7",
+          "livro_inicial": "Amos",
+          "capitulo_inicial": 5,
+          "livro_final": "Amos",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 265,
+          "referencia": "Amos 8-9; Obadias 1",
+          "livro_inicial": "Amos",
+          "capitulo_inicial": 8,
+          "livro_final": "Obadias",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 266,
+          "referencia": "Jonas 1-3",
+          "livro_inicial": "Jonas",
+          "capitulo_inicial": 1,
+          "livro_final": "Jonas",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 267,
+          "referencia": "Jonas 4; Miqueias 1-2",
+          "livro_inicial": "Jonas",
+          "capitulo_inicial": 4,
+          "livro_final": "Miqueias",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 268,
+          "referencia": "Miqueias 3-5",
+          "livro_inicial": "Miqueias",
+          "capitulo_inicial": 3,
+          "livro_final": "Miqueias",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 269,
+          "referencia": "Miqueias 6-7; Naum 1",
+          "livro_inicial": "Miqueias",
+          "capitulo_inicial": 6,
+          "livro_final": "Naum",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 270,
+          "referencia": "Naum 2-3; Habacuque 1",
+          "livro_inicial": "Naum",
+          "capitulo_inicial": 2,
+          "livro_final": "Habacuque",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 271,
+          "referencia": "Habacuque 2-3; Sofonias 1",
+          "livro_inicial": "Habacuque",
+          "capitulo_inicial": 2,
+          "livro_final": "Sofonias",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 272,
+          "referencia": "Sofonias 2-3; Ageu 1",
+          "livro_inicial": "Sofonias",
+          "capitulo_inicial": 2,
+          "livro_final": "Ageu",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 273,
+          "referencia": "Ageu 2; Zacarias 1-2",
+          "livro_inicial": "Ageu",
+          "capitulo_inicial": 2,
+          "livro_final": "Zacarias",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 274,
+          "referencia": "Zacarias 3-5",
+          "livro_inicial": "Zacarias",
+          "capitulo_inicial": 3,
+          "livro_final": "Zacarias",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 275,
+          "referencia": "Zacarias 6-8",
+          "livro_inicial": "Zacarias",
+          "capitulo_inicial": 6,
+          "livro_final": "Zacarias",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 276,
+          "referencia": "Zacarias 9-11",
+          "livro_inicial": "Zacarias",
+          "capitulo_inicial": 9,
+          "livro_final": "Zacarias",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 277,
+          "referencia": "Zacarias 12-14",
+          "livro_inicial": "Zacarias",
+          "capitulo_inicial": 12,
+          "livro_final": "Zacarias",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 278,
+          "referencia": "Malaquias 1-3",
+          "livro_inicial": "Malaquias",
+          "capitulo_inicial": 1,
+          "livro_final": "Malaquias",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 279,
+          "referencia": "Malaquias 4; Mateus 1-2",
+          "livro_inicial": "Malaquias",
+          "capitulo_inicial": 4,
+          "livro_final": "Mateus",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 280,
+          "referencia": "Mateus 3-5",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 3,
+          "livro_final": "Mateus",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 281,
+          "referencia": "Mateus 6-8",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 6,
+          "livro_final": "Mateus",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 282,
+          "referencia": "Mateus 9-11",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 9,
+          "livro_final": "Mateus",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 283,
+          "referencia": "Mateus 12-14",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 12,
+          "livro_final": "Mateus",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 284,
+          "referencia": "Mateus 15-17",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 15,
+          "livro_final": "Mateus",
+          "capitulo_final": 17,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 285,
+          "referencia": "Mateus 18-20",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 18,
+          "livro_final": "Mateus",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 286,
+          "referencia": "Mateus 21-23",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 21,
+          "livro_final": "Mateus",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 287,
+          "referencia": "Mateus 24-26",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 24,
+          "livro_final": "Mateus",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 288,
+          "referencia": "Mateus 27-28; Marcos 1",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 27,
+          "livro_final": "Marcos",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 289,
+          "referencia": "Marcos 2-4",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 2,
+          "livro_final": "Marcos",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 290,
+          "referencia": "Marcos 5-7",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 5,
+          "livro_final": "Marcos",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 291,
+          "referencia": "Marcos 8-10",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 8,
+          "livro_final": "Marcos",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 292,
+          "referencia": "Marcos 11-13",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 11,
+          "livro_final": "Marcos",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 293,
+          "referencia": "Marcos 14-16",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 14,
+          "livro_final": "Marcos",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 294,
+          "referencia": "Lucas 1-3",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 1,
+          "livro_final": "Lucas",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 295,
+          "referencia": "Lucas 4-6",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 4,
+          "livro_final": "Lucas",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 296,
+          "referencia": "Lucas 7-9",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 7,
+          "livro_final": "Lucas",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 297,
+          "referencia": "Lucas 10-12",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 10,
+          "livro_final": "Lucas",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 298,
+          "referencia": "Lucas 13-15",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 13,
+          "livro_final": "Lucas",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 299,
+          "referencia": "Lucas 16-18",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 16,
+          "livro_final": "Lucas",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 300,
+          "referencia": "Lucas 19-21",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 19,
+          "livro_final": "Lucas",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 301,
+          "referencia": "Lucas 22-24",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 22,
+          "livro_final": "Lucas",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 302,
+          "referencia": "Joao 1-3",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 1,
+          "livro_final": "Joao",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 303,
+          "referencia": "Joao 4-6",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 4,
+          "livro_final": "Joao",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 304,
+          "referencia": "Joao 7-9",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 7,
+          "livro_final": "Joao",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 305,
+          "referencia": "Joao 10-12",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 10,
+          "livro_final": "Joao",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 306,
+          "referencia": "Joao 13-15",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 13,
+          "livro_final": "Joao",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 307,
+          "referencia": "Joao 16-18",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 16,
+          "livro_final": "Joao",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 308,
+          "referencia": "Joao 19-21",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 19,
+          "livro_final": "Joao",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 309,
+          "referencia": "Atos 1-3",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 1,
+          "livro_final": "Atos",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 310,
+          "referencia": "Atos 4-6",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 4,
+          "livro_final": "Atos",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 311,
+          "referencia": "Atos 7-9",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 7,
+          "livro_final": "Atos",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 312,
+          "referencia": "Atos 10-12",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 10,
+          "livro_final": "Atos",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 313,
+          "referencia": "Atos 13-15",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 13,
+          "livro_final": "Atos",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 314,
+          "referencia": "Atos 16-18",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 16,
+          "livro_final": "Atos",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 315,
+          "referencia": "Atos 19-21",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 19,
+          "livro_final": "Atos",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 316,
+          "referencia": "Atos 22-24",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 22,
+          "livro_final": "Atos",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 317,
+          "referencia": "Atos 25-27",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 25,
+          "livro_final": "Atos",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 318,
+          "referencia": "Atos 28; Romanos 1-2",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 28,
+          "livro_final": "Romanos",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 319,
+          "referencia": "Romanos 3-5",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 3,
+          "livro_final": "Romanos",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 320,
+          "referencia": "Romanos 6-8",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 6,
+          "livro_final": "Romanos",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 321,
+          "referencia": "Romanos 9-11",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 9,
+          "livro_final": "Romanos",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 322,
+          "referencia": "Romanos 12-14",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 12,
+          "livro_final": "Romanos",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 323,
+          "referencia": "Romanos 15-16; 1 Corintios 1",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 15,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 324,
+          "referencia": "1 Corintios 2-4",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 325,
+          "referencia": "1 Corintios 5-7",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 5,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 326,
+          "referencia": "1 Corintios 8-10",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 8,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 327,
+          "referencia": "1 Corintios 11-13",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 11,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 328,
+          "referencia": "1 Corintios 14-16",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 14,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 329,
+          "referencia": "2 Corintios 1-3",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 1,
+          "livro_final": "2 Corintios",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 330,
+          "referencia": "2 Corintios 4-6",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 4,
+          "livro_final": "2 Corintios",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 331,
+          "referencia": "2 Corintios 7-9",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 7,
+          "livro_final": "2 Corintios",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 332,
+          "referencia": "2 Corintios 10-12",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 10,
+          "livro_final": "2 Corintios",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 333,
+          "referencia": "2 Corintios 13; Galatas 1-2",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 13,
+          "livro_final": "Galatas",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 334,
+          "referencia": "Galatas 3-5",
+          "livro_inicial": "Galatas",
+          "capitulo_inicial": 3,
+          "livro_final": "Galatas",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 335,
+          "referencia": "Galatas 6; Efesios 1-2",
+          "livro_inicial": "Galatas",
+          "capitulo_inicial": 6,
+          "livro_final": "Efesios",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 336,
+          "referencia": "Efesios 3-5",
+          "livro_inicial": "Efesios",
+          "capitulo_inicial": 3,
+          "livro_final": "Efesios",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 337,
+          "referencia": "Efesios 6; Filipenses 1-2",
+          "livro_inicial": "Efesios",
+          "capitulo_inicial": 6,
+          "livro_final": "Filipenses",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 338,
+          "referencia": "Filipenses 3-4; Colossenses 1",
+          "livro_inicial": "Filipenses",
+          "capitulo_inicial": 3,
+          "livro_final": "Colossenses",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 339,
+          "referencia": "Colossenses 2-4",
+          "livro_inicial": "Colossenses",
+          "capitulo_inicial": 2,
+          "livro_final": "Colossenses",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 340,
+          "referencia": "1 Tessalonicenses 1-3",
+          "livro_inicial": "1 Tessalonicenses",
+          "capitulo_inicial": 1,
+          "livro_final": "1 Tessalonicenses",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 341,
+          "referencia": "1 Tessalonicenses 4-5; 2 Tessalonicenses 1",
+          "livro_inicial": "1 Tessalonicenses",
+          "capitulo_inicial": 4,
+          "livro_final": "2 Tessalonicenses",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 342,
+          "referencia": "2 Tessalonicenses 2-3; 1 Timoteo 1",
+          "livro_inicial": "2 Tessalonicenses",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Timoteo",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 343,
+          "referencia": "1 Timoteo 2-4",
+          "livro_inicial": "1 Timoteo",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Timoteo",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 344,
+          "referencia": "1 Timoteo 5-6; 2 Timoteo 1",
+          "livro_inicial": "1 Timoteo",
+          "capitulo_inicial": 5,
+          "livro_final": "2 Timoteo",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 345,
+          "referencia": "2 Timoteo 2-4",
+          "livro_inicial": "2 Timoteo",
+          "capitulo_inicial": 2,
+          "livro_final": "2 Timoteo",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 346,
+          "referencia": "Tito 1-3",
+          "livro_inicial": "Tito",
+          "capitulo_inicial": 1,
+          "livro_final": "Tito",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 347,
+          "referencia": "Filemom 1; Hebreus 1-2",
+          "livro_inicial": "Filemom",
+          "capitulo_inicial": 1,
+          "livro_final": "Hebreus",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 348,
+          "referencia": "Hebreus 3-5",
+          "livro_inicial": "Hebreus",
+          "capitulo_inicial": 3,
+          "livro_final": "Hebreus",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 349,
+          "referencia": "Hebreus 6-8",
+          "livro_inicial": "Hebreus",
+          "capitulo_inicial": 6,
+          "livro_final": "Hebreus",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 350,
+          "referencia": "Hebreus 9-11",
+          "livro_inicial": "Hebreus",
+          "capitulo_inicial": 9,
+          "livro_final": "Hebreus",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 351,
+          "referencia": "Hebreus 12-13; Tiago 1",
+          "livro_inicial": "Hebreus",
+          "capitulo_inicial": 12,
+          "livro_final": "Tiago",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 352,
+          "referencia": "Tiago 2-4",
+          "livro_inicial": "Tiago",
+          "capitulo_inicial": 2,
+          "livro_final": "Tiago",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 353,
+          "referencia": "Tiago 5; 1 Pedro 1-2",
+          "livro_inicial": "Tiago",
+          "capitulo_inicial": 5,
+          "livro_final": "1 Pedro",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 354,
+          "referencia": "1 Pedro 3-5",
+          "livro_inicial": "1 Pedro",
+          "capitulo_inicial": 3,
+          "livro_final": "1 Pedro",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 355,
+          "referencia": "2 Pedro 1-3",
+          "livro_inicial": "2 Pedro",
+          "capitulo_inicial": 1,
+          "livro_final": "2 Pedro",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 356,
+          "referencia": "1 Joao 1-3",
+          "livro_inicial": "1 Joao",
+          "capitulo_inicial": 1,
+          "livro_final": "1 Joao",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 357,
+          "referencia": "1 Joao 4-5; 2 Joao 1",
+          "livro_inicial": "1 Joao",
+          "capitulo_inicial": 4,
+          "livro_final": "2 Joao",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 358,
+          "referencia": "3 Joao 1; Judas 1; Apocalipse 1",
+          "livro_inicial": "3 Joao",
+          "capitulo_inicial": 1,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 359,
+          "referencia": "Apocalipse 2-4",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 2,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 360,
+          "referencia": "Apocalipse 5-7",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 5,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 361,
+          "referencia": "Apocalipse 8-10",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 8,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 362,
+          "referencia": "Apocalipse 11-13",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 11,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 363,
+          "referencia": "Apocalipse 14-16",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 14,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 364,
+          "referencia": "Apocalipse 17-19",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 17,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 3
+        },
+        {
+          "dia": 365,
+          "referencia": "Apocalipse 20-22",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 20,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 3
+        }
+      ]
+    },
+    {
+      "id": "plano_semestral",
+      "nome": "Plano Semestral",
+      "duracao_dias": 180,
+      "total_capitulos": 1189,
+      "dias": [
+        {
+          "dia": 1,
+          "referencia": "Genesis 1-7",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 1,
+          "livro_final": "Genesis",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 2,
+          "referencia": "Genesis 8-14",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 8,
+          "livro_final": "Genesis",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 3,
+          "referencia": "Genesis 15-21",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 15,
+          "livro_final": "Genesis",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 4,
+          "referencia": "Genesis 22-28",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 22,
+          "livro_final": "Genesis",
+          "capitulo_final": 28,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 5,
+          "referencia": "Genesis 29-35",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 29,
+          "livro_final": "Genesis",
+          "capitulo_final": 35,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 6,
+          "referencia": "Genesis 36-42",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 36,
+          "livro_final": "Genesis",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 7,
+          "referencia": "Genesis 43-49",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 43,
+          "livro_final": "Genesis",
+          "capitulo_final": 49,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 8,
+          "referencia": "Genesis 50; Exodo 1-6",
+          "livro_inicial": "Genesis",
+          "capitulo_inicial": 50,
+          "livro_final": "Exodo",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 9,
+          "referencia": "Exodo 7-13",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 7,
+          "livro_final": "Exodo",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 10,
+          "referencia": "Exodo 14-20",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 14,
+          "livro_final": "Exodo",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 11,
+          "referencia": "Exodo 21-27",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 21,
+          "livro_final": "Exodo",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 12,
+          "referencia": "Exodo 28-34",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 28,
+          "livro_final": "Exodo",
+          "capitulo_final": 34,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 13,
+          "referencia": "Exodo 35-40; Levitico 1",
+          "livro_inicial": "Exodo",
+          "capitulo_inicial": 35,
+          "livro_final": "Levitico",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 14,
+          "referencia": "Levitico 2-8",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 2,
+          "livro_final": "Levitico",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 15,
+          "referencia": "Levitico 9-15",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 9,
+          "livro_final": "Levitico",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 16,
+          "referencia": "Levitico 16-22",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 16,
+          "livro_final": "Levitico",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 17,
+          "referencia": "Levitico 23-27; Numeros 1-2",
+          "livro_inicial": "Levitico",
+          "capitulo_inicial": 23,
+          "livro_final": "Numeros",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 18,
+          "referencia": "Numeros 3-9",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 3,
+          "livro_final": "Numeros",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 19,
+          "referencia": "Numeros 10-16",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 10,
+          "livro_final": "Numeros",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 20,
+          "referencia": "Numeros 17-23",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 17,
+          "livro_final": "Numeros",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 21,
+          "referencia": "Numeros 24-30",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 24,
+          "livro_final": "Numeros",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 22,
+          "referencia": "Numeros 31-36; Deuteronomio 1",
+          "livro_inicial": "Numeros",
+          "capitulo_inicial": 31,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 23,
+          "referencia": "Deuteronomio 2-8",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 2,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 24,
+          "referencia": "Deuteronomio 9-15",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 9,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 25,
+          "referencia": "Deuteronomio 16-22",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 16,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 26,
+          "referencia": "Deuteronomio 23-29",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 23,
+          "livro_final": "Deuteronomio",
+          "capitulo_final": 29,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 27,
+          "referencia": "Deuteronomio 30-34; Josue 1-2",
+          "livro_inicial": "Deuteronomio",
+          "capitulo_inicial": 30,
+          "livro_final": "Josue",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 28,
+          "referencia": "Josue 3-9",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 3,
+          "livro_final": "Josue",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 29,
+          "referencia": "Josue 10-16",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 10,
+          "livro_final": "Josue",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 30,
+          "referencia": "Josue 17-23",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 17,
+          "livro_final": "Josue",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 31,
+          "referencia": "Josue 24; Juizes 1-6",
+          "livro_inicial": "Josue",
+          "capitulo_inicial": 24,
+          "livro_final": "Juizes",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 32,
+          "referencia": "Juizes 7-13",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 7,
+          "livro_final": "Juizes",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 33,
+          "referencia": "Juizes 14-20",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 14,
+          "livro_final": "Juizes",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 34,
+          "referencia": "Juizes 21; Rute 1-4; 1 Samuel 1-2",
+          "livro_inicial": "Juizes",
+          "capitulo_inicial": 21,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 35,
+          "referencia": "1 Samuel 3-9",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 3,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 36,
+          "referencia": "1 Samuel 10-16",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 10,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 37,
+          "referencia": "1 Samuel 17-23",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 17,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 38,
+          "referencia": "1 Samuel 24-30",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 24,
+          "livro_final": "1 Samuel",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 39,
+          "referencia": "1 Samuel 31; 2 Samuel 1-6",
+          "livro_inicial": "1 Samuel",
+          "capitulo_inicial": 31,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 40,
+          "referencia": "2 Samuel 7-13",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 7,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 41,
+          "referencia": "2 Samuel 14-20",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 14,
+          "livro_final": "2 Samuel",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 42,
+          "referencia": "2 Samuel 21-24; 1 Reis 1-3",
+          "livro_inicial": "2 Samuel",
+          "capitulo_inicial": 21,
+          "livro_final": "1 Reis",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 43,
+          "referencia": "1 Reis 4-10",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 4,
+          "livro_final": "1 Reis",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 44,
+          "referencia": "1 Reis 11-17",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 11,
+          "livro_final": "1 Reis",
+          "capitulo_final": 17,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 45,
+          "referencia": "1 Reis 18-22; 2 Reis 1-2",
+          "livro_inicial": "1 Reis",
+          "capitulo_inicial": 18,
+          "livro_final": "2 Reis",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 46,
+          "referencia": "2 Reis 3-9",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 3,
+          "livro_final": "2 Reis",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 47,
+          "referencia": "2 Reis 10-16",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 10,
+          "livro_final": "2 Reis",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 48,
+          "referencia": "2 Reis 17-23",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 17,
+          "livro_final": "2 Reis",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 49,
+          "referencia": "2 Reis 24-25; 1 Cronicas 1-5",
+          "livro_inicial": "2 Reis",
+          "capitulo_inicial": 24,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 50,
+          "referencia": "1 Cronicas 6-12",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 6,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 51,
+          "referencia": "1 Cronicas 13-19",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 13,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 52,
+          "referencia": "1 Cronicas 20-26",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 20,
+          "livro_final": "1 Cronicas",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 53,
+          "referencia": "1 Cronicas 27-29; 2 Cronicas 1-4",
+          "livro_inicial": "1 Cronicas",
+          "capitulo_inicial": 27,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 54,
+          "referencia": "2 Cronicas 5-11",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 5,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 55,
+          "referencia": "2 Cronicas 12-18",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 12,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 56,
+          "referencia": "2 Cronicas 19-25",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 19,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 25,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 57,
+          "referencia": "2 Cronicas 26-32",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 26,
+          "livro_final": "2 Cronicas",
+          "capitulo_final": 32,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 58,
+          "referencia": "2 Cronicas 33-36; Esdras 1-3",
+          "livro_inicial": "2 Cronicas",
+          "capitulo_inicial": 33,
+          "livro_final": "Esdras",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 59,
+          "referencia": "Esdras 4-10",
+          "livro_inicial": "Esdras",
+          "capitulo_inicial": 4,
+          "livro_final": "Esdras",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 60,
+          "referencia": "Neemias 1-7",
+          "livro_inicial": "Neemias",
+          "capitulo_inicial": 1,
+          "livro_final": "Neemias",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 61,
+          "referencia": "Neemias 8-13; Ester 1",
+          "livro_inicial": "Neemias",
+          "capitulo_inicial": 8,
+          "livro_final": "Ester",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 62,
+          "referencia": "Ester 2-8",
+          "livro_inicial": "Ester",
+          "capitulo_inicial": 2,
+          "livro_final": "Ester",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 63,
+          "referencia": "Ester 9-10; Jo 1-5",
+          "livro_inicial": "Ester",
+          "capitulo_inicial": 9,
+          "livro_final": "Jo",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 64,
+          "referencia": "Jo 6-12",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 6,
+          "livro_final": "Jo",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 65,
+          "referencia": "Jo 13-19",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 13,
+          "livro_final": "Jo",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 66,
+          "referencia": "Jo 20-26",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 20,
+          "livro_final": "Jo",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 67,
+          "referencia": "Jo 27-33",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 27,
+          "livro_final": "Jo",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 68,
+          "referencia": "Jo 34-40",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 34,
+          "livro_final": "Jo",
+          "capitulo_final": 40,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 69,
+          "referencia": "Jo 41-42; Salmos 1-5",
+          "livro_inicial": "Jo",
+          "capitulo_inicial": 41,
+          "livro_final": "Salmos",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 70,
+          "referencia": "Salmos 6-12",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 6,
+          "livro_final": "Salmos",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 71,
+          "referencia": "Salmos 13-19",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 13,
+          "livro_final": "Salmos",
+          "capitulo_final": 19,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 72,
+          "referencia": "Salmos 20-26",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 20,
+          "livro_final": "Salmos",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 73,
+          "referencia": "Salmos 27-33",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 27,
+          "livro_final": "Salmos",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 74,
+          "referencia": "Salmos 34-40",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 34,
+          "livro_final": "Salmos",
+          "capitulo_final": 40,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 75,
+          "referencia": "Salmos 41-47",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 41,
+          "livro_final": "Salmos",
+          "capitulo_final": 47,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 76,
+          "referencia": "Salmos 48-54",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 48,
+          "livro_final": "Salmos",
+          "capitulo_final": 54,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 77,
+          "referencia": "Salmos 55-61",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 55,
+          "livro_final": "Salmos",
+          "capitulo_final": 61,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 78,
+          "referencia": "Salmos 62-68",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 62,
+          "livro_final": "Salmos",
+          "capitulo_final": 68,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 79,
+          "referencia": "Salmos 69-75",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 69,
+          "livro_final": "Salmos",
+          "capitulo_final": 75,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 80,
+          "referencia": "Salmos 76-82",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 76,
+          "livro_final": "Salmos",
+          "capitulo_final": 82,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 81,
+          "referencia": "Salmos 83-89",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 83,
+          "livro_final": "Salmos",
+          "capitulo_final": 89,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 82,
+          "referencia": "Salmos 90-96",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 90,
+          "livro_final": "Salmos",
+          "capitulo_final": 96,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 83,
+          "referencia": "Salmos 97-103",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 97,
+          "livro_final": "Salmos",
+          "capitulo_final": 103,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 84,
+          "referencia": "Salmos 104-110",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 104,
+          "livro_final": "Salmos",
+          "capitulo_final": 110,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 85,
+          "referencia": "Salmos 111-117",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 111,
+          "livro_final": "Salmos",
+          "capitulo_final": 117,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 86,
+          "referencia": "Salmos 118-124",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 118,
+          "livro_final": "Salmos",
+          "capitulo_final": 124,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 87,
+          "referencia": "Salmos 125-131",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 125,
+          "livro_final": "Salmos",
+          "capitulo_final": 131,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 88,
+          "referencia": "Salmos 132-138",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 132,
+          "livro_final": "Salmos",
+          "capitulo_final": 138,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 89,
+          "referencia": "Salmos 139-145",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 139,
+          "livro_final": "Salmos",
+          "capitulo_final": 145,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 90,
+          "referencia": "Salmos 146-150; Proverbios 1-2",
+          "livro_inicial": "Salmos",
+          "capitulo_inicial": 146,
+          "livro_final": "Proverbios",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 91,
+          "referencia": "Proverbios 3-9",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 3,
+          "livro_final": "Proverbios",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 92,
+          "referencia": "Proverbios 10-16",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 10,
+          "livro_final": "Proverbios",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 93,
+          "referencia": "Proverbios 17-23",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 17,
+          "livro_final": "Proverbios",
+          "capitulo_final": 23,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 94,
+          "referencia": "Proverbios 24-30",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 24,
+          "livro_final": "Proverbios",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 95,
+          "referencia": "Proverbios 31; Eclesiastes 1-6",
+          "livro_inicial": "Proverbios",
+          "capitulo_inicial": 31,
+          "livro_final": "Eclesiastes",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 96,
+          "referencia": "Eclesiastes 7-12; Cantares 1",
+          "livro_inicial": "Eclesiastes",
+          "capitulo_inicial": 7,
+          "livro_final": "Cantares",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 97,
+          "referencia": "Cantares 2-8",
+          "livro_inicial": "Cantares",
+          "capitulo_inicial": 2,
+          "livro_final": "Cantares",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 98,
+          "referencia": "Isaias 1-7",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 1,
+          "livro_final": "Isaias",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 99,
+          "referencia": "Isaias 8-14",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 8,
+          "livro_final": "Isaias",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 100,
+          "referencia": "Isaias 15-21",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 15,
+          "livro_final": "Isaias",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 101,
+          "referencia": "Isaias 22-28",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 22,
+          "livro_final": "Isaias",
+          "capitulo_final": 28,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 102,
+          "referencia": "Isaias 29-35",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 29,
+          "livro_final": "Isaias",
+          "capitulo_final": 35,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 103,
+          "referencia": "Isaias 36-42",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 36,
+          "livro_final": "Isaias",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 104,
+          "referencia": "Isaias 43-49",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 43,
+          "livro_final": "Isaias",
+          "capitulo_final": 49,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 105,
+          "referencia": "Isaias 50-56",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 50,
+          "livro_final": "Isaias",
+          "capitulo_final": 56,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 106,
+          "referencia": "Isaias 57-63",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 57,
+          "livro_final": "Isaias",
+          "capitulo_final": 63,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 107,
+          "referencia": "Isaias 64-66; Jeremias 1-4",
+          "livro_inicial": "Isaias",
+          "capitulo_inicial": 64,
+          "livro_final": "Jeremias",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 108,
+          "referencia": "Jeremias 5-11",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 5,
+          "livro_final": "Jeremias",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 109,
+          "referencia": "Jeremias 12-18",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 12,
+          "livro_final": "Jeremias",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 7
+        },
+        {
+          "dia": 110,
+          "referencia": "Jeremias 19-24",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 19,
+          "livro_final": "Jeremias",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 111,
+          "referencia": "Jeremias 25-30",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 25,
+          "livro_final": "Jeremias",
+          "capitulo_final": 30,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 112,
+          "referencia": "Jeremias 31-36",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 31,
+          "livro_final": "Jeremias",
+          "capitulo_final": 36,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 113,
+          "referencia": "Jeremias 37-42",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 37,
+          "livro_final": "Jeremias",
+          "capitulo_final": 42,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 114,
+          "referencia": "Jeremias 43-48",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 43,
+          "livro_final": "Jeremias",
+          "capitulo_final": 48,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 115,
+          "referencia": "Jeremias 49-52; Lamentacoes 1-2",
+          "livro_inicial": "Jeremias",
+          "capitulo_inicial": 49,
+          "livro_final": "Lamentacoes",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 116,
+          "referencia": "Lamentacoes 3-5; Ezequiel 1-3",
+          "livro_inicial": "Lamentacoes",
+          "capitulo_inicial": 3,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 117,
+          "referencia": "Ezequiel 4-9",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 4,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 118,
+          "referencia": "Ezequiel 10-15",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 10,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 119,
+          "referencia": "Ezequiel 16-21",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 16,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 120,
+          "referencia": "Ezequiel 22-27",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 22,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 121,
+          "referencia": "Ezequiel 28-33",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 28,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 33,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 122,
+          "referencia": "Ezequiel 34-39",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 34,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 39,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 123,
+          "referencia": "Ezequiel 40-45",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 40,
+          "livro_final": "Ezequiel",
+          "capitulo_final": 45,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 124,
+          "referencia": "Ezequiel 46-48; Daniel 1-3",
+          "livro_inicial": "Ezequiel",
+          "capitulo_inicial": 46,
+          "livro_final": "Daniel",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 125,
+          "referencia": "Daniel 4-9",
+          "livro_inicial": "Daniel",
+          "capitulo_inicial": 4,
+          "livro_final": "Daniel",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 126,
+          "referencia": "Daniel 10-12; Oseias 1-3",
+          "livro_inicial": "Daniel",
+          "capitulo_inicial": 10,
+          "livro_final": "Oseias",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 127,
+          "referencia": "Oseias 4-9",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 4,
+          "livro_final": "Oseias",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 128,
+          "referencia": "Oseias 10-14; Joel 1",
+          "livro_inicial": "Oseias",
+          "capitulo_inicial": 10,
+          "livro_final": "Joel",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 129,
+          "referencia": "Joel 2-3; Amos 1-4",
+          "livro_inicial": "Joel",
+          "capitulo_inicial": 2,
+          "livro_final": "Amos",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 130,
+          "referencia": "Amos 5-9; Obadias 1",
+          "livro_inicial": "Amos",
+          "capitulo_inicial": 5,
+          "livro_final": "Obadias",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 131,
+          "referencia": "Jonas 1-4; Miqueias 1-2",
+          "livro_inicial": "Jonas",
+          "capitulo_inicial": 1,
+          "livro_final": "Miqueias",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 132,
+          "referencia": "Miqueias 3-7; Naum 1",
+          "livro_inicial": "Miqueias",
+          "capitulo_inicial": 3,
+          "livro_final": "Naum",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 133,
+          "referencia": "Naum 2-3; Habacuque 1-3; Sofonias 1",
+          "livro_inicial": "Naum",
+          "capitulo_inicial": 2,
+          "livro_final": "Sofonias",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 134,
+          "referencia": "Sofonias 2-3; Ageu 1-2; Zacarias 1-2",
+          "livro_inicial": "Sofonias",
+          "capitulo_inicial": 2,
+          "livro_final": "Zacarias",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 135,
+          "referencia": "Zacarias 3-8",
+          "livro_inicial": "Zacarias",
+          "capitulo_inicial": 3,
+          "livro_final": "Zacarias",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 136,
+          "referencia": "Zacarias 9-14",
+          "livro_inicial": "Zacarias",
+          "capitulo_inicial": 9,
+          "livro_final": "Zacarias",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 137,
+          "referencia": "Malaquias 1-4; Mateus 1-2",
+          "livro_inicial": "Malaquias",
+          "capitulo_inicial": 1,
+          "livro_final": "Mateus",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 138,
+          "referencia": "Mateus 3-8",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 3,
+          "livro_final": "Mateus",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 139,
+          "referencia": "Mateus 9-14",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 9,
+          "livro_final": "Mateus",
+          "capitulo_final": 14,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 140,
+          "referencia": "Mateus 15-20",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 15,
+          "livro_final": "Mateus",
+          "capitulo_final": 20,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 141,
+          "referencia": "Mateus 21-26",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 21,
+          "livro_final": "Mateus",
+          "capitulo_final": 26,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 142,
+          "referencia": "Mateus 27-28; Marcos 1-4",
+          "livro_inicial": "Mateus",
+          "capitulo_inicial": 27,
+          "livro_final": "Marcos",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 143,
+          "referencia": "Marcos 5-10",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 5,
+          "livro_final": "Marcos",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 144,
+          "referencia": "Marcos 11-16",
+          "livro_inicial": "Marcos",
+          "capitulo_inicial": 11,
+          "livro_final": "Marcos",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 145,
+          "referencia": "Lucas 1-6",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 1,
+          "livro_final": "Lucas",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 146,
+          "referencia": "Lucas 7-12",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 7,
+          "livro_final": "Lucas",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 147,
+          "referencia": "Lucas 13-18",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 13,
+          "livro_final": "Lucas",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 148,
+          "referencia": "Lucas 19-24",
+          "livro_inicial": "Lucas",
+          "capitulo_inicial": 19,
+          "livro_final": "Lucas",
+          "capitulo_final": 24,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 149,
+          "referencia": "Joao 1-6",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 1,
+          "livro_final": "Joao",
+          "capitulo_final": 6,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 150,
+          "referencia": "Joao 7-12",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 7,
+          "livro_final": "Joao",
+          "capitulo_final": 12,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 151,
+          "referencia": "Joao 13-18",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 13,
+          "livro_final": "Joao",
+          "capitulo_final": 18,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 152,
+          "referencia": "Joao 19-21; Atos 1-3",
+          "livro_inicial": "Joao",
+          "capitulo_inicial": 19,
+          "livro_final": "Atos",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 153,
+          "referencia": "Atos 4-9",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 4,
+          "livro_final": "Atos",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 154,
+          "referencia": "Atos 10-15",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 10,
+          "livro_final": "Atos",
+          "capitulo_final": 15,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 155,
+          "referencia": "Atos 16-21",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 16,
+          "livro_final": "Atos",
+          "capitulo_final": 21,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 156,
+          "referencia": "Atos 22-27",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 22,
+          "livro_final": "Atos",
+          "capitulo_final": 27,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 157,
+          "referencia": "Atos 28; Romanos 1-5",
+          "livro_inicial": "Atos",
+          "capitulo_inicial": 28,
+          "livro_final": "Romanos",
+          "capitulo_final": 5,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 158,
+          "referencia": "Romanos 6-11",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 6,
+          "livro_final": "Romanos",
+          "capitulo_final": 11,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 159,
+          "referencia": "Romanos 12-16; 1 Corintios 1",
+          "livro_inicial": "Romanos",
+          "capitulo_inicial": 12,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 160,
+          "referencia": "1 Corintios 2-7",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 7,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 161,
+          "referencia": "1 Corintios 8-13",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 8,
+          "livro_final": "1 Corintios",
+          "capitulo_final": 13,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 162,
+          "referencia": "1 Corintios 14-16; 2 Corintios 1-3",
+          "livro_inicial": "1 Corintios",
+          "capitulo_inicial": 14,
+          "livro_final": "2 Corintios",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 163,
+          "referencia": "2 Corintios 4-9",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 4,
+          "livro_final": "2 Corintios",
+          "capitulo_final": 9,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 164,
+          "referencia": "2 Corintios 10-13; Galatas 1-2",
+          "livro_inicial": "2 Corintios",
+          "capitulo_inicial": 10,
+          "livro_final": "Galatas",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 165,
+          "referencia": "Galatas 3-6; Efesios 1-2",
+          "livro_inicial": "Galatas",
+          "capitulo_inicial": 3,
+          "livro_final": "Efesios",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 166,
+          "referencia": "Efesios 3-6; Filipenses 1-2",
+          "livro_inicial": "Efesios",
+          "capitulo_inicial": 3,
+          "livro_final": "Filipenses",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 167,
+          "referencia": "Filipenses 3-4; Colossenses 1-4",
+          "livro_inicial": "Filipenses",
+          "capitulo_inicial": 3,
+          "livro_final": "Colossenses",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 168,
+          "referencia": "1 Tessalonicenses 1-5; 2 Tessalonicenses 1",
+          "livro_inicial": "1 Tessalonicenses",
+          "capitulo_inicial": 1,
+          "livro_final": "2 Tessalonicenses",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 169,
+          "referencia": "2 Tessalonicenses 2-3; 1 Timoteo 1-4",
+          "livro_inicial": "2 Tessalonicenses",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Timoteo",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 170,
+          "referencia": "1 Timoteo 5-6; 2 Timoteo 1-4",
+          "livro_inicial": "1 Timoteo",
+          "capitulo_inicial": 5,
+          "livro_final": "2 Timoteo",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 171,
+          "referencia": "Tito 1-3; Filemom 1; Hebreus 1-2",
+          "livro_inicial": "Tito",
+          "capitulo_inicial": 1,
+          "livro_final": "Hebreus",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 172,
+          "referencia": "Hebreus 3-8",
+          "livro_inicial": "Hebreus",
+          "capitulo_inicial": 3,
+          "livro_final": "Hebreus",
+          "capitulo_final": 8,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 173,
+          "referencia": "Hebreus 9-13; Tiago 1",
+          "livro_inicial": "Hebreus",
+          "capitulo_inicial": 9,
+          "livro_final": "Tiago",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 174,
+          "referencia": "Tiago 2-5; 1 Pedro 1-2",
+          "livro_inicial": "Tiago",
+          "capitulo_inicial": 2,
+          "livro_final": "1 Pedro",
+          "capitulo_final": 2,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 175,
+          "referencia": "1 Pedro 3-5; 2 Pedro 1-3",
+          "livro_inicial": "1 Pedro",
+          "capitulo_inicial": 3,
+          "livro_final": "2 Pedro",
+          "capitulo_final": 3,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 176,
+          "referencia": "1 Joao 1-5; 2 Joao 1",
+          "livro_inicial": "1 Joao",
+          "capitulo_inicial": 1,
+          "livro_final": "2 Joao",
+          "capitulo_final": 1,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 177,
+          "referencia": "3 Joao 1; Judas 1; Apocalipse 1-4",
+          "livro_inicial": "3 Joao",
+          "capitulo_inicial": 1,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 4,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 178,
+          "referencia": "Apocalipse 5-10",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 5,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 10,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 179,
+          "referencia": "Apocalipse 11-16",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 11,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 16,
+          "total_capitulos_dia": 6
+        },
+        {
+          "dia": 180,
+          "referencia": "Apocalipse 17-22",
+          "livro_inicial": "Apocalipse",
+          "capitulo_inicial": 17,
+          "livro_final": "Apocalipse",
+          "capitulo_final": 22,
+          "total_capitulos_dia": 6
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "total_capitulos_biblia": 1189,
+    "traducao": "ARC",
+    "gerado_por": "gerar_planos.py"
+  }
+}
