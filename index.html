@@ -162,6 +162,10 @@
     .day-circle{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:var(--parch);color:var(--muted);border:2px solid transparent;transition:all .2s;}
     .day-circle.done{background:var(--forest);color:#fff;}
     .day-circle.today{border-color:var(--forest);}
+    .biblia-ring{width:64px;height:64px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:conic-gradient(var(--forest) calc(var(--pct)*1%), var(--parch) 0);}
+    .biblia-ring-inner{width:50px;height:50px;border-radius:50%;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+    .biblia-ring-pct{font-size:14px;font-weight:800;color:var(--forest);line-height:1;}
+    .biblia-ring-label{font-size:7px;color:var(--muted);font-weight:700;letter-spacing:.6px;margin-top:2px;}
     @media (max-width:480px){
       .login-title{font-size:26px;}.login-dove{font-size:56px;}.home-greeting{font-size:20px;}
       .dev-title{font-size:20px;}.dev-para{font-size:16px;line-height:1.85;}.verse-text{font-size:15px;}
@@ -699,11 +703,30 @@ function ReadingPlanScreen({user}){
   const jaLeuHoje=dates.includes(TODAY);
   const streak=streakLeitura(dates);
   const semana=weekDaysLeitura(dates);
+  const totalCapBiblia=planos.meta.total_capitulos_biblia;
+  const capLidos=registros.reduce((sum,r)=>{
+    const d=plano.dias.find(x=>x.dia===r.dia_plano);
+    return sum+(d?d.total_capitulos_dia:0);
+  },0);
+  const pctBiblia=totalCapBiblia?Math.round((capLidos/totalCapBiblia)*100):0;
 
   return(
     <div className="screen">
       <div className="topbar"><h2>📚 Plano de Leitura</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
+        <div className="card" style={{display:'flex',alignItems:'center',gap:'16px',marginBottom:'16px'}}>
+          <div className="biblia-ring" style={{'--pct':pctBiblia}}>
+            <div className="biblia-ring-inner">
+              <span className="biblia-ring-pct">{pctBiblia}%</span>
+              <span className="biblia-ring-label">BÍBLIA</span>
+            </div>
+          </div>
+          <div>
+            <p style={{fontWeight:'700',fontSize:'15px',color:'var(--ink)'}}>{capLidos} de {totalCapBiblia} capítulos lidos</p>
+            <p style={{fontSize:'12px',color:'var(--muted)',marginTop:'2px'}}>no {plano.nome.toLowerCase()}</p>
+          </div>
+        </div>
+
         <div className="tabs" style={{marginBottom:'16px'}}>
           {planos.planos.map(p=>(<button key={p.id} className={`tab${planoId===p.id?' active':''}`} onClick={()=>trocarPlano(p.id)}>{p.nome}</button>))}
         </div>
