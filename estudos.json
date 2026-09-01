@@ -1,0 +1,277 @@
+{
+  "1samuel": {
+    "titulo": "1 Samuel",
+    "contexto": {
+      "autor": "Tradicionalmente atribuido a Samuel, com contribuicoes de Natã e Gade (1 Crônicas 29:29)",
+      "periodo": "Aproximadamente 1105 a 1017 a.C.",
+      "local": "Israel, no período de transição dos juízes para a monarquia",
+      "tema_central": "Deus é o Senhor da história; Seus planos se cumprem apesar do fracasso humano",
+      "personagens_chave": ["Samuel", "Ana", "Eli", "Saul", "Davi", "Jônatas"],
+      "palavra_chave": "Samuel significa \"ouvido por Deus\" ou \"ouviu falar de Deus\""
+    },
+    "arcos": [
+      {
+        "id": "arco_1",
+        "titulo": "Ana e Samuel",
+        "capitulos": [1, 7],
+        "pergunta_motriz": "Como Deus responde a um coração fiel em meio à angústia?",
+        "blocos": [
+          {
+            "id": "bloco_1_1",
+            "titulo": "A oração de Ana",
+            "capitulos": [1, 2],
+            "resumo": "Ana, estéril e angustiada, ora no tabernáculo em Siló e promete devotar seu filho ao Senhor. Deus responde e Samuel nasce. Ana entrega o menino a Eli e entoa um cântico de louvor.",
+            "versiculo_chave": "1 Samuel 1:27 - Por este menino orava eu; e o Senhor me concedeu o que eu lhe pedira.",
+            "reflexao": "Em que área da sua vida você precisa entregar algo a Deus como Ana entregou Samuel?",
+            "quiz": [
+              {
+                "pergunta": "Onde Ana fazia sua oração?",
+                "opcoes": ["No templo de Jerusalém", "No tabernáculo em Siló", "Em sua casa"],
+                "resposta_correta": 1
+              },
+              {
+                "pergunta": "O que Ana prometeu a Deus se tivesse um filho?",
+                "opcoes": ["Que ele seria rei", "Que o dedicaria ao Senhor todos os dias de sua vida", "Que construiria um templo"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_2",
+            "titulo": "O chamado de Samuel",
+            "capitulos": [3],
+            "resumo": "Ainda menino, Samuel ouve a voz do Senhor no templo à noite. Eli o orienta a responder. Deus revela a Samuel o julgamento que virá sobre a casa de Eli.",
+            "versiculo_chave": "1 Samuel 3:10 - Fala, Senhor, porque o teu servo ouve.",
+            "reflexao": "Você reconhece a voz de Deus falando na sua vida hoje? Como você tem respondido?",
+            "quiz": [
+              {
+                "pergunta": "Quantas vezes o Senhor chamou Samuel antes de ele entender que era Deus?",
+                "opcoes": ["Uma vez", "Duas vezes", "Três vezes"],
+                "resposta_correta": 2
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_3",
+            "titulo": "A arca é capturada",
+            "capitulos": [4, 5, 6],
+            "resumo": "Israel é derrotado pelos filisteus e a arca da aliança é capturada. Eli morre ao saber a notícia. A arca causa aflição entre os filisteus, que a devolvem a Israel.",
+            "versiculo_chave": "1 Samuel 4:22 - Foi-se a glória de Israel, porquanto a arca de Deus foi tomada.",
+            "reflexao": "Israel tratou a arca como um amuleto de sorte, não como sinal da presença de Deus. Existe algo em sua vida que você trata como fórmula mágica em vez de buscar a Deus de verdade?",
+            "quiz": [
+              {
+                "pergunta": "O que aconteceu quando Eli soube que a arca havia sido capturada?",
+                "opcoes": ["Ele orou e jejuou", "Ele caiu para trás e morreu", "Ele foi buscar a arca"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_4",
+            "titulo": "Samuel lidera Israel",
+            "capitulos": [7],
+            "resumo": "Samuel convoca Israel ao arrependimento em Mispá. O Senhor concede vitória sobre os filisteus, e Samuel ergue a pedra Ebenézer em memória do socorro divino.",
+            "versiculo_chave": "1 Samuel 7:12 - Até aqui nos ajudou o Senhor.",
+            "reflexao": "Que \"pedra Ebenézer\" você poderia erguer hoje para lembrar de uma ajuda que Deus já deu à sua família?",
+            "quiz": [
+              {
+                "pergunta": "O que significa o nome dado à pedra levantada por Samuel?",
+                "opcoes": ["Até aqui nos ajudou o Senhor", "Deus é fiel", "Casa de Deus"],
+                "resposta_correta": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_2",
+        "titulo": "Saul, o primeiro rei",
+        "capitulos": [8, 15],
+        "pergunta_motriz": "O que acontece quando escolhemos seguir nossa própria vontade em vez da direção de Deus?",
+        "blocos": [
+          {
+            "id": "bloco_2_1",
+            "titulo": "O povo pede um rei",
+            "capitulos": [8, 9],
+            "resumo": "Israel rejeita o governo direto de Deus e pede um rei \"como todas as nações\". Samuel adverte sobre os custos da monarquia, mas o povo insiste. Saul é apresentado como um jovem alto e de aparência impressionante.",
+            "versiculo_chave": "1 Samuel 8:7 - A mim me rejeitaram, para eu não reinar sobre eles.",
+            "reflexao": "Já tomamos decisões olhando apenas para a aparência ou para o que os outros fazem, em vez de buscar a vontade de Deus? Como podemos discernir melhor?",
+            "quiz": [
+              {
+                "pergunta": "Por que o povo pediu um rei?",
+                "opcoes": ["Para ser como as outras nações", "Porque Deus ordenou", "Porque Samuel sugeriu"],
+                "resposta_correta": 0
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_2",
+            "titulo": "Saul é ungido rei",
+            "capitulos": [10, 11, 12],
+            "resumo": "Samuel unge Saul em particular e depois o apresenta publicamente ao povo. Saul vence os amonitas em sua primeira grande vitória. Samuel faz seu discurso de despedida, lembrando Israel da fidelidade de Deus.",
+            "versiculo_chave": "1 Samuel 12:24 - Tão somente temei ao Senhor, e servi-o fielmente de todo o vosso coração.",
+            "reflexao": "Samuel lembra o povo das obras passadas de Deus antes de pedir fidelidade futura. Que lembranças da fidelidade de Deus podem fortalecer a fé da sua família hoje?",
+            "quiz": [
+              {
+                "pergunta": "Onde Saul estava escondido quando foi apresentado como rei ao povo?",
+                "opcoes": ["Em uma caverna", "Entre a bagagem", "No templo"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_3",
+            "titulo": "Guerra contra os filisteus",
+            "capitulos": [13, 14],
+            "resumo": "Saul oferece um sacrifício sem esperar por Samuel, desobedecendo a instrução divina. Jônatas, seu filho, demonstra fé ousada ao atacar uma guarnição filisteia sozinho com seu escudeiro.",
+            "versiculo_chave": "1 Samuel 14:6 - Não há impedimento para o Senhor livrar, quer por muitos, quer por poucos.",
+            "reflexao": "Jônatas confiou que Deus podia agir independente do tamanho do exército. Em que situação você precisa confiar mais no poder de Deus do que nos recursos que você vê?",
+            "quiz": [
+              {
+                "pergunta": "Por que Saul ofereceu o sacrifício ele mesmo, sem Samuel?",
+                "opcoes": ["Porque Samuel havia morrido", "Por impaciência, com medo de o povo se dispersar", "Porque Deus ordenou"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_4",
+            "titulo": "A rejeição de Saul",
+            "capitulos": [15],
+            "resumo": "Deus ordena a Saul destruir totalmente os amalequitas, mas Saul poupa o rei Agague e os melhores animais. Samuel confronta Saul, que tenta justificar sua desobediência. Deus rejeita Saul como rei.",
+            "versiculo_chave": "1 Samuel 15:22 - Eis que o obedecer é melhor do que o sacrificar.",
+            "reflexao": "Saul obedeceu parcialmente e chamou isso de obediência. Existe alguma área em que você tem negociado uma obediência parcial com Deus?",
+            "quiz": [
+              {
+                "pergunta": "Qual foi a resposta de Samuel à justificativa de Saul de que guardou os animais para sacrificar?",
+                "opcoes": ["Que isso era aceitável", "Que obedecer é melhor do que sacrificar", "Que Deus não se importava"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_3",
+        "titulo": "Davi e Saul",
+        "capitulos": [16, 26],
+        "pergunta_motriz": "Como manter um coração íntegro quando somos perseguidos injustamente?",
+        "blocos": [
+          {
+            "id": "bloco_3_1",
+            "titulo": "A unção de Davi e Golias",
+            "capitulos": [16, 17],
+            "resumo": "Samuel unge Davi, o mais jovem dos filhos de Jessé, como futuro rei. Pouco depois, Davi enfrenta e derrota o gigante Golias, confiando no nome do Senhor dos Exércitos.",
+            "versiculo_chave": "1 Samuel 16:7 - O Senhor não vê como vê o homem... o Senhor olha para o coração.",
+            "reflexao": "Deus escolheu Davi quando ninguém mais o considerava. Existe alguma área da sua vida em que você se sente \"pequeno demais\" para ser usado por Deus?",
+            "quiz": [
+              {
+                "pergunta": "O que Davi disse que traria a vitória sobre Golias?",
+                "opcoes": ["Sua espada", "O nome do Senhor dos Exércitos", "Sua armadura"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_2",
+            "titulo": "Jônatas, Davi e o ciúme de Saul",
+            "capitulos": [18, 19, 20],
+            "resumo": "Jônatas e Davi selam um pacto de amizade leal. O ciúme de Saul cresce após o povo louvar as vitórias de Davi, levando-o a tentar matá-lo diversas vezes.",
+            "versiculo_chave": "1 Samuel 18:1 - A alma de Jônatas se ligou com a alma de Davi.",
+            "reflexao": "Jônatas colocou a amizade e a vontade de Deus acima de seu próprio direito ao trono. Que sacrifício uma amizade fiel já pediu de você?",
+            "quiz": [
+              {
+                "pergunta": "O que motivou o ciúme de Saul em relação a Davi?",
+                "opcoes": ["Davi era mais rico", "As mulheres cantavam que Davi matara dez mil e Saul mil", "Davi queria ser sacerdote"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_3",
+            "titulo": "Davi foge e poupa Saul na caverna",
+            "capitulos": [21, 22, 23, 24],
+            "resumo": "Davi foge de Saul, refugiando-se entre os filisteus e em covis. Cercado em En-Gedi, Davi tem a chance de matar Saul em uma caverna, mas corta apenas a orla de sua capa, recusando-se a atacar o ungido do Senhor.",
+            "versiculo_chave": "1 Samuel 24:6 - Longe de mim, da parte do Senhor, que eu faça tal coisa ao meu senhor, ao ungido do Senhor.",
+            "reflexao": "Davi teve motivo e oportunidade de se vingar, mas escolheu esperar o tempo de Deus. Existe alguma situação em que você está sendo chamado a esperar em vez de agir por conta própria?",
+            "quiz": [
+              {
+                "pergunta": "O que Davi cortou de Saul na caverna em En-Gedi?",
+                "opcoes": ["A orla da capa", "A espada", "O cinto"],
+                "resposta_correta": 0
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_4",
+            "titulo": "Abigail e a segunda chance de Saul",
+            "capitulos": [25, 26],
+            "resumo": "Abigail intercede com sabedoria para evitar que Davi se vingue de Nabal, seu marido insensato. Depois, Davi novamente poupa a vida de Saul, desta vez em seu acampamento, levando sua lança e jarro de água como prova.",
+            "versiculo_chave": "1 Samuel 26:23 - O Senhor pague a cada um segundo a sua justiça e a sua fidelidade.",
+            "reflexao": "Abigail usou sabedoria e humildade para prevenir um erro grave de Davi. Como a sabedoria de alguém já evitou um erro seu, ou como você pode ser essa pessoa para outra?",
+            "quiz": [
+              {
+                "pergunta": "O que Abigail fez para evitar a ira de Davi contra sua casa?",
+                "opcoes": ["Escondeu-se", "Foi ao encontro de Davi com presentes e um apelo sábio", "Chamou os soldados de Saul"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_4",
+        "titulo": "O fim de Saul",
+        "capitulos": [27, 31],
+        "pergunta_motriz": "O que a queda de Saul nos ensina sobre as consequências de um coração afastado de Deus?",
+        "blocos": [
+          {
+            "id": "bloco_4_1",
+            "titulo": "Davi entre os filisteus",
+            "capitulos": [27, 28, 29],
+            "resumo": "Davi busca refúgio na terra filisteia. Saul, desesperado e sem resposta de Deus, consulta uma médium em En-Dor. Os líderes filisteus desconfiam de Davi e o dispensam da batalha contra Israel.",
+            "versiculo_chave": "1 Samuel 28:6 - Consultou Saul ao Senhor, mas o Senhor não lhe respondeu.",
+            "reflexao": "Saul buscou respostas de Deus apenas quando estava em crise, e recorreu a meios proibidos ao não obter resposta. Como está a constância da sua busca por Deus, não só nos momentos difíceis?",
+            "quiz": [
+              {
+                "pergunta": "O que Saul fez ao não receber resposta de Deus?",
+                "opcoes": ["Jejuou e esperou", "Consultou uma médium em En-Dor", "Pediu perdão a Davi"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_4_2",
+            "titulo": "Davi recupera Ziclague",
+            "capitulos": [30],
+            "resumo": "Enquanto Davi estava fora, os amalequitas atacaram e queimaram Ziclague, levando as famílias cativas. Davi se fortalece no Senhor e, com direção divina, persegue e recupera tudo o que fora tomado.",
+            "versiculo_chave": "1 Samuel 30:6 - Davi se fortaleceu no Senhor, seu Deus.",
+            "reflexao": "Em meio à angústia e até à ameaça de seus próprios homens, Davi buscou forças em Deus antes de agir. Onde você tem buscado força nos momentos de crise?",
+            "quiz": [
+              {
+                "pergunta": "O que Davi fez antes de perseguir os amalequitas que atacaram Ziclague?",
+                "opcoes": ["Consultou o Senhor por meio do sacerdote", "Atacou imediatamente sem planejar", "Desistiu de recuperar os bens"],
+                "resposta_correta": 0
+              }
+            ]
+          },
+          {
+            "id": "bloco_4_3",
+            "titulo": "A morte de Saul",
+            "capitulos": [31],
+            "resumo": "Israel é derrotado pelos filisteus no Monte Gilboa. Jônatas e seus irmãos morrem em combate. Gravemente ferido, Saul tira a própria vida para não ser capturado, encerrando seu reinado em tragédia.",
+            "versiculo_chave": "1 Samuel 31:6 - Assim morreram naquele dia juntamente Saul e seus três filhos.",
+            "reflexao": "A trajetória de Saul começou com grande potencial e terminou em tragédia por decisões de desobediência ao longo do caminho. Que decisão pequena de hoje pode proteger o rumo da sua caminhada com Deus amanhã?",
+            "quiz": [
+              {
+                "pergunta": "Em que monte aconteceu a batalha final em que Saul morreu?",
+                "opcoes": ["Monte Carmelo", "Monte Gilboa", "Monte Sinai"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

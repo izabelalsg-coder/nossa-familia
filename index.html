@@ -350,6 +350,15 @@ async function loadPlanosData(){
   _planosData=await r.json();return _planosData;
 }
 
+// ── ESTUDOS POR LIVRO ─────────────────────────────────────────────────────────
+let _estudosData=null;
+async function loadEstudosData(){
+  if(_estudosData)return _estudosData;
+  const r=await fetch('estudos.json?v='+Date.now());
+  if(!r.ok)throw new Error('Arquivo estudos.json não encontrado ('+r.status+')');
+  _estudosData=await r.json();return _estudosData;
+}
+
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
@@ -776,8 +785,115 @@ function CelebrationScreen({member,phase,onClose}){
   );
 }
 
+function EstudosScreen(){
+  const[livros,setLivros]=useState(null);
+  const[loading,setLoading]=useState(true);
+  const[err,setErr]=useState(null);
+  const[livroId,setLivroId]=useState(null);
+  const[arcoIdx,setArcoIdx]=useState(0);
+  const[blocoIdx,setBlocoIdx]=useState(0);
+  const[respostas,setRespostas]=useState({});
+  const[mostrarResultado,setMostrarResultado]=useState({});
+
+  useEffect(()=>{(async()=>{
+    try{
+      const data=await loadEstudosData();setLivros(data);
+      const primeiro=Object.keys(data)[0];setLivroId(primeiro);
+    }catch(e){console.error(e);setErr(e.message);}
+    setLoading(false);
+  })();},[]);
+
+  if(err)return(<div className="screen"><div className="topbar"><h2>📘 Estudos</h2></div><div style={{padding:'16px'}}><div className="alert alert-red">{err}</div></div></div>);
+  if(loading||!livros||!livroId)return(<div className="loading-center"><div style={{fontSize:'40px'}} className="pulse">📘</div></div>);
+
+  const livro=livros[livroId];
+  const arco=livro.arcos[arcoIdx];
+  const bloco=arco.blocos[blocoIdx];
+  const blocoChave=`${arcoIdx}-${blocoIdx}`;
+
+  function irProximo(){
+    if(blocoIdx<arco.blocos.length-1){setBlocoIdx(blocoIdx+1);}
+    else if(arcoIdx<livro.arcos.length-1){setArcoIdx(arcoIdx+1);setBlocoIdx(0);}
+  }
+  function irAnterior(){
+    if(blocoIdx>0){setBlocoIdx(blocoIdx-1);}
+    else if(arcoIdx>0){const novoArco=arcoIdx-1;setArcoIdx(novoArco);setBlocoIdx(livro.arcos[novoArco].blocos.length-1);}
+  }
+  function responder(qIdx,opIdx){
+    setRespostas(r=>({...r,[blocoChave]:{...(r[blocoChave]||{}),[qIdx]:opIdx}}));
+    setMostrarResultado(r=>({...r,[blocoChave]:{...(r[blocoChave]||{}),[qIdx]:true}}));
+  }
+
+  const ehPrimeiro=arcoIdx===0&&blocoIdx===0;
+  const ehUltimo=arcoIdx===livro.arcos.length-1&&blocoIdx===arco.blocos.length-1;
+  const blocosTotal=livro.arcos.reduce((s,a)=>s+a.blocos.length,0);
+  const blocoNumeroAtual=livro.arcos.slice(0,arcoIdx).reduce((s,a)=>s+a.blocos.length,0)+blocoIdx+1;
+  const pct=Math.round((blocoNumeroAtual/blocosTotal)*100);
+
+  return(
+    <div className="screen">
+      <div className="topbar"><h2>📘 {livro.titulo}</h2></div>
+      <div className="scroll" style={{padding:'16px'}}>
+        <div className="progress-bar-wrap" style={{marginBottom:'6px'}}><div className="progress-bar-fill" style={{width:`${pct}%`}}/></div>
+        <p style={{fontSize:'11px',color:'var(--muted)',marginBottom:'16px'}}>Bloco {blocoNumeroAtual} de {blocosTotal} · {arco.titulo}</p>
+
+        {blocoIdx===0&&arcoIdx===0&&(
+          <div className="card" style={{marginBottom:'16px',background:'var(--parch)'}}>
+            <p style={{fontSize:'11px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'6px'}}>Contexto</p>
+            <p style={{fontSize:'13px',lineHeight:'1.6',color:'var(--ink)',marginBottom:'6px'}}><strong>Autor:</strong> {livro.contexto.autor}</p>
+            <p style={{fontSize:'13px',lineHeight:'1.6',color:'var(--ink)',marginBottom:'6px'}}><strong>Período:</strong> {livro.contexto.periodo}</p>
+            <p style={{fontSize:'13px',lineHeight:'1.6',color:'var(--ink)'}}><strong>Tema central:</strong> {livro.contexto.tema_central}</p>
+          </div>
+        )}
+
+        <div className="badge badge-green" style={{marginBottom:'12px'}}>Capítulos {bloco.capitulos[0]}–{bloco.capitulos[1]||bloco.capitulos[0]}</div>
+        <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:'20px',fontWeight:'700',color:'var(--ink)',marginBottom:'12px'}}>{bloco.titulo}</h3>
+        <p style={{fontSize:'14px',lineHeight:'1.7',color:'var(--ink)',marginBottom:'16px'}}>{bloco.resumo}</p>
+
+        <div className="card-verse" style={{marginBottom:'16px'}}>
+          <p className="verse-label">Versículo chave</p>
+          <p className="verse-text">{bloco.versiculo_chave}</p>
+        </div>
+
+        <div className="card" style={{marginBottom:'16px'}}>
+          <p style={{fontSize:'11px',color:'var(--forest)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'8px'}}>Reflexão</p>
+          <p style={{fontSize:'14px',lineHeight:'1.7',color:'var(--ink)',fontStyle:'italic'}}>{bloco.reflexao}</p>
+        </div>
+
+        {(bloco.quiz||[]).map((q,qIdx)=>{
+          const resp=respostas[blocoChave]?.[qIdx];
+          const mostrar=mostrarResultado[blocoChave]?.[qIdx];
+          return(
+            <div className="card" key={qIdx} style={{marginBottom:'12px'}}>
+              <p style={{fontSize:'14px',fontWeight:'600',color:'var(--ink)',marginBottom:'10px'}}>{q.pergunta}</p>
+              {q.opcoes.map((op,opIdx)=>{
+                let estilo='btn-ghost';
+                if(mostrar){
+                  if(opIdx===q.resposta_correta)estilo='btn-secondary';
+                  else if(opIdx===resp)estilo='btn-amber';
+                }
+                return(
+                  <button key={opIdx} className={`btn ${estilo} btn-full`} style={{marginBottom:'8px',justifyContent:'flex-start',textAlign:'left'}} disabled={mostrar} onClick={()=>responder(qIdx,opIdx)}>
+                    {op}
+                  </button>
+                );
+              })}
+              {mostrar&&(<p style={{fontSize:'12px',color:resp===q.resposta_correta?'var(--forest)':'var(--red)',fontWeight:'600'}}>{resp===q.resposta_correta?'✓ Correto!':'Quase — a resposta certa está em verde.'}</p>)}
+            </div>
+          );
+        })}
+
+        <div style={{display:'flex',gap:'10px',marginTop:'8px'}}>
+          <button className="btn btn-ghost" style={{flex:1}} disabled={ehPrimeiro} onClick={irAnterior}>← Anterior</button>
+          <button className="btn btn-primary" style={{flex:1}} disabled={ehUltimo} onClick={irProximo}>{ehUltimo?'Fim do livro 🎉':'Próximo →'}</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function BottomNav({active,onChange}){
-  const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'reading',icon:'📚',label:'Leitura'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'missions',icon:'⚔️',label:'Missões'}];
+  const tabs=[{id:'home',icon:'📖',label:'Hoje'},{id:'board',icon:'🗺️',label:'Jornada'},{id:'reading',icon:'📚',label:'Leitura'},{id:'prayers',icon:'🙏',label:'Orações'},{id:'estudos',icon:'📘',label:'Estudos'}];
   return(<nav className="bottom-nav">{tabs.map(t=>(<button key={t.id} className={`nav-btn${active===t.id?' active':''}`} onClick={()=>onChange(t.id)}><span>{t.icon}</span><span>{t.label}</span>{active===t.id&&<div className="nav-indicator"/>}</button>))}</nav>);
 }
 
@@ -875,7 +991,7 @@ function App(){
       {tab==='board'&&<BoardScreen members={members} progress={progress}/>}
       {tab==='reading'&&<ReadingPlanScreen user={user}/>}
       {tab==='prayers'&&<PrayersScreen user={user} wall={wall} answeredWall={answeredWall} onAdd={addPrayer} onPray={prayFor} onMarkAnswered={markAnswered} members={members}/>}
-      {tab==='missions'&&<MissionsScreen user={user} missions={missions} theme={theme} onComplete={completeMission} members={members}/>}
+      {tab==='estudos'&&<EstudosScreen/>}
       <BottomNav active={tab} onChange={setTab}/>
     </div>
   );
