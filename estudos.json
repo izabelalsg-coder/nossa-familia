@@ -273,5 +273,342 @@
         ]
       }
     ]
+  },
+  "ester": {
+    "titulo": "Ester",
+    "contexto": {
+      "autor": "Desconhecido; as evidencias internas indicam um autor judeu que conhecia bem os costumes da corte persa",
+      "periodo": "Reinado de Assuero (Xerxes I), 486 a 465 a.C., com composicao provavelmente pouco depois desses eventos",
+      "local": "Susã, capital do Império Persa",
+      "tema_central": "A providência de Deus age nos bastidores da história, mesmo quando Seu nome não é mencionado no texto",
+      "personagens_chave": ["Ester", "Mardoqueu", "Hamã", "Assuero", "Vasti"],
+      "palavra_chave": "Purim, a festa instituída no fim do livro, vem da palavra \"pur\" (sorte), o método usado por Hamã para escolher o dia do extermínio"
+    },
+    "arcos": [
+      {
+        "id": "arco_1",
+        "titulo": "A ascensão de Ester",
+        "capitulos": [1, 2],
+        "pergunta_motriz": "Como Deus posiciona pessoas em lugares estratégicos antes mesmo de a crise chegar?",
+        "blocos": [
+          {
+            "id": "bloco_1_1",
+            "titulo": "A rainha Vasti é deposta",
+            "capitulos": [1],
+            "resumo": "Em um banquete real, a rainha Vasti se recusa a comparecer diante do rei Assuero. Por conselho de seus oficiais, o rei a destitui, abrindo caminho para a escolha de uma nova rainha.",
+            "versiculo_chave": "Ester 1:19 - Que Vasti não entre mais na presença do rei Assuero.",
+            "reflexao": "Às vezes eventos que parecem apenas políticos ou pessoais preparam o caminho para os planos de Deus. Você consegue olhar para trás e ver uma situação difícil que, no fim, abriu uma porta importante?",
+            "quiz": [
+              {
+                "pergunta": "Por que a rainha Vasti foi deposta?",
+                "opcoes": ["Ela traiu o rei", "Ela se recusou a comparecer ao banquete do rei", "Ela adoeceu"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_2",
+            "titulo": "Ester se torna rainha",
+            "capitulos": [2],
+            "resumo": "Ester, uma jovem judia órfã criada por seu primo Mardoqueu, é levada ao palácio e encontra favor diante do rei, tornando-se a nova rainha, sem revelar sua origem judaica.",
+            "versiculo_chave": "Ester 2:17 - O rei amou a Ester mais do que a todas as mulheres.",
+            "reflexao": "Ester estava em uma posição de destaque, mas ainda não sabia por quê. Existe alguma posição ou responsabilidade em sua vida hoje cujo propósito completo você ainda não enxerga?",
+            "quiz": [
+              {
+                "pergunta": "Quem criou Ester como se fosse sua filha?",
+                "opcoes": ["Assuero", "Mardoqueu, seu primo", "Hamã"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_2",
+        "titulo": "O plano de Hamã",
+        "capitulos": [3, 5],
+        "pergunta_motriz": "Como responder com coragem quando a maldade de alguém ameaça pessoas inocentes?",
+        "blocos": [
+          {
+            "id": "bloco_2_1",
+            "titulo": "O decreto de extermínio",
+            "capitulos": [3],
+            "resumo": "Hamã, promovido a uma posição de grande poder, se enfurece porque Mardoqueu se recusa a se curvar diante dele. Em vingança, arma um plano para exterminar todos os judeus do império, lançando sortes (Pur) para escolher a data.",
+            "versiculo_chave": "Ester 3:6 - Buscou Hamã destruir todos os judeus.",
+            "reflexao": "O orgulho ferido de Hamã o levou a um ódio desproporcional. Como lidar com nossa própria reação quando nos sentimos desrespeitados, sem deixar que isso vire ressentimento ou vingança?",
+            "quiz": [
+              {
+                "pergunta": "Por que Hamã quis destruir todos os judeus, e não apenas Mardoqueu?",
+                "opcoes": ["Porque o rei ordenou", "Por orgulho ferido, já que Mardoqueu não se curvava diante dele", "Porque os judeus eram mais ricos"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_2",
+            "titulo": "Para tal tempo como este",
+            "capitulos": [4, 5],
+            "resumo": "Mardoqueu pede que Ester interceda junto ao rei, mesmo sob risco de morte. Após jejum, Ester se apresenta diante do rei sem ser chamada e o convida, junto com Hamã, para dois banquetes.",
+            "versiculo_chave": "Ester 4:14 - Quem sabe se não foi para tal tempo como este que chegaste a ser rainha?",
+            "reflexao": "Ester escolheu agir mesmo com medo, dizendo \"se eu perecer, pereço\". Existe alguma atitude corajosa que Deus está te chamando a tomar, mesmo com incerteza do resultado?",
+            "quiz": [
+              {
+                "pergunta": "O que Ester pediu ao povo antes de se apresentar ao rei?",
+                "opcoes": ["Que jejuassem por ela durante três dias", "Que orassem em voz alta no palácio", "Que enviassem uma carta ao rei"],
+                "resposta_correta": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_3",
+        "titulo": "O livramento e o Purim",
+        "capitulos": [6, 10],
+        "pergunta_motriz": "Como Deus reverte situações que pareciam perdidas, mesmo sem intervir de forma visível?",
+        "blocos": [
+          {
+            "id": "bloco_3_1",
+            "titulo": "A virada de Mardoqueu",
+            "capitulos": [6, 7],
+            "resumo": "Numa noite sem sono, o rei lê os registros e descobre que Mardoqueu nunca foi recompensado por ter salvado sua vida. Em uma reviravolta irônica, é o próprio Hamã quem é forçado a honrá-lo publicamente. Pouco depois, Ester revela o plano de Hamã ao rei, e ele é condenado.",
+            "versiculo_chave": "Ester 7:10 - Assim enforcaram a Hamã na forca que tinha preparado para Mardoqueu.",
+            "reflexao": "A providência de Deus aparece em pequenos detalhes, como uma noite de insônia do rei. Você já percebeu Deus trabalhando em detalhes pequenos e aparentemente sem importância da sua vida?",
+            "quiz": [
+              {
+                "pergunta": "O que o rei descobriu ao ler os registros do reino durante a noite?",
+                "opcoes": ["Que Hamã era traidor", "Que Mardoqueu nunca foi recompensado por salvar sua vida", "Que Ester era judia"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_2",
+            "titulo": "A instituição do Purim",
+            "capitulos": [8, 9, 10],
+            "resumo": "Um novo decreto permite que os judeus se defendam, revertendo a ameaça de extermínio em vitória. A festa de Purim é instituída para lembrar, ano após ano, esse livramento.",
+            "versiculo_chave": "Ester 9:22 - Que ele lhes tornasse a tristeza em alegria, e o luto em dia de festa.",
+            "reflexao": "O Purim existe para que o povo nunca esqueça o que Deus fez. Que \"marco de memória\" sua família poderia criar para lembrar um livramento vivido?",
+            "quiz": [
+              {
+                "pergunta": "O que a festa de Purim celebra?",
+                "opcoes": ["O nascimento de Ester", "A construção do templo", "O livramento dos judeus da destruição planejada por Hamã"],
+                "resposta_correta": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "mateus": {
+    "titulo": "Mateus",
+    "contexto": {
+      "autor": "Tradicionalmente atribuido ao apóstolo Mateus (Levi), o cobrador de impostos chamado por Jesus; alguns estudiosos modernos sugerem um autor judeu-cristão anônimo do fim do primeiro século",
+      "periodo": "Provavelmente escrito entre 50 e 90 d.C., segundo diferentes estudiosos, narrando a vida de Jesus no primeiro século",
+      "local": "Possivelmente Antioquia da Síria, para uma comunidade majoritariamente judaico-cristã",
+      "tema_central": "Jesus é o Messias prometido, o cumprimento das profecias do Antigo Testamento e o Rei do Reino dos Céus",
+      "personagens_chave": ["Jesus", "Maria e José", "João Batista", "os doze apóstolos", "os fariseus"],
+      "palavra_chave": "\"Para que se cumprisse\" é uma expressão repetida por Mateus para mostrar Jesus cumprindo as profecias do Antigo Testamento"
+    },
+    "arcos": [
+      {
+        "id": "arco_1",
+        "titulo": "O nascimento e a preparação",
+        "capitulos": [1, 4],
+        "pergunta_motriz": "Como Deus prepara o caminho para Seus propósitos muito antes de eles se cumprirem?",
+        "blocos": [
+          {
+            "id": "bloco_1_1",
+            "titulo": "A genealogia e o nascimento de Jesus",
+            "capitulos": [1, 2],
+            "resumo": "Mateus abre seu evangelho traçando a linhagem de Jesus até Davi e Abraão, e narra Seu nascimento em Belém, a visita dos magos e a fuga para o Egito diante da ameaça de Herodes.",
+            "versiculo_chave": "Mateus 1:23 - Eis que a virgem conceberá... e chamarão o seu nome Emanuel, que traduzido é: Deus conosco.",
+            "reflexao": "Mateus se preocupa em mostrar que tudo estava conectado às promessas antigas de Deus. Que promessa antiga de Deus você tem visto se cumprir na sua própria vida ou família?",
+            "quiz": [
+              {
+                "pergunta": "Até quais dois patriarcas Mateus traça a genealogia de Jesus?",
+                "opcoes": ["Davi e Abraão", "Moisés e Elias", "Noé e Adão"],
+                "resposta_correta": 0
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_2",
+            "titulo": "O batismo e a tentação de Jesus",
+            "capitulos": [3, 4],
+            "resumo": "João Batista prepara o caminho pregando arrependimento. Jesus é batizado e, em seguida, é tentado no deserto por 40 dias, respondendo a cada tentação com a Palavra de Deus.",
+            "versiculo_chave": "Mateus 4:4 - Nem só de pão viverá o homem, mas de toda palavra que sai da boca de Deus.",
+            "reflexao": "Jesus usou a Palavra de Deus como resposta a cada tentação. Que versículo você poderia guardar de cor para usar em um momento de tentação específico da sua vida?",
+            "quiz": [
+              {
+                "pergunta": "Quantos dias Jesus jejuou no deserto antes de ser tentado?",
+                "opcoes": ["7 dias", "40 dias", "3 dias"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_2",
+        "titulo": "O ensino do Reino",
+        "capitulos": [5, 13],
+        "pergunta_motriz": "O que significa viver como cidadão do Reino dos Céus no dia a dia?",
+        "blocos": [
+          {
+            "id": "bloco_2_1",
+            "titulo": "O Sermão do Monte",
+            "capitulos": [5, 6, 7],
+            "resumo": "Jesus ensina as Bem-Aventuranças e princípios do Reino: ser sal e luz, o verdadeiro sentido da lei, o perdão, a oração (o Pai Nosso) e o convite a construir a vida sobre a rocha de Sua palavra.",
+            "versiculo_chave": "Mateus 7:24 - Todo aquele, pois, que ouve estas minhas palavras e as pratica, compará-lo-ei ao homem prudente que edificou a sua casa sobre a rocha.",
+            "reflexao": "Jesus fala de ouvir e praticar, não apenas ouvir. Qual ensinamento do Sermão do Monte você sente que precisa passar de \"ouvir\" para \"praticar\" esta semana?",
+            "quiz": [
+              {
+                "pergunta": "Sobre o que Jesus disse que devemos construir nossa vida?",
+                "opcoes": ["Sobre a areia", "Sobre a rocha, praticando Sua palavra", "Sobre as tradições dos anciãos"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_2",
+            "titulo": "Milagres e o envio dos doze",
+            "capitulos": [8, 9, 10],
+            "resumo": "Jesus cura enfermos, acalma a tempestade e expulsa demônios, demonstrando Sua autoridade. Em seguida, escolhe e envia os doze apóstolos para pregar o Reino, com instruções sobre como agir e o que esperar.",
+            "versiculo_chave": "Mateus 9:37 - A seara, na verdade, é grande, mas os trabalhadores são poucos.",
+            "reflexao": "Jesus capacitou e enviou pessoas comuns para uma missão grande. Onde você sente que Deus está te chamando a servir, mesmo que se sinta despreparado?",
+            "quiz": [
+              {
+                "pergunta": "Quantos apóstolos Jesus escolheu e enviou?",
+                "opcoes": ["Sete", "Doze", "Setenta"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_3",
+            "titulo": "As parábolas do Reino",
+            "capitulos": [11, 12, 13],
+            "resumo": "Jesus responde às dúvidas de João Batista, confronta a incredulidade dos fariseus e ensina em parábolas, como a do semeador e a do joio e do trigo, revelando os mistérios do Reino dos Céus.",
+            "versiculo_chave": "Mateus 13:23 - Mas o que foi semeado em boa terra é aquele que ouve e entende a palavra, e dá fruto.",
+            "reflexao": "Na parábola do semeador, o mesmo tipo de semente teve resultados diferentes conforme o tipo de terreno. O que você pode fazer para preparar seu coração para receber melhor a Palavra de Deus?",
+            "quiz": [
+              {
+                "pergunta": "Na parábola do semeador, o que representa a \"boa terra\"?",
+                "opcoes": ["Quem ouve e não entende", "Quem ouve, entende e dá fruto", "Quem nunca ouve a palavra"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_3",
+        "titulo": "Ministério, conflitos e revelação",
+        "capitulos": [14, 20],
+        "pergunta_motriz": "Como a identidade de Jesus como Messias vai se revelando em meio à oposição?",
+        "blocos": [
+          {
+            "id": "bloco_3_1",
+            "titulo": "Jesus alimenta a multidão e anda sobre o mar",
+            "capitulos": [14, 15],
+            "resumo": "Após a morte de João Batista, Jesus multiplica pães e peixes para alimentar milhares e anda sobre as águas, convidando Pedro a caminhar com Ele pela fé.",
+            "versiculo_chave": "Mateus 14:31 - Homem de pouca fé, por que duvidaste?",
+            "reflexao": "Pedro andou sobre a água enquanto olhava para Jesus, e afundou quando olhou para a tempestade. Em que área da sua vida você tem \"olhado para a tempestade\" em vez de olhar para Jesus?",
+            "quiz": [
+              {
+                "pergunta": "O que aconteceu com Pedro quando ele começou a duvidar ao andar sobre a água?",
+                "opcoes": ["Ele voltou correndo para o barco", "Ele começou a afundar", "Ele conseguiu chegar até Jesus sem problemas"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_2",
+            "titulo": "A confissão de Pedro e a transfiguração",
+            "capitulos": [16, 17],
+            "resumo": "Pedro confessa que Jesus é o Cristo, o Filho do Deus vivo. Jesus começa a anunciar Sua morte e ressurreição, e logo depois é transfigurado diante de Pedro, Tiago e João, revelando Sua glória.",
+            "versiculo_chave": "Mateus 16:16 - Tu és o Cristo, o Filho do Deus vivo.",
+            "reflexao": "A confissão de Pedro foi pessoal, não apenas repetição do que outros diziam. Como você responderia, com suas próprias palavras, à pergunta que Jesus fez: \"Quem dizeis vós que eu sou?\"",
+            "quiz": [
+              {
+                "pergunta": "O que Pedro respondeu quando Jesus perguntou quem Ele era?",
+                "opcoes": ["Um dos profetas", "Tu és o Cristo, o Filho do Deus vivo", "João Batista ressuscitado"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_3",
+            "titulo": "Servir em vez de ser servido",
+            "capitulos": [18, 19, 20],
+            "resumo": "Jesus ensina sobre humildade, perdão, o valor das crianças e o perigo das riquezas. Encerra o bloco afirmando que Ele veio para servir e dar Sua vida em resgate por muitos.",
+            "versiculo_chave": "Mateus 20:28 - O Filho do homem não veio para ser servido, mas para servir.",
+            "reflexao": "Jesus definiu grandeza como serviço, não como status. De que forma prática sua família pode viver isso nesta semana?",
+            "quiz": [
+              {
+                "pergunta": "Segundo Jesus, para que Ele veio?",
+                "opcoes": ["Para ser servido", "Para servir e dar Sua vida em resgate por muitos", "Para julgar imediatamente o mundo"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_4",
+        "titulo": "A semana final e a ressurreição",
+        "capitulos": [21, 28],
+        "pergunta_motriz": "O que a cruz e a ressurreição revelam sobre o plano de Deus para a humanidade?",
+        "blocos": [
+          {
+            "id": "bloco_4_1",
+            "titulo": "Entrada em Jerusalém e confrontos finais",
+            "capitulos": [21, 22, 23],
+            "resumo": "Jesus entra em Jerusalém aclamado como rei, purifica o templo e enfrenta perguntas armadilha dos líderes religiosos, respondendo com sabedoria e pronunciando ais sobre a hipocrisia religiosa.",
+            "versiculo_chave": "Mateus 21:9 - Bendito o que vem em nome do Senhor.",
+            "reflexao": "A multidão que aclamou Jesus como rei, dias depois, pediria Sua morte. O que isso nos ensina sobre a diferença entre entusiasmo passageiro e fé verdadeira?",
+            "quiz": [
+              {
+                "pergunta": "O que Jesus fez ao chegar ao templo em Jerusalém?",
+                "opcoes": ["Ficou em silêncio", "Purificou o templo, expulsando os vendedores", "Foi embora imediatamente"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_4_2",
+            "titulo": "A última ceia e a prisão",
+            "capitulos": [24, 25, 26],
+            "resumo": "Jesus ensina sobre os últimos tempos, institui a Ceia com os discípulos, ora angustiado no Getsêmani e é preso, traído por Judas, enquanto Pedro o nega três vezes.",
+            "versiculo_chave": "Mateus 26:39 - Não seja como eu quero, mas como tu queres.",
+            "reflexao": "Mesmo angustiado, Jesus escolheu se submeter à vontade do Pai. Em que decisão difícil você precisa orar com essa mesma entrega?",
+            "quiz": [
+              {
+                "pergunta": "Quantas vezes Pedro negou conhecer Jesus?",
+                "opcoes": ["Uma vez", "Duas vezes", "Três vezes"],
+                "resposta_correta": 2
+              }
+            ]
+          },
+          {
+            "id": "bloco_4_3",
+            "titulo": "A crucificação e a ressurreição",
+            "capitulos": [27, 28],
+            "resumo": "Jesus é julgado, crucificado e sepultado. No terceiro dia, ressuscita e aparece aos discípulos, dando-lhes a Grande Comissão de fazer discípulos em todas as nações.",
+            "versiculo_chave": "Mateus 28:19-20 - Fazei discípulos de todas as nações... e eis que estou convosco todos os dias.",
+            "reflexao": "O evangelho termina com uma promessa de presença constante junto com um chamado à missão. Como a certeza de que Jesus está \"convosco todos os dias\" muda a forma como sua família encara os desafios da semana?",
+            "quiz": [
+              {
+                "pergunta": "O que Jesus ordenou aos discípulos depois de ressuscitar?",
+                "opcoes": ["Que ficassem escondidos", "Que fizessem discípulos de todas as nações", "Que voltassem para suas profissões antigas"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
