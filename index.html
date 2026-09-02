@@ -247,10 +247,7 @@ const DB={
     await sb.from('progresso').insert({membro_id:membroId,tipo,referencia});
   },
   async getOracoes(){
-    const weekStart=new Date();
-    const daysSinceWed=(weekStart.getDay()-3+7)%7;
-    weekStart.setDate(weekStart.getDate()-daysSinceWed);weekStart.setHours(0,0,0,0);
-    const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').gte('criado_em',weekStart.toISOString()).order('criado_em',{ascending:false});
+    const{data}=await sb.from('oracoes').select('*, intercessions(membro_id)').eq('respondida',false).order('criado_em',{ascending:false});
     return(data||[]).map(o=>({id:o.id,authorId:o.autor_id,text:o.texto,date:o.data_br,prayedBy:(o.intercessions||[]).map(i=>i.membro_id),respondida:o.respondida||false,respondida_em:o.respondida_em||null}));
   },
   async getAllOracoes(){
