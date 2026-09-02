@@ -798,13 +798,43 @@ function EstudosScreen(){
   useEffect(()=>{(async()=>{
     try{
       const data=await loadEstudosData();setLivros(data);
-      const primeiro=Object.keys(data)[0];setLivroId(primeiro);
     }catch(e){console.error(e);setErr(e.message);}
     setLoading(false);
   })();},[]);
 
+  function abrirLivro(id){setLivroId(id);setArcoIdx(0);setBlocoIdx(0);}
+  function voltarLista(){setLivroId(null);}
+
   if(err)return(<div className="screen"><div className="topbar"><h2>📘 Estudos</h2></div><div style={{padding:'16px'}}><div className="alert alert-red">{err}</div></div></div>);
-  if(loading||!livros||!livroId)return(<div className="loading-center"><div style={{fontSize:'40px'}} className="pulse">📘</div></div>);
+  if(loading||!livros)return(<div className="loading-center"><div style={{fontSize:'40px'}} className="pulse">📘</div></div>);
+
+  if(!livroId){
+    const ids=Object.keys(livros);
+    return(
+      <div className="screen">
+        <div className="topbar"><h2>📘 Estudos por Livro</h2></div>
+        <div className="scroll" style={{padding:'16px'}}>
+          <p style={{fontSize:'13px',color:'var(--muted)',marginBottom:'16px'}}>Escolha um livro para começar ou continuar o estudo em família.</p>
+          {ids.map(id=>{
+            const l=livros[id];
+            const totalBlocos=l.arcos.reduce((s,a)=>s+a.blocos.length,0);
+            const totalCap=l.arcos.length?l.arcos[l.arcos.length-1].capitulos[1]:0;
+            return(
+              <button key={id} className="member-btn" style={{marginBottom:'12px'}} onClick={()=>abrirLivro(id)}>
+                <div className="avatar" style={{background:'var(--moss)'}}>📖</div>
+                <div className="member-btn-info">
+                  <p>{l.titulo}</p>
+                  <p>{totalCap} capítulos · {totalBlocos} blocos de estudo</p>
+                </div>
+                <span className="member-btn-arrow">›</span>
+              </button>
+            );
+          })}
+          <div className="alert alert-green" style={{marginTop:'8px'}}>Mais livros serão adicionados aqui com o tempo. ✨</div>
+        </div>
+      </div>
+    );
+  }
 
   const livro=livros[livroId];
   const arco=livro.arcos[arcoIdx];
@@ -832,7 +862,7 @@ function EstudosScreen(){
 
   return(
     <div className="screen">
-      <div className="topbar"><h2>📘 {livro.titulo}</h2></div>
+      <div className="topbar"><button className="topbar-back" onClick={voltarLista}>‹</button><h2>📘 {livro.titulo}</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
         <div className="progress-bar-wrap" style={{marginBottom:'6px'}}><div className="progress-bar-fill" style={{width:`${pct}%`}}/></div>
         <p style={{fontSize:'11px',color:'var(--muted)',marginBottom:'16px'}}>Bloco {blocoNumeroAtual} de {blocosTotal} · {arco.titulo}</p>
