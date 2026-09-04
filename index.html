@@ -320,6 +320,17 @@ const DB={
   async setPlanoAtivo(membroId,planoId){
     await sb.from('leitura_plano_ativo').upsert({membro_id:membroId,plano_id:planoId,data_inicio:TODAY,atualizado_em:new Date().toISOString()});
   },
+  async getLeituraLivre(membroId){
+    const{data}=await sb.from('leitura_progresso').select('dia_plano,data_concluido').eq('membro_id',membroId).eq('plano_id','livre');
+    return(data||[]).map(r=>r.dia_plano);
+  },
+  async toggleLeituraLivre(membroId,codigo,marcarComoLido){
+    if(marcarComoLido){
+      await sb.from('leitura_progresso').upsert({membro_id:membroId,plano_id:'livre',dia_plano:codigo,data_concluido:TODAY},{onConflict:'membro_id,plano_id,dia_plano'});
+    }else{
+      await sb.from('leitura_progresso').delete().eq('membro_id',membroId).eq('plano_id','livre').eq('dia_plano',codigo);
+    }
+  },
 };
 
 // ── DEVOTIONAL LOADER ─────────────────────────────────────────────────────────
@@ -355,6 +366,34 @@ async function loadEstudosData(){
   if(!r.ok)throw new Error('Arquivo estudos.json não encontrado ('+r.status+')');
   _estudosData=await r.json();return _estudosData;
 }
+
+// ── LIVROS DA BÍBLIA (leitura livre) ──────────────────────────────────────────
+const BIBLE_BOOKS=[
+  {id:1,nome:'Gênesis',cap:50,test:'AT'},{id:2,nome:'Êxodo',cap:40,test:'AT'},{id:3,nome:'Levítico',cap:27,test:'AT'},
+  {id:4,nome:'Números',cap:36,test:'AT'},{id:5,nome:'Deuteronômio',cap:34,test:'AT'},{id:6,nome:'Josué',cap:24,test:'AT'},
+  {id:7,nome:'Juízes',cap:21,test:'AT'},{id:8,nome:'Rute',cap:4,test:'AT'},{id:9,nome:'1 Samuel',cap:31,test:'AT'},
+  {id:10,nome:'2 Samuel',cap:24,test:'AT'},{id:11,nome:'1 Reis',cap:22,test:'AT'},{id:12,nome:'2 Reis',cap:25,test:'AT'},
+  {id:13,nome:'1 Crônicas',cap:29,test:'AT'},{id:14,nome:'2 Crônicas',cap:36,test:'AT'},{id:15,nome:'Esdras',cap:10,test:'AT'},
+  {id:16,nome:'Neemias',cap:13,test:'AT'},{id:17,nome:'Ester',cap:10,test:'AT'},{id:18,nome:'Jó',cap:42,test:'AT'},
+  {id:19,nome:'Salmos',cap:150,test:'AT'},{id:20,nome:'Provérbios',cap:31,test:'AT'},{id:21,nome:'Eclesiastes',cap:12,test:'AT'},
+  {id:22,nome:'Cânticos',cap:8,test:'AT'},{id:23,nome:'Isaías',cap:66,test:'AT'},{id:24,nome:'Jeremias',cap:52,test:'AT'},
+  {id:25,nome:'Lamentações',cap:5,test:'AT'},{id:26,nome:'Ezequiel',cap:48,test:'AT'},{id:27,nome:'Daniel',cap:12,test:'AT'},
+  {id:28,nome:'Oséias',cap:14,test:'AT'},{id:29,nome:'Joel',cap:3,test:'AT'},{id:30,nome:'Amós',cap:9,test:'AT'},
+  {id:31,nome:'Obadias',cap:1,test:'AT'},{id:32,nome:'Jonas',cap:4,test:'AT'},{id:33,nome:'Miquéias',cap:7,test:'AT'},
+  {id:34,nome:'Naum',cap:3,test:'AT'},{id:35,nome:'Habacuque',cap:3,test:'AT'},{id:36,nome:'Sofonias',cap:3,test:'AT'},
+  {id:37,nome:'Ageu',cap:2,test:'AT'},{id:38,nome:'Zacarias',cap:14,test:'AT'},{id:39,nome:'Malaquias',cap:4,test:'AT'},
+  {id:40,nome:'Mateus',cap:28,test:'NT'},{id:41,nome:'Marcos',cap:16,test:'NT'},{id:42,nome:'Lucas',cap:24,test:'NT'},
+  {id:43,nome:'João',cap:21,test:'NT'},{id:44,nome:'Atos',cap:28,test:'NT'},{id:45,nome:'Romanos',cap:16,test:'NT'},
+  {id:46,nome:'1 Coríntios',cap:16,test:'NT'},{id:47,nome:'2 Coríntios',cap:13,test:'NT'},{id:48,nome:'Gálatas',cap:6,test:'NT'},
+  {id:49,nome:'Efésios',cap:6,test:'NT'},{id:50,nome:'Filipenses',cap:4,test:'NT'},{id:51,nome:'Colossenses',cap:4,test:'NT'},
+  {id:52,nome:'1 Tessalonicenses',cap:5,test:'NT'},{id:53,nome:'2 Tessalonicenses',cap:3,test:'NT'},{id:54,nome:'1 Timóteo',cap:6,test:'NT'},
+  {id:55,nome:'2 Timóteo',cap:4,test:'NT'},{id:56,nome:'Tito',cap:3,test:'NT'},{id:57,nome:'Filemom',cap:1,test:'NT'},
+  {id:58,nome:'Hebreus',cap:13,test:'NT'},{id:59,nome:'Tiago',cap:5,test:'NT'},{id:60,nome:'1 Pedro',cap:5,test:'NT'},
+  {id:61,nome:'2 Pedro',cap:3,test:'NT'},{id:62,nome:'1 João',cap:5,test:'NT'},{id:63,nome:'2 João',cap:1,test:'NT'},
+  {id:64,nome:'3 João',cap:1,test:'NT'},{id:65,nome:'Judas',cap:1,test:'NT'},{id:66,nome:'Apocalipse',cap:22,test:'NT'}
+];
+function codLivreCap(bookId,cap){return bookId*1000+cap;}
+function decodLivreCap(codigo){return{bookId:Math.floor(codigo/1000),cap:codigo%1000};}
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const fmtDate=()=>new Date().toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long'});
@@ -663,6 +702,7 @@ function streakLeitura(dates){
 }
 
 function ReadingPlanScreen({user}){
+  const[modo,setModo]=useState('plano');
   const[planos,setPlanos]=useState(null);
   const[planoId,setPlanoId]=useState('plano_anual');
   const[registros,setRegistros]=useState([]);
@@ -697,6 +737,8 @@ function ReadingPlanScreen({user}){
     setMarking(false);
   }
 
+  if(modo==='livre')return(<FreeReadingScreen user={user} onVoltar={()=>setModo('plano')}/>);
+
   if(err)return(<div className="screen"><div className="topbar"><h2>📚 Plano de Leitura</h2></div><div style={{padding:'16px'}}><div className="alert alert-red">{err}</div></div></div>);
   if(loading||!planos)return(<div className="loading-center"><div style={{fontSize:'40px'}} className="pulse">📖</div></div>);
 
@@ -720,6 +762,11 @@ function ReadingPlanScreen({user}){
     <div className="screen">
       <div className="topbar"><h2>📚 Plano de Leitura</h2></div>
       <div className="scroll" style={{padding:'16px'}}>
+        <div className="tabs" style={{marginBottom:'16px'}}>
+          <button className="tab active">Plano</button>
+          <button className="tab" onClick={()=>setModo('livre')}>Livre</button>
+        </div>
+
         <div className="card" style={{display:'flex',alignItems:'center',gap:'16px',marginBottom:'16px'}}>
           <div className="biblia-ring" style={{'--pct':pctBiblia}}>
             <div className="biblia-ring-inner">
@@ -756,6 +803,87 @@ function ReadingPlanScreen({user}){
           <button className={`btn btn-full${jaLeuHoje?' btn-secondary':' btn-primary'}`} disabled={jaLeuHoje||marking} onClick={marcarHoje}>
             {jaLeuHoje?'✓ Leitura de hoje concluída':marking?'⏳...':'Marcar leitura de hoje'}
           </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FreeReadingScreen({user,onVoltar}){
+  const[lidos,setLidos]=useState([]);
+  const[loading,setLoading]=useState(true);
+  const[livroSel,setLivroSel]=useState(null);
+
+  useEffect(()=>{(async()=>{
+    setLidos(await DB.getLeituraLivre(user.id));
+    setLoading(false);
+  })();},[user.id]);
+
+  async function toggleCap(bookId,cap){
+    const codigo=codLivreCap(bookId,cap);
+    const jaLido=lidos.includes(codigo);
+    setLidos(jaLido?lidos.filter(c=>c!==codigo):[...lidos,codigo]);
+    await DB.toggleLeituraLivre(user.id,codigo,!jaLido);
+  }
+
+  if(loading)return(<div className="loading-center"><div style={{fontSize:'40px'}} className="pulse">📖</div></div>);
+
+  const totalLidos=lidos.length;
+  const totalCapBiblia=BIBLE_BOOKS.reduce((s,b)=>s+b.cap,0);
+
+  if(!livroSel){
+    return(
+      <div className="screen">
+        <div className="topbar"><button className="topbar-back" onClick={onVoltar}>‹</button><h2>📖 Leitura Livre</h2></div>
+        <div className="scroll" style={{padding:'16px'}}>
+          <div className="card" style={{marginBottom:'16px'}}>
+            <p style={{fontSize:'13px',color:'var(--muted)'}}>Escolha qualquer livro e capítulo, no seu tempo.</p>
+            <p style={{fontSize:'12px',color:'var(--forest)',fontWeight:'700',marginTop:'6px'}}>{totalLidos} de {totalCapBiblia} capítulos marcados</p>
+          </div>
+          {['AT','NT'].map(test=>(
+            <div key={test} style={{marginBottom:'20px'}}>
+              <p style={{fontSize:'11px',color:'var(--muted)',fontWeight:'700',letterSpacing:'.8px',textTransform:'uppercase',marginBottom:'8px'}}>{test==='AT'?'Antigo Testamento':'Novo Testamento'}</p>
+              {BIBLE_BOOKS.filter(b=>b.test===test).map(b=>{
+                const lidosNoLivro=lidos.filter(c=>decodLivreCap(c).bookId===b.id).length;
+                const completo=lidosNoLivro===b.cap;
+                return(
+                  <button key={b.id} className="member-btn" style={{marginBottom:'8px'}} onClick={()=>setLivroSel(b.id)}>
+                    <div className="avatar" style={{background:completo?'var(--forest)':'var(--moss)'}}>{completo?'✓':'📄'}</div>
+                    <div className="member-btn-info">
+                      <p>{b.nome}</p>
+                      <p>{lidosNoLivro} de {b.cap} capítulos lidos</p>
+                    </div>
+                    <span className="member-btn-arrow">›</span>
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  const livro=BIBLE_BOOKS.find(b=>b.id===livroSel);
+  const capitulos=Array.from({length:livro.cap},(_,i)=>i+1);
+
+  return(
+    <div className="screen">
+      <div className="topbar"><button className="topbar-back" onClick={()=>setLivroSel(null)}>‹</button><h2>📖 {livro.nome}</h2></div>
+      <div className="scroll" style={{padding:'16px'}}>
+        <p style={{fontSize:'13px',color:'var(--muted)',marginBottom:'14px'}}>Toque em um capítulo para marcar ou desmarcar como lido.</p>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:'8px'}}>
+          {capitulos.map(cap=>{
+            const codigo=codLivreCap(livro.id,cap);
+            const lido=lidos.includes(codigo);
+            return(
+              <button key={cap} onClick={()=>toggleCap(livro.id,cap)} style={{
+                aspectRatio:'1',borderRadius:'10px',border:lido?'2px solid var(--forest)':'2px solid var(--border)',
+                background:lido?'var(--forest)':'var(--card)',color:lido?'#fff':'var(--ink)',
+                fontWeight:'700',fontSize:'14px',cursor:'pointer'
+              }}>{lido?'✓':cap}</button>
+            );
+          })}
         </div>
       </div>
     </div>
