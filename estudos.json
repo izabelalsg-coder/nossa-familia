@@ -610,5 +610,230 @@
         ]
       }
     ]
+  },
+  "2samuel": {
+    "titulo": "2 Samuel",
+    "contexto": {
+      "autor": "Autoria incerta; tradicionalmente associada a Natã e Gade, com possível base em registros de Samuel (1 Crônicas 29:29)",
+      "periodo": "Aproximadamente 1010 a 970 a.C., do início do reinado de Davi até o fim de sua vida",
+      "local": "Hebrom no início do reinado e depois Jerusalém, capital do reino unificado",
+      "tema_central": "O reinado de Davi e a aliança de Deus com ele, incluindo as consequências reais do pecado mesmo para um rei segundo o coração de Deus",
+      "personagens_chave": ["Davi", "Jônatas", "Joabe", "Bate-Seba", "Natã", "Absalão"],
+      "palavra_chave": "2 Samuel era originalmente um único livro com 1 Samuel, dividido posteriormente em duas partes"
+    },
+    "arcos": [
+      {
+        "id": "arco_1",
+        "titulo": "A ascensão de Davi ao trono",
+        "capitulos": [1, 5],
+        "pergunta_motriz": "Como Davi lidou com o poder recém-recebido sem perder o caráter formado nos anos de espera?",
+        "blocos": [
+          {
+            "id": "bloco_1_1",
+            "titulo": "O luto de Davi por Saul e Jônatas",
+            "capitulos": [1, 2],
+            "resumo": "Ao saber da morte de Saul e Jônatas, Davi lamenta profundamente e compõe um cântico fúnebre em honra dos dois, mesmo Saul tendo sido seu perseguidor. Davi é então ungido rei sobre Judá em Hebrom.",
+            "versiculo_chave": "2 Samuel 1:23 - Amáveis e queridos na sua vida, também na sua morte não foram separados.",
+            "reflexao": "Davi honrou até quem o perseguiu, em vez de comemorar sua morte. Existe alguém em sua vida que você precisa honrar ou perdoar, mesmo depois de um relacionamento difícil?",
+            "quiz": [
+              {
+                "pergunta": "Como Davi reagiu ao saber da morte de Saul e Jônatas?",
+                "opcoes": ["Comemorou a vitória", "Lamentou profundamente e compôs um cântico fúnebre", "Ficou indiferente"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_2",
+            "titulo": "Guerra civil e a morte de Abner",
+            "capitulos": [3, 4],
+            "resumo": "Um longo conflito se estende entre a casa de Davi e a casa de Saul. Abner, general de Israel, negocia se aliar a Davi, mas é assassinado por Joabe em vingança pessoal. Davi lamenta publicamente a morte de Abner, distanciando-se do ato de Joabe.",
+            "versiculo_chave": "2 Samuel 3:38 - Não sabeis que hoje caiu em Israel um príncipe, e um grande homem?",
+            "reflexao": "Davi fez questão de deixar claro que não concordava com a vingança de Joabe, mesmo sendo seu comandante. Você tem coragem de discordar publicamente de atitudes erradas de pessoas próximas a você, mesmo quando é mais fácil ficar calado?",
+            "quiz": [
+              {
+                "pergunta": "Quem matou Abner por vingança pessoal?",
+                "opcoes": ["Davi", "Joabe", "Saul"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_1_3",
+            "titulo": "Davi rei sobre todo Israel e a tomada de Jerusalém",
+            "capitulos": [5],
+            "resumo": "Todas as tribos de Israel reconhecem Davi como rei, unificando o reino. Davi conquista Jerusalém dos jebuseus e a estabelece como sua capital, a Cidade de Davi.",
+            "versiculo_chave": "2 Samuel 5:10 - Davi ia crescendo e se tornando cada vez mais poderoso, porque o Senhor, o Deus dos Exércitos, estava com ele.",
+            "reflexao": "O crescimento de Davi é atribuído à presença de Deus, não apenas à sua habilidade. Em que área da sua vida você tem dado crédito só ao seu próprio esforço, esquecendo de reconhecer a ajuda de Deus?",
+            "quiz": [
+              {
+                "pergunta": "Que cidade Davi conquistou e tornou sua capital?",
+                "opcoes": ["Hebrom", "Jerusalém", "Belém"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_2",
+        "titulo": "Aliança e conquistas",
+        "capitulos": [6, 10],
+        "pergunta_motriz": "O que significa colocar a presença de Deus no centro da vida e da liderança?",
+        "blocos": [
+          {
+            "id": "bloco_2_1",
+            "titulo": "A arca é trazida a Jerusalém",
+            "capitulos": [6],
+            "resumo": "Davi traz a arca da aliança para Jerusalém em meio a celebração. No caminho, Uzá morre ao tocar a arca de forma indevida, e Davi só retoma a celebração depois de reorganizar o transporte segundo a instrução divina, dançando diante do Senhor com todas as suas forças.",
+            "versiculo_chave": "2 Samuel 6:14 - Davi dançava com todas as suas forças diante do Senhor.",
+            "reflexao": "Davi não se importou com a opinião alheia ao adorar com intensidade. Existe algo que te impede de adorar a Deus livremente por causa do que os outros possam pensar?",
+            "quiz": [
+              {
+                "pergunta": "O que aconteceu com Uzá ao tocar a arca de forma indevida?",
+                "opcoes": ["Nada aconteceu", "Ele morreu", "Ele foi abençoado"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_2",
+            "titulo": "A aliança davídica",
+            "capitulos": [7],
+            "resumo": "Davi deseja construir um templo para Deus, mas o Senhor, por meio do profeta Natã, promete a Davi algo maior: uma dinastia eterna, prometendo estabelecer seu trono para sempre.",
+            "versiculo_chave": "2 Samuel 7:16 - Será firme para sempre a tua casa e o teu reino diante de ti; teu trono será estabelecido para sempre.",
+            "reflexao": "Deus trocou o desejo de Davi de construir uma casa para Ele por uma promessa ainda maior. Já aconteceu de Deus negar algo que você queria dar a Ele, para te dar algo maior no lugar?",
+            "quiz": [
+              {
+                "pergunta": "O que Deus prometeu a Davi por meio do profeta Natã?",
+                "opcoes": ["Riquezas imediatas", "Um trono e uma dinastia estabelecidos para sempre", "A destruição de todos os seus inimigos"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_2_3",
+            "titulo": "Vitórias militares e graça a Mefibosete",
+            "capitulos": [8, 9, 10],
+            "resumo": "Davi consolida o reino com vitórias sobre nações vizinhas. Em meio a esse sucesso, ele busca um descendente de Jônatas para mostrar bondade, e encontra Mefibosete, aleijado dos pés, a quem trata como um dos seus próprios filhos.",
+            "versiculo_chave": "2 Samuel 9:7 - Não temas, porque decerto usarei de benevolência para contigo, por amor de Jônatas, teu pai.",
+            "reflexao": "No auge do seu poder, Davi lembrou de uma promessa antiga de bondade a um amigo. Que promessa de cuidado ou bondade você fez a alguém no passado e ainda precisa cumprir?",
+            "quiz": [
+              {
+                "pergunta": "Por que Davi mostrou bondade a Mefibosete?",
+                "opcoes": ["Por interesse político", "Por amor a Jônatas, pai de Mefibosete", "Porque foi obrigado"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_3",
+        "titulo": "O pecado e suas consequências",
+        "capitulos": [11, 14],
+        "pergunta_motriz": "Como um só pecado não confrontado pode se espalhar e afetar toda uma família?",
+        "blocos": [
+          {
+            "id": "bloco_3_1",
+            "titulo": "Davi, Bate-Seba e Urias",
+            "capitulos": [11],
+            "resumo": "Enquanto deveria estar na guerra, Davi vê Bate-Seba, comete adultério com ela e, para encobrir o pecado, arquiteta a morte de seu marido Urias, um dos seus soldados mais leais.",
+            "versiculo_chave": "2 Samuel 11:27 - Mas o que Davi fizera pareceu mal aos olhos do Senhor.",
+            "reflexao": "O pecado de Davi começou com uma escolha pequena, ficar em casa em vez de ir para a guerra, e cresceu até o encobrimento e a morte de um inocente. Que pequena escolha de ociosidade ou desatenção em sua vida poderia, se não cuidada, crescer em algo maior?",
+            "quiz": [
+              {
+                "pergunta": "O que Davi fez para tentar encobrir seu pecado com Bate-Seba?",
+                "opcoes": ["Confessou publicamente", "Arquitetou a morte de Urias, marido dela", "Pediu perdão a Urias"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_2",
+            "titulo": "O confronto de Natã e o arrependimento de Davi",
+            "capitulos": [12],
+            "resumo": "O profeta Natã confronta Davi com uma parábola sobre um cordeirinho, expondo seu pecado. Davi se arrepende genuinamente, embora enfrente consequências duras, incluindo a morte do filho nascido do adultério.",
+            "versiculo_chave": "2 Samuel 12:13 - Também o Senhor perdoou o teu pecado.",
+            "reflexao": "Davi não se justificou nem culpou outros ao ser confrontado, apenas reconheceu seu erro. Como você costuma reagir quando alguém te confronta sobre algo que fez de errado?",
+            "quiz": [
+              {
+                "pergunta": "Como Natã confrontou Davi sobre seu pecado?",
+                "opcoes": ["Com uma acusação direta e pública", "Com uma parábola sobre um cordeirinho", "Escrevendo uma carta"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_3_3",
+            "titulo": "Tragédia na família de Davi",
+            "capitulos": [13, 14],
+            "resumo": "As consequências do pecado de Davi se desdobram em sua própria família: Amnom abusa de sua meia-irmã Tamar, e Absalão, irmão dela, o mata em vingança e foge. Depois de anos, Joabe intervém para trazer Absalão de volta.",
+            "versiculo_chave": "2 Samuel 12:10 - Nunca a espada se apartará da tua casa.",
+            "reflexao": "A palavra de Natã sobre as consequências futuras se cumpriu de forma dolorosa dentro da própria casa de Davi. Como podemos buscar restauração em relacionamentos familiares feridos por mágoas antigas?",
+            "quiz": [
+              {
+                "pergunta": "O que Absalão fez depois que Amnom abusou de sua irmã Tamar?",
+                "opcoes": ["Perdoou imediatamente", "Matou Amnom em vingança e fugiu", "Foi buscar ajuda de Davi"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "arco_4",
+        "titulo": "A rebelião de Absalão e os últimos anos",
+        "capitulos": [15, 24],
+        "pergunta_motriz": "Como Davi manteve a fé mesmo sendo traído pelo próprio filho e enfrentando o fim conturbado de seu reinado?",
+        "blocos": [
+          {
+            "id": "bloco_4_1",
+            "titulo": "A rebelião de Absalão",
+            "capitulos": [15, 16, 17],
+            "resumo": "Absalão conquista o coração do povo e se rebela contra Davi, forçando-o a fugir de Jerusalém. Em meio à fuga, Davi é insultado por Simei, mas escolhe não retaliar, confiando o julgamento a Deus.",
+            "versiculo_chave": "2 Samuel 15:25-26 - Se eu achar graça aos olhos do Senhor, ele me tornará a trazer... Se disser, porém, assim: Não tenho prazer em ti; eis-me aqui, faça de mim como parecer bem aos seus olhos.",
+            "reflexao": "Mesmo perdendo o trono temporariamente, Davi entregou o resultado nas mãos de Deus em vez de lutar contra o próprio filho a qualquer custo. Que situação você precisa entregar ao tempo de Deus, em vez de tentar controlar sozinho?",
+            "quiz": [
+              {
+                "pergunta": "Como Davi reagiu quando Simei o insultou durante a fuga?",
+                "opcoes": ["Mandou matá-lo", "Escolheu não retaliar, confiando o julgamento a Deus", "Ignorou e voltou depois para se vingar"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_4_2",
+            "titulo": "A morte de Absalão",
+            "capitulos": [18, 19],
+            "resumo": "O exército de Davi derrota as forças de Absalão, que morre preso pelos cabelos em um carvalho, apesar da ordem explícita de Davi para pouparem sua vida. Davi chora amargamente a morte do filho, mesmo tendo se rebelado contra ele.",
+            "versiculo_chave": "2 Samuel 18:33 - Meu filho Absalão, meu filho, meu filho Absalão! Quem me dera que eu morrera por ti.",
+            "reflexao": "O amor de pai de Davi superou a dor da traição. Existe alguém que te traiu e por quem, mesmo assim, seu coração ainda sente amor e cuidado?",
+            "quiz": [
+              {
+                "pergunta": "Como Absalão morreu?",
+                "opcoes": ["Em batalha direta com Davi", "Preso pelos cabelos em um carvalho", "De doença"],
+                "resposta_correta": 1
+              }
+            ]
+          },
+          {
+            "id": "bloco_4_3",
+            "titulo": "Os últimos anos e o apêndice do livro",
+            "capitulos": [20, 21, 22, 23, 24],
+            "resumo": "Davi enfrenta ainda outra rebelião, liderada por Seba, e o livro fecha com um apêndice contendo o cântico de louvor de Davi, uma lista de seus guerreiros valentes e o episódio do censo pecaminoso, cuja consequência ele intercede para minimizar sobre o povo.",
+            "versiculo_chave": "2 Samuel 22:2-3 - O Senhor é o meu rochedo, e o meu lugar forte, e o meu libertador.",
+            "reflexao": "Mesmo depois de tantas quedas e vitórias, o cântico final de Davi é de louvor e confiança em Deus como rocha. Ao olhar para trás na sua própria trajetória de altos e baixos, que motivo de louvor você pode expressar hoje?",
+            "quiz": [
+              {
+                "pergunta": "O que Davi fez ao perceber a gravidade do pecado do censo que ele havia ordenado?",
+                "opcoes": ["Culpou o povo", "Intercedeu, pedindo que o castigo caísse sobre ele e não sobre o povo", "Ignorou o problema"],
+                "resposta_correta": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
